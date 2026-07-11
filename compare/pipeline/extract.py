@@ -110,4 +110,43 @@ def extract(html_text, url=""):
         t = re.search(r"<title[^>]*>(.*?)</title>", html_text, re.S | re.I)
         if t:
             out["name"] = html.unescape(t.group(1)).strip()[:120]
+
+    ing = extract_ingredients(html_text)
+    if ing:
+        out["ingredients_text"] = ing
     return out
+
+
+_TAG = re.compile(r"<[^>]+>")
+_ING_HDR = re.compile(
+    r"(?:ingr[ée]dients?|composition)\s*(?:pour[^:<]*)?[:\-]\s*(.+?)"
+    r"(?:\.\s|</p>|</div>|</td>|</li>|valeurs?\s+nutrition|conseils?\s+d|analyse\s+moyenne)",
+    re.I | re.S)
+
+
+def extract_ingredients(html_text):
+    """Best-effort pull of a label ingredients/composition block from raw HTML.
+
+    Deliberately conservative: only fires on an explicit 'Ingrédients:' /
+    'Composition:' header so we don't invent data. Returns a cleaned string or
+    None. Per-merchant adapters (Phase 1) will do better; this already captures
+    the many shops that print the ingredient list inline."""
+    # search near an ingredients header, on a tag-stripped copy of a window
+    for m in re.finditer(r"(ingr[ée]dients?|composition)", html_text, re.I):
+        window = html_text[m.start(): m.start() + 1500]
+        text = html.unescape(_TAG.sub(" ", window))
+        text = re.sub(r"\s+", " ", text).strip()
+        hit = _ING_HDR.search(text)
+        if hit:
+            frag = hit.group(1).strip(" .;:")
+            if 8 <= len(frag) <= 600:      # plausible ingredient string
+                return frag
+    return None
+
+
+def ingredient_items(ingredients_text):
+    """Split an ingredients string into individual items for the auto-tagger."""
+    if not ingredients_text:
+        return []
+    parts = re.split(r"[,;]| - ", ingredients_text)
+    return [p.strip() for p in parts if len(p.strip()) > 1]

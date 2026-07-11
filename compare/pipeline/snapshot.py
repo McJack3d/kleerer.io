@@ -33,7 +33,19 @@ def content_hash(rec):
     return hashlib.sha1(json.dumps(basis, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
 
 
-def write_snapshot(source, extracted, label_hash=None, date=None):
+def observed_label_hash(ingredients_text, purity_tags):
+    """Fingerprint of the LIVE-observed label (scraped ingredients), distinct
+    from the curated label_hash. When two consecutive days both have this, the
+    pipeline can flag a real, observed reformulation."""
+    if not ingredients_text:
+        return None
+    basis = {"ingredients": ingredients_text.lower().strip(),
+             "tags": sorted(purity_tags or [])}
+    return hashlib.sha1(json.dumps(basis, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
+
+
+def write_snapshot(source, extracted, label_hash=None, live_label_hash=None,
+                   live_purity_tags=None, date=None):
     date = date or today()
     day_dir = os.path.join(SNAP_ROOT, date)
     os.makedirs(day_dir, exist_ok=True)
@@ -47,6 +59,9 @@ def write_snapshot(source, extracted, label_hash=None, date=None):
         "availability": extracted.get("availability"),
         "extract_source": extracted.get("source"),
         "label_hash": label_hash,
+        "live_label_hash": live_label_hash,
+        "live_purity_tags": live_purity_tags,
+        "ingredients_text": extracted.get("ingredients_text"),
         "raw": extracted,
     }
     rec["content_hash"] = content_hash(extracted)

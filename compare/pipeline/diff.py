@@ -38,10 +38,13 @@ def diff_days(prev, curr):
         if p.get("availability") != c.get("availability") and (p.get("availability") or c.get("availability")):
             changes.append({"id": pid, "kind": "availability",
                             "detail": f"{p.get('availability') or '?'} → {c.get('availability') or '?'}"})
-        # reformulation
-        if p.get("label_hash") and c.get("label_hash") and p["label_hash"] != c["label_hash"]:
+        # reformulation — observed (scraped ingredients changed) takes priority
+        if p.get("live_label_hash") and c.get("live_label_hash") and p["live_label_hash"] != c["live_label_hash"]:
             changes.append({"id": pid, "kind": "reformulation",
-                            "detail": f"label changed ({p['label_hash']} → {c['label_hash']})"})
+                            "detail": f"observed label changed ({p['live_label_hash']} → {c['live_label_hash']})"})
+        elif p.get("label_hash") and c.get("label_hash") and p["label_hash"] != c["label_hash"]:
+            changes.append({"id": pid, "kind": "reformulation",
+                            "detail": f"curated label changed ({p['label_hash']} → {c['label_hash']})"})
     for pid in prev:
         if pid not in curr:
             changes.append({"id": pid, "kind": "disappeared", "detail": "not in latest snapshot"})

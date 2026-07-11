@@ -16,7 +16,12 @@ import os, sys, argparse, json, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, "..", "scripts"))
 import fetch, extract, snapshot, diff, offtake
+try:
+    import autotag
+except Exception:
+    autotag = None
 
 REPORTS = os.path.join(HERE, "reports")
 DATA_JS = os.path.join(HERE, "..", "data.js")
@@ -106,18 +111,26 @@ def main():
                                         "availability": None, "name": s.get("name")})
             continue
         ex = extract.extract(res.body, s["url"])
-        # optional OFF enrichment (does not block on failure)
-        if s.get("ean"):
+        # live label extraction: scraped ingredients → auto-tagger → observed tags
+        live_tags, ingredients = None, ex.get("ingredients_text")
+        if not ingredients and s.get("ean"):        # fall back to OpenFoodFacts
             enr = offtake.enrich_by_ean(s["ean"], fetch.fetch, meta)
             if enr and enr.get("found"):
                 off_hits += 1
-                ex["off_ingredients"] = enr.get("ingredients_text")
-                ex["off_purity_tags"] = enr.get("derived_purity_tags")
+                ingredients = enr.get("ingredients_text") or ingredients
+                ex["ingredients_text"] = ingredients
+                live_tags = enr.get("derived_purity_tags")
+        if ingredients and live_tags is None and autotag:
+            live_tags = [t for t in (autotag.classify_additive(x)
+                         for x in extract.ingredient_items(ingredients)) if t]
+        live_lh = snapshot.observed_label_hash(ingredients, live_tags)
         lh = label_hashes.get(s.get("product_id"))
-        snapshot.write_snapshot(s, ex, label_hash=lh)
+        snapshot.write_snapshot(s, ex, label_hash=lh,
+                                live_label_hash=live_lh, live_purity_tags=live_tags)
         written += 1
         tag = "cache" if res.from_cache else "net"
-        print(f"  ✓ {s['id']:38} {ex.get('price')} {ex.get('currency') or ''} [{ex.get('source')}, {tag}]")
+        lbl = "＋label" if ingredients else ""
+        print(f"  ✓ {s['id']:38} {ex.get('price')} {ex.get('currency') or ''} [{ex.get('source')}, {tag}] {lbl}")
 
     # diff against previous day
     days = snapshot.list_days()

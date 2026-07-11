@@ -50,6 +50,30 @@ def test_price_thousands_format():
     assert extract._to_float("29,90") == 29.90
 
 
+def test_extract_ingredients_and_live_tags():
+    e = extract.extract(_read("ingredients_product.html"), "http://x")
+    assert e["price"] == 27.99
+    ing = e.get("ingredients_text")
+    assert ing and "collagène marin" in ing.lower()
+    items = extract.ingredient_items(ing)
+    tags = [t for t in (autotag.classify_additive(x) for x in items) if t]
+    # must catch both artificial sweeteners in the scraped label
+    assert "sucralose" in tags and "acesulfame_k" in tags
+    lh = snapshot.observed_label_hash(ing, tags)
+    assert lh and len(lh) == 12
+
+
+def test_observed_reformulation_detected():
+    prev = {"x": {"id": "x", "price": 27.99, "currency": "EUR",
+                  "availability": "InStock", "label_hash": "same",
+                  "live_label_hash": "live-aaa"}}
+    curr = {"x": {"id": "x", "price": 27.99, "currency": "EUR",
+                  "availability": "InStock", "label_hash": "same",
+                  "live_label_hash": "live-bbb"}}   # ingredients changed on the page
+    ch = diff.diff_days(prev, curr)
+    assert any(c["kind"] == "reformulation" and "observed" in c["detail"] for c in ch)
+
+
 # ----------------------------- auto-tagger --------------------------------- #
 def test_autotag_penalties():
     assert autotag.classify_additive("édulcorant : sucralose") == "sucralose"
