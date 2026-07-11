@@ -1,0 +1,25 @@
+{
+ "id": "mium-lab-gummies-vitamine-d-sans-sucres-42-gummies-gout-mangue",
+ "date": "2026-07-11",
+ "url": "https://www.miumlab.com/products/gummies-vitamine-d",
+ "fetched_at": "2026-07-11T18:24:25",
+ "price": 21.9,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "a2088a8d8ca5",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Gummies VITAMINE D SANS SUCRES | Tonus musculaire | 21 jours",
+  "brand": "Mium Lab",
+  "price": 21.9,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.miumlab.com/products/gummies-vitamine-d"
+ },
+ "content_hash": "7a0848094ca2"
+}

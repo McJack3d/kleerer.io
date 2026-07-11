@@ -1,0 +1,25 @@
+{
+ "id": "biocyte-zn-zinc-liposome-60-gelules-15-mg",
+ "date": "2026-07-11",
+ "url": "https://www.biocyte.com/fr/sante/182-zn-zinc-liposome-3770008244221.html",
+ "fetched_at": "2026-07-11T18:25:04",
+ "price": 21.9,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "ae8b236664b3",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Compléments alimentaires santé | Immunité, énergie & tonus",
+  "brand": null,
+  "price": 21.9,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.biocyte.com/fr/sante/182-zn-zinc-liposome-3770008244221.html"
+ },
+ "content_hash": "179b6eba0058"
+}

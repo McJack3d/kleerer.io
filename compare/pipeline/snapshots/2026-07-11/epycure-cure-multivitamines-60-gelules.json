@@ -1,0 +1,25 @@
+{
+ "id": "epycure-cure-multivitamines-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://epycure.com/products/essentiel-anti-fatigue",
+ "fetched_at": "2026-07-11T18:23:10",
+ "price": 72.9,
+ "currency": "EUR",
+ "availability": " InStock",
+ "extract_source": "json-ld",
+ "label_hash": "ac408187230d",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Cure multivitamines+",
+  "brand": "Epycure",
+  "price": 72.9,
+  "currency": "EUR",
+  "availability": " InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://epycure.com/products/essentiel-anti-fatigue"
+ },
+ "content_hash": "96ae9d83e03d"
+}

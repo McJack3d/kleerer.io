@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-magnesium-bisglycinate-chelate-traacs-gelules-750-mg-60",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/magnesium-bisglycinate",
+ "fetched_at": "2026-07-11T18:22:33",
+ "price": 11.28,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "889ee904d7a8",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Magnésium bisglycinate chélaté - 60 gélules",
+  "brand": null,
+  "price": 11.28,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/magnesium-bisglycinate"
+ },
+ "content_hash": "ed4e3731bdab"
+}

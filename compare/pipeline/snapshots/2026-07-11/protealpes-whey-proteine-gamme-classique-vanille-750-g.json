@@ -1,0 +1,21 @@
+{
+ "id": "protealpes-whey-proteine-gamme-classique-vanille-750-g",
+ "date": "2026-07-11",
+ "url": "https://protealpes.com/produit/vanille/",
+ "fetched_at": "2026-07-11T18:24:59",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Whey protéine Gamme classique"
+ },
+ "content_hash": "bf076d01c5c1"
+}

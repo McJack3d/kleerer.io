@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-vitamine-d3-vegetale-1000-ui-gelules-60",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/vitamine-d3",
+ "fetched_at": "2026-07-11T18:24:22",
+ "price": 16.97,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "2d619e451719",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Vitamine D3 végétale - 2000 UI",
+  "brand": null,
+  "price": 16.97,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/vitamine-d3"
+ },
+ "content_hash": "35df2d5a858f"
+}

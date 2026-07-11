@@ -1,0 +1,21 @@
+{
+ "id": "nutri-co-le-collagene-marin-180-g-30-portions",
+ "date": "2026-07-11",
+ "url": "https://nutriandco.com/fr/produits/collagene",
+ "fetched_at": "2026-07-11T18:22:10",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Le Collagène Marin"
+ },
+ "content_hash": "c4ec789fcbcd"
+}

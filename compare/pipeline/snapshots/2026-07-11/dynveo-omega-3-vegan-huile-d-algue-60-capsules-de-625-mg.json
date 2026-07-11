@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-omega-3-vegan-huile-d-algue-60-capsules-de-625-mg",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/omega-3-vegetal",
+ "fetched_at": "2026-07-11T18:23:25",
+ "price": 23.6,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "fec2f47f6cc8",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Oméga-3 Vegan",
+  "brand": null,
+  "price": 23.6,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/omega-3-vegetal"
+ },
+ "content_hash": "a955c43776e8"
+}

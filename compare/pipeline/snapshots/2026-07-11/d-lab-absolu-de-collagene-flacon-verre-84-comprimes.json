@@ -1,0 +1,25 @@
+{
+ "id": "d-lab-absolu-de-collagene-flacon-verre-84-comprimes",
+ "date": "2026-07-11",
+ "url": "https://dailylab.com/products/absolu-de-collagene",
+ "fetched_at": "2026-07-11T18:21:52",
+ "price": 30.0,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "7c4bba726e03",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Absolu de Collagène - Collactive Marin Hydrolysé\n – D-LAB Nutriscometics",
+  "brand": null,
+  "price": 30.0,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://dailylab.com/products/absolu-de-collagene"
+ },
+ "content_hash": "20f4996c3540"
+}

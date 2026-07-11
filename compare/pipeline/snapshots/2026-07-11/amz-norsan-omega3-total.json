@@ -1,0 +1,29 @@
+{
+ "id": "amz-norsan-omega3-total",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B08X4XVPFM",
+ "fetched_at": "2026-07-11T18:26:28",
+ "price": 26.9,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "deb2525200ae",
+ "live_label_hash": "5be1725afe83",
+ "live_purity_tags": [
+  "bulking_filler",
+  "bulking_filler"
+ ],
+ "ingredients_text": "Huile de poisson naturelle, huile d'olive, mélange de tocophérols (vitamine E), cholécalciférol (vitamine D), huile de citron naturelle",
+ "raw": {
+  "name": "NORSAN Premium huile de poisson omega 3 Total Citron hautement dosé 200 ml / 2.000mg d’ omega 3 dose journalière/fish oi",
+  "brand": null,
+  "price": 26.9,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B08X4XVPFM",
+  "ingredients_text": "Huile de poisson naturelle, huile d'olive, mélange de tocophérols (vitamine E), cholécalciférol (vitamine D), huile de citron naturelle"
+ },
+ "content_hash": "678b539945a4"
+}

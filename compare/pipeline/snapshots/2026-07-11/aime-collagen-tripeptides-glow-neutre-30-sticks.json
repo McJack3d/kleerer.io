@@ -1,0 +1,25 @@
+{
+ "id": "aime-collagen-tripeptides-glow-neutre-30-sticks",
+ "date": "2026-07-11",
+ "url": "https://aime.co/en/products/1350-collagene-glow-collagen-supplement",
+ "fetched_at": "2026-07-11T18:21:42",
+ "price": 42.0,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "dfd1e752b0e5",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Next-Generation Collagen Tripeptides - Aime",
+  "brand": null,
+  "price": 42.0,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://aime.co/en/products/1350-collagene-glow-collagen-supplement"
+ },
+ "content_hash": "a1be548e57d3"
+}

@@ -1,0 +1,25 @@
+{
+ "id": "amz-on-micronised-creatine",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B00T7L20EC",
+ "fetched_at": "2026-07-11T18:26:12",
+ "price": 44.64,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "9d3150ca2406",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Optimum Nutrition Créatine Micronisée en Poudre, Sans Arôme, 634g, 186 Doses : Amazon.fr: Hygiène et Santé",
+  "brand": null,
+  "price": 44.64,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B00T7L20EC"
+ },
+ "content_hash": "3319bf7500b5"
+}

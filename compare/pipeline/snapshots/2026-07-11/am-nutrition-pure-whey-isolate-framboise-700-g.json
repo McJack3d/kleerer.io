@@ -1,0 +1,29 @@
+{
+ "id": "am-nutrition-pure-whey-isolate-framboise-700-g",
+ "date": "2026-07-11",
+ "url": "https://www.amnutrition.fr/products/whey-isolate",
+ "fetched_at": "2026-07-11T18:24:32",
+ "price": 37.9,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "da1820dcdc34",
+ "live_label_hash": "759b650cbb28",
+ "live_purity_tags": [
+  "bulking_filler",
+  "bulking_filler"
+ ],
+ "ingredients_text": "variant-39365430509773\" style=\"display: block;\"> Préparation en poudre pour boisson, riche en protéines avec édulcorant et lactase",
+ "raw": {
+  "name": "PURE Whey Isolate",
+  "brand": null,
+  "price": 37.9,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://www.amnutrition.fr/products/whey-isolate",
+  "ingredients_text": "variant-39365430509773\" style=\"display: block;\"> Préparation en poudre pour boisson, riche en protéines avec édulcorant et lactase"
+ },
+ "content_hash": "e47d30d1b54c"
+}

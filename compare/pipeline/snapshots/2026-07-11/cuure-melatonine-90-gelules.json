@@ -1,0 +1,21 @@
+{
+ "id": "cuure-melatonine-90-gelules",
+ "date": "2026-07-11",
+ "url": "https://cuure.com/en/products/melatonine",
+ "fetched_at": "2026-07-11T18:22:46",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Mélatonine"
+ },
+ "content_hash": "a7c8ff2d82c6"
+}

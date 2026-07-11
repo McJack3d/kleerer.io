@@ -1,0 +1,21 @@
+{
+ "id": "nutripure-pure-bio-pre-probiotiques-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://www.nutripure.fr/fr/sante/40-131-prebiotiques-probiotiques-symbiotiques.html",
+ "fetched_at": "2026-07-11T18:23:52",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Pure Bio² (Pré & Probiotiques)"
+ },
+ "content_hash": "0754685ecb01"
+}

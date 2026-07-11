@@ -1,0 +1,25 @@
+{
+ "id": "amz-nutripure-creapure",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B08DD992N1",
+ "fetched_at": "2026-07-11T18:26:20",
+ "price": 25.9,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "345d19c1019c",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Nutripure | Créatine Monohydrate Creapure® 100% Pure | Force & Performance Musculaire | Crossfit, Sports Intensifs & Mus",
+  "brand": null,
+  "price": 25.9,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B08DD992N1"
+ },
+ "content_hash": "91e57318b724"
+}

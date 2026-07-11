@@ -1,0 +1,21 @@
+{
+ "id": "superphysique-nutrition-elite-creatine-creapure-neutre-544-g",
+ "date": "2026-07-11",
+ "url": "https://www.superphysique-nutrition.fr/creatine/618-elite-creatine-creapure-en-poudre.html",
+ "fetched_at": "2026-07-11T18:22:21",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Elite Créatine Creapure®"
+ },
+ "content_hash": "1cd98e86734b"
+}

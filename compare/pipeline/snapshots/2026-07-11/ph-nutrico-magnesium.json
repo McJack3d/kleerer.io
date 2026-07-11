@@ -1,0 +1,25 @@
+{
+ "id": "ph-nutrico-magnesium",
+ "date": "2026-07-11",
+ "url": "https://lasante.net/espace-para/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/tonus-et-fatigue/nutrico-magnesium-120-gelules.html",
+ "fetched_at": "2026-07-11T18:27:09",
+ "price": 20.77,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "65c12e82f8fe",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Nutri&Co Magnésium Gélules x 120",
+  "brand": null,
+  "price": 20.77,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://lasante.net/espace-para/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/tonus-et-fatigue/nutrico-magnesium-120-gelules.html"
+ },
+ "content_hash": "46542e65daa5"
+}

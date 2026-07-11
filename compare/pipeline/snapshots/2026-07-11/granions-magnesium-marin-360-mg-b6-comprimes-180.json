@@ -1,0 +1,21 @@
+{
+ "id": "granions-magnesium-marin-360-mg-b6-comprimes-180",
+ "date": "2026-07-11",
+ "url": "https://www.granions.fr/magnesium-marin-360-mg.html",
+ "fetched_at": "2026-07-11T18:22:38",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Magnésium Marin 360 mg + B6"
+ },
+ "content_hash": "f6f5a2621a69"
+}

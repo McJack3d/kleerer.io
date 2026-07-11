@@ -1,0 +1,25 @@
+{
+ "id": "epycure-cure-collagene-vegetarien-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://epycure.com/products/collagene-vegetarien",
+ "fetched_at": "2026-07-11T18:22:00",
+ "price": 89.1,
+ "currency": "EUR",
+ "availability": " InStock",
+ "extract_source": "json-ld",
+ "label_hash": "0da8a16dcc41",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Cure Collagène™️",
+  "brand": "Epycure",
+  "price": 89.1,
+  "currency": "EUR",
+  "availability": " InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://epycure.com/products/collagene-vegetarien"
+ },
+ "content_hash": "dd26d3653fc7"
+}

@@ -1,0 +1,21 @@
+{
+ "id": "aroma-zone-zinc-bisglycinate-120-comprimes-10-mg",
+ "date": "2026-07-11",
+ "url": "https://www.aroma-zone.com/product/complement-alimentaire-bisglycinate-de-zinc-120-comprimes",
+ "fetched_at": "2026-07-11T18:25:00",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Zinc Bisglycinate"
+ },
+ "content_hash": "80d81e638175"
+}

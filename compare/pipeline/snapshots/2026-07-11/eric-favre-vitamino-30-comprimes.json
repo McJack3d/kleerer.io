@@ -1,0 +1,25 @@
+{
+ "id": "eric-favre-vitamino-30-comprimes",
+ "date": "2026-07-11",
+ "url": "https://www.ericfavre.com/fr_fr/tonus-immunite/vitamino-cure-30-jours-p-160.htm",
+ "fetched_at": "2026-07-11T18:23:15",
+ "price": 8.9,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "c05933a5a076",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Vitamino+ Immunité, fatigue, Multivitamines et minéraux ",
+  "brand": "Laboratoire Eric Favre Santé",
+  "price": 8.9,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.ericfavre.com/fr_fr/tonus-immunite/vitamino-cure-30-jours-p-160.htm"
+ },
+ "content_hash": "27e941fffc5e"
+}

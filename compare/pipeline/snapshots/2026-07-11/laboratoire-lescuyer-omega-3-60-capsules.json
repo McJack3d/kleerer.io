@@ -1,0 +1,21 @@
+{
+ "id": "laboratoire-lescuyer-omega-3-60-capsules",
+ "date": "2026-07-11",
+ "url": "https://www.laboratoire-lescuyer.com/cholesterol-cardiovasculaire/omega-3",
+ "fetched_at": "2026-07-11T18:23:26",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Oméga 3"
+ },
+ "content_hash": "313ca06558cc"
+}

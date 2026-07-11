@@ -1,0 +1,29 @@
+{
+ "id": "am-nutrition-pure-creatine-creapure-nature-500-g",
+ "date": "2026-07-11",
+ "url": "https://www.amnutrition.fr/products/pure-creatine-creapure",
+ "fetched_at": "2026-07-11T18:22:20",
+ "price": 39.9,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "c786d817bb2a",
+ "live_label_hash": "6b1609842039",
+ "live_purity_tags": [
+  "bulking_filler",
+  "bulking_filler"
+ ],
+ "ingredients_text": "variant-48356628824411\" style=\"display: block;\"> Complément alimentaire à base de créatine",
+ "raw": {
+  "name": "PURE Créatine Creapure®",
+  "brand": null,
+  "price": 39.9,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://www.amnutrition.fr/products/pure-creatine-creapure",
+  "ingredients_text": "variant-48356628824411\" style=\"display: block;\"> Complément alimentaire à base de créatine"
+ },
+ "content_hash": "966e5380f6f2"
+}

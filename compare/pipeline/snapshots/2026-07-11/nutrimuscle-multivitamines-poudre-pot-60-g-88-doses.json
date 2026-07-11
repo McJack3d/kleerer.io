@@ -1,0 +1,25 @@
+{
+ "id": "nutrimuscle-multivitamines-poudre-pot-60-g-88-doses",
+ "date": "2026-07-11",
+ "url": "https://www.nutrimuscle.com/products/multivitamines",
+ "fetched_at": "2026-07-11T18:23:21",
+ "price": 29.95,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "7c5a729d6d40",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Multivitamins powder",
+  "brand": null,
+  "price": 29.95,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.nutrimuscle.com/products/multivitamines"
+ },
+ "content_hash": "ae00a755a3d0"
+}

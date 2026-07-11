@@ -1,0 +1,25 @@
+{
+ "id": "arkopharma-arkogelules-omega-3-60-capsules",
+ "date": "2026-07-11",
+ "url": "https://fr.arkopharma.com/products/arkogelules-omega-3",
+ "fetched_at": "2026-07-11T18:23:21",
+ "price": 8.8,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "fa75b3716288",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Arkogélules® Oméga 3",
+  "brand": "ARKOGELULES",
+  "price": 8.8,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": "3401528538766",
+  "source": "json-ld",
+  "url": "https://fr.arkopharma.com/products/arkogelules-omega-3"
+ },
+ "content_hash": "8a9e052b0c3d"
+}

@@ -1,0 +1,25 @@
+{
+ "id": "argalys-multivitamines-et-mineraux-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://www.argalys.com/products/multivitamines",
+ "fetched_at": "2026-07-11T18:23:01",
+ "price": 20.32,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "a1fa44ab0ea3",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Multivitamines et minéraux",
+  "brand": "ARGALYS",
+  "price": 20.32,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.argalys.com/products/multivitamines"
+ },
+ "content_hash": "ad3e82adc3c6"
+}

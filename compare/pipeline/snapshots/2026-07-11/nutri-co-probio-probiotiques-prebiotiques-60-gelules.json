@@ -1,0 +1,21 @@
+{
+ "id": "nutri-co-probio-probiotiques-prebiotiques-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://nutriandco.com/fr/produits/probiotiques",
+ "fetched_at": "2026-07-11T18:23:52",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Probio² Probiotiques & Prébiotiques"
+ },
+ "content_hash": "571912457291"
+}

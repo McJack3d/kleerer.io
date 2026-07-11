@@ -1,0 +1,25 @@
+{
+ "id": "mium-lab-gummies-immunite-sans-sucres-42-gummies-cerise",
+ "date": "2026-07-11",
+ "url": "https://www.miumlab.com/products/gummies-immunite-925",
+ "fetched_at": "2026-07-11T18:24:04",
+ "price": 21.9,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "042eb1941316",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Gummies IMMUNITÉ SANS SUCRES | Défenses naturelles & protection | 21 jours 🛡️",
+  "brand": "Mium Lab",
+  "price": 21.9,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.miumlab.com/products/gummies-immunite-925"
+ },
+ "content_hash": "c99f2659ee23"
+}

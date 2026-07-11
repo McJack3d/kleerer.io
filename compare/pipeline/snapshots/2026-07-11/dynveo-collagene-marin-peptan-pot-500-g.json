@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-collagene-marin-peptan-pot-500-g",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/collagene-marin",
+ "fetched_at": "2026-07-11T18:21:56",
+ "price": 37.82,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "e05db4d61d64",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Collagène marin en poudre hydrolysé - Peptan®",
+  "brand": null,
+  "price": 37.82,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/collagene-marin"
+ },
+ "content_hash": "234412285c87"
+}

@@ -1,0 +1,29 @@
+{
+ "id": "amz-myprotein-impact-whey",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B00EZTKZDE",
+ "fetched_at": "2026-07-11T18:25:16",
+ "price": 26.99,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "097b9040647d",
+ "live_label_hash": "7edba7c70f53",
+ "live_purity_tags": [
+  "lecithin",
+  "lecithin"
+ ],
+ "ingredients_text": "Concentre de proteines de lactoserum (LAIT) (100%) (contient des emulsifiants: lecithine de SOJA, lecithine de tournesol)",
+ "raw": {
+  "name": "My Protein Impact Whey Protéine sans Saveur 1 kg : Amazon.fr: Hygiène et Santé",
+  "brand": null,
+  "price": 26.99,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B00EZTKZDE",
+  "ingredients_text": "Concentre de proteines de lactoserum (LAIT) (100%) (contient des emulsifiants: lecithine de SOJA, lecithine de tournesol)"
+ },
+ "content_hash": "6322e06a2776"
+}

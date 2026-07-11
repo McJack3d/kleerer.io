@@ -1,0 +1,25 @@
+{
+ "id": "eric-favre-iso-zero-100-whey-protein-vanille-1-5-kg",
+ "date": "2026-07-11",
+ "url": "https://www.ericfavre.com/en/proteins/iso-zero-100-whey-protein-vanilla-1-5kg-p-194-o-1204.htm",
+ "fetched_at": "2026-07-11T18:24:59",
+ "price": 67.91,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "c6389af1863b",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Iso Zero 100% Whey Protein flavour Vanilla 1,5kg | Eric Favre",
+  "brand": null,
+  "price": 67.91,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.ericfavre.com/en/proteins/iso-zero-100-whey-protein-vanilla-1-5kg-p-194-o-1204.htm"
+ },
+ "content_hash": "67a6c7b22117"
+}

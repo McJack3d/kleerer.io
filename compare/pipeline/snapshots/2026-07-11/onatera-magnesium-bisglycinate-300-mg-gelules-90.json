@@ -1,0 +1,21 @@
+{
+ "id": "onatera-magnesium-bisglycinate-300-mg-gelules-90",
+ "date": "2026-07-11",
+ "url": "https://www.onatera.com/FR/fr/produit-magnesium-bisglycinate-300-mg-90-gelules-onatera",
+ "fetched_at": "2026-07-11T18:22:44",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Magnésium Bisglycinate 300 mg"
+ },
+ "content_hash": "cd16e6ce44d0"
+}
