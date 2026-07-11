@@ -1,0 +1,90 @@
+# kleerer. — tracked product sources (seed list).
+# Every URL here was verified live during the July 2026 research pass.
+# The pipeline fetches these politely and snapshots price + label each run.
+# Format is intentionally plain so non-developers can add a line by hand.
+#
+# id:          stable slug for this tracked source
+# product_id:  the scored product id in data.js (links the snapshot to its label_hash)
+# brand / name / category: for the report and cross-check
+# url:         canonical product page (prefer the official brand site)
+# ean:         barcode if known — enables OpenFoodFacts enrichment (no scraping)
+# render:      "static" (HTML has the data) or "js" (needs headless, Phase 1)
+
+meta:
+  user_agent: "kleerer-bot/0.1 (+https://kleerer.com/bot; supplement price & label transparency; contact: hello@kleerer.com)"
+  min_delay_seconds_per_domain: 8       # be gentle
+  respect_robots: true
+  timeout_seconds: 20
+
+sources:
+  - id: dynveo-magnesium-bisglycinate
+    product_id: dynveo-magnesium-bisglycinate-chelate-traacs-gelules-750-mg-60
+    brand: Dynveo
+    name: Magnésium bisglycinate chélaté TRAACS
+    category: magnesium
+    url: https://www.dynveo.fr/products/magnesium-bisglycinate
+    ean: null
+    render: js
+
+  - id: nutripure-creatine-creapure
+    product_id: nutripure-creapure
+    brand: Nutripure
+    name: Créatine Monohydrate Creapure
+    category: creatine
+    url: https://www.nutripure.fr/fr/musculation/16-creatine-monohydrate-creapure.html
+    ean: null
+    render: static
+
+  - id: nutrimuscle-omega-3-epax
+    product_id: nutrimuscle-omega-3-epax-60-capsules
+    brand: Nutrimuscle
+    name: Oméga 3 Epax
+    category: omega3
+    url: https://www.nutrimuscle.com/products/omega-3-epax
+    ean: null
+    render: js
+
+  - id: novoma-zinc-bisglycinate
+    product_id: novoma-zinc-bisglycinate-120-gelules-15-mg-b6
+    brand: Novoma
+    name: Zinc Bisglycinate
+    category: zinc
+    url: https://novoma.com/products/zinc-bisglycinate
+    ean: "3052351247969"
+    render: js
+
+  - id: nutripure-collagene-peptan
+    product_id: nutripure-peptides-de-collagene-peptan-neutre-310-g
+    brand: Nutripure
+    name: Peptides de Collagène Peptan
+    category: collagen
+    url: https://www.nutripure.fr/fr/complement-alimentaire-mobilite-articulation/15-collagene-peptide-peptan.html
+    ean: null
+    render: static
+
+  - id: protealpes-whey-vanille
+    product_id: protealpes-whey-proteine-gamme-classique-vanille-750-g
+    brand: Protéalpes
+    name: Whey protéine vanille
+    category: whey
+    url: https://protealpes.com/produit/vanille/
+    ean: null
+    render: static
+
+  - id: cuure-melatonine
+    product_id: cuure-melatonine-90-gelules
+    brand: Cuure
+    name: Mélatonine
+    category: melatonin
+    url: https://cuure.com/en/products/melatonine
+    ean: null
+    render: js
+
+  - id: sunday-vitamin-d3-drops
+    product_id: sunday-d3-drops
+    brand: Sunday Natural
+    name: Vitamin D3 1000 IU Drops
+    category: vitamin_d3
+    url: https://www.sunday.de/en/vitamin-d3-oil-1000-i-e
+    ean: null
+    render: js

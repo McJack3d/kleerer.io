@@ -226,7 +226,9 @@ const P = KLEERER_DATA.products;
 const META = KLEERER_DATA.meta;
 const CATS = [
   ["all","all"], ["whey","whey"], ["creatine","creatine"], ["vitamin_d3","vitamin d3"],
-  ["magnesium","magnesium"], ["omega3","omega-3"], ["multivitamin","multivitamin"]
+  ["magnesium","magnesium"], ["omega3","omega-3"], ["multivitamin","multivitamin"],
+  ["zinc","zinc"], ["vitamin_c","vitamin c"], ["collagen","collagen"],
+  ["probiotics","probiotics"], ["melatonin","melatonin"]
 ];
 const CATLABEL = Object.fromEntries(CATS);
 const GCOLOR = {A:"var(--gA)", B:"var(--gB)", C:"var(--gC)", D:"var(--gD)", E:"var(--gE)"};
@@ -248,6 +250,13 @@ function activesLine(p){
     case "vitamin_d3": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} IU / day (${p.units_per_day} × ${p.unit_name})`;
     case "magnesium": return `${p.active_per_unit*p.units_per_day} mg elemental Mg / day (${p.units_per_day} × ${p.unit_name})`;
     case "omega3": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} mg EPA+DHA / day (${p.units_per_day} × ${p.unit_name})`;
+    case "zinc": return `${(p.active_per_unit*p.units_per_day)} mg elemental Zn / day (${p.units_per_day} × ${p.unit_name})`;
+    case "vitamin_c": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} mg vitamin C / day (${p.units_per_day} × ${p.unit_name})`;
+    case "collagen": return "pack_g" in p
+      ? `${p.active_per_serving_g} g collagen per ${p.serving_g} g serving`
+      : `${(p.active_per_unit*p.units_per_day).toFixed(2)} g collagen / day (${p.units_per_day} × ${p.unit_name})`;
+    case "probiotics": return `${(p.active_per_unit*p.units_per_day)} billion CFU / day (${p.units_per_day} × ${p.unit_name})`;
+    case "melatonin": return `${(p.active_per_unit*p.units_per_day)} mg melatonin / day (${p.units_per_day} × ${p.unit_name})`;
     default: return `${p.units_per_day} ${p.unit_name}s / day`;
   }
 }
@@ -255,8 +264,8 @@ function activesLine(p){
 /* ---------- stats ---------- */
 document.getElementById("stats").innerHTML = `
   <div class="stat"><b>${META.n_products}</b><span>products scored</span></div>
-  <div class="stat"><b>6</b><span>categories</span></div>
-  <div class="stat"><b>EU</b><span>market scope</span></div>
+  <div class="stat"><b>${META.n_categories}</b><span>categories</span></div>
+  <div class="stat"><b>${META.region}</b><span>market scope</span></div>
   <div class="stat"><b>${META.snapshot}</b><span>price snapshot</span></div>
   <div class="stat"><b>100%</b><span>open data &amp; method</span></div>`;
 
@@ -426,7 +435,7 @@ function openMethodology(){
     <h4>Composition &amp; efficacy — 40 pts</h4>
     <p><b>Form quality (20):</b> how bioavailable the chemical form is. Chelated magnesium (bisglycinate) beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; bioactive vitamin forms beat cheap ones. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values — including penalties for exceeding EU upper limits.</p>
     <h4>Purity &amp; additives — 30 pts</h4>
-    <p>Start at 30, subtract per additive: artificial sweeteners −4, hydrogenated fats −6, undisclosed blends −6, fillers/anti-caking/coatings −2 each. Carrier oils, gelatine, natural antioxidants and natural flavours are neutral.</p>
+    <p>Start at 30, subtract per additive: hydrogenated fats −6, undisclosed blends −6, added sugar / artificial sweeteners −4, artificial colours −3, polyols / synthetic carriers / emulsifiers / fillers / anti-caking / coatings −2 each. Carrier oils, gelatine, capsule shells, natural antioxidants and natural flavours are neutral. Every additive on the label is classified by an open auto-tagger (<b>scripts/autotag.py</b>) — the same one the collection pipeline uses.</p>
     <h4>Transparency &amp; testing — 30 pts</h4>
     <table><tr><th>Published batch analyses / COAs</th><td>+12</td></tr>
     <tr><th>Recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, Labdoor…)</th><td>+10</td></tr>
@@ -435,7 +444,7 @@ function openMethodology(){
     <h4>Grades</h4>
     <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
     <h4>Value metric</h4>
-    <p>Normalised to a standard daily dose per category: € per 25 g protein · 3 g creatine · 1000 IU D3 · 300 mg elemental Mg · 500 mg EPA+DHA · daily multi dose. This is what the marketing hides: a "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one.</p>
+    <p>Normalised to a standard daily dose per category: € per 25 g protein · 3 g creatine · 1000 IU D3 · 300 mg elemental Mg · 500 mg EPA+DHA · 15 mg zinc · 1000 mg vitamin C · 10 g collagen · and € per day for multivitamins, probiotics and melatonin. This is what the marketing hides: a "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one, and a €28 collagen with 1 g/day is dearer than a €23 one with 10 g/day.</p>
     <p>Full details, penalty tables and known limitations: <b>METHODOLOGY.md</b> in the repository.</p>
   </div>`);
 }
@@ -447,7 +456,7 @@ function openAbout(){
     <h4>Why it exists</h4>
     <p>Supplement marketing sells stories; labels tell the truth. kleerer. reads the label for you: what form the active is in, whether the dose is effective, what else is in the capsule, and what the brand actually proves with third-party tests — then prices the product per gram of active, not per kilo of powder.</p>
     <h4>Independence</h4>
-    <p>No sponsors, no affiliate links, no paid placements. The dataset (37 EU products, snapshot ${META.snapshot}), the scoring script and this page are open-source (MIT). If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
+    <p>No sponsors, no affiliate links, no paid placements. The dataset (${META.n_products} EU/FR products across ${META.n_categories} categories, snapshot ${META.snapshot}), the scoring script and this page are open-source (MIT). If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
     <h4>Roadmap</h4>
     <p>p1: this comparator. Next: automated price &amp; label pipeline (source audit is Phase 1 of the roadmap), broader categories, and a personalised profile → needs → products journey.</p>
     <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>

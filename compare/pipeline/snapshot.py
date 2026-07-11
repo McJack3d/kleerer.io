@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+"""
+Dated, content-hashed snapshots — the archive layer.
+
+Each run writes one JSON file per product under snapshots/YYYY-MM-DD/<id>.json:
+
+  {
+    "id", "date", "url", "fetched_at",
+    "price", "currency", "availability",
+    "content_hash",        # sha1 of the observed facts (price+availability+name)
+    "label_hash",          # optional: from the scoring engine, detects reformulation
+    "extract_source",      # json-ld | meta | text-fallback
+    "raw"                  # the extracted dict
+  }
+
+Snapshots are immutable: we never overwrite a past day. Committing snapshots/ to
+git turns the repository history into a versioned price+label time-series. When
+the dataset outgrows git, the same files move to object storage unchanged.
+"""
+import os, json, hashlib, datetime
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SNAP_ROOT = os.path.join(HERE, "snapshots")
+
+
+def today():
+    return datetime.date.today().isoformat()
+
+
+def content_hash(rec):
+    basis = {"price": rec.get("price"), "currency": rec.get("currency"),
+             "availability": rec.get("availability"), "name": rec.get("name")}
+    return hashlib.sha1(json.dumps(basis, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
+
+
+def write_snapshot(source, extracted, label_hash=None, date=None):
+    date = date or today()
+    day_dir = os.path.join(SNAP_ROOT, date)
+    os.makedirs(day_dir, exist_ok=True)
+    rec = {
+        "id": source["id"],
+        "date": date,
+        "url": source["url"],
+        "fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
+        "price": extracted.get("price"),
+        "currency": extracted.get("currency"),
+        "availability": extracted.get("availability"),
+        "extract_source": extracted.get("source"),
+        "label_hash": label_hash,
+        "raw": extracted,
+    }
+    rec["content_hash"] = content_hash(extracted)
+    path = os.path.join(day_dir, source["id"] + ".json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(rec, f, ensure_ascii=False, indent=1)
+    return path
+
+
+def list_days():
+    if not os.path.isdir(SNAP_ROOT):
+        return []
+    return sorted(d for d in os.listdir(SNAP_ROOT)
+                  if os.path.isdir(os.path.join(SNAP_ROOT, d)))
+
+
+def load_day(date):
+    day_dir = os.path.join(SNAP_ROOT, date)
+    out = {}
+    if not os.path.isdir(day_dir):
+        return out
+    for fn in os.listdir(day_dir):
+        if fn.endswith(".json"):
+            with open(os.path.join(day_dir, fn), encoding="utf-8") as f:
+                rec = json.load(f)
+                out[rec["id"]] = rec
+    return out
