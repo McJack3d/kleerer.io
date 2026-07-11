@@ -1,0 +1,21 @@
+{
+ "id": "unae-omega-3-de-poissons-sauvages-msc-bouteille-150-ml",
+ "date": "2026-07-11",
+ "url": "https://unae.fr/boutique/omega-3/omega3-de-poissons-sauvages-issus-de-la-peche-durable/",
+ "fetched_at": "2026-07-11T18:23:36",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Oméga-3 de poissons sauvages MSC"
+ },
+ "content_hash": "2a9fb7fbe7f3"
+}

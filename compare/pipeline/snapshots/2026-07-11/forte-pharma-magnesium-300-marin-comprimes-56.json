@@ -1,0 +1,25 @@
+{
+ "id": "forte-pharma-magnesium-300-marin-comprimes-56",
+ "date": "2026-07-11",
+ "url": "https://fr.fortepharma.com/products/magnesium-300-marin",
+ "fetched_at": "2026-07-11T18:22:38",
+ "price": 9.8,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "6039ae63ba63",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Magnésium 300 Marin",
+  "brand": "Forté Pharma",
+  "price": 9.8,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": "3700221313695",
+  "source": "json-ld",
+  "url": "https://fr.fortepharma.com/products/magnesium-300-marin"
+ },
+ "content_hash": "9dc2a92c2eae"
+}

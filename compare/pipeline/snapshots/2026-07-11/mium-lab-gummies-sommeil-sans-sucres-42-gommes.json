@@ -1,0 +1,25 @@
+{
+ "id": "mium-lab-gummies-sommeil-sans-sucres-42-gommes",
+ "date": "2026-07-11",
+ "url": "https://www.miumlab.com/products/gummies-sommeil-sans-sucres",
+ "fetched_at": "2026-07-11T18:22:54",
+ "price": 21.9,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "1828fad9f870",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Gummies SOMMEIL SANS SUCRES | Qualité du sommeil | 21 jours",
+  "brand": "Mium Lab",
+  "price": 21.9,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.miumlab.com/products/gummies-sommeil-sans-sucres"
+ },
+ "content_hash": "8fe5fb302b28"
+}

@@ -1,0 +1,25 @@
+{
+ "id": "novoma-omega-3-epax-120-capsules",
+ "date": "2026-07-11",
+ "url": "https://novoma.com/products/omega-3-epax",
+ "fetched_at": "2026-07-11T18:23:30",
+ "price": 20.76,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "1031aab12fe5",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Oméga 3 Epax®",
+  "brand": "Novoma",
+  "price": 20.76,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://novoma.com/products/omega-3-epax"
+ },
+ "content_hash": "00f93584bed2"
+}

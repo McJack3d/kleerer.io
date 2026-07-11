@@ -1,0 +1,25 @@
+{
+ "id": "nutrimuscle-omega-3-epax-60-capsules",
+ "date": "2026-07-11",
+ "url": "https://www.nutrimuscle.com/products/omega-3-epax",
+ "fetched_at": "2026-07-11T18:23:36",
+ "price": 17.95,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "a096104f51cf",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Oméga 3 Epax®",
+  "brand": null,
+  "price": 17.95,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.nutrimuscle.com/products/omega-3-epax"
+ },
+ "content_hash": "2ef0967da47a"
+}

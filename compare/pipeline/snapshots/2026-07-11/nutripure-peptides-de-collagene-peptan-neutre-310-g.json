@@ -1,0 +1,21 @@
+{
+ "id": "nutripure-peptides-de-collagene-peptan-neutre-310-g",
+ "date": "2026-07-11",
+ "url": "https://www.nutripure.fr/fr/complement-alimentaire-mobilite-articulation/15-collagene-peptide-peptan.html",
+ "fetched_at": "2026-07-11T18:22:16",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Peptides de Collagène Peptan®"
+ },
+ "content_hash": "eedd098c0688"
+}

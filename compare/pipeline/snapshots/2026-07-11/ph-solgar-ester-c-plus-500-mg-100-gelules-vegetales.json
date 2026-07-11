@@ -1,0 +1,21 @@
+{
+ "id": "ph-solgar-ester-c-plus-500-mg-100-gelules-vegetales",
+ "date": "2026-07-11",
+ "url": "https://www.newpharma.fr/solgar/508725/solgar-ester-c-plus-500mg-vitamine-c-100-gelules-vegetales.html",
+ "fetched_at": "2026-07-11T18:27:18",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "newpharma.fr listing"
+ },
+ "content_hash": "03cd8eedf77d"
+}

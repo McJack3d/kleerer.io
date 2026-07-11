@@ -1,0 +1,25 @@
+{
+ "id": "amz-bulk-pure-whey",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B00HF63AYA",
+ "fetched_at": "2026-07-11T18:25:40",
+ "price": 27.19,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "be33fa16af43",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Bulk Pure Whey Protéine en Poudre, Vanille, 23g Protéines 5g BCAA portion, Shake de Whey, Faible en sucre, Favorise la c",
+  "brand": null,
+  "price": 27.19,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B00HF63AYA"
+ },
+ "content_hash": "2f31d5204f7d"
+}

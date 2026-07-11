@@ -1,0 +1,25 @@
+{
+ "id": "ph-nutrico-d3-vegan",
+ "date": "2026-07-11",
+ "url": "https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/nutrico-vitamine-d-vegetale-15-ml.html",
+ "fetched_at": "2026-07-11T18:27:01",
+ "price": 20.95,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "d8e5efa8c78c",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Nutri&Co Vitamine D Végétale 15 ml",
+  "brand": "Nutri&Co",
+  "price": 20.95,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/nutrico-vitamine-d-vegetale-15-ml.html"
+ },
+ "content_hash": "3b92dda743e3"
+}

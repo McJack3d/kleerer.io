@@ -1,0 +1,21 @@
+{
+ "id": "nutri-co-vitamine-c-liposomale-90-gelules-pureway-c",
+ "date": "2026-07-11",
+ "url": "https://nutriandco.com/fr/produits/vitamine-c-liposomale",
+ "fetched_at": "2026-07-11T18:24:09",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Vitamine C Liposomale"
+ },
+ "content_hash": "8b516bffefda"
+}

@@ -1,0 +1,25 @@
+{
+ "id": "argalys-vitamine-d3-vegetale-spray-spray-30-ml-240-pulverisations",
+ "date": "2026-07-11",
+ "url": "https://www.argalys.com/en/products/vitamine-d",
+ "fetched_at": "2026-07-11T18:24:14",
+ "price": 14.37,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "2abf528042a7",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Vitamine D3 Végétale",
+  "brand": "ARGALYS",
+  "price": 14.37,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.argalys.com/en/products/vitamine-d"
+ },
+ "content_hash": "b478975a38f5"
+}

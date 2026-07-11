@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-zinc-bisglycinate-60-gelules-10-mg-traacs",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/zinc-bisglycinate-chelate",
+ "fetched_at": "2026-07-11T18:25:08",
+ "price": 10.33,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "3c4a6c80faed",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Zinc bisglycinate",
+  "brand": null,
+  "price": 10.33,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/zinc-bisglycinate-chelate"
+ },
+ "content_hash": "f3dbd1bbf2fb"
+}

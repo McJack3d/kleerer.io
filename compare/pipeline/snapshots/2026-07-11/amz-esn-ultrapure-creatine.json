@@ -1,0 +1,25 @@
+{
+ "id": "amz-esn-ultrapure-creatine",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B0057ED9AM",
+ "fetched_at": "2026-07-11T18:25:56",
+ "price": 50.82,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "5fe342303486",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "ESN Créatine monohydrate ultra pure, 500 g, 142 portions, Neutre, poudre de créatine, microfine, solubilité optimale, vé",
+  "brand": null,
+  "price": 50.82,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B0057ED9AM"
+ },
+ "content_hash": "0fa443781d15"
+}

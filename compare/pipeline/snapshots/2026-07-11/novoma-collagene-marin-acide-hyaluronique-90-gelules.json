@@ -1,0 +1,25 @@
+{
+ "id": "novoma-collagene-marin-acide-hyaluronique-90-gelules",
+ "date": "2026-07-11",
+ "url": "https://novoma.com/products/collagene-marin",
+ "fetched_at": "2026-07-11T18:22:10",
+ "price": 18.86,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "08a10e85b3a2",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Collagène Marin",
+  "brand": "Novoma",
+  "price": 18.86,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://novoma.com/products/collagene-marin"
+ },
+ "content_hash": "6a384ca6d845"
+}

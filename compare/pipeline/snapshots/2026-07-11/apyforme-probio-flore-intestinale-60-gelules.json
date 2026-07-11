@@ -1,0 +1,25 @@
+{
+ "id": "apyforme-probio-flore-intestinale-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://apyforme.com/products/probio",
+ "fetched_at": "2026-07-11T18:23:40",
+ "price": 16.19,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "ae4053f4505b",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Probio+",
+  "brand": "Apyforme",
+  "price": 16.19,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://apyforme.com/products/probio"
+ },
+ "content_hash": "74329106ce3c"
+}

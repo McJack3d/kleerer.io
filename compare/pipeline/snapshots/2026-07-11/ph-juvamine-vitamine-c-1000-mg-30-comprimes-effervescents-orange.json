@@ -1,0 +1,25 @@
+{
+ "id": "ph-juvamine-vitamine-c-1000-mg-30-comprimes-effervescents-orange",
+ "date": "2026-07-11",
+ "url": "https://www.redcare-pharmacie.fr/hygiene-et-sante/BE04471702/juvamine-vitamine-c-1000-30-comprimes-effervescents.htm",
+ "fetched_at": "2026-07-11T18:27:18",
+ "price": 7.59,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "f2800270cf1b",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Juvamine Vitamine C 1000 30 comprimés effervescents",
+  "brand": "Juvamine",
+  "price": 7.59,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": "3160921610386",
+  "source": "json-ld",
+  "url": "https://www.redcare-pharmacie.fr/hygiene-et-sante/BE04471702/juvamine-vitamine-c-1000-30-comprimes-effervescents.htm"
+ },
+ "content_hash": "0cf0935254d8"
+}

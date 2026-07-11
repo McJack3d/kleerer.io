@@ -1,0 +1,25 @@
+{
+ "id": "amz-bulk-creatine",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B00SP2ZKW8",
+ "fetched_at": "2026-07-11T18:26:04",
+ "price": 27.18,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "d275c758528b",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Bulk Créatine Monohydrate Poudre 500 g | 147 portions | Créatine micronisée pure | Non aromatisé | Vegan et Halal | Idéa",
+  "brand": null,
+  "price": 27.18,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B00SP2ZKW8"
+ },
+ "content_hash": "3e652e6dad62"
+}

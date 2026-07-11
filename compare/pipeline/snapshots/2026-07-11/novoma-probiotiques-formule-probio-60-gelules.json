@@ -1,0 +1,25 @@
+{
+ "id": "novoma-probiotiques-formule-probio-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://novoma.com/products/formule-probio",
+ "fetched_at": "2026-07-11T18:23:52",
+ "price": 25.5,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "9a5313cb37c5",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Probiotiques",
+  "brand": "Novoma",
+  "price": 25.5,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://novoma.com/products/formule-probio"
+ },
+ "content_hash": "925a268b2936"
+}

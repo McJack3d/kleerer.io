@@ -1,0 +1,35 @@
+{
+ "id": "amz-on-gold-standard-whey",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B000GISTZ4",
+ "fetched_at": "2026-07-11T18:25:24",
+ "price": 29.77,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "cbf178202879",
+ "live_label_hash": "01426dbf575c",
+ "live_purity_tags": [
+  "bulking_filler",
+  "bulking_filler",
+  "bulking_filler",
+  "lecithin",
+  "bulking_filler",
+  "thickener",
+  "sucralose",
+  "bulking_filler"
+ ],
+ "ingredients_text": "Mélange de protéines de LACTOSÉRUM (98 %) [LAIT] (isolat de protéine de LACTOSÉRUM, concentré de protéine de LACTOSÉRUM, isolat de protéine de LACTOSÉRUM hydrolysé, émulsifiant : lécithine de SOJA), arômes [LAIT], épaississant (gomme xanthane), édulcorant (sucralose), colorant (curcumine)",
+ "raw": {
+  "name": "Optimum Nutrition Gold Standard 100% Whey, Protéine en Poudre, Goût Glace à la Vanille, 900g, 30 Doses, Emballage Peut V",
+  "brand": null,
+  "price": 29.77,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B000GISTZ4",
+  "ingredients_text": "Mélange de protéines de LACTOSÉRUM (98 %) [LAIT] (isolat de protéine de LACTOSÉRUM, concentré de protéine de LACTOSÉRUM, isolat de protéine de LACTOSÉRUM hydrolysé, émulsifiant : lécithine de SOJA), arômes [LAIT], épaississant (gomme xanthane), édulcorant (sucralose), colorant (curcumine)"
+ },
+ "content_hash": "1ccf4a1b940f"
+}

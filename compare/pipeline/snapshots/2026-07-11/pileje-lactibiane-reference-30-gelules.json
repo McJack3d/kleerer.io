@@ -1,0 +1,25 @@
+{
+ "id": "pileje-lactibiane-reference-30-gelules",
+ "date": "2026-07-11",
+ "url": "https://www.pileje.fr/",
+ "fetched_at": "2026-07-11T18:23:56",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": null,
+ "label_hash": "66c16853fc7f",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "PiLeJe Laboratoire | Microbiotes, Micronutrition, Phytothérapie & Nutrition",
+  "brand": null,
+  "price": null,
+  "currency": null,
+  "availability": null,
+  "gtin": null,
+  "source": null,
+  "url": "https://www.pileje.fr/"
+ },
+ "content_hash": "799c9b9dbc69"
+}

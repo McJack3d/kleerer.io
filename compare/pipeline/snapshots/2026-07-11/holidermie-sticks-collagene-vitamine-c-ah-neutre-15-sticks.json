@@ -1,0 +1,26 @@
+{
+ "id": "holidermie-sticks-collagene-vitamine-c-ah-neutre-15-sticks",
+ "date": "2026-07-11",
+ "url": "https://www.holidermie.com/products/complement-collagene-en-poudre-gout-neutre-sticks",
+ "fetched_at": "2026-07-11T18:22:05",
+ "price": 48.0,
+ "currency": "USD",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "70752f94d58b",
+ "live_label_hash": "eaa18e1e9089",
+ "live_purity_tags": [],
+ "ingredients_text": "100mg Vitamine C : 40mg soit 50% de l'apport recommandé *Le collagène est casher et halal",
+ "raw": {
+  "name": "Collagène Marin, Acide Hyaluronique & Vitamine C | Holidermie | Beauté Holistique",
+  "brand": null,
+  "price": 48.0,
+  "currency": "USD",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://www.holidermie.com/products/complement-collagene-en-poudre-gout-neutre-sticks",
+  "ingredients_text": "100mg Vitamine C : 40mg soit 50% de l'apport recommandé *Le collagène est casher et halal"
+ },
+ "content_hash": "8ac01031b5a6"
+}

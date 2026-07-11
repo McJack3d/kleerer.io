@@ -1,0 +1,21 @@
+{
+ "id": "granions-zinc-bisglycinate-15-mg-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://www.granions.fr/zinc-15mg.html",
+ "fetched_at": "2026-07-11T18:25:08",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": "fetch-failed",
+ "label_hash": null,
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "price": null,
+  "source": "fetch-failed",
+  "availability": null,
+  "name": "Zinc Bisglycinate 15 mg"
+ },
+ "content_hash": "828b4f1f32a3"
+}

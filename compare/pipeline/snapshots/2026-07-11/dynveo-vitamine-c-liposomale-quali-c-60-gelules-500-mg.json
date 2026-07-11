@@ -1,0 +1,25 @@
+{
+ "id": "dynveo-vitamine-c-liposomale-quali-c-60-gelules-500-mg",
+ "date": "2026-07-11",
+ "url": "https://www.dynveo.fr/products/vitamine-c-liposomale",
+ "fetched_at": "2026-07-11T18:24:00",
+ "price": 28.34,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "7177e61de6ca",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Vitamine C Liposomale - 60 gélules",
+  "brand": null,
+  "price": 28.34,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.dynveo.fr/products/vitamine-c-liposomale"
+ },
+ "content_hash": "7ada5a234432"
+}

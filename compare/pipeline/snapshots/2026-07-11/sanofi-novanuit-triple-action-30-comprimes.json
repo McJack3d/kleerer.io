@@ -1,0 +1,25 @@
+{
+ "id": "sanofi-novanuit-triple-action-30-comprimes",
+ "date": "2026-07-11",
+ "url": "https://www.novanuit.fr/nos-produits/novanuit-triple-action",
+ "fetched_at": "2026-07-11T18:22:57",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": null,
+ "label_hash": "3a3d619091d5",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Complément alimentaire programme 30 jours qui aide à l'endormissement, sans dépendance.",
+  "brand": null,
+  "price": null,
+  "currency": null,
+  "availability": null,
+  "gtin": null,
+  "source": null,
+  "url": "https://www.novanuit.fr/nos-produits/novanuit-triple-action"
+ },
+ "content_hash": "1c7d2941f9f0"
+}

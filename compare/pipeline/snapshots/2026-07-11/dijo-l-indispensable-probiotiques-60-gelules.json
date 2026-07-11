@@ -1,0 +1,25 @@
+{
+ "id": "dijo-l-indispensable-probiotiques-60-gelules",
+ "date": "2026-07-11",
+ "url": "https://www.dijo.fr/products/indispensable",
+ "fetched_at": "2026-07-11T18:23:48",
+ "price": 40.0,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "meta",
+ "label_hash": "e2cd75d4657f",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "L'Indispensable Probiotiques",
+  "brand": null,
+  "price": 40.0,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "meta",
+  "url": "https://www.dijo.fr/products/indispensable"
+ },
+ "content_hash": "23a101b2a861"
+}

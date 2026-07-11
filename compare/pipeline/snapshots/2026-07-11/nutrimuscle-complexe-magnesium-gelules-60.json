@@ -1,0 +1,25 @@
+{
+ "id": "nutrimuscle-complexe-magnesium-gelules-60",
+ "date": "2026-07-11",
+ "url": "https://www.nutrimuscle.com/products/complexe-magnesium-gelules",
+ "fetched_at": "2026-07-11T18:22:44",
+ "price": 19.95,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "050e29b88a2b",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Complexe Magnésium",
+  "brand": null,
+  "price": 19.95,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": null,
+  "source": "json-ld",
+  "url": "https://www.nutrimuscle.com/products/complexe-magnesium-gelules"
+ },
+ "content_hash": "49c4e11e48e7"
+}

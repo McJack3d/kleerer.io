@@ -1,0 +1,25 @@
+{
+ "id": "vitavea-vitamine-d-1000-ui-comprimes-90",
+ "date": "2026-07-11",
+ "url": "https://vitavea.com/produits/vitamines/vitamine-d-1000-ui",
+ "fetched_at": "2026-07-11T18:24:28",
+ "price": null,
+ "currency": null,
+ "availability": null,
+ "extract_source": null,
+ "label_hash": "e16d2c10516e",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "Vitamine D 1000 UI - Vitavea",
+  "brand": null,
+  "price": null,
+  "currency": null,
+  "availability": null,
+  "gtin": null,
+  "source": null,
+  "url": "https://vitavea.com/produits/vitamines/vitamine-d-1000-ui"
+ },
+ "content_hash": "7ef3110f0993"
+}

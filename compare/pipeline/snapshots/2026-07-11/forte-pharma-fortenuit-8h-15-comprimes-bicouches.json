@@ -1,0 +1,25 @@
+{
+ "id": "forte-pharma-fortenuit-8h-15-comprimes-bicouches",
+ "date": "2026-07-11",
+ "url": "https://fr.fortepharma.com/products/fortenuit-8h",
+ "fetched_at": "2026-07-11T18:22:50",
+ "price": 11.1,
+ "currency": "EUR",
+ "availability": "InStock",
+ "extract_source": "json-ld",
+ "label_hash": "0a15bb96beb3",
+ "live_label_hash": null,
+ "live_purity_tags": null,
+ "ingredients_text": null,
+ "raw": {
+  "name": "FortéNuit 8h",
+  "brand": "Forté Pharma",
+  "price": 11.1,
+  "currency": "EUR",
+  "availability": "InStock",
+  "gtin": "3700221317716",
+  "source": "json-ld",
+  "url": "https://fr.fortepharma.com/products/fortenuit-8h"
+ },
+ "content_hash": "f492a850b102"
+}

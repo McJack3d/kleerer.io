@@ -1,0 +1,29 @@
+{
+ "id": "amz-novoma-omega-3-epax-120-capsules",
+ "date": "2026-07-11",
+ "url": "https://www.amazon.fr/dp/B07T6T34HH",
+ "fetched_at": "2026-07-11T18:27:00",
+ "price": 0.15,
+ "currency": "EUR",
+ "availability": null,
+ "extract_source": "text-fallback",
+ "label_hash": "1031aab12fe5",
+ "live_label_hash": "009baaa4725e",
+ "live_purity_tags": [
+  "bulking_filler",
+  "lecithin"
+ ],
+ "ingredients_text": "Huile de POISSON, capsule [gélatine (POISSON), humectant : glycérol], antioxydants : extraits de romarin, extrait riche en étocopherols, émulsifiant: lécithine de tournesol",
+ "raw": {
+  "name": "NOVOMA Oméga 3 Huile de Poisson Epax® 2000mg /j, Pure et Concentrée, 120 capsules, Riche en EPA et DHA & Vitamine E, Ome",
+  "brand": null,
+  "price": 0.15,
+  "currency": "EUR",
+  "availability": null,
+  "gtin": null,
+  "source": "text-fallback",
+  "url": "https://www.amazon.fr/dp/B07T6T34HH",
+  "ingredients_text": "Huile de POISSON, capsule [gélatine (POISSON), humectant : glycérol], antioxydants : extraits de romarin, extrait riche en étocopherols, émulsifiant: lécithine de tournesol"
+ },
+ "content_hash": "a91928dd1a5f"
+}
