@@ -1,0 +1,97 @@
+:root {
+    --bg: #f7f4eb;
+    --ink: #000000;
+    --pad: clamp(24px, 5vw, 56px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    background-color: var(--bg);
+    color: var(--ink);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: var(--pad);
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.logo {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-weight: bold;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    animation: rise 0.7s ease 0.1s both;
+}
+
+.logo-dot {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 62ch;
+    animation: rise 0.7s ease 0.25s both;
+}
+
+.text h1,
+.text p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0;
+}
+
+.p1-line {
+    font-size: 0.85rem;
+}
+
+.p1-line a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.4;
+    border-bottom: 1px solid transparent;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.p1-line a:hover,
+.p1-line a:focus-visible {
+    opacity: 1;
+    border-bottom-color: var(--ink);
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes breathe {
+    50% {
+        opacity: 0.25;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo,
+    .logo-dot,
+    .text {
+        animation: none;
+    }
+}
