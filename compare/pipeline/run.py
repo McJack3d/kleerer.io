@@ -17,11 +17,23 @@ import os, sys, argparse, json, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "scripts"))
-import fetch, extract, snapshot, diff, offtake
+import fetch, extract, snapshot, diff, offtake, render
 try:
     import autotag
 except Exception:
     autotag = None
+
+
+def fetch_source(s, meta, use_cache=True):
+    """Dispatch: js sources go through the headless renderer when available;
+    everything else (and every fallback) uses the polite static fetcher."""
+    if s.get("render") == "js" and render.available():
+        res = render.render(s["url"], meta, use_cache=use_cache)
+        if res.ok():
+            return res, "headless"
+        # fall through to static — Shopify shops often embed JSON-LD server-side
+    res = fetch.fetch(s["url"], meta, use_cache=use_cache)
+    return res, "static"
 
 REPORTS = os.path.join(HERE, "reports")
 DATA_JS = os.path.join(HERE, "..", "data.js")
@@ -100,10 +112,15 @@ def main():
             print(f"  - {s['id']:38} {s.get('render','static'):7} {s['url']}")
         return
 
+    if any(s.get("render") == "js" for s in sources) and not render.available():
+        print("note: playwright not installed — js sources will use the static "
+              "fallback (JSON-LD is often server-side anyway). To enable: "
+              "pip install playwright && playwright install chromium\n")
+
     date = snapshot.today()
     written, off_hits = 0, 0
     for s in sources:
-        res = fetch.fetch(s["url"], meta, use_cache=not args.no_cache)
+        res, engine = fetch_source(s, meta, use_cache=not args.no_cache)
         if not res.ok():
             print(f"  ! {s['id']}: fetch failed ({res.reason or res.status})")
             # still snapshot the failure state (availability unknown)
@@ -128,9 +145,11 @@ def main():
         snapshot.write_snapshot(s, ex, label_hash=lh,
                                 live_label_hash=live_lh, live_purity_tags=live_tags)
         written += 1
-        tag = "cache" if res.from_cache else "net"
+        tag = "cache" if res.from_cache else engine
         lbl = "＋label" if ingredients else ""
         print(f"  ✓ {s['id']:38} {ex.get('price')} {ex.get('currency') or ''} [{ex.get('source')}, {tag}] {lbl}")
+
+    render.close()
 
     # diff against previous day
     days = snapshot.list_days()

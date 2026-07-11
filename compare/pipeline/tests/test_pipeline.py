@@ -147,6 +147,38 @@ def test_report_renders():
     assert "change report" in r and "price (1)" in r
 
 
+# ----------------------------- renderer dispatch --------------------------- #
+def test_render_graceful_without_playwright():
+    import render
+    # whether or not playwright is installed, the API must never raise here
+    assert isinstance(render.available(), bool)
+    if not render.available():
+        r = render.render("https://example.com/x", {"respect_robots": False}, use_cache=False)
+        assert not r.ok() and "playwright" in (r.reason or "").lower()
+
+
+def test_fetch_source_dispatch_falls_back():
+    import run
+    # js source with no playwright → must dispatch to static path without raising
+    called = {}
+    import fetch as f
+    orig = f.fetch
+    def fake_fetch(url, meta, use_cache=True, **kw):
+        called["url"] = url
+        return f.FetchResult(url, 200, "<html></html>")
+    f.fetch = fake_fetch
+    try:
+        src = {"id": "x", "url": "https://example.com/p", "render": "js"}
+        res, engine = run.fetch_source(src, {"respect_robots": False})
+        assert res.ok()
+        import render
+        assert engine in ("static", "headless")
+        if not render.available():
+            assert engine == "static" and called["url"] == src["url"]
+    finally:
+        f.fetch = orig
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     passed = 0

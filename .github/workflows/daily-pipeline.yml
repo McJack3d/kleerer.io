@@ -26,10 +26,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run pipeline (fetch → snapshot → diff)
+      - name: Install headless renderer (Playwright Chromium)
         working-directory: compare/pipeline
         run: |
-          python3 run.py
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Run pipeline (fetch/render → snapshot → diff)
+        working-directory: compare/pipeline
+        timeout-minutes: 90
+        run: |
+          python3 run.py --no-cache
           echo "----- today's change report -----"
           cat reports/$(date -u +%F).md || true
 

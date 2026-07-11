@@ -38,6 +38,6 @@ python3 -m pytest tests/ -q       # offline tests (no network)
 
 ## What v0 does and does not do
 
-**Does:** polite fetch, JSON-LD/meta extraction, dated content-hashed snapshots, price-move + reformulation diffing, OpenFoodFacts enrichment, dry-run planning, offline tests.
+**Does:** polite fetch, **headless rendering for JS-only shops** (Playwright Chromium, free on GitHub Actions — `render.py`), JSON-LD/meta extraction, **live ingredient-label extraction** feeding the shared auto-tagger (observed reformulation detection), dated content-hashed snapshots, price-move + reformulation diffing, OpenFoodFacts enrichment by EAN, auto-generated source list from the catalogue (`gen_sources.py`, 110 tracked sources incl. Amazon.fr and French online pharmacies), dry-run planning, 16 offline tests.
 
-**Does not yet:** headless-browser rendering for JS-only pages, per-merchant HTML adapters, captcha/anti-bot handling, a proper database. These are the Phase-1 build items — see the roadmap and the "what I need from you" note Fred received.
+**Does not yet:** per-merchant HTML adapters, captcha/anti-bot evasion (we don't evade — if a site blocks us, we record the failure and move on), a proper database. Bot transparency page: [/bot/](../../bot/) — site owners can request exclusion at hello@kleerer.com.

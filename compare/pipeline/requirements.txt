@@ -1,0 +1,4 @@
+# The pipeline core is stdlib-only. Playwright is OPTIONAL — it unlocks the
+# headless renderer for JS-only shops (render: js in sources.yaml).
+# Install:  pip install -r requirements.txt && playwright install chromium
+playwright>=1.45

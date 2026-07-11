@@ -691,13 +691,320 @@ sources:
     render: static
 
 # --- manual sources (kept across regenerations) ---
-  # Append hand-picked sources here (marketplace URLs, extra formats).
-  # Example:
-  # - id: amazon-myprotein-creatine
-  #   product_id: myprotein-creatine
-  #   brand: Myprotein
-  #   name: Creatine Monohydrate
-  #   category: creatine
-  #   url: https://www.amazon.fr/dp/XXXXXXXX
-  #   ean: null
-  #   render: js
+
+  # Amazon.fr listings (render: js — needs the headless renderer)
+  - id: amz-myprotein-impact-whey
+    product_id: myprotein-impact-whey
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: whey
+    url: https://www.amazon.fr/dp/B00EZTKZDE
+    ean: 5055534319710
+    render: js
+
+  - id: amz-on-gold-standard-whey
+    product_id: on-gold-standard-whey
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: whey
+    url: https://www.amazon.fr/dp/B000GISTZ4
+    ean: null
+    render: js
+
+  - id: amz-esn-designer-whey
+    product_id: esn-designer-whey
+    brand: marketplace
+    name: Amazon.fr listing (medium match)
+    category: whey
+    url: https://www.amazon.fr/dp/B08HD8JC65
+    ean: 4250519648736
+    render: js
+
+  - id: amz-bulk-pure-whey
+    product_id: bulk-pure-whey
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: whey
+    url: https://www.amazon.fr/dp/B00HF63AYA
+    ean: null
+    render: js
+
+  - id: amz-prozis-real-whey
+    product_id: prozis-real-whey
+    brand: marketplace
+    name: Amazon.fr listing (medium match)
+    category: whey
+    url: https://www.amazon.fr/dp/B07486HGFG
+    ean: null
+    render: js
+
+  - id: amz-esn-ultrapure-creatine
+    product_id: esn-ultrapure-creatine
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: creatine
+    url: https://www.amazon.fr/dp/B0057ED9AM
+    ean: null
+    render: js
+
+  - id: amz-bulk-creatine
+    product_id: bulk-creatine
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: creatine
+    url: https://www.amazon.fr/dp/B00SP2ZKW8
+    ean: null
+    render: js
+
+  - id: amz-on-micronised-creatine
+    product_id: on-micronised-creatine
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: creatine
+    url: https://www.amazon.fr/dp/B00T7L20EC
+    ean: null
+    render: js
+
+  - id: amz-nutripure-creapure
+    product_id: nutripure-creapure
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: creatine
+    url: https://www.amazon.fr/dp/B08DD992N1
+    ean: 3770010399445
+    render: js
+
+  - id: amz-norsan-omega3-total
+    product_id: norsan-omega3-total
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: omega3
+    url: https://www.amazon.fr/dp/B08X4XVPFM
+    ean: null
+    render: js
+
+  - id: amz-whc-unocardio-1000
+    product_id: whc-unocardio-1000
+    brand: marketplace
+    name: Amazon.fr listing (medium match)
+    category: omega3
+    url: https://www.amazon.fr/dp/B00M42XIVK
+    ean: 5425034191169
+    render: js
+
+  - id: amz-now-ultra-omega3
+    product_id: now-ultra-omega3
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: omega3
+    url: https://www.amazon.fr/dp/B0043MPTAW
+    ean: null
+    render: js
+
+  - id: amz-arkopharma-arkogelules-omega-3-60-capsules
+    product_id: arkopharma-arkogelules-omega-3-60-capsules
+    brand: marketplace
+    name: Amazon.fr listing (medium match)
+    category: omega3
+    url: https://www.amazon.fr/dp/B01619P68O
+    ean: null
+    render: js
+
+  - id: amz-novoma-omega-3-epax-120-capsules
+    product_id: novoma-omega-3-epax-120-capsules
+    brand: marketplace
+    name: Amazon.fr listing (high match)
+    category: omega3
+    url: https://www.amazon.fr/dp/B07T6T34HH
+    ean: 3052351247938
+    render: js
+
+  # French online-pharmacy listings (server-rendered, static fetch works)
+  - id: ph-solgar-d3-1000
+    product_id: solgar-d3-1000
+    brand: pharmacy
+    name: newpharma.fr listing
+    category: vitamin_d3
+    url: https://www.newpharma.fr/solgar/508704/solgar-vitamine-d3-1000iu-25-g-softgels-100.html
+    ean: null
+    render: static
+
+  - id: ph-nutrico-d3-vegan
+    product_id: nutrico-d3-vegan
+    brand: pharmacy
+    name: lasante.net listing
+    category: vitamin_d3
+    url: https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/nutrico-vitamine-d-vegetale-15-ml.html
+    ean: null
+    render: static
+
+  - id: ph-biocyte-vitamine-d3-liposomal-30-gelules
+    product_id: biocyte-vitamine-d3-liposomal-30-gelules
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: vitamin_d3
+    url: https://www.pharma-gdd.com/fr/biocyte-vitamin-d-liposomal
+    ean: 3760289220007
+    render: static
+
+  - id: ph-vitavea-vitamine-d-1000-ui-comprimes-90
+    product_id: vitavea-vitamine-d-1000-ui-comprimes-90
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: vitamin_d3
+    url: https://www.pharma-gdd.com/fr/vitavea-vitamine-d-1000-ui-comprimes
+    ean: 3515450079614
+    render: static
+
+  - id: ph-mium-lab-gummies-vitamine-d-sans-sucres-42-gummies-gout-mangue
+    product_id: mium-lab-gummies-vitamine-d-sans-sucres-42-gummies-gout-mangue
+    brand: pharmacy
+    name: newpharma.fr listing
+    category: vitamin_d3
+    url: https://www.newpharma.fr/miumlab/876667/miumlab-gummies-vitamine-d-42-pieces.html
+    ean: 3760325682615
+    render: static
+
+  - id: ph-solgar-mg-citrate
+    product_id: solgar-mg-citrate
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: magnesium
+    url: https://www.pharma-gdd.com/fr/solgar-magnesium-citrate-comprimes
+    ean: 0033984017108
+    render: static
+
+  - id: ph-nutrico-magnesium
+    product_id: nutrico-magnesium
+    brand: pharmacy
+    name: lasante.net listing
+    category: magnesium
+    url: https://lasante.net/espace-para/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/tonus-et-fatigue/nutrico-magnesium-120-gelules.html
+    ean: null
+    render: static
+
+  - id: ph-granions-magnesium-marin-360-mg-b6-comprimes-180
+    product_id: granions-magnesium-marin-360-mg-b6-comprimes-180
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: magnesium
+    url: https://www.pharma-gdd.com/fr/granions-magnesium-marin-360-mg-comprimes
+    ean: 3760155217780
+    render: static
+
+  - id: ph-forte-pharma-magnesium-300-marin-comprimes-56
+    product_id: forte-pharma-magnesium-300-marin-comprimes-56
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: magnesium
+    url: https://www.pharma-gdd.com/fr/forte-pharma-magnesium-300-marin-comprimes
+    ean: 3700221313695
+    render: static
+
+  - id: ph-juvamine-magnesium-marin-vitamine-b6-comprimes-120
+    product_id: juvamine-magnesium-marin-vitamine-b6-comprimes-120
+    brand: pharmacy
+    name: lasante.net listing
+    category: magnesium
+    url: https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/juvamine-magnesium-marin-vitamine-b6-x-120.html
+    ean: 3160920644184
+    render: static
+
+  - id: ph-solgar-zinc-picolinate-22-mg-100-comprimes
+    product_id: solgar-zinc-picolinate-22-mg-100-comprimes
+    brand: pharmacy
+    name: newpharma.fr listing
+    category: zinc
+    url: https://www.newpharma.fr/solgar/508698/solgar-zinc-picolinate-22mg-comprimes-100.html
+    ean: 0033984037250
+    render: static
+
+  - id: ph-granions-zinc-bisglycinate-15-mg-60-gelules
+    product_id: granions-zinc-bisglycinate-15-mg-60-gelules
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: zinc
+    url: https://www.pharma-gdd.com/fr/granions-zinc-15-mg-gelules-vegetales
+    ean: 3760155213485
+    render: static
+
+  - id: ph-biocyte-zn-zinc-liposome-60-gelules-15-mg
+    product_id: biocyte-zn-zinc-liposome-60-gelules-15-mg
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: zinc
+    url: https://www.pharma-gdd.com/fr/biocyte-zn-zinc-liposomal-60-gelules
+    ean: 3770008244221
+    render: static
+
+  - id: ph-juvamine-vitamine-c-1000-mg-30-comprimes-effervescents-orange
+    product_id: juvamine-vitamine-c-1000-mg-30-comprimes-effervescents-orange
+    brand: pharmacy
+    name: redcare-pharmacie.fr listing
+    category: vitamin_c
+    url: https://www.redcare-pharmacie.fr/hygiene-et-sante/BE04471702/juvamine-vitamine-c-1000-30-comprimes-effervescents.htm
+    ean: 3160921610386
+    render: static
+
+  - id: ph-solgar-ester-c-plus-500-mg-100-gelules-vegetales
+    product_id: solgar-ester-c-plus-500-mg-100-gelules-vegetales
+    brand: pharmacy
+    name: newpharma.fr listing
+    category: vitamin_c
+    url: https://www.newpharma.fr/solgar/508725/solgar-ester-c-plus-500mg-vitamine-c-100-gelules-vegetales.html
+    ean: null
+    render: static
+
+  - id: ph-pileje-lactibiane-reference-30-gelules
+    product_id: pileje-lactibiane-reference-30-gelules
+    brand: pharmacy
+    name: pharmacielafayette.com listing
+    category: probiotics
+    url: https://www.pharmacielafayette.com/enseigne/pileje-lactibiane-reference-30-gelules-58578
+    ean: 3401560504828
+    render: static
+
+  - id: ph-biocyte-microbiote-atb-probiotiques-10-gelules
+    product_id: biocyte-microbiote-atb-probiotiques-10-gelules
+    brand: pharmacy
+    name: pharmacielafayette.com listing
+    category: probiotics
+    url: https://www.pharmacielafayette.com/enseigne/biocyte-microbiote-atb-10-gelules
+    ean: 3760289222155
+    render: static
+
+  - id: ph-sanofi-novanuit-triple-action-30-comprimes
+    product_id: sanofi-novanuit-triple-action-30-comprimes
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: melatonin
+    url: https://www.pharma-gdd.com/fr/novanuit-triple-action-cprs
+    ean: 3664798070118
+    render: static
+
+  - id: ph-arkopharma-arkorelax-sommeil-fort-8h-30-comprimes-bicouches
+    product_id: arkopharma-arkorelax-sommeil-fort-8h-30-comprimes-bicouches
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: melatonin
+    url: https://www.pharma-gdd.com/fr/arkopharma-arkorelax-sommeil-fort-8-heures
+    ean: 3578835501995
+    render: static
+
+  - id: ph-zzzquil-sommeil-gummies-natura-30-gommes-fruits-des-bois
+    product_id: zzzquil-sommeil-gummies-natura-30-gommes-fruits-des-bois
+    brand: pharmacy
+    name: pharma-gdd.com listing
+    category: melatonin
+    url: https://www.pharma-gdd.com/fr/zzzquil-sommeil-gommes
+    ean: 8001841491110
+    render: static
+
+  - id: ph-forte-pharma-fortenuit-8h-15-comprimes-bicouches
+    product_id: forte-pharma-fortenuit-8h-15-comprimes-bicouches
+    brand: pharmacy
+    name: lasante.net listing
+    category: melatonin
+    url: https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/sommeil-stress/forte-pharma-fortenuit-8h-comprimes-x-15.html
+    ean: 3700221303443
+    render: static
