@@ -1,5 +1,7 @@
 .claude/
 .DS_Store
 compare/pipeline/.cache/
+compare/pipeline/snapshots/
+compare/pipeline/reports/
 __pycache__/
 *.pyc

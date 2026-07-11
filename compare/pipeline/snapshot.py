@@ -20,7 +20,10 @@ the dataset outgrows git, the same files move to object storage unchanged.
 import os, json, hashlib, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SNAP_ROOT = os.path.join(HERE, "snapshots")
+# The archive location. By default a local folder (dev runs); in production the
+# daily workflow points this at a checkout of the PRIVATE kleerer-data repo so
+# the accumulating history never lands in the public repository.
+SNAP_ROOT = os.environ.get("KLEERER_SNAPSHOT_DIR", os.path.join(HERE, "snapshots"))
 
 
 def today():

@@ -35,7 +35,7 @@ def fetch_source(s, meta, use_cache=True):
     res = fetch.fetch(s["url"], meta, use_cache=use_cache)
     return res, "static"
 
-REPORTS = os.path.join(HERE, "reports")
+REPORTS = os.environ.get("KLEERER_REPORTS_DIR", os.path.join(HERE, "reports"))
 DATA_JS = os.path.join(HERE, "..", "data.js")
 
 

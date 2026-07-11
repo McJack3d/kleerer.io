@@ -34,7 +34,21 @@ python3 run.py --limit 5          # fetch 5 products politely, snapshot + diff
 python3 -m pytest tests/ -q       # offline tests (no network)
 ```
 
-`run.py` writes today's snapshots to `snapshots/YYYY-MM-DD/` and a change report to `reports/YYYY-MM-DD.md`. Commit both — the git history *is* the versioned archive (until the dataset outgrows git and moves to object storage; see the storage note in the repo README).
+`run.py` writes today's snapshots to `snapshots/YYYY-MM-DD/` and a change report to `reports/YYYY-MM-DD.md` (both git-ignored in this public repo).
+
+## Archive privacy — where the history actually lives
+
+**The historical archive is private by design.** The public repo contains code and today's catalogue only; the accumulating time-series — the asset — is committed daily to the **private** repository `kleerer/kleerer-data` by the workflow, via the env vars `KLEERER_SNAPSHOT_DIR` / `KLEERER_REPORTS_DIR`.
+
+One-time setup:
+1. Create the private repo `kleerer-data` on GitHub (empty is fine).
+2. Create a fine-grained personal access token scoped to **only** that repo, permission *Contents: Read and write* (GitHub → Settings → Developer settings → Fine-grained tokens).
+3. In `kleerer.io` → Settings → Secrets and variables → Actions → new secret **`DATA_REPO_TOKEN`** = that token.
+4. Re-run the workflow. Each day now lands as one commit in `kleerer-data`.
+
+**Offline backup** (external drive): run [`backup.sh`](backup.sh) — first run creates full `git clone --mirror` copies of both repos (every commit, every day ever recorded); later runs are fast incremental updates. Suggested cadence: weekly. A mirror alone is enough to restore everything even if GitHub vanished.
+
+**Also recommended (2 min):** on both repos, Settings → Rules → protect `main` against force-pushes and deletion, so no one — including a compromised token — can silently rewrite history.
 
 ## What v0 does and does not do
 
