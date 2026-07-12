@@ -31,7 +31,7 @@ jobs:
       - name: Checkout private archive (kleerer-data)
         uses: actions/checkout@v4
         with:
-          repository: kleerer/kleerer-data
+          repository: McJack3d/kleerer-data
           token: ${{ secrets.DATA_REPO_TOKEN }}
           path: data-archive
 
