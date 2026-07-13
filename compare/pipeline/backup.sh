@@ -15,7 +15,7 @@ set -euo pipefail
 
 DEST="${1:?usage: ./backup.sh /path/to/external/drive/folder}"
 REPO_DATA="https://github.com/McJack3d/kleerer-data.git"
-REPO_SITE="https://github.com/kleerer/kleerer.io.git"
+REPO_SITE="https://github.com/McJack3d/kleerer.io.git"
 
 mkdir -p "$DEST"
 for REPO in "$REPO_DATA" "$REPO_SITE"; do
