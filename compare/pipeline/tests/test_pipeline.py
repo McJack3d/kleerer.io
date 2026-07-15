@@ -57,8 +57,8 @@ def test_extract_ingredients_and_live_tags():
     assert ing and "collagène marin" in ing.lower()
     items = extract.ingredient_items(ing)
     tags = [t for t in (autotag.classify_additive(x) for x in items) if t]
-    # must catch both artificial sweeteners in the scraped label
-    assert "sucralose" in tags and "acesulfame_k" in tags
+    # must catch both artificial sweeteners in the scraped label (v1.2 tiers)
+    assert "sweetener_d" in tags and "sweetener_c" in tags
     lh = snapshot.observed_label_hash(ing, tags)
     assert lh and len(lh) == 12
 
@@ -75,26 +75,51 @@ def test_observed_reformulation_detected():
 
 
 # ----------------------------- auto-tagger --------------------------------- #
-def test_autotag_penalties():
-    assert autotag.classify_additive("édulcorant : sucralose") == "sucralose"
-    assert autotag.classify_additive("acésulfame K") == "acesulfame_k"
+def test_autotag_penalties_v12():
+    # sweeteners are tiered by evidence of harm
+    assert autotag.classify_additive("édulcorant : sucralose") == "sweetener_d"
+    assert autotag.classify_additive("acésulfame K") == "sweetener_c"
+    assert autotag.classify_additive("aspartame") == "sweetener_c"
+    assert autotag.classify_additive("saccharine") == "sweetener_b"
     assert autotag.classify_additive("sirop de glucose") == "added_sugar"
     assert autotag.classify_additive("maltitol") == "polyol"
     assert autotag.classify_additive("colorant azoïque : E110") == "artificial_colour"
     assert autotag.classify_additive("stéarate de magnésium") == "anticaking"
     assert autotag.classify_additive("lécithine de tournesol") == "lecithin"
+    assert autotag.classify_additive("Botanical blend without individual doses") == "proprietary_blend"
+
+
+def test_autotag_natural_sweeteners_neutral():
+    for s in ["extrait de stevia", "glycosides de stéviol", "monk fruit extract"]:
+        assert autotag.classify_additive(s) is None, s
+
+
+def test_autotag_red_card_substances():
+    assert autotag.classify_additive("dioxyde de titane (E171)") == "banned:titanium_dioxide"
+    assert autotag.classify_additive("huile partiellement hydrogénée") == "banned:trans_fat"
+    assert autotag.classify_additive("erythrosine E127") == "banned:red_3_erythrosine"
+    # ...but the REPLACEMENT / "free of" must NOT trip the red card
+    assert autotag.classify_additive("Calcium carbonate (whitener — E171 replacement)") != "banned:titanium_dioxide"
+    assert autotag.classify_additive("titanium dioxide free") != "banned:titanium_dioxide"
+    # fully hydrogenated (saturated) is a heavy penalty, NOT a red card
+    assert autotag.classify_additive("fully hydrogenated rapeseed fat") == "hydrogenated_fat"
 
 
 def test_autotag_neutrals():
     for neutral in ["huile de colza vierge bio", "gélule végétale (HPMC)",
                     "arôme naturel de vanille", "extrait riche en tocophérols",
-                    "glycérine", "acide citrique"]:
+                    "glycérine", "acide citrique", "Organic olive oil (antioxidant, neutral)"]:
         assert autotag.classify_additive(neutral) is None, neutral
 
 
-def test_autotag_unknown_fails_safe():
-    # never silently ignore: unknown → conservative filler penalty
-    assert autotag.classify_additive("zorblax 3000") == "bulking_filler"
+def test_autotag_unknown_flags_review():
+    # unrecognised → "unknown" (surfaced for human review), never silently dropped
+    assert autotag.classify_additive("zorblax 3000") == "unknown"
+    tags, detail, banned, review = autotag.tags_from_additives(
+        ["sucralose", "dioxyde de titane E171", "zorblax 3000", "huile d'olive"])
+    assert "sweetener_d" in tags and "banned" in tags and "unknown" in tags
+    assert banned == ["titanium_dioxide"]
+    assert review == ["zorblax 3000"]
 
 
 def test_form_tiers():

@@ -16,33 +16,55 @@ the point: the rules live in one auditable place.
 import re, unicodedata
 
 # ----------------------------------------------------------------------------- #
-#  Additive classification: map a free-text ingredient string to ONE penalty tag
+#  v1.2 additive classification.
+#
+#  A free-text ingredient string maps to ONE tag. Tags fall in three buckets:
+#    • RED-CARD substances   -> classify_additive returns "banned:<name>"; the
+#      scorer forces the whole product to 0 (grade E). Basis: banned/withdrawn
+#      by at least one of EU-EFSA / US-FDA / WHO (strictest-guideline-wins).
+#    • penalty tags          -> subtract from the 30-pt purity base (see
+#      build_scores.PURITY_PENALTIES).
+#    • "unknown"             -> not silently ignored: small provisional penalty
+#      AND surfaced on the product card for human review.
+#  Sweetener tiers (A→D) encode strength-of-evidence-of-harm from recent
+#  independent cohorts/RCTs — see METHODOLOGY.md. Sugar is penalised MORE than
+#  any sweetener because the evidence for added-sugar harm is stronger.
 # ----------------------------------------------------------------------------- #
-# Order matters: first matching rule wins (worst offenders first). A rule is
-# (tag, [keywords]). Keywords are matched on a normalized (accent-free, lower)
-# string. `None` tag => neutral ingredient (no penalty).
 
-_NEUTRAL = "neutral"
-
-# Capsule/shell materials and benign carriers are neutral even though they share
-# keywords (e.g. "cellulose") with fillers — detected first.
 CAPSULE_HINTS = ["gelule", "capsule", "tunique", "k-caps", "kcaps", "drcaps",
                  "pullulan", "hpmc vegetal", "gelatine", "gelatin", "softgel",
                  "enveloppe", "vegecaps"]
 
+# Red-card: banned / authorisation-withdrawn / restricted by EU, FDA or WHO.
+BANNED = [
+    ("titanium_dioxide",   ["dioxyde de titane", "titanium dioxide", "e171"]),
+    ("trans_fat",          ["partiellement hydrogen", "partially hydrogen",
+                            "graisse trans", "trans fat", "acides gras trans"]),
+    ("brominated_veg_oil", ["huile vegetale bromee", "brominated vegetable", "bvo"]),
+    ("potassium_bromate",  ["bromate de potassium", "potassium bromate", "e924"]),
+    ("red_3_erythrosine",  ["erythrosine", "e127", "red 3", "red no. 3", "rouge 3"]),
+    ("propylparaben",      ["propylparaben", "propylparabene", "e216", "e217"]),
+]
+
+# Order matters: first match wins (worst offenders first).
 RULES = [
-    ("titanium_dioxide", ["dioxyde de titane", "titanium dioxide", "e171"]),
-    ("hydrogenated_fat", ["hydrogen", "hydrogene"]),
+    ("hydrogenated_fat", ["hydrogen", "hydrogene"]),   # FULLY hydrogenated = saturated (partial caught by BANNED above)
     ("added_sugar",      ["sirop de glucose", "glucose syrup", "sucre", "sugar",
                           "saccharose", "sirop de", "dextrose"]),
-    ("sucralose",        ["sucralose"]),
-    ("acesulfame_k",     ["acesulfame", "acesulphame", "ace-k", "ace k"]),
-    ("artificial_sweetener", ["aspartame", "saccharin", "saccharinate",
-                              "cyclamate", "edulcorant de synthese"]),
-    ("polyol",           ["maltitol", "sorbitol", "xylitol", "erythritol",
-                          "polyol", "isomalt", "mannitol"]),
-    ("artificial_colour",["azoique", "e102", "e104", "e110", "e122", "e124",
-                          "e129", "e133", "e151", "colorant azo"]),
+    ("severe_antioxidant",["e320", "e321", "bha", "bht", "butylhydroxy",
+                          "hydroxyanisole", "hydroxytoluene"]),
+    ("proprietary_blend",["blend without", "without individual dose", "proprietary blend",
+                          "melange proprietaire", "non detaille", "non precis",
+                          "undisclosed", "not disclosed", "excipients non"]),
+    # sweeteners, tiered by evidence of harm (strongest signal first)
+    ("sweetener_d",      ["sucralose", "erythritol", "erythritol", "xylitol"]),
+    ("sweetener_c",      ["aspartame", "acesulfame", "acesulphame", "ace-k", "ace k"]),
+    ("sweetener_b",      ["saccharin", "saccharinate", "cyclamate"]),
+    ("polyol",           ["maltitol", "sorbitol", "polyol", "isomalt", "mannitol"]),
+    # stevia / monk fruit = Tier A (natural, no harm signal) -> handled as neutral
+    ("artificial_colour",["azoique", "e102", "e104", "e110", "e122", "e124", "e129",
+                          "tartrazine", "sunset yellow", "allura", "ponceau",
+                          "carmoisine", "azorubine", "quinoline", "colorant azo"]),
     ("synthetic_carrier",["polyethylene glycol", "peg ", "(peg)", "polyethylene-glycol"]),
     ("artificial_flavour",["arome artificiel", "artificial flavour",
                            "artificial flavor", "aromatisant artificiel"]),
@@ -51,9 +73,9 @@ RULES = [
                           "gomme gellane", "gellan", "carraghenane", "carrageenan"]),
     ("bulking_filler",   ["maltodextrine", "maltodextrin", "amidon", "starch",
                           "cellulose microcristalline", "microcrystalline cellulose",
-                          "phosphate dicalcique", "phosphate tricalcique",
-                          "dicalcium phosphate", "gomme d'acacia", "gomme arabique",
-                          "acacia", "caroube", "carob", "citrate de calcium"]),
+                          "cellulose", "croscarmellose", "phosphate dicalcique",
+                          "phosphate tricalcique", "dicalcium phosphate", "gomme d'acacia",
+                          "gomme arabique", "acacia", "caroube", "carob", "citrate de calcium"]),
     ("anticaking",       ["stearate de magnesium", "magnesium stearate",
                           "sels de magnesium d'acides gras", "acide stearique",
                           "stearic", "dioxyde de silicium", "silicon dioxide",
@@ -63,9 +85,10 @@ RULES = [
                           "hydroxypropylcellulose", "hydroxypropylmethylcellulose"]),
 ]
 
-# Neutral keywords: recognised and explicitly NOT penalised.
+# Explicitly recognised as NON-penalised (incl. Tier-A natural sweeteners and the
+# clean E171 replacement, calcium carbonate — already neutral via 'coating' path).
 NEUTRAL_KEYWORDS = [
-    "eau", "water", "glycerine", "glycerin", "glycerol", "glycerol",
+    "eau", "water", "glycerine", "glycerin", "glycerol",
     "huile de colza", "huile d'olive", "huile de coco", "huile mct", "mct",
     "huile de tournesol", "huile vegetale", "triglycerides a chaine moyenne",
     "tocopherol", "tocopherols", "vitamine e", "romarin", "rosemary",
@@ -77,7 +100,22 @@ NEUTRAL_KEYWORDS = [
     "amidon de riz", "riz", "antioxydant naturel", "ascorbyl", "e300",
     "extrait de romarin", "poudre de fruit", "cacao", "vitamine", "vitamin",
     "b8", "b12", "b6", "saccharomyces", "acides gras",
+    "stevia", "steviol", "glycosides de steviol", "monk fruit", "luo han",
+    # English benign ingredients (curated v1 labels are in English)
+    "olive oil", "sunflower oil", "rapeseed oil", "coconut oil", "mct oil",
+    "fish oil", "fish-gelatine", "fish gelatin", "bovine gelatine", "gelatine",
+    "glycerol", "glycerine", "glycerin", "natural flavour", "natural orange flavour",
+    "natural flavor", "antioxidant", "rosemary", "tocopherol", "vitamin e",
+    "salt", "water", "declared", "none", "rice", "acacia gum (prebiotic",
+    "prebiotic", "lactase", "enteric coating", "functional enteric",
+    "pectine", "pectin", "chlorure de sodium", "huile essentielle", "citrate de",
 ]
+
+# Strings the curator/scraper has explicitly marked benign, or that describe the
+# ABSENCE/replacement of a banned substance (must never trip the red card).
+NEUTRAL_MARKERS = ["(neutral", "neutral)", "e171 replacement", "e171-replacement"]
+NEGATION_NEAR_BANNED = ["replacement", "remplac", "sans ", "-free", " free",
+                        "free)", "alternative", "instead of", "substitut", "no titanium"]
 
 
 def _norm(s: str) -> str:
@@ -86,34 +124,54 @@ def _norm(s: str) -> str:
 
 
 def classify_additive(raw: str):
-    """Return a penalty tag string, or None if neutral. Whole-string match."""
+    """Map an ingredient string to a tag:
+       "banned:<name>"  -> red card (force score to 0)
+       "<penalty_tag>"  -> purity penalty (see build_scores.PURITY_PENALTIES)
+       "unknown"        -> unrecognised, flag for human review (+ small penalty)
+       None             -> neutral / benign."""
     n = _norm(raw)
-    # capsule / shell material → neutral
+    # annotator-marked benign / "free of X" strings never trip a penalty or red card
+    if any(m in n for m in NEUTRAL_MARKERS):
+        return None
+    negated = any(w in n for w in NEGATION_NEAR_BANNED)
+    for name, keys in BANNED:                       # red card checked first
+        if any(k in n for k in keys) and not negated:
+            return "banned:" + name
+    # capsule / shell material → neutral (but not if it also names a filler/anti-caking)
     if any(h in n for h in CAPSULE_HINTS) and not any(
         k in n for k in ["stearate", "silice", "silica", "dioxyde", "maltodextrine"]
     ):
         return None
+    # natural Tier-A sweeteners are benign — short-circuit before generic matches
+    if any(k in n for k in ["stevia", "steviol", "monk fruit", "luo han"]):
+        return None
     for tag, keys in RULES:
         if any(k in n for k in keys):
-            # guard: "carbonate de calcium (whitener)" as coating is fine, but a
-            # bare neutral like "arome naturel" must not be caught by 'arome'
             return tag
     if any(k in n for k in NEUTRAL_KEYWORDS):
         return None
-    # Unknown ingredient: treat as a minor filler so we never silently ignore it,
-    # but flag low so it's visible. Conservative -2.
-    return "bulking_filler"
+    return "unknown"                                # never silently ignored
 
 
 def tags_from_additives(additives):
-    """additives: list[str] -> (purity_tags[list], additives_detail[list])."""
-    tags, detail = [], []
+    """additives -> (purity_tags, additives_detail, banned[list], review[list]).
+       banned  = red-card substance names found (force score 0)
+       review  = ingredient strings the tagger couldn't classify (needs a human)"""
+    tags, detail, banned, review = [], [], [], []
     for a in additives or []:
         t = classify_additive(a)
-        if t:
-            tags.append(t)
         detail.append(a)
-    return tags, detail
+        if t is None:
+            continue
+        if t.startswith("banned:"):
+            banned.append(t.split(":", 1)[1])
+            tags.append("banned")
+        elif t == "unknown":
+            review.append(a)
+            tags.append("unknown")
+        else:
+            tags.append(t)
+    return tags, detail, banned, review
 
 
 # ----------------------------------------------------------------------------- #

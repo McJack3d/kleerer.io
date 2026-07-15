@@ -3,7 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Independent, open-source supplement comparator: Health & Compo Score and price per gram of actual active — no sponsors, no affiliate links.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Independent supplement comparator: an evidence-based Health &amp; Compo Score (A–E) and price per gram of actual active for 112 EU/French products across 11 categories. No sponsors, no affiliate links.">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="compléments alimentaires, supplements, health score, whey, créatine, magnésium, oméga-3, comparateur, additifs, édulcorants">
+<link rel="canonical" href="https://kleerer.com/compare/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="kleerer.">
+<meta property="og:title" content="kleerer. — supplements, made clear">
+<meta property="og:description" content="Evidence-based Health &amp; Compo Score and true price-per-active for EU/French supplements. Independent, no affiliate links.">
+<meta property="og:url" content="https://kleerer.com/compare/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kleerer. — supplements, made clear">
+<meta name="twitter:description" content="Evidence-based Health &amp; Compo Score and true price-per-active for EU/French supplements.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "kleerer. compare — independent supplement comparator",
+  "url": "https://kleerer.com/compare/",
+  "inLanguage": "en",
+  "about": {"@type": "MedicalEntity", "name": "Dietary supplements"},
+  "audience": {"@type": "Patient"},
+  "medicalAudience": "Patient",
+  "specialty": "Nutrition",
+  "isPartOf": {"@type": "WebSite", "name": "kleerer.", "url": "https://kleerer.com/"},
+  "publisher": {"@type": "Organization", "name": "kleerer.", "url": "https://kleerer.com/"},
+  "description": "An evidence-based Health & Compo Score (A–E) and price-per-active for EU/French dietary supplements across 11 categories."
+}
+</script>
 <title>kleerer. — p1 · compare</title>
 <style>
   :root{
@@ -79,6 +108,13 @@
   .chip{font-size:.65rem; padding:2px 7px; border-radius:2px; border:1px solid var(--line); color:var(--muted)}
   .chip.cert{border-color:var(--ink); color:var(--ink)}
   .chip.warn{border-color:var(--warn-line); background:var(--warn-bg); color:var(--warn-ink)}
+  .chip.review{border-color:var(--gD); color:var(--gD)}
+  .chip.flag{border:none; padding:2px 4px; font-size:.8rem}
+  .meta-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:.72rem; color:var(--muted)}
+  .plevel{letter-spacing:1px; font-weight:700; color:var(--ink)}
+  .plevel .off{color:var(--line)}
+  .redcard{border:2px solid var(--gE); background:rgba(185,58,23,.06)}
+  .redcard-banner{display:flex; align-items:center; gap:8px; background:var(--gE); color:#fff; font-size:.72rem; font-weight:700; padding:6px 10px; border-radius:2px; margin:-2px 0 2px; text-transform:uppercase; letter-spacing:.04em}
   .card-actions{display:flex; gap:6px; margin-top:auto; padding-top:4px}
   .btn{border:1px solid var(--ink); background:none; border-radius:2px; padding:7px 12px; font-size:.75rem; font-weight:700; color:var(--ink); transition:.15s}
   .btn:hover{background:var(--soft)}
@@ -214,8 +250,8 @@
     <p style="margin-top:10px">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
-      <span>p1 · compare — open-source health data · MIT · v1.0</span>
-      <span>methodology v1.0</span>
+      <span>p1 · compare — open method, private data · MIT · v1.2</span>
+      <span>methodology v1.2</span>
     </div>
   </div>
 </footer>
@@ -279,19 +315,32 @@ function setCat(k){ cat = k;
 }
 
 /* ---------- cards ---------- */
+const ZONE_FLAG = {FR:"🇫🇷", EU:"🇪🇺", EXTRA_EU:"🌍", UNKNOWN:"—"};
+const ZONE_LABEL = {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"};
+function priceLevel(tier){
+  return `<span class="plevel" title="price level ${tier}/5 (1=cheapest per dose, 5=priciest)">`
+    + "€".repeat(tier) + `<span class="off">${"€".repeat(5-tier)}</span></span>`;
+}
+function provBadge(p){
+  const z = (p.provenance && p.provenance.zone) || "UNKNOWN";
+  const c = p.provenance && p.provenance.country ? " · " + esc(p.provenance.country) : "";
+  return `<span title="${ZONE_LABEL[z]}${c}">${ZONE_FLAG[z]}</span>`;
+}
 function chipset(p){
   const chips = [];
   if (p.transparency.branded_ingredient) chips.push(`<span class="chip cert">${esc(p.transparency.branded_ingredient)}</span>`);
   if (p.transparency.coa_published) chips.push(`<span class="chip cert">COA published</span>`);
   if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">3rd-party tested</span>`);
   if (p.vegan) chips.push(`<span class="chip">vegan</span>`);
+  if (p.review_flags && p.review_flags.length) chips.push(`<span class="chip review" title="unrecognised ingredient — needs human review">⚑ needs review</span>`);
   if (p.flags.length) chips.push(`<span class="chip warn">⚠ ${p.flags.length} flag${p.flags.length>1?"s":""}</span>`);
   return chips.join("");
 }
 function card(p){
   const s = p.scores, inCmp = compare.includes(p.id);
-  return `<article class="card">
+  return `<article class="card${s.red_card?" redcard":""}">
     <span class="conf" title="data confidence: ${p.confidence}" style="background:${CONF[p.confidence]}"></span>
+    ${s.red_card?`<div class="redcard-banner">🟥 red card · banned: ${esc((s.banned_substances||[]).join(", ").replace(/_/g," "))}</div>`:""}
     <div class="card-top">
       <div class="gradeb" style="background:${GCOLOR[s.grade]}"><b>${s.grade}</b><span>${s.total}/100</span></div>
       <div>
@@ -304,6 +353,7 @@ function card(p){
       <span class="price">${eur(p.price_eur)}</span>
       <span class="perday">${eur(p.value.cost_per_day)}/day · ~${p.value.days_per_pack} days</span>
     </div>
+    <div class="meta-row">${priceLevel(p.value.price_tier)} <span>·</span> ${provBadge(p)}</div>
     <div class="value-chip">${valueFmt(p)} <span>${esc(p.value.std_label.replace("€ / ","/ "))}</span></div>
     <div class="bars">
       ${[["composition", s.form+s.dose, 40], ["purity", s.purity, 30], ["transparency", s.transparency, 30]]
@@ -397,7 +447,9 @@ function openDetail(id){
     ["Purity & additives", s.purity, 30, p.additives_detail.length ? p.additives_detail.join(" · ") : "No additives — clean label"],
     ["Transparency & testing", s.transparency, 30, p.certifications.length ? p.certifications.join(" · ") : "No public certifications or COAs"]
   ];
+  const prov = p.provenance || {zone:"UNKNOWN"};
   let html = `<button class="close" onclick="closeModal()">✕</button>
+    ${s.red_card?`<div class="redcard-banner" style="margin-bottom:14px">🟥 red card — contains a substance banned or restricted by EU / FDA / WHO: ${esc((s.banned_substances||[]).join(", ").replace(/_/g," "))}. Score forced to 0.</div>`:""}
     <div class="m-head">
       <div class="gradeb lg" style="background:${GCOLOR[s.grade]}"><b>${s.grade}</b><span>${s.total}/100</span></div>
       <div class="m-title">
@@ -414,13 +466,18 @@ function openDetail(id){
       <div class="kv">
         <div class="cell"><b>${eur(p.price_eur)}</b><span>list price · ${esc(p.variant)}</span></div>
         <div class="cell"><b>${valueFmt(p)}</b><span>${esc(p.value.std_label)}</span></div>
-        <div class="cell"><b>${eur(p.value.cost_per_day)}</b><span>per day · ~${p.value.days_per_pack} days/pack</span></div>
+        <div class="cell"><b>${priceLevel(p.value.price_tier)}</b><span>price level ${p.value.price_tier}/5 in category</span></div>
       </div>
       <p style="font-size:.72rem;color:var(--muted);margin-top:8px">${esc(p.price_note)}</p>
+    </div>
+    <div class="sec"><h3>provenance</h3>
+      <p style="font-size:.85rem">${provBadge(p)} <b>${esc(ZONE_LABEL[prov.zone]||"unknown")}</b>${prov.country?` · ${esc(prov.country)}`:""}
+      ${prov.malus?` <span style="color:var(--muted)">(−${prov.malus} proximity, shown separately — not in the health score)</span>`:""}</p>
     </div>
     <div class="sec"><h3>what you actually get</h3>
       <ul class="plain"><li>${esc(activesLine(p))}</li><li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
+    ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>needs human review</h3>${p.review_flags.map(f=>`<div class="flagbox">⚑ unrecognised ingredient: ${esc(f)} — help us classify it</div>`).join("")}</div>`:""}
     ${p.flags.length ? `<div class="sec"><h3>watch-outs</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
     <p class="footnote">Scored with methodology v${META.methodology_version} from the public label and brand documents — not from independent lab testing. Not medical advice.</p>`;
   showModal(html);
@@ -431,21 +488,27 @@ function openMethodology(){
   showModal(`<button class="close" onclick="closeModal()">✕</button>
   <div class="prose">
     <h2>How the Health &amp; Compo Score works</h2>
-    <p>Every product is scored 0–100 by an open Python script from an open dataset — using only the label and public proofs, never marketing claims. <b>Price is never part of the health score</b>; value is shown separately.</p>
+    <p>Every product is scored 0–100 by an <b>open</b> script using only the label and public proofs, never marketing claims. The <b>method is open</b> so it can be audited; the <b>dataset and its price/label history are not published</b> — that accumulating archive is kleerer's moat. <b>Price is never part of the health score.</b></p>
+    <h4>🟥 Red card</h4>
+    <p>A product containing a substance banned, withdrawn or restricted by <b>any</b> of EU-EFSA, US-FDA or WHO (titanium dioxide E171, industrial trans fat, BVO, potassium bromate, Red 3, propylparaben…) is forced to <b>0 / grade E</b> — a banned additive is a disqualification, not a deduction. Strictest-guideline-wins: if one body flags it, we flag it.</p>
     <h4>Composition &amp; efficacy — 40 pts</h4>
-    <p><b>Form quality (20):</b> how bioavailable the chemical form is. Chelated magnesium (bisglycinate) beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; bioactive vitamin forms beat cheap ones. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values — including penalties for exceeding EU upper limits.</p>
+    <p><b>Form quality (20):</b> chelated magnesium beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; strain-coded probiotics beat un-coded. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values, with penalties for exceeding EU upper limits.</p>
     <h4>Purity &amp; additives — 30 pts</h4>
-    <p>Start at 30, subtract per additive: hydrogenated fats −6, undisclosed blends −6, added sugar / artificial sweeteners −4, artificial colours −3, polyols / synthetic carriers / emulsifiers / fillers / anti-caking / coatings −2 each. Carrier oils, gelatine, capsule shells, natural antioxidants and natural flavours are neutral. Every additive on the label is classified by an open auto-tagger (<b>scripts/autotag.py</b>) — the same one the collection pipeline uses.</p>
+    <p>Start at 30, subtract per additive, <b>proportionate to the health evidence</b>: fully hydrogenated fat −25, undisclosed/proprietary blend −10, BHA/BHT −10, <b>added sugar −8</b>, then sweeteners tiered by evidence (see below), azo colours −3, polyols/carriers/emulsifiers/fillers/coatings −2 each. Natural sweeteners (stevia, monk fruit), carrier oils, capsule shells and natural flavours are neutral. An unrecognised ingredient is never ignored — it's flagged <b>needs review</b> (−2 provisional).</p>
+    <h4>Our position on sweeteners (evidence-based)</h4>
+    <p>Regulators (EFSA, FDA, WHO/JECFA) uphold sweetener safety at their acceptable daily intakes. Large cohorts (NutriNet-Santé, &gt;100 000 adults) and lab studies report <i>signals</i> — not proven causation — for some. We apply mild, proportionate precaution: <b>Tier D</b> sucralose/erythritol/xylitol −6 (mechanistic/CV signal), <b>Tier C</b> aspartame/acesulfame-K −4 (cohort signal), <b>Tier B</b> saccharin/cyclamate −2, <b>Tier A</b> stevia/monk fruit 0. Crucially, <b>added sugar (−8) is penalised more than any sweetener</b>, because the evidence that sugar harms health is stronger. We do not claim "sweeteners cause cancer".</p>
     <h4>Transparency &amp; testing — 30 pts</h4>
     <table><tr><th>Published batch analyses / COAs</th><td>+12</td></tr>
-    <tr><th>Recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, Labdoor…)</th><td>+10</td></tr>
-    <tr><th>Branded traceable raw ingredient (Creapure®, EPAX®, TRAACS®…)</th><td>+4</td></tr>
+    <tr><th>Recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF…)</th><td>+10</td></tr>
+    <tr><th>Branded traceable raw ingredient (Creapure®, EPAX®, Peptan®…)</th><td>+4</td></tr>
     <tr><th>Fully quantified label, no proprietary blend</th><td>+4</td></tr></table>
     <h4>Grades</h4>
     <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
-    <h4>Value metric</h4>
-    <p>Normalised to a standard daily dose per category: € per 25 g protein · 3 g creatine · 1000 IU D3 · 300 mg elemental Mg · 500 mg EPA+DHA · 15 mg zinc · 1000 mg vitamin C · 10 g collagen · and € per day for multivitamins, probiotics and melatonin. This is what the marketing hides: a "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one, and a €28 collagen with 1 g/day is dearer than a €23 one with 10 g/day.</p>
-    <p>Full details, penalty tables and known limitations: <b>METHODOLOGY.md</b> in the repository.</p>
+    <h4>Price level &amp; value (separate from the health score)</h4>
+    <p><b>€ / standard dose</b> per category (€/25 g protein, €/1000 IU D3, €/10 g collagen…) plus a <b>price level 1–5</b> — a within-category affordability band (1 = cheapest per dose, 5 = priciest). A "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one.</p>
+    <h4>Provenance (separate axis, not in the health score)</h4>
+    <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
+    <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>
   </div>`);
 }
 function openAbout(){
@@ -456,7 +519,7 @@ function openAbout(){
     <h4>Why it exists</h4>
     <p>Supplement marketing sells stories; labels tell the truth. kleerer. reads the label for you: what form the active is in, whether the dose is effective, what else is in the capsule, and what the brand actually proves with third-party tests — then prices the product per gram of active, not per kilo of powder.</p>
     <h4>Independence</h4>
-    <p>No sponsors, no affiliate links, no paid placements. The dataset (${META.n_products} EU/FR products across ${META.n_categories} categories, snapshot ${META.snapshot}), the scoring script and this page are open-source (MIT). If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
+    <p>No sponsors, no affiliate links, no paid placements. Covers ${META.n_products} EU/FR products across ${META.n_categories} categories (snapshot ${META.snapshot}). The <b>scoring method</b> — script and rules — is open-source (MIT) so it can be audited and challenged; the <b>dataset and its daily price/label history</b> stay private, because that accumulating archive is what makes kleerer hard to replicate. If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
     <h4>Roadmap</h4>
     <p>p1: this comparator. Next: automated price &amp; label pipeline (source audit is Phase 1 of the roadmap), broader categories, and a personalised profile → needs → products journey.</p>
     <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>
