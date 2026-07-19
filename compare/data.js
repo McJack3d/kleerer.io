@@ -5,11 +5,11 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-07-15",
-  "n_products": 112,
+  "generated": "2026-07-19",
+  "n_products": 163,
   "n_categories": 11,
-  "n_red_cards": 0,
-  "n_needs_review": 8,
+  "n_red_cards": 1,
+  "n_needs_review": 24,
   "methodology_version": "1.2"
  },
  "products": [
@@ -72,7 +72,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "097b9040647d",
-   "rank_in_category": 4
+   "rank_in_category": 5
   },
   {
    "id": "on-gold-standard-whey",
@@ -140,7 +140,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "cbf178202879",
-   "rank_in_category": 8
+   "rank_in_category": 9
   },
   {
    "id": "esn-designer-whey",
@@ -207,7 +207,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "b7e3e7b0a064",
-   "rank_in_category": 10
+   "rank_in_category": 12
   },
   {
    "id": "bulk-pure-whey",
@@ -270,7 +270,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "be33fa16af43",
-   "rank_in_category": 13
+   "rank_in_category": 16
   },
   {
    "id": "nutrimuscle-whey-native",
@@ -392,7 +392,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "913a80d9a189",
-   "rank_in_category": 12
+   "rank_in_category": 14
   },
   {
    "id": "myprotein-creatine",
@@ -449,7 +449,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "187f6b5ffb0e",
-   "rank_in_category": 9
+   "rank_in_category": 10
   },
   {
    "id": "esn-ultrapure-creatine",
@@ -506,7 +506,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "5fe342303486",
-   "rank_in_category": 10
+   "rank_in_category": 11
   },
   {
    "id": "bulk-creatine",
@@ -561,7 +561,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "d275c758528b",
-   "rank_in_category": 11
+   "rank_in_category": 15
   },
   {
    "id": "on-micronised-creatine",
@@ -619,7 +619,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "9d3150ca2406",
-   "rank_in_category": 8
+   "rank_in_category": 9
   },
   {
    "id": "nutrimuscle-creapure",
@@ -858,7 +858,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "ecc74dd49752",
-   "rank_in_category": 6
+   "rank_in_category": 10
   },
   {
    "id": "sunday-d3-drops",
@@ -1040,10 +1040,10 @@ const KLEERER_DATA = {
     "std": 0.018,
     "std_label": "€ / 1000 IU",
     "days_per_pack": 240,
-    "price_tier": 2
+    "price_tier": 1
    },
    "label_hash": "44afbfd6832e",
-   "rank_in_category": 12
+   "rank_in_category": 17
   },
   {
    "id": "mivolis-d3-1000",
@@ -1102,7 +1102,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "673d42cdfab6",
-   "rank_in_category": 8
+   "rank_in_category": 13
   },
   {
    "id": "nutrico-magnesium",
@@ -1169,7 +1169,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "65c12e82f8fe",
-   "rank_in_category": 7
+   "rank_in_category": 10
   },
   {
    "id": "nutripure-magnesium",
@@ -1290,7 +1290,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "db38cc9e9f9b",
-   "rank_in_category": 6
+   "rank_in_category": 7
   },
   {
    "id": "solgar-mg-citrate",
@@ -1361,7 +1361,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "5e55b98af9a7",
-   "rank_in_category": 8
+   "rank_in_category": 11
   },
   {
    "id": "sunday-mg-glycinate",
@@ -1419,7 +1419,7 @@ const KLEERER_DATA = {
     "std": 0.363,
     "std_label": "€ / 300 mg Mg",
     "days_per_pack": 30,
-    "price_tier": 3
+    "price_tier": 2
    },
    "label_hash": "3ccda682cb7b",
    "rank_in_category": 4
@@ -1497,7 +1497,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "dda9632114cc",
-   "rank_in_category": 13
+   "rank_in_category": 19
   },
   {
    "id": "nutripure-omega3",
@@ -1620,10 +1620,10 @@ const KLEERER_DATA = {
     "std": 0.326,
     "std_label": "€ / 500 mg EPA+DHA",
     "days_per_pack": 25,
-    "price_tier": 3
+    "price_tier": 2
    },
    "label_hash": "deb2525200ae",
-   "rank_in_category": 4
+   "rank_in_category": 5
   },
   {
    "id": "nutrico-omega3",
@@ -1687,7 +1687,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "51aedd118bf3",
-   "rank_in_category": 7
+   "rank_in_category": 8
   },
   {
    "id": "whc-unocardio-1000",
@@ -1749,7 +1749,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "2d521aaf740e",
-   "rank_in_category": 3
+   "rank_in_category": 4
   },
   {
    "id": "now-ultra-omega3",
@@ -1811,10 +1811,10 @@ const KLEERER_DATA = {
     "std": 0.221,
     "std_label": "€ / 500 mg EPA+DHA",
     "days_per_pack": 90,
-    "price_tier": 2
+    "price_tier": 1
    },
    "label_hash": "01f6cfb039c8",
-   "rank_in_category": 13
+   "rank_in_category": 18
   },
   {
    "id": "myprotein-omega3",
@@ -1875,7 +1875,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "27e2551c0dd7",
-   "rank_in_category": 12
+   "rank_in_category": 16
   },
   {
    "id": "norsan-omega3-vegan",
@@ -1935,10 +1935,10 @@ const KLEERER_DATA = {
     "std": 0.384,
     "std_label": "€ / 500 mg EPA+DHA",
     "days_per_pack": 20,
-    "price_tier": 4
+    "price_tier": 3
    },
    "label_hash": "a118e9b6d1e4",
-   "rank_in_category": 9
+   "rank_in_category": 11
   },
   {
    "id": "myprotein-alpha-men",
@@ -2008,7 +2008,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "68bbb9b16b24",
-   "rank_in_category": 13
+   "rank_in_category": 18
   },
   {
    "id": "nutrico-le-multi",
@@ -2147,10 +2147,10 @@ const KLEERER_DATA = {
     "std": 0.396,
     "std_label": "€ / day",
     "days_per_pack": 60,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "5df4c3e735b2",
-   "rank_in_category": 10
+   "rank_in_category": 15
   },
   {
    "id": "now-adam",
@@ -2217,7 +2217,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "7a5356e0c15c",
-   "rank_in_category": 9
+   "rank_in_category": 11
   },
   {
    "id": "foodspring-daily-vitamins",
@@ -2291,7 +2291,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "aff43fca5e53",
-   "rank_in_category": 12
+   "rank_in_category": 17
   },
   {
    "id": "sunday-essentials-multi",
@@ -2498,7 +2498,7 @@ const KLEERER_DATA = {
     "std": 1.872,
     "std_label": "€ / 10 g collagen",
     "days_per_pack": 30,
-    "price_tier": 2
+    "price_tier": 3
    },
    "label_hash": "f77cf02abdd6",
    "rank_in_category": 4
@@ -2643,10 +2643,10 @@ const KLEERER_DATA = {
     "std": 7.71,
     "std_label": "€ / 10 g collagen",
     "days_per_pack": 30,
-    "price_tier": 3
+    "price_tier": 4
    },
    "label_hash": "08a10e85b3a2",
-   "rank_in_category": 9
+   "rank_in_category": 12
   },
   {
    "category": "collagen",
@@ -2738,10 +2738,10 @@ const KLEERER_DATA = {
     "std": 2.001,
     "std_label": "€ / 10 g collagen",
     "days_per_pack": 20,
-    "price_tier": 2
+    "price_tier": 3
    },
    "label_hash": "d7006c212e0c",
-   "rank_in_category": 11
+   "rank_in_category": 15
   },
   {
    "category": "collagen",
@@ -2824,10 +2824,10 @@ const KLEERER_DATA = {
     "std": 7.599,
     "std_label": "€ / 10 g collagen",
     "days_per_pack": 28,
-    "price_tier": 3
+    "price_tier": 4
    },
    "label_hash": "7c4bba726e03",
-   "rank_in_category": 8
+   "rank_in_category": 11
   },
   {
    "category": "collagen",
@@ -2960,7 +2960,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "dfd1e752b0e5",
-   "rank_in_category": 7
+   "rank_in_category": 10
   },
   {
    "category": "collagen",
@@ -3031,10 +3031,10 @@ const KLEERER_DATA = {
     "std": 2.267,
     "std_label": "€ / 10 g collagen",
     "days_per_pack": 15,
-    "price_tier": 2
+    "price_tier": 3
    },
    "label_hash": "70752f94d58b",
-   "rank_in_category": 5
+   "rank_in_category": 6
   },
   {
    "category": "collagen",
@@ -3102,7 +3102,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "c7c55f466d08",
-   "rank_in_category": 6
+   "rank_in_category": 7
   },
   {
    "category": "collagen",
@@ -3176,7 +3176,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "0da8a16dcc41",
-   "rank_in_category": 10
+   "rank_in_category": 14
   },
   {
    "category": "vitamin_d3",
@@ -3317,7 +3317,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "78faaeda7995",
-   "rank_in_category": 11
+   "rank_in_category": 16
   },
   {
    "category": "vitamin_d3",
@@ -3475,7 +3475,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "a2088a8d8ca5",
-   "rank_in_category": 7
+   "rank_in_category": 12
   },
   {
    "category": "vitamin_d3",
@@ -3562,7 +3562,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "413b7414fe7e",
-   "rank_in_category": 10
+   "rank_in_category": 15
   },
   {
    "category": "vitamin_d3",
@@ -3637,7 +3637,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "e16d2c10516e",
-   "rank_in_category": 9
+   "rank_in_category": 14
   },
   {
    "category": "magnesium",
@@ -3703,7 +3703,7 @@ const KLEERER_DATA = {
     "std": 0.793,
     "std_label": "€ / 300 mg Mg",
     "days_per_pack": 30,
-    "price_tier": 5
+    "price_tier": 4
    },
    "label_hash": "889ee904d7a8",
    "rank_in_category": 3
@@ -3919,7 +3919,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "9a895bb85638",
-   "rank_in_category": 9
+   "rank_in_category": 13
   },
   {
    "category": "magnesium",
@@ -3997,7 +3997,7 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "adaefc6dffb9",
-   "rank_in_category": 10
+   "rank_in_category": 15
   },
   {
    "category": "magnesium",
@@ -4084,10 +4084,10 @@ const KLEERER_DATA = {
     "std": 0.175,
     "std_label": "€ / 300 mg Mg",
     "days_per_pack": 56,
-    "price_tier": 2
+    "price_tier": 1
    },
    "label_hash": "6039ae63ba63",
-   "rank_in_category": 12
+   "rank_in_category": 18
   },
   {
    "category": "magnesium",
@@ -4160,7 +4160,1396 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "4d56e298a432",
+   "rank_in_category": 17
+  },
+  {
+   "category": "omega3",
+   "brand": "Nat & Form",
+   "name": "Oméga-3 EPAX®",
+   "variant": "90 capsules",
+   "price_eur": 23.9,
+   "price_note": "nat-form.com live 07/2026",
+   "units_pack": 90,
+   "unit_name": "capsule",
+   "units_per_day": 3,
+   "active_per_unit": 350,
+   "active_unit": "mg EPA+DHA",
+   "epa_mg_day": 600,
+   "dha_mg_day": 450,
+   "form": "concentré EPAX® 70% (rTG probable, forme non confirmée sur l'étiquette)",
+   "vegan": false,
+   "additives": [
+    "tunique gélatine de poisson",
+    "humectant : glycérine",
+    "antioxydant : extrait de romarin",
+    "tocophérols"
+   ],
+   "certifications": [
+    "EPAX®",
+    "TOTOX 3",
+    "Fabriqué en France",
+    "pêche durable"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": "EPAX®",
+   "full_label": true,
+   "flags": [
+    "forme d'ester (TG/EE) non précisée sur l'étiquette"
+   ],
+   "confidence": "high",
+   "url": "https://www.nat-form.com/products/omega-3-premium",
+   "ean": null,
+   "notes": "40% EPA / 30% DHA, poissons sauvages.",
+   "id": "nat-form-omega-3-epax-90-capsules",
+   "form_tier": 20,
+   "form_note": "Re-esterified triglycerides (rTG) — best absorbed.",
+   "purity_tags": [],
+   "additives_detail": [
+    "tunique gélatine de poisson",
+    "humectant : glycérine",
+    "antioxydant : extrait de romarin",
+    "tocophérols"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": "EPAX®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 30,
+    "total": 100,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.797,
+    "std": 0.379,
+    "std_label": "€ / 500 mg EPA+DHA",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "aee35edd0bfd",
+   "rank_in_category": 3
+  },
+  {
+   "category": "omega3",
+   "brand": "OM3 (Isodisnatura)",
+   "name": "OM3 Équilibre Émotionnel",
+   "variant": "60 capsules",
+   "price_eur": 24.99,
+   "price_note": "comparateur pharmacies live 07/2026 (24,99-29,89)",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 3,
+   "active_per_unit": 400,
+   "active_unit": "mg EPA+DHA",
+   "epa_mg_day": 1050,
+   "dha_mg_day": 150,
+   "form": "concentré 90% oméga-3, capsule Novapill (TG/EE non précisé)",
+   "vegan": false,
+   "additives": [
+    "capsule Novapill (anti-goût de poisson)"
+   ],
+   "certifications": [
+    "poissons sauvages"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Novapill®",
+   "full_label": true,
+   "flags": [
+    "ratio très déséquilibré vers l'EPA (7,5:1)",
+    "forme d'ester non précisée"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharmaciedesdrakkars.com/om3-equilibre-emotionnel-19mg",
+   "ean": "5425013130011",
+   "notes": "Positionné équilibre émotionnel.",
+   "id": "om3-isodisnatura-om3-equilibre-emotionnel-60-capsules",
+   "form_tier": 16,
+   "form_note": "Natural triglycerides (TG).",
+   "purity_tags": [],
+   "additives_detail": [
+    "capsule Novapill (anti-goût de poisson)"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Novapill®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 8,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.249,
+    "std": 0.521,
+    "std_label": "€ / 500 mg EPA+DHA",
+    "days_per_pack": 20,
+    "price_tier": 5
+   },
+   "label_hash": "98e3a7b6e959",
+   "rank_in_category": 13
+  },
+  {
+   "category": "omega3",
+   "brand": "Fleurance Nature",
+   "name": "Oméga 3 (Omegavie®)",
+   "variant": "60 capsules",
+   "price_eur": 15.12,
+   "price_note": "onaturel.fr live 07/2026",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 4,
+   "active_per_unit": 335,
+   "active_unit": "mg EPA+DHA",
+   "epa_mg_day": 800,
+   "dha_mg_day": 540,
+   "form": "triglycérides naturels (TG), huile Omegavie® stabilisée Qualitysilver®",
+   "vegan": false,
+   "additives": [
+    "capsule gélatine de poisson",
+    "humectant : glycérol",
+    "tocophérols naturels"
+   ],
+   "certifications": [
+    "Omegavie®",
+    "Qualitysilver®",
+    "Friend of the Sea",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": "Omegavie® (Polaris)",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.fleurancenature.fr/p/omega-3-13266.html",
+   "ean": "3700211132664",
+   "notes": "Dose d'attaque 4 caps, entretien 2.",
+   "id": "fleurance-nature-omega-3-omegavie-60-capsules",
+   "form_tier": 16,
+   "form_note": "Natural triglycerides (TG).",
+   "purity_tags": [],
+   "additives_detail": [
+    "capsule gélatine de poisson",
+    "humectant : glycérol",
+    "tocophérols naturels"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": "Omegavie® (Polaris)",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 18,
+    "total": 84,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.008,
+    "std": 0.376,
+    "std_label": "€ / 500 mg EPA+DHA",
+    "days_per_pack": 15,
+    "price_tier": 3
+   },
+   "label_hash": "7b81bd752c6e",
+   "rank_in_category": 10
+  },
+  {
+   "category": "omega3",
+   "brand": "Pure Encapsulations",
+   "name": "EPA/DHA Essentiels 1000 mg",
+   "variant": "90 capsules",
+   "price_eur": 38.89,
+   "price_note": "détaillants FR ~38,89 (non vérifié au centime)",
+   "units_pack": 90,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 500,
+   "active_unit": "mg EPA+DHA",
+   "epa_mg_day": 300,
+   "dha_mg_day": 200,
+   "form": "triglycérides (TG), huile de poisson microfiltrée concentrée",
+   "vegan": false,
+   "additives": [
+    "capsule gélatine",
+    "glycérine",
+    "tocophérols naturels"
+   ],
+   "certifications": [
+    "sans dioxyde de titane",
+    "sans stéarate de magnésium"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://www.pureencapsulations.fr/produits/epadha-essentiels",
+   "ean": "1210000900548",
+   "notes": "Posologie 1-2 caps/j (scoré à 1).",
+   "id": "pure-encapsulations-epa-dha-essentiels-1000-mg-90-capsules",
+   "form_tier": 16,
+   "form_note": "Natural triglycerides (TG).",
+   "purity_tags": [],
+   "additives_detail": [
+    "capsule gélatine",
+    "glycérine",
+    "tocophérols naturels"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 17,
+    "purity": 30,
+    "transparency": 4,
+    "total": 67,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.432,
+    "std": 0.432,
+    "std_label": "€ / 500 mg EPA+DHA",
+    "days_per_pack": 90,
+    "price_tier": 4
+   },
+   "label_hash": "88d1bb6ff900",
+   "rank_in_category": 14
+  },
+  {
+   "category": "omega3",
+   "brand": "Solaray",
+   "name": "Super Omega 3-7-9",
+   "variant": "120 capsules molles",
+   "price_eur": 24.9,
+   "price_note": "marché FR approximatif (non vérifié au centime)",
+   "units_pack": 120,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "active_per_unit": 150,
+   "active_unit": "mg EPA+DHA",
+   "epa_mg_day": 180,
+   "dha_mg_day": 120,
+   "form": "triglycérides (huile de saumon) + oméga-7/9 + vitamine D3",
+   "vegan": false,
+   "additives": [
+    "capsule gélatine"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "dose EPA+DHA modeste (300 mg/j)",
+    "prix FR non vérifié en direct"
+   ],
+   "confidence": "medium",
+   "url": "https://www.naturitas.fr/p/complements/acides-gras-et-omegas/huile-de-poisson/super-omega-3-7-9-120-capsules-solaray",
+   "ean": "0076280610093",
+   "notes": "Marque US distribuée en France.",
+   "id": "solaray-super-omega-3-7-9-120-capsules-molles",
+   "form_tier": 16,
+   "form_note": "Natural triglycerides (TG).",
+   "purity_tags": [],
+   "additives_detail": [
+    "capsule gélatine"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 12,
+    "purity": 30,
+    "transparency": 4,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.415,
+    "std": 0.692,
+    "std_label": "€ / 500 mg EPA+DHA",
+    "days_per_pack": 60,
+    "price_tier": 5
+   },
+   "label_hash": "0a0149d215c0",
+   "rank_in_category": 17
+  },
+  {
+   "category": "multivitamin",
+   "brand": "Arkopharma",
+   "name": "Azinc Vitalité Adulte",
+   "variant": "120 gélules",
+   "price_eur": 11.5,
+   "price_note": "pharmacies FR 07/2026",
+   "units_pack": 120,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "form": "12 vitamines + 8 minéraux, formes économiques",
+   "form_quality": "cheap",
+   "dose_style": "physiological",
+   "vit_d_ug": 5,
+   "vegan": false,
+   "additives": [
+    "carbonate de calcium",
+    "carbonate de magnésium",
+    "maltodextrine",
+    "cellulose",
+    "antiagglomérant : stéarate de magnésium",
+    "mono- et diglycérides d'acides gras"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "formes minérales économiques (oxyde de zinc, carbonates)",
+    "B9 acide folique, B12 cyanocobalamine"
+   ],
+   "confidence": "high",
+   "url": "https://fr.arkopharma.com/products/azinc-vitalite-gelules",
+   "ean": "3578835502800",
+   "notes": "2 gélules/j = 100% VNR.",
+   "id": "arkopharma-azinc-vitalite-adulte-120-gelules",
+   "form_tier": 8,
+   "form_note": "Cheap forms (oxides, cyanocobalamin, retinol).",
+   "dose_tier": 20,
+   "dose_note": "Physiological ~100% NRV coverage.",
+   "purity_tags": [
+    "coating",
+    "anticaking",
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "carbonate de calcium",
+    "carbonate de magnésium",
+    "maltodextrine",
+    "cellulose",
+    "antiagglomérant : stéarate de magnésium",
+    "mono- et diglycérides d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 8,
+    "dose": 20,
+    "purity": 20,
+    "transparency": 4,
+    "total": 52,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.192,
+    "std": 0.192,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "7dd2e2288fc0",
+   "rank_in_category": 14
+  },
+  {
+   "category": "multivitamin",
+   "brand": "Alvityl",
+   "name": "Vitalité à avaler",
+   "variant": "40 comprimés",
+   "price_eur": 13.89,
+   "price_note": "Redcare live 07/2026",
+   "units_pack": 40,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "form": "12 vitamines + 8 minéraux, comprimé",
+   "form_quality": "standard",
+   "dose_style": "physiological",
+   "vit_d_ug": 5,
+   "vegan": false,
+   "additives": [
+    "agents d'enrobage standard"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "ne pas confondre avec Alvityl médicament (ici gamme Vitalité, complément)"
+   ],
+   "confidence": "high",
+   "url": "https://alvityl.fr/alvityl-produits/alvityl-vitalite-a-avaler/",
+   "ean": "3664492022864",
+   "notes": "1 comprimé/j = 100% VNR.",
+   "id": "alvityl-vitalite-a-avaler-40-comprimes",
+   "form_tier": 12,
+   "form_note": "Standard vitamin/mineral forms.",
+   "dose_tier": 20,
+   "dose_note": "Physiological ~100% NRV coverage.",
+   "purity_tags": [
+    "coating"
+   ],
+   "additives_detail": [
+    "agents d'enrobage standard"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 12,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.347,
+    "std": 0.347,
+    "std_label": "€ / day",
+    "days_per_pack": 40,
+    "price_tier": 1
+   },
+   "label_hash": "192c52c9b880",
+   "rank_in_category": 8
+  },
+  {
+   "category": "multivitamin",
+   "brand": "Bion3 (P&G)",
+   "name": "Bion3 Défense Adultes",
+   "variant": "30 comprimés",
+   "price_eur": 19.99,
+   "price_note": "marché FR 07/2026",
+   "units_pack": 30,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "form": "12 vitamines + 7 minéraux + 3 probiotiques (tri-couche)",
+   "form_quality": "standard",
+   "dose_style": "mixed",
+   "vit_d_ug": 10,
+   "vegan": false,
+   "additives": [
+    "support comprimé multicouche"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Tri-Bion®",
+   "full_label": true,
+   "flags": [
+    "dose probiotique symbolique (10 millions UFC/j)"
+   ],
+   "confidence": "high",
+   "url": "https://www.bion3.com/fr-fr/produits/bion3-defense-comprimes",
+   "ean": "3401377618190",
+   "notes": "D 10 µg, C 120 mg, Zn 10 mg.",
+   "id": "bion3-p-g-bion3-defense-adultes-30-comprimes",
+   "form_tier": 12,
+   "form_note": "Standard vitamin/mineral forms.",
+   "dose_tier": 15,
+   "dose_note": "Mixed dosing.",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "support comprimé multicouche"
+   ],
+   "banned": [],
+   "review_flags": [
+    "support comprimé multicouche"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Tri-Bion®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 12,
+    "dose": 15,
+    "purity": 28,
+    "transparency": 8,
+    "total": 63,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.666,
+    "std": 0.666,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "df2328048eca",
+   "rank_in_category": 9
+  },
+  {
+   "category": "multivitamin",
+   "brand": "Bayer",
+   "name": "Berocca Energie",
+   "variant": "30 comprimés",
+   "price_eur": 14.25,
+   "price_note": "pharmacies FR 07/2026",
+   "units_pack": 30,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "form": "vitamines B fortement dosées + C 500 mg + Mg/Ca/Zn, sans vitamine D ni A",
+   "form_quality": "standard",
+   "dose_style": "megadose_b",
+   "vit_d_ug": 0,
+   "vegan": false,
+   "additives": [
+    "support comprimé pelliculé standard"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "pas de vitamine D ni A",
+    "C 500 mg + B mégadosées"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/berocca-energie-comprimes",
+   "ean": "3534510000665",
+   "notes": "Complément (≠ Berocca médicament historique).",
+   "id": "bayer-berocca-energie-30-comprimes",
+   "form_tier": 12,
+   "form_note": "Standard vitamin/mineral forms.",
+   "dose_tier": 12,
+   "dose_note": "B-vitamin megadosing far above NRV.",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "support comprimé pelliculé standard"
+   ],
+   "banned": [],
+   "review_flags": [
+    "support comprimé pelliculé standard"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 12,
+    "dose": 12,
+    "purity": 28,
+    "transparency": 4,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.475,
+    "std": 0.475,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "4a7f331c3cc2",
+   "rank_in_category": 12
+  },
+  {
+   "category": "multivitamin",
+   "brand": "Isoxan",
+   "name": "Isoxan Adulte",
+   "variant": "20 comprimés",
+   "price_eur": 9.9,
+   "price_note": "pharmacies FR ~9-11",
+   "units_pack": 20,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "form": "9 vitamines + 6 minéraux + antioxydants, sans vitamine D",
+   "form_quality": "standard",
+   "dose_style": "gaps",
+   "vit_d_ug": 0,
+   "vegan": false,
+   "additives": [
+    "support comprimé standard"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "pas de vitamine D (lacune)",
+    "seulement 9 vitamines"
+   ],
+   "confidence": "medium",
+   "url": "https://isoxan.com/produits/isoxan-adulte/",
+   "ean": "3401554166858",
+   "notes": "Positionné anti-fatigue.",
+   "id": "isoxan-isoxan-adulte-20-comprimes",
+   "form_tier": 12,
+   "form_note": "Standard vitamin/mineral forms.",
+   "dose_tier": 10,
+   "dose_note": "Notable gaps (missing minerals or low vitamin D).",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "support comprimé standard"
+   ],
+   "banned": [],
+   "review_flags": [
+    "support comprimé standard"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 12,
+    "dose": 10,
+    "purity": 28,
+    "transparency": 4,
+    "total": 54,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.495,
+    "std": 0.495,
+    "std_label": "€ / day",
+    "days_per_pack": 20,
+    "price_tier": 2
+   },
+   "label_hash": "ff5bc3b648ec",
+   "rank_in_category": 13
+  },
+  {
+   "category": "probiotics",
+   "brand": "Nutergia",
+   "name": "Ergyphilus Plus",
+   "variant": "30 gélules",
+   "price_eur": 15.9,
+   "price_note": "nutergia.com live 07/2026",
+   "units_pack": 30,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "active_per_unit": 8,
+   "active_unit": "billion CFU",
+   "strains_count": 4,
+   "strains_coded": true,
+   "gastro_resistant": true,
+   "form": "gélule végétale HPMC, 4 souches codées dont L. rhamnosus GG, résistance gastrique testée",
+   "vegan": false,
+   "additives": [
+    "amidon de pomme de terre",
+    "fibres d'acacia",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [
+    "Sport Protect (NF EN 17444)",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": "L. rhamnosus GG ATCC 53103",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutergia.com/fr/fr/nos-complements-alimentaires/probiotiques/ergyphilus-plus",
+   "ean": null,
+   "notes": "2 gél/j = 16 Mds UFC (attaque 4/j = 32).",
+   "id": "nutergia-ergyphilus-plus-30-gelules",
+   "form_tier": 20,
+   "form_note": "Strain-coded and gastro-resistant delivery.",
+   "dose_tier": 18,
+   "dose_note": "16 billion CFU/day — solid.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "amidon de pomme de terre",
+    "fibres d'acacia",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": "L. rhamnosus GG ATCC 53103",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 18,
+    "purity": 24,
+    "transparency": 18,
+    "total": 80,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.06,
+    "std": 1.06,
+    "std_label": "€ / day",
+    "days_per_pack": 15,
+    "price_tier": 5
+   },
+   "label_hash": "69e4eb64b69d",
+   "rank_in_category": 1
+  },
+  {
+   "category": "probiotics",
+   "brand": "PiLeJe",
+   "name": "Lactibiane Tolérance",
+   "variant": "30 gélules",
+   "price_eur": 31.8,
+   "price_note": "pileje.fr live 07/2026",
+   "units_pack": 30,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 10,
+   "active_unit": "billion CFU",
+   "strains_count": 5,
+   "strains_coded": true,
+   "gastro_resistant": false,
+   "form": "gélule végétale, 5 souches codées, sans enrobage gastro-résistant",
+   "vegan": false,
+   "additives": [
+    "amidon de maïs",
+    "antiagglomérants : acides gras"
+   ],
+   "certifications": [
+    "Fabriqué en France",
+    "Charte HQM"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "souches LA (PiLeJe)",
+   "full_label": true,
+   "flags": [
+    "gélule non gastro-résistante"
+   ],
+   "confidence": "high",
+   "url": "https://solutions.pileje.fr/fr/produit/lactibiane-tolerance-30-gelules",
+   "ean": null,
+   "notes": "Orienté hypersensibilité digestive (SII).",
+   "id": "pileje-lactibiane-tolerance-30-gelules",
+   "form_tier": 17,
+   "form_note": "Strain-coded (documented strains).",
+   "dose_tier": 18,
+   "dose_note": "10 billion CFU/day — solid.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "amidon de maïs",
+    "antiagglomérants : acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "souches LA (PiLeJe)",
+    "full_label": true
+   },
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 17,
+    "dose": 18,
+    "purity": 28,
+    "transparency": 8,
+    "total": 71,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.06,
+    "std": 1.06,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "d475c29d2f99",
+   "rank_in_category": 6
+  },
+  {
+   "category": "probiotics",
+   "brand": "Biocodex",
+   "name": "Symbiosys Alflorex+",
+   "variant": "30 gélules",
+   "price_eur": 17.99,
+   "price_note": "Redcare live 07/2026",
+   "units_pack": 30,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 1,
+   "active_unit": "billion CFU",
+   "strains_count": 1,
+   "strains_coded": true,
+   "gastro_resistant": false,
+   "form": "souche unique B. longum 35624 très documentée (SII) + calcium",
+   "vegan": false,
+   "additives": [
+    "carbonate de calcium [nano]",
+    "amidon de maïs",
+    "enrobage HPMC",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [
+    "souche sur liste QPS EFSA"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "B. longum 35624 (PrecisionBiotics)",
+   "full_label": true,
+   "flags": [
+    "carbonate de calcium [nano]",
+    "dose faible (1 Md UFC/j)"
+   ],
+   "confidence": "high",
+   "url": "https://www.symbiosys.fr/symbiosys-alflorex-v71890.html",
+   "ean": "3583310000146",
+   "notes": "Souche clinique SII de référence.",
+   "id": "biocodex-symbiosys-alflorex-30-gelules",
+   "form_tier": 17,
+   "form_note": "Strain-coded (documented strains).",
+   "dose_tier": 12,
+   "dose_note": "1 billion CFU/day — low.",
+   "purity_tags": [
+    "coating",
+    "bulking_filler",
+    "coating",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "carbonate de calcium [nano]",
+    "amidon de maïs",
+    "enrobage HPMC",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "B. longum 35624 (PrecisionBiotics)",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 17,
+    "dose": 12,
+    "purity": 22,
+    "transparency": 8,
+    "total": 59,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.6,
+    "std": 0.6,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "f8c40f8f7151",
    "rank_in_category": 11
+  },
+  {
+   "category": "probiotics",
+   "brand": "Mayoly Spindler",
+   "name": "Probiolog Fort",
+   "variant": "30 gélules gastro-résistantes",
+   "price_eur": 9.9,
+   "price_note": "pharmacies FR (6,29-16,90)",
+   "units_pack": 30,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 2,
+   "active_unit": "billion CFU",
+   "strains_count": 2,
+   "strains_coded": true,
+   "gastro_resistant": true,
+   "form": "gélule gastro-résistante HPMC, souches Chr. Hansen LA-5 + BB-12",
+   "vegan": false,
+   "additives": [
+    "cellulose microcristalline",
+    "maltodextrine",
+    "antiagglomérant : dioxyde de silicium [nano]",
+    "sels de magnésium d'acides gras"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "LA-5® & BB-12® (Chr. Hansen)",
+   "full_label": true,
+   "flags": [
+    "dioxyde de silicium [nano]",
+    "dose modeste (2 Mds UFC/j)"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/probiolog-fort",
+   "ean": "3760001040678",
+   "notes": "Souches documentées, petit prix.",
+   "id": "mayoly-spindler-probiolog-fort-30-gelules-gastro-resistantes",
+   "form_tier": 20,
+   "form_note": "Strain-coded and gastro-resistant delivery.",
+   "dose_tier": 12,
+   "dose_note": "2 billion CFU/day — low.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "cellulose microcristalline",
+    "maltodextrine",
+    "antiagglomérant : dioxyde de silicium [nano]",
+    "sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "LA-5® & BB-12® (Chr. Hansen)",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 12,
+    "purity": 22,
+    "transparency": 8,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.33,
+    "std": 0.33,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "02295961d658",
+   "rank_in_category": 9
+  },
+  {
+   "category": "melatonin",
+   "brand": "IPRAD",
+   "name": "ChronoDorm Mélatonine 1 mg",
+   "variant": "30 comprimés sublinguaux",
+   "price_eur": 5.9,
+   "price_note": "pharmacies FR (4,99-6,90)",
+   "units_pack": 30,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 1.0,
+   "active_unit": "mg melatonin",
+   "release": "immediate",
+   "plant_combo": false,
+   "form": "comprimé sublingual, mélatonine seule",
+   "vegan": true,
+   "additives": [
+    "maltodextrine",
+    "cellulose microcristalline",
+    "carboxyméthylcellulose sodique",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.newpharma.fr/chronodorm/630660/chronodorm-melatonine-1mg-comprimes-sublinguaux-30.html",
+   "ean": "3401560082623",
+   "notes": "Voie sublinguale, action rapide, minimaliste.",
+   "id": "iprad-chronodorm-melatonine-1-mg-30-comprimes-sublinguaux",
+   "form_tier": 16,
+   "form_note": "Immediate release — supports sleep onset.",
+   "dose_tier": 20,
+   "dose_note": "1 mg/day — EFSA sleep-onset dose, within the French ceiling.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "maltodextrine",
+    "cellulose microcristalline",
+    "carboxyméthylcellulose sodique",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 22,
+    "transparency": 4,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.197,
+    "std": 0.197,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "a9160a93442d",
+   "rank_in_category": 5
+  },
+  {
+   "category": "melatonin",
+   "brand": "Valdispert",
+   "name": "Mélatonine 1,9 mg",
+   "variant": "40 comprimés orodispersibles",
+   "price_eur": 11.5,
+   "price_note": "pharmacies FR 07/2026",
+   "units_pack": 40,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 1.9,
+   "active_unit": "mg melatonin",
+   "release": "immediate",
+   "plant_combo": false,
+   "form": "comprimé orodispersible, mélatonine seule",
+   "vegan": false,
+   "additives": [
+    "agent de charge : mannitol",
+    "amidon de maïs",
+    "cellulose",
+    "antiagglomérant : stéarate de magnésium",
+    "arômes vanille-anis (contient lait)"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "contient du lait (allergène)",
+    "1,9 mg = plafond réglementaire FR"
+   ],
+   "confidence": "high",
+   "url": "https://www.valdispert.fr/product/valdispert-melatonine-1-9mg",
+   "ean": "3614810005383",
+   "notes": "Diffusion orodispersible ~1 min.",
+   "id": "valdispert-melatonine-1-9-mg-40-comprimes-orodispersibles",
+   "form_tier": 16,
+   "form_note": "Immediate release — supports sleep onset.",
+   "dose_tier": 20,
+   "dose_note": "1.9 mg/day — EFSA sleep-onset dose, within the French ceiling.",
+   "purity_tags": [
+    "polyol",
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking",
+    "unknown"
+   ],
+   "additives_detail": [
+    "agent de charge : mannitol",
+    "amidon de maïs",
+    "cellulose",
+    "antiagglomérant : stéarate de magnésium",
+    "arômes vanille-anis (contient lait)"
+   ],
+   "banned": [],
+   "review_flags": [
+    "arômes vanille-anis (contient lait)"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 20,
+    "transparency": 4,
+    "total": 60,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.287,
+    "std": 0.287,
+    "std_label": "€ / day",
+    "days_per_pack": 40,
+    "price_tier": 2
+   },
+   "label_hash": "16498273767f",
+   "rank_in_category": 6
+  },
+  {
+   "category": "melatonin",
+   "brand": "Bayer",
+   "name": "EuphytoseNuit LP 1,9 mg",
+   "variant": "30 comprimés bi-couche",
+   "price_eur": 14.89,
+   "price_note": "pharmacies FR 07/2026",
+   "units_pack": 30,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 1.9,
+   "active_unit": "mg melatonin",
+   "release": "prolonged",
+   "plant_combo": true,
+   "form": "comprimé bi-couche (1 mg immédiat + 0,9 mg prolongé 8 h) + valériane/eschscholtzia",
+   "vegan": true,
+   "additives": [
+    "cellulose E460",
+    "antioxydant E341",
+    "hypromellose E464",
+    "émulsifiant E471",
+    "gélifiant E401",
+    "colorant végétal EXBERRY (spiruline, pomme)",
+    "antiagglomérant E470b"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Ipowder® (valériane/eschscholtzia)",
+   "full_label": true,
+   "flags": [
+    "complément — ne pas confondre avec Euphytose classique (médicament)"
+   ],
+   "confidence": "high",
+   "url": "https://www.euphytosegamme.fr/en-plus-de-dormir-reposez-vous/euphytosenuit-lp-comprimes",
+   "ean": "3534510001662",
+   "notes": "Bi-couche chronobiologique + plantes dosées.",
+   "id": "bayer-euphytosenuit-lp-1-9-mg-30-comprimes-bi-couche",
+   "form_tier": 20,
+   "form_note": "Prolonged/bi-layer release — supports sleep maintenance.",
+   "dose_tier": 20,
+   "dose_note": "1.9 mg/day — EFSA sleep-onset dose, within the French ceiling.",
+   "purity_tags": [
+    "bulking_filler",
+    "unknown",
+    "unknown",
+    "unknown",
+    "unknown",
+    "unknown"
+   ],
+   "additives_detail": [
+    "cellulose E460",
+    "antioxydant E341",
+    "hypromellose E464",
+    "émulsifiant E471",
+    "gélifiant E401",
+    "colorant végétal EXBERRY (spiruline, pomme)",
+    "antiagglomérant E470b"
+   ],
+   "banned": [],
+   "review_flags": [
+    "antioxydant E341",
+    "hypromellose E464",
+    "émulsifiant E471",
+    "gélifiant E401",
+    "antiagglomérant E470b"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Ipowder® (valériane/eschscholtzia)",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 18,
+    "transparency": 8,
+    "total": 66,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.496,
+    "std": 0.496,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "54f637fb7f4f",
+   "rank_in_category": 4
   },
   {
    "category": "omega3",
@@ -4324,7 +5713,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "1031aab12fe5",
-   "rank_in_category": 6
+   "rank_in_category": 7
   },
   {
    "category": "omega3",
@@ -4398,10 +5787,10 @@ const KLEERER_DATA = {
     "std": 0.216,
     "std_label": "€ / 500 mg EPA+DHA",
     "days_per_pack": 30,
-    "price_tier": 2
+    "price_tier": 1
    },
    "label_hash": "a3c6b19b1c59",
-   "rank_in_category": 8
+   "rank_in_category": 9
   },
   {
    "category": "omega3",
@@ -4479,7 +5868,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "2be448f4332e",
-   "rank_in_category": 10
+   "rank_in_category": 12
   },
   {
    "category": "omega3",
@@ -4554,7 +5943,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "fa75b3716288",
-   "rank_in_category": 11
+   "rank_in_category": 15
   },
   {
    "category": "omega3",
@@ -4632,7 +6021,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "fec2f47f6cc8",
-   "rank_in_category": 5
+   "rank_in_category": 6
   },
   {
    "category": "multivitamin",
@@ -4985,10 +6374,10 @@ const KLEERER_DATA = {
     "std": 0.9,
     "std_label": "€ / day",
     "days_per_pack": 30,
-    "price_tier": 4
+    "price_tier": 5
    },
    "label_hash": "ac408187230d",
-   "rank_in_category": 8
+   "rank_in_category": 10
   },
   {
    "category": "multivitamin",
@@ -5064,7 +6453,7 @@ const KLEERER_DATA = {
     "std": 0.398,
     "std_label": "€ / day",
     "days_per_pack": 60,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "a1fa44ab0ea3",
    "rank_in_category": 5
@@ -5162,7 +6551,1538 @@ const KLEERER_DATA = {
     "price_tier": 1
    },
    "label_hash": "c05933a5a076",
+   "rank_in_category": 16
+  },
+  {
+   "category": "vitamin_d3",
+   "brand": "Nutergia",
+   "name": "Ergy D",
+   "variant": "flacon 15 ml · 340 gouttes",
+   "price_eur": 9.49,
+   "price_note": "Pharma GDD live 07/2026",
+   "units_pack": 340,
+   "unit_name": "drop",
+   "units_per_day": 5,
+   "active_per_unit": 200,
+   "active_unit": "IU",
+   "form": "cholécalciférol (D3) de lanoline, huile de tournesol oléique + vitamine E",
+   "vegan": false,
+   "additives": [],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/ergy-d-15-ml",
+   "ean": "3664524001850",
+   "notes": "Adulte 3-5 gouttes/j (600-1000 UI).",
+   "id": "nutergia-ergy-d-flacon-15-ml-340-gouttes",
+   "form_tier": 20,
+   "form_note": "Documented D3 source (lichen or lanolin).",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.14,
+    "std": 0.14,
+    "std_label": "€ / 1000 IU",
+    "days_per_pack": 68,
+    "price_tier": 3
+   },
+   "label_hash": "522fee884cc1",
+   "rank_in_category": 8
+  },
+  {
+   "category": "vitamin_d3",
+   "brand": "Fleurance Nature",
+   "name": "Vitamine D3",
+   "variant": "flacon 15 ml · ~300 gouttes",
+   "price_eur": 9.9,
+   "price_note": "fleurancenature.fr live 07/2026",
+   "units_pack": 300,
+   "unit_name": "drop",
+   "units_per_day": 4,
+   "active_per_unit": 500,
+   "active_unit": "IU",
+   "form": "cholécalciférol (D3) de lanoline, huile vierge de colza + tocophérols naturels",
+   "vegan": false,
+   "additives": [
+    "antioxydants : tocophérols naturels"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "nombre de gouttes estimé"
+   ],
+   "confidence": "high",
+   "url": "https://www.fleurancenature.fr/p/vitamine-d3-17129.html",
+   "ean": null,
+   "notes": "1 goutte = 500 UI; 1-4 gouttes/j.",
+   "id": "fleurance-nature-vitamine-d3-flacon-15-ml-300-gouttes",
+   "form_tier": 20,
+   "form_note": "Documented D3 source (lichen or lanolin).",
+   "purity_tags": [],
+   "additives_detail": [
+    "antioxydants : tocophérols naturels"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.132,
+    "std": 0.066,
+    "std_label": "€ / 1000 IU",
+    "days_per_pack": 75,
+    "price_tier": 2
+   },
+   "label_hash": "845a292f2655",
+   "rank_in_category": 6
+  },
+  {
+   "category": "vitamin_d3",
+   "brand": "Vit'all+",
+   "name": "Vitamine D3 2000 UI",
+   "variant": "100 capsules",
+   "price_eur": 24.75,
+   "price_note": "vitalplus.com live 07/2026",
+   "units_pack": 100,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 2000,
+   "active_unit": "IU",
+   "form": "cholécalciférol de lanoline, huile d'olive vierge extra, capsule gélatine",
+   "vegan": false,
+   "additives": [
+    "gélatine (enrobage)",
+    "glycérine végétale"
+   ],
+   "certifications": [
+    "Fabriqué en France (Sarthe)"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.vitalplus.com/catalogue/articulations-capital-osseux/vitamine-d3-2000-ui-cholecalciferol-50-mcg/",
+   "ean": "3700195679049",
+   "notes": "50 µg/capsule.",
+   "id": "vit-all-vitamine-d3-2000-ui-100-capsules",
+   "form_tier": 20,
+   "form_note": "Documented D3 source (lichen or lanolin).",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélatine (enrobage)",
+    "glycérine végétale"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.247,
+    "std": 0.124,
+    "std_label": "€ / 1000 IU",
+    "days_per_pack": 100,
+    "price_tier": 3
+   },
+   "label_hash": "e8ecaf2dfc5d",
+   "rank_in_category": 7
+  },
+  {
+   "category": "vitamin_d3",
+   "brand": "Pure Encapsulations",
+   "name": "Vitamine D3 1000 UI",
+   "variant": "60 capsules",
+   "price_eur": 16.19,
+   "price_note": "Newpharma live 07/2026 (promo -29%)",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "IU",
+   "form": "cholécalciférol (lanoline), capsule végétale hypoallergénique",
+   "vegan": false,
+   "additives": [
+    "agent de charge : cellulose microcristalline"
+   ],
+   "certifications": [
+    "gamme hypoallergénique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.newpharma.fr/pure-encapsulations/522242/pure-encapsulations-vitamine-d3-1000ui-60-capsules.html",
+   "ean": null,
+   "notes": "Nestlé Health Science.",
+   "id": "pure-encapsulations-vitamine-d3-1000-ui-60-capsules",
+   "form_tier": 20,
+   "form_note": "Documented D3 source (lichen or lanolin).",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : cellulose microcristalline"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.27,
+    "std": 0.27,
+    "std_label": "€ / 1000 IU",
+    "days_per_pack": 60,
+    "price_tier": 5
+   },
+   "label_hash": "b26ac35d5283",
+   "rank_in_category": 9
+  },
+  {
+   "category": "vitamin_d3",
+   "brand": "Dieti Natura",
+   "name": "Vitamine D3",
+   "variant": "60 gélules",
+   "price_eur": 7.95,
+   "price_note": "dieti-natura.com live 07/2026",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "active_per_unit": 1000,
+   "active_unit": "IU",
+   "form": "cholécalciférol de lichen (100% végétale), fibres d'acacia + coco, gélule HPMC",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia (support)",
+    "farine de noix de coco"
+   ],
+   "certifications": [
+    "Sans OGM",
+    "Sans gluten"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dieti-natura.com/vitamine-d3.html",
+   "ean": null,
+   "notes": "D3 végétale petit prix, fabriqué en France.",
+   "id": "dieti-natura-vitamine-d3-60-gelules",
+   "form_tier": 20,
+   "form_note": "Documented D3 source (lichen or lanolin).",
+   "purity_tags": [
+    "bulking_filler",
+    "unknown"
+   ],
+   "additives_detail": [
+    "fibres d'acacia (support)",
+    "farine de noix de coco"
+   ],
+   "banned": [],
+   "review_flags": [
+    "farine de noix de coco"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.265,
+    "std": 0.133,
+    "std_label": "€ / 1000 IU",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "65af197a6db7",
    "rank_in_category": 11
+  },
+  {
+   "category": "magnesium",
+   "brand": "Nutergia",
+   "name": "Ergymag",
+   "variant": "45 gélules",
+   "price_eur": 10.38,
+   "price_note": "Pharma GDD live 07/2026",
+   "units_pack": 45,
+   "unit_name": "capsule",
+   "units_per_day": 3,
+   "active_per_unit": 100,
+   "active_unit": "mg elemental Mg",
+   "form": "4 formes : citrate + bisglycinate + marin (oxyde) + carbonate; avec zinc et vitamines B; gélule gélatine de poisson",
+   "vegan": false,
+   "additives": [
+    "anti-agglomérants : sels de magnésium d'acides gras",
+    "phosphate de calcium"
+   ],
+   "certifications": [
+    "Fondation Kousmine",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "mélange contenant de l'oxyde marin (biodisponibilité moindre)",
+    "300 mg/j au-dessus de l'UL EFSA supplémentaire"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/nutergia-ergymag-magnesium",
+   "ean": "3664524000112",
+   "notes": "3 gélules = 300 mg élémentaire.",
+   "id": "nutergia-ergymag-45-gelules",
+   "form_tier": 20,
+   "form_note": "Chelated magnesium — high bioavailability.",
+   "purity_tags": [
+    "anticaking",
+    "unknown"
+   ],
+   "additives_detail": [
+    "anti-agglomérants : sels de magnésium d'acides gras",
+    "phosphate de calcium"
+   ],
+   "banned": [],
+   "review_flags": [
+    "phosphate de calcium"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 17,
+    "purity": 26,
+    "transparency": 4,
+    "total": 67,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.692,
+    "std": 0.692,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 15,
+    "price_tier": 4
+   },
+   "label_hash": "92c5858bdf38",
+   "rank_in_category": 9
+  },
+  {
+   "category": "magnesium",
+   "brand": "Superdiet",
+   "name": "Magnésium marin et Vitamine B6",
+   "variant": "20 ampoules de 10 ml",
+   "price_eur": 17.8,
+   "price_note": "superdiet.com live 07/2026",
+   "units_pack": 20,
+   "unit_name": "ampoule",
+   "units_per_day": 1,
+   "active_per_unit": 262,
+   "active_unit": "mg elemental Mg",
+   "form": "magnésium marin (eau de mer atomisée) + vitamine B6",
+   "vegan": true,
+   "additives": [
+    "jus concentré de citron",
+    "arôme naturel de citron"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "apporte 0,5 g de sel par ampoule",
+    "262 mg/j au-dessus de l'UL EFSA supplémentaire"
+   ],
+   "confidence": "high",
+   "url": "https://www.superdiet.com/fr/p14372_magnesium_marin_et_vitamine_b6_20_ampoules.php",
+   "ean": null,
+   "notes": "70% VNR/ampoule, sans conservateur.",
+   "id": "superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml",
+   "form_tier": 4,
+   "form_note": "Oxide (incl. seawater 'marine') — lowest bioavailability.",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "jus concentré de citron",
+    "arôme naturel de citron"
+   ],
+   "banned": [],
+   "review_flags": [
+    "jus concentré de citron"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 4,
+    "dose": 17,
+    "purity": 28,
+    "transparency": 4,
+    "total": 53,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.89,
+    "std": 1.019,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 20,
+    "price_tier": 5
+   },
+   "label_hash": "011c281fa862",
+   "rank_in_category": 14
+  },
+  {
+   "category": "magnesium",
+   "brand": "Nat & Form",
+   "name": "Magnésium marin + Vitamine B6",
+   "variant": "80 gélules",
+   "price_eur": 6.19,
+   "price_note": "Redcare live 07/2026 (-42% vs PPC)",
+   "units_pack": 80,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 177,
+   "active_unit": "mg elemental Mg",
+   "form": "oxyde de magnésium marin + vitamine B6, gélule végétale",
+   "vegan": true,
+   "additives": [
+    "maltodextrine (agent de charge)"
+   ],
+   "certifications": [
+    "Fabriqué en France (Atlantic Nature)"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "forme oxyde (biodisponibilité moindre)"
+   ],
+   "confidence": "high",
+   "url": "https://www.redcare-pharmacie.fr/hygiene-et-sante/F00134466/nat-form-magnesium-marin-vitamine-b6.htm",
+   "ean": "3535400007474",
+   "notes": "177 mg élémentaire/gélule.",
+   "id": "nat-form-magnesium-marin-vitamine-b6-80-gelules",
+   "form_tier": 4,
+   "form_note": "Oxide (incl. seawater 'marine') — lowest bioavailability.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "maltodextrine (agent de charge)"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 4,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.077,
+    "std": 0.131,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 80,
+    "price_tier": 1
+   },
+   "label_hash": "0f2393986c93",
+   "rank_in_category": 12
+  },
+  {
+   "category": "magnesium",
+   "brand": "Fleurance Nature",
+   "name": "Magnésium marin-B6",
+   "variant": "60 comprimés",
+   "price_eur": 10.3,
+   "price_note": "fleurancenature.fr live 07/2026",
+   "units_pack": 60,
+   "unit_name": "tablet",
+   "units_per_day": 2,
+   "active_per_unit": 150,
+   "active_unit": "mg elemental Mg",
+   "form": "oxyde de magnésium marin (Mer Morte) + B6, diffusion progressive",
+   "vegan": true,
+   "additives": [
+    "agent de charge : sorbitol",
+    "antiagglomérant : stéarate de magnésium",
+    "hydroxypropylméthylcellulose"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "forme oxyde (biodisponibilité moindre)",
+    "300 mg/j au-dessus de l'UL EFSA supplémentaire"
+   ],
+   "confidence": "high",
+   "url": "https://www.fleurancenature.fr/p/magnesium-marin-b6-59310.html",
+   "ean": null,
+   "notes": "2 comprimés = 300 mg.",
+   "id": "fleurance-nature-magnesium-marin-b6-60-comprimes",
+   "form_tier": 4,
+   "form_note": "Oxide (incl. seawater 'marine') — lowest bioavailability.",
+   "purity_tags": [
+    "polyol",
+    "anticaking",
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : sorbitol",
+    "antiagglomérant : stéarate de magnésium",
+    "hydroxypropylméthylcellulose"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 4,
+    "dose": 17,
+    "purity": 24,
+    "transparency": 4,
+    "total": 49,
+    "grade": "D",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.343,
+    "std": 0.343,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "80f4af4bd8cb",
+   "rank_in_category": 16
+  },
+  {
+   "category": "magnesium",
+   "brand": "NHCO",
+   "name": "Magnésium Amino-chélaté",
+   "variant": "84 gélules",
+   "price_eur": 21.89,
+   "price_note": "Newpharma live 07/2026",
+   "units_pack": 84,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "active_per_unit": 125,
+   "active_unit": "mg elemental Mg",
+   "form": "bisglycinate de magnésium tamponné (bisglycinate + oxyde), gélule HPMC",
+   "vegan": true,
+   "additives": [
+    "anti-agglomérant : stéarate de magnésium végétal"
+   ],
+   "certifications": [
+    "B Corp (entreprise)"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "bisglycinate « tamponné » = contient aussi de l'oxyde"
+   ],
+   "confidence": "high",
+   "url": "https://www.newpharma.fr/nhco/860001/nhco-nutrition-magnesium-amino-chelate-84-gelules.html",
+   "ean": null,
+   "notes": "2 gélules = 250 mg (67% VNR).",
+   "id": "nhco-magnesium-amino-chelate-84-gelules",
+   "form_tier": 20,
+   "form_note": "Chelated magnesium — high bioavailability.",
+   "purity_tags": [
+    "anticaking"
+   ],
+   "additives_detail": [
+    "anti-agglomérant : stéarate de magnésium végétal"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.521,
+    "std": 0.625,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 42,
+    "price_tier": 4
+   },
+   "label_hash": "f12c5a3ea901",
+   "rank_in_category": 6
+  },
+  {
+   "category": "magnesium",
+   "brand": "Pure Encapsulations",
+   "name": "Glycinate de Magnésium",
+   "variant": "90 capsules",
+   "price_eur": 32.49,
+   "price_note": "Newpharma live 07/2026 (promo)",
+   "units_pack": 90,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 120,
+   "active_unit": "mg elemental Mg",
+   "form": "magnésium bisglycinate pur, capsule végétale hypoallergénique",
+   "vegan": true,
+   "additives": [
+    "palmitate d'ascorbyle (antioxydant)"
+   ],
+   "certifications": [
+    "gamme hypoallergénique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": false,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://www.newpharma.fr/pure-encapsulations/522236/pure-encapsulations-glycinate-de-magnesium-90-capsules.html",
+   "ean": null,
+   "notes": "120 mg élémentaire/capsule.",
+   "id": "pure-encapsulations-glycinate-de-magnesium-90-capsules",
+   "form_tier": 20,
+   "form_note": "Chelated magnesium — high bioavailability.",
+   "purity_tags": [],
+   "additives_detail": [
+    "palmitate d'ascorbyle (antioxydant)"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 0,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.361,
+    "std": 0.902,
+    "std_label": "€ / 300 mg Mg",
+    "days_per_pack": 90,
+    "price_tier": 5
+   },
+   "label_hash": "ab8cae194ca0",
+   "rank_in_category": 8
+  },
+  {
+   "category": "zinc",
+   "brand": "Nutergia",
+   "name": "Oligomax Zinc",
+   "variant": "flacon 150 ml · 30 doses",
+   "price_eur": 10.89,
+   "price_note": "Pharma GDD live 07/2026",
+   "units_pack": 30,
+   "unit_name": "ampoule",
+   "units_per_day": 1,
+   "active_per_unit": 5,
+   "active_unit": "mg elemental Zn",
+   "form": "gluconate de zinc en solution d'oligoéléments (eau de mer désodée + lithothamne)",
+   "vegan": true,
+   "additives": [
+    "conservateur : sorbate de potassium",
+    "correcteur d'acidité : hydroxyde de potassium",
+    "arôme naturel"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "dose modeste (5 mg = 50% VNR)"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/nutergia-oligomax-zinc-150-ml",
+   "ean": "3401560008678",
+   "notes": "Multi-oligoéléments avec Mn/Cu/Se.",
+   "id": "nutergia-oligomax-zinc-flacon-150-ml-30-doses",
+   "form_tier": 14,
+   "form_note": "Gluconate — modest bioavailability.",
+   "dose_tier": 20,
+   "dose_note": "5 mg elemental zinc/day — effective, within EFSA UL.",
+   "purity_tags": [
+    "unknown",
+    "unknown"
+   ],
+   "additives_detail": [
+    "conservateur : sorbate de potassium",
+    "correcteur d'acidité : hydroxyde de potassium",
+    "arôme naturel"
+   ],
+   "banned": [],
+   "review_flags": [
+    "conservateur : sorbate de potassium",
+    "correcteur d'acidité : hydroxyde de potassium"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 4,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.363,
+    "std": 1.089,
+    "std_label": "€ / 15 mg Zn",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "c149998dd0a0",
+   "rank_in_category": 9
+  },
+  {
+   "category": "zinc",
+   "brand": "NHCO",
+   "name": "Zinc bisglycinate",
+   "variant": "84 gélules",
+   "price_eur": 16.9,
+   "price_note": "nhco-nutrition.com live 07/2026",
+   "units_pack": 84,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 15,
+   "active_unit": "mg elemental Zn",
+   "form": "bisglycinate de zinc amino-chélaté + vitamine B5, gélule HPMC",
+   "vegan": true,
+   "additives": [
+    "agent de charge : cellulose microcristalline",
+    "anti-agglomérant : stéarate de magnésium végétal"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "B5 à 600% VNR"
+   ],
+   "confidence": "high",
+   "url": "https://nhco-nutrition.com/produit/zinc/",
+   "ean": null,
+   "notes": "12 semaines de cure.",
+   "id": "nhco-zinc-bisglycinate-84-gelules",
+   "form_tier": 20,
+   "form_note": "Bisglycinate — well-absorbed chelate.",
+   "dose_tier": 20,
+   "dose_note": "15 mg elemental zinc/day — effective, within EFSA UL.",
+   "purity_tags": [
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "agent de charge : cellulose microcristalline",
+    "anti-agglomérant : stéarate de magnésium végétal"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.201,
+    "std": 0.201,
+    "std_label": "€ / 15 mg Zn",
+    "days_per_pack": 84,
+    "price_tier": 3
+   },
+   "label_hash": "ce1beff553aa",
+   "rank_in_category": 5
+  },
+  {
+   "category": "zinc",
+   "brand": "Fleurance Nature",
+   "name": "Zinc Bisglycinate",
+   "variant": "90 gélules (pilulier verre)",
+   "price_eur": 16.5,
+   "price_note": "fleurancenature.fr live 07/2026",
+   "units_pack": 90,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 15,
+   "active_unit": "mg elemental Zn",
+   "form": "bisglycinate de zinc, gélule végétale HPMC",
+   "vegan": true,
+   "additives": [
+    "agent de charge : maltodextrine",
+    "antiagglomérant : stéarate de magnésium"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.fleurancenature.fr/p/zinc-bisglycinate-13355.html",
+   "ean": null,
+   "notes": "3 mois de cure, pilulier verre.",
+   "id": "fleurance-nature-zinc-bisglycinate-90-gelules-pilulier-verre",
+   "form_tier": 20,
+   "form_note": "Bisglycinate — well-absorbed chelate.",
+   "dose_tier": 20,
+   "dose_note": "15 mg elemental zinc/day — effective, within EFSA UL.",
+   "purity_tags": [
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "agent de charge : maltodextrine",
+    "antiagglomérant : stéarate de magnésium"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.183,
+    "std": 0.183,
+    "std_label": "€ / 15 mg Zn",
+    "days_per_pack": 90,
+    "price_tier": 2
+   },
+   "label_hash": "cd289aed06d2",
+   "rank_in_category": 4
+  },
+  {
+   "category": "zinc",
+   "brand": "Dieti Natura",
+   "name": "Zinc",
+   "variant": "60 gélules",
+   "price_eur": 4.5,
+   "price_note": "dieti-natura.com live 07/2026",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 2,
+   "active_per_unit": 7.5,
+   "active_unit": "mg elemental Zn",
+   "form": "pidolate de zinc, gélule HPMC",
+   "vegan": true,
+   "additives": [
+    "maltodextrine",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [
+    "Sans OGM",
+    "Sans gluten"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dieti-natura.com/zinc.html",
+   "ean": null,
+   "notes": "L'un des zincs les moins chers du marché FR.",
+   "id": "dieti-natura-zinc-60-gelules",
+   "form_tier": 14,
+   "form_note": "Unspecified zinc form.",
+   "dose_tier": 20,
+   "dose_note": "15 mg elemental zinc/day — effective, within EFSA UL.",
+   "purity_tags": [
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "maltodextrine",
+    "antiagglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 4,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.15,
+    "std": 0.15,
+    "std_label": "€ / 15 mg Zn",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "f2df3a57055c",
+   "rank_in_category": 8
+  },
+  {
+   "category": "vitamin_c",
+   "brand": "Superdiet",
+   "name": "Acérola 1000 Vitalité Bio",
+   "variant": "24 comprimés à croquer",
+   "price_eur": 11.74,
+   "price_note": "superdiet.com live 07/2026",
+   "units_pack": 24,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 170,
+   "active_unit": "mg vitamin C",
+   "form": "vitamine C 100% naturelle d'acérola bio titrée",
+   "vegan": true,
+   "additives": [
+    "sucre de canne bio",
+    "sucre de betterave bio",
+    "sirop de riz bio",
+    "fécule de manioc bio",
+    "arôme naturel fruits rouges bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "certifications": [
+    "Agriculture Biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "sucres ajoutés"
+   ],
+   "confidence": "high",
+   "url": "https://www.superdiet.com/fr/p91_acerola_1000_bio_24_comprimes.php",
+   "ean": null,
+   "notes": "212% VNR/comprimé.",
+   "id": "superdiet-acerola-1000-vitalite-bio-24-comprimes-a-croquer",
+   "form_tier": 18,
+   "form_note": "Buffered/whole-food vitamin C, gentle on the stomach.",
+   "dose_tier": 17,
+   "dose_note": "170 mg/day — at/above NRV.",
+   "purity_tags": [
+    "added_sugar",
+    "added_sugar",
+    "added_sugar",
+    "unknown",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "sucre de canne bio",
+    "sucre de betterave bio",
+    "sirop de riz bio",
+    "fécule de manioc bio",
+    "arôme naturel fruits rouges bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "banned": [],
+   "review_flags": [
+    "fécule de manioc bio"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 17,
+    "purity": 2,
+    "transparency": 14,
+    "total": 51,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.489,
+    "std": 2.877,
+    "std_label": "€ / 1000 mg C",
+    "days_per_pack": 24,
+    "price_tier": 3
+   },
+   "label_hash": "5250e97a92c2",
+   "rank_in_category": 10
+  },
+  {
+   "category": "vitamin_c",
+   "brand": "Nat & Form",
+   "name": "Acérola 1000 Bio",
+   "variant": "100 comprimés à croquer",
+   "price_eur": 12.69,
+   "price_note": "Pharma GDD live 07/2026",
+   "units_pack": 100,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 170,
+   "active_unit": "mg vitamin C",
+   "form": "extrait d'acérola bio titré 17% vitamine C naturelle",
+   "vegan": true,
+   "additives": [
+    "sucre bio",
+    "maltodextrine bio",
+    "arôme naturel fruits rouges bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "certifications": [
+    "Agriculture Biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "sucre ajouté"
+   ],
+   "confidence": "high",
+   "url": "https://www.pharma-gdd.com/fr/nat-form-acerola-1000-bio",
+   "ean": "3535400023139",
+   "notes": "Fabriqué en France (Atlantic Nature).",
+   "id": "nat-form-acerola-1000-bio-100-comprimes-a-croquer",
+   "form_tier": 18,
+   "form_note": "Buffered/whole-food vitamin C, gentle on the stomach.",
+   "dose_tier": 17,
+   "dose_note": "170 mg/day — at/above NRV.",
+   "purity_tags": [
+    "added_sugar",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "sucre bio",
+    "maltodextrine bio",
+    "arôme naturel fruits rouges bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 17,
+    "purity": 18,
+    "transparency": 14,
+    "total": 67,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.127,
+    "std": 0.746,
+    "std_label": "€ / 1000 mg C",
+    "days_per_pack": 100,
+    "price_tier": 2
+   },
+   "label_hash": "e0d4aece8220",
+   "rank_in_category": 5
+  },
+  {
+   "category": "vitamin_c",
+   "brand": "Fleurance Nature",
+   "name": "Acérola 1000 Bio",
+   "variant": "tube 20 comprimés",
+   "price_eur": 9.9,
+   "price_note": "fleurancenature.fr live 07/2026",
+   "units_pack": 20,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 160,
+   "active_unit": "mg vitamin C",
+   "form": "extrait d'acérola bio (Brésil) riche en vitamine C naturelle",
+   "vegan": true,
+   "additives": [
+    "sucre de canne bio",
+    "maltodextrine bio",
+    "arôme naturel orange bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "certifications": [
+    "Agriculture Biologique (Ecocert)"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "sucre ajouté"
+   ],
+   "confidence": "high",
+   "url": "https://www.fleurancenature.fr/p/vitaminnature-acerola-1000-bio-59276.html",
+   "ean": "3700211192767",
+   "notes": "200% VNR/comprimé.",
+   "id": "fleurance-nature-acerola-1000-bio-tube-20-comprimes",
+   "form_tier": 18,
+   "form_note": "Buffered/whole-food vitamin C, gentle on the stomach.",
+   "dose_tier": 17,
+   "dose_note": "160 mg/day — at/above NRV.",
+   "purity_tags": [
+    "added_sugar",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "sucre de canne bio",
+    "maltodextrine bio",
+    "arôme naturel orange bio",
+    "antiagglomérant : carbonate de magnésium"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 17,
+    "purity": 18,
+    "transparency": 14,
+    "total": 67,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.495,
+    "std": 3.094,
+    "std_label": "€ / 1000 mg C",
+    "days_per_pack": 20,
+    "price_tier": 3
+   },
+   "label_hash": "4f1d7edbd101",
+   "rank_in_category": 6
+  },
+  {
+   "category": "vitamin_c",
+   "brand": "Dieti Natura",
+   "name": "Acérola",
+   "variant": "25 comprimés",
+   "price_eur": 4.4,
+   "price_note": "dieti-natura.com live 07/2026 (promo -20%)",
+   "units_pack": 25,
+   "unit_name": "tablet",
+   "units_per_day": 1,
+   "active_per_unit": 440,
+   "active_unit": "mg vitamin C",
+   "form": "mélange acérola naturelle + ascorbate de sodium + acide L-ascorbique (majorité synthétique)",
+   "vegan": true,
+   "additives": [
+    "édulcorant : sorbitol",
+    "dextrose",
+    "arôme naturel fruits rouges",
+    "antiagglomérant : sels de magnésium d'acides gras",
+    "édulcorant : sucralose"
+   ],
+   "certifications": [
+    "Sans OGM",
+    "Sans gluten"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "positionné « naturel » mais majorité de vitamine C synthétique (336/440 mg)"
+   ],
+   "confidence": "high",
+   "url": "https://www.dieti-natura.com/acerola.html",
+   "ean": null,
+   "notes": "550% VNR/comprimé.",
+   "id": "dieti-natura-acerola-25-comprimes",
+   "form_tier": 18,
+   "form_note": "Buffered/whole-food vitamin C, gentle on the stomach.",
+   "dose_tier": 20,
+   "dose_note": "440 mg/day — saturating dose.",
+   "purity_tags": [
+    "polyol",
+    "added_sugar",
+    "anticaking",
+    "sweetener_d"
+   ],
+   "additives_detail": [
+    "édulcorant : sorbitol",
+    "dextrose",
+    "arôme naturel fruits rouges",
+    "antiagglomérant : sels de magnésium d'acides gras",
+    "édulcorant : sucralose"
+   ],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 12,
+    "transparency": 4,
+    "total": 54,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.176,
+    "std": 0.4,
+    "std_label": "€ / 1000 mg C",
+    "days_per_pack": 25,
+    "price_tier": 2
+   },
+   "label_hash": "96a53dbea006",
+   "rank_in_category": 9
+  },
+  {
+   "category": "vitamin_c",
+   "brand": "Pure Encapsulations",
+   "name": "Vitamine C 1000 Tamponnée",
+   "variant": "90 capsules",
+   "price_eur": 27.65,
+   "price_note": "Newpharma live 07/2026 (promo)",
+   "units_pack": 90,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "mg vitamin C",
+   "form": "ascorbates minéraux tamponnés (pH neutre), capsule végétale hypoallergénique",
+   "vegan": true,
+   "additives": [],
+   "certifications": [
+    "gamme hypoallergénique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": false,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://www.newpharma.fr/pure-encapsulations/600745/pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules.html",
+   "ean": null,
+   "notes": "Douce pour l'estomac.",
+   "id": "pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules",
+   "form_tier": 16,
+   "form_note": "Plain ascorbic acid — effective, standard form.",
+   "dose_tier": 20,
+   "dose_note": "1000 mg/day — saturating dose.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 0,
+    "total": 66,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.307,
+    "std": 0.307,
+    "std_label": "€ / 1000 mg C",
+    "days_per_pack": 90,
+    "price_tier": 2
+   },
+   "label_hash": "a365816e618c",
+   "rank_in_category": 7
   },
   {
    "category": "probiotics",
@@ -5239,10 +8159,10 @@ const KLEERER_DATA = {
     "std": 0.663,
     "std_label": "€ / day",
     "days_per_pack": 30,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "317f41383f99",
-   "rank_in_category": 3
+   "rank_in_category": 4
   },
   {
    "category": "probiotics",
@@ -5323,7 +8243,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "329ef5c7bca8",
-   "rank_in_category": 2
+   "rank_in_category": 3
   },
   {
    "category": "probiotics",
@@ -5402,7 +8322,7 @@ const KLEERER_DATA = {
     "price_tier": 3
    },
    "label_hash": "ae4053f4505b",
-   "rank_in_category": 5
+   "rank_in_category": 7
   },
   {
    "category": "probiotics",
@@ -5481,10 +8401,10 @@ const KLEERER_DATA = {
     "std": 0.696,
     "std_label": "€ / day",
     "days_per_pack": 30,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "66c16853fc7f",
-   "rank_in_category": 4
+   "rank_in_category": 5
   },
   {
    "category": "probiotics",
@@ -5563,7 +8483,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "e2cd75d4657f",
-   "rank_in_category": 6
+   "rank_in_category": 8
   },
   {
    "category": "probiotics",
@@ -5642,7 +8562,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "9a5313cb37c5",
-   "rank_in_category": 1
+   "rank_in_category": 2
   },
   {
    "category": "probiotics",
@@ -5719,7 +8639,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "141a2c451718",
-   "rank_in_category": 7
+   "rank_in_category": 10
   },
   {
    "category": "melatonin",
@@ -5789,7 +8709,7 @@ const KLEERER_DATA = {
     "std": 0.397,
     "std_label": "€ / day",
     "days_per_pack": 30,
-    "price_tier": 2
+    "price_tier": 3
    },
    "label_hash": "3a3d619091d5",
    "rank_in_category": 2
@@ -5963,7 +8883,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "c665e1e1ec73",
-   "rank_in_category": 6
+   "rank_in_category": 9
   },
   {
    "category": "melatonin",
@@ -6059,7 +8979,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "1828fad9f870",
-   "rank_in_category": 5
+   "rank_in_category": 8
   },
   {
    "category": "melatonin",
@@ -6143,10 +9063,10 @@ const KLEERER_DATA = {
     "std": 0.74,
     "std_label": "€ / day",
     "days_per_pack": 15,
-    "price_tier": 4
+    "price_tier": 5
    },
    "label_hash": "0a15bb96beb3",
-   "rank_in_category": 4
+   "rank_in_category": 7
   },
   {
    "category": "melatonin",
@@ -6229,6 +9149,1069 @@ const KLEERER_DATA = {
   },
   {
    "category": "whey",
+   "format": "powder",
+   "brand": "InShape Nutrition",
+   "name": "Whey Protein",
+   "variant": "neutre · 1 kg",
+   "price_eur": 39.9,
+   "price_note": "inshape-nutrition.com live 07/2026",
+   "pack_g": 1000,
+   "serving_g": 30,
+   "active_per_100g": 81,
+   "active_per_serving_g": 24.3,
+   "form": "concentré de whey (WPC)",
+   "vegan": false,
+   "additives": [
+    "arômes (parfums aromatisés)"
+   ],
+   "certifications": [
+    "HACCP"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": false,
+   "flags": [
+    "liste complète non publiée en ligne"
+   ],
+   "confidence": "medium",
+   "url": "https://www.inshape-nutrition.com/products/whey-protein",
+   "ean": null,
+   "notes": "Marque Tibo InShape, made in France.",
+   "id": "inshape-nutrition-whey-protein-neutre-1-kg",
+   "form_tier": 14,
+   "form_note": "Standard whey concentrate.",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "arômes (parfums aromatisés)"
+   ],
+   "banned": [],
+   "review_flags": [
+    "arômes (parfums aromatisés)"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 0,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.197,
+    "std": 1.231,
+    "std_label": "€ / 25 g protein",
+    "days_per_pack": 33,
+    "price_tier": 2
+   },
+   "label_hash": "a1709a5258f4",
+   "rank_in_category": 11
+  },
+  {
+   "category": "whey",
+   "format": "powder",
+   "brand": "Corength (Decathlon)",
+   "name": "Whey Protéine",
+   "variant": "chocolat · 900 g",
+   "price_eur": 26.99,
+   "price_note": "Alltricks live 07/2026 (Decathlon 28,99-31,99)",
+   "pack_g": 900,
+   "serving_g": 30,
+   "active_per_100g": 70,
+   "active_per_serving_g": 21,
+   "form": "concentré de whey (WPC)",
+   "vegan": false,
+   "additives": [
+    "arômes naturels",
+    "édulcorant : glycosides de stéviol"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": false,
+   "flags": [
+    "étiquette partielle en ligne"
+   ],
+   "confidence": "medium",
+   "url": "https://www.alltricks.com/F-11928-nutrition/P-2696524-decathlon_nutrition_whey_protein_powder_chocolate_900g",
+   "ean": null,
+   "notes": "Édulcoré à la stévia (tier A neutre).",
+   "id": "corength-decathlon-whey-proteine-chocolat-900-g",
+   "form_tier": 14,
+   "form_note": "Standard whey concentrate.",
+   "purity_tags": [
+    "unknown"
+   ],
+   "additives_detail": [
+    "arômes naturels",
+    "édulcorant : glycosides de stéviol"
+   ],
+   "banned": [],
+   "review_flags": [
+    "arômes naturels"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 14,
+    "purity": 28,
+    "transparency": 0,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.9,
+    "std": 1.071,
+    "std_label": "€ / 25 g protein",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "11cba7b55bc2",
+   "rank_in_category": 15
+  },
+  {
+   "category": "whey",
+   "format": "powder",
+   "brand": "Scitec Nutrition",
+   "name": "100% Whey Protein Professional",
+   "variant": "500 g",
+   "price_eur": 34.9,
+   "price_note": "Optigura live 07/2026",
+   "pack_g": 500,
+   "serving_g": 30,
+   "active_per_100g": 73.3,
+   "active_per_serving_g": 22,
+   "form": "mélange concentré (WPC) + isolat (WPI)",
+   "vegan": false,
+   "additives": [
+    "émulsifiant : lécithines (soja)",
+    "arômes",
+    "épaississant : gomme de xanthane",
+    "édulcorant : acésulfame-K",
+    "édulcorant : sucralose",
+    "antiagglomérant : dioxyde de silicium"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "acides aminés libres ajoutés (taurine/glutamine) gonflent la teneur protéique"
+   ],
+   "confidence": "high",
+   "url": "https://www.optigura.fr/product/100-whey-protein-professional",
+   "ean": null,
+   "notes": "Étiquette complète vérifiée.",
+   "id": "scitec-nutrition-100-whey-protein-professional-500-g",
+   "form_tier": 18,
+   "form_note": "Isolate-led.",
+   "purity_tags": [
+    "lecithin",
+    "unknown",
+    "thickener",
+    "sweetener_c",
+    "sweetener_d",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "émulsifiant : lécithines (soja)",
+    "arômes",
+    "épaississant : gomme de xanthane",
+    "édulcorant : acésulfame-K",
+    "édulcorant : sucralose",
+    "antiagglomérant : dioxyde de silicium"
+   ],
+   "banned": [],
+   "review_flags": [
+    "arômes"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 14,
+    "purity": 12,
+    "transparency": 4,
+    "total": 48,
+    "grade": "D",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 2.094,
+    "std": 2.381,
+    "std_label": "€ / 25 g protein",
+    "days_per_pack": 17,
+    "price_tier": 5
+   },
+   "label_hash": "6a954e06eebb",
+   "rank_in_category": 17
+  },
+  {
+   "category": "whey",
+   "format": "powder",
+   "brand": "Nutrimuscle",
+   "name": "Native Whey Isolate",
+   "variant": "chocolat · 1 kg",
+   "price_eur": 58.95,
+   "price_note": "toutelanutrition.com live 07/2026",
+   "pack_g": 1000,
+   "serving_g": 30,
+   "active_per_100g": 81.3,
+   "active_per_serving_g": 24.4,
+   "form": "isolat de whey native non instantanéisé (94%), microfiltration à froid",
+   "vegan": false,
+   "additives": [
+    "cacao maigre bio 4,7%",
+    "arômes",
+    "inuline",
+    "lactase",
+    "Bacillus coagulans GBI-30 6086",
+    "édulcorant : sucralose"
+   ],
+   "certifications": [
+    "AFNOR NF EN 17444 (antidopage)"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": "Bacillus coagulans GBI-30 6086",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutrimuscle.com/products/whey-native-isolate",
+   "ean": null,
+   "notes": "Variante isolate de la whey native.",
+   "id": "nutrimuscle-native-whey-isolate-chocolat-1-kg",
+   "form_tier": 20,
+   "form_note": "Native isolate — the top milk-protein form.",
+   "purity_tags": [
+    "unknown",
+    "unknown",
+    "sweetener_d"
+   ],
+   "additives_detail": [
+    "cacao maigre bio 4,7%",
+    "arômes",
+    "inuline",
+    "lactase",
+    "Bacillus coagulans GBI-30 6086",
+    "édulcorant : sucralose"
+   ],
+   "banned": [],
+   "review_flags": [
+    "arômes",
+    "Bacillus coagulans GBI-30 6086"
+   ],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": "Bacillus coagulans GBI-30 6086",
+    "full_label": true
+   },
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 20,
+    "transparency": 30,
+    "total": 90,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.768,
+    "std": 1.813,
+    "std_label": "€ / 25 g protein",
+    "days_per_pack": 33,
+    "price_tier": 5
+   },
+   "label_hash": "e4f52f188e9e",
+   "rank_in_category": 2
+  },
+  {
+   "category": "creatine",
+   "format": "powder",
+   "brand": "InShape Nutrition",
+   "name": "Créatine en poudre",
+   "variant": "neutre · 300 g",
+   "price_eur": 29.9,
+   "price_note": "inshape-nutrition.com live 07/2026",
+   "pack_g": 300,
+   "serving_g": 4,
+   "active_per_100g": 87.9,
+   "active_per_serving_g": 3.5,
+   "form": "créatine monohydrate micronisée (non Creapure)",
+   "vegan": true,
+   "additives": [],
+   "certifications": [
+    "HACCP"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": false,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://www.inshape-nutrition.com/products/creatine-en-poudre",
+   "ean": null,
+   "notes": "75 doses de 4 g, sans additifs.",
+   "id": "inshape-nutrition-creatine-en-poudre-neutre-300-g",
+   "form_tier": 20,
+   "form_note": "Documented-purity Creapure® monohydrate.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 0,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.399,
+    "std": 0.34,
+    "std_label": "€ / 3 g creatine",
+    "days_per_pack": 75,
+    "price_tier": 5
+   },
+   "label_hash": "1203712e222f",
+   "rank_in_category": 16
+  },
+  {
+   "category": "creatine",
+   "format": "powder",
+   "brand": "Corength (Decathlon)",
+   "name": "Créatine monohydrate Creapure®",
+   "variant": "neutre · 300 g",
+   "price_eur": 18.99,
+   "price_note": "relevés 2026, page Decathlon en JS (non vérifié live)",
+   "pack_g": 300,
+   "serving_g": 3,
+   "active_per_100g": 87.9,
+   "active_per_serving_g": 2.6,
+   "form": "créatine monohydrate Creapure® micronisée",
+   "vegan": true,
+   "additives": [],
+   "certifications": [
+    "Creapure®"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": "Creapure®",
+   "full_label": false,
+   "flags": [
+    "prix non vérifié en direct"
+   ],
+   "confidence": "medium",
+   "url": "https://www.decathlon.fr/p/creatine-monohydrate-creapure-gout-neutre-300g/_/R-p-327680",
+   "ean": null,
+   "notes": "~63 €/kg : le Creapure le moins cher du panel.",
+   "id": "corength-decathlon-creatine-monohydrate-creapure-neutre-300-g",
+   "form_tier": 20,
+   "form_note": "Documented-purity Creapure® monohydrate.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": "Creapure®",
+    "full_label": false
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 12,
+    "purity": 30,
+    "transparency": 14,
+    "total": 76,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.19,
+    "std": 0.216,
+    "std_label": "€ / 3 g creatine",
+    "days_per_pack": 100,
+    "price_tier": 2
+   },
+   "label_hash": "a64b23f22098",
+   "rank_in_category": 13
+  },
+  {
+   "category": "creatine",
+   "format": "powder",
+   "brand": "nutriting",
+   "name": "nuCrea+",
+   "variant": "poudre · 500 g",
+   "price_eur": 39.9,
+   "price_note": "nutriting.com live 07/2026",
+   "pack_g": 500,
+   "serving_g": 3,
+   "active_per_100g": 87.9,
+   "active_per_serving_g": 2.6,
+   "form": "créatine monohydrate Creapure® micronisée, ingrédient unique",
+   "vegan": true,
+   "additives": [],
+   "certifications": [
+    "Creapure®"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": "Creapure®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutriting.com/nu-shop/complement-alimentaire-creatine",
+   "ean": null,
+   "notes": "Poudre 100% Creapure.",
+   "id": "nutriting-nucrea-poudre-500-g",
+   "form_tier": 20,
+   "form_note": "Documented-purity Creapure® monohydrate.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": "Creapure®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 12,
+    "purity": 30,
+    "transparency": 18,
+    "total": 80,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.239,
+    "std": 0.272,
+    "std_label": "€ / 3 g creatine",
+    "days_per_pack": 167,
+    "price_tier": 3
+   },
+   "label_hash": "9cde4715119c",
+   "rank_in_category": 12
+  },
+  {
+   "category": "creatine",
+   "format": "powder",
+   "brand": "BioTechUSA",
+   "name": "100% Creatine Monohydrate",
+   "variant": "neutre · 500 g",
+   "price_eur": 47.9,
+   "price_note": "shop.biotechusa.fr live 07/2026 (~35,90 via Decathlon marketplace)",
+   "pack_g": 500,
+   "serving_g": 3.4,
+   "active_per_100g": 88.2,
+   "active_per_serving_g": 3,
+   "form": "créatine monohydrate micronisée 200 mesh (non Creapure)",
+   "vegan": true,
+   "additives": [],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "atelier multi-allergènes"
+   ],
+   "confidence": "high",
+   "url": "https://shop.biotechusa.fr/products/100-micronized-creatine-monohydrate-500-g",
+   "ean": null,
+   "notes": "147 doses.",
+   "id": "biotechusa-100-creatine-monohydrate-neutre-500-g",
+   "form_tier": 20,
+   "form_note": "Documented-purity Creapure® monohydrate.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.326,
+    "std": 0.326,
+    "std_label": "€ / 3 g creatine",
+    "days_per_pack": 147,
+    "price_tier": 4
+   },
+   "label_hash": "51a285fd033c",
+   "rank_in_category": 14
+  },
+  {
+   "category": "creatine",
+   "format": "powder",
+   "brand": "Olimp Sport Nutrition",
+   "name": "Creatine Monohydrate Creapure®",
+   "variant": "neutre · 500 g",
+   "price_eur": 46.5,
+   "price_note": "olimpstore.fr live 07/2026 (~26-30 chez revendeurs)",
+   "pack_g": 500,
+   "serving_g": 3.4,
+   "active_per_100g": 88,
+   "active_per_serving_g": 3,
+   "form": "créatine monohydrate Creapure® micronisée",
+   "vegan": true,
+   "additives": [],
+   "certifications": [
+    "Creapure®"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": "Creapure®",
+   "full_label": true,
+   "flags": [
+    "prix direct premium"
+   ],
+   "confidence": "high",
+   "url": "https://olimpstore.fr/olimp-creatine-monohydrate-powder-creapure-500-g-95",
+   "ean": null,
+   "notes": "Étiquette complète vérifiée (88 g/100 g).",
+   "id": "olimp-sport-nutrition-creatine-monohydrate-creapure-neutre-500-g",
+   "form_tier": 20,
+   "form_note": "Documented-purity Creapure® monohydrate.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": "Creapure®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 18,
+    "total": 88,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.316,
+    "std": 0.317,
+    "std_label": "€ / 3 g creatine",
+    "days_per_pack": 147,
+    "price_tier": 4
+   },
+   "label_hash": "11565ad1e463",
+   "rank_in_category": 8
+  },
+  {
+   "category": "collagen",
+   "format": "powder",
+   "brand": "nutriting",
+   "name": "nuCollagen",
+   "variant": "neutre · 300 g",
+   "price_eur": 24.9,
+   "price_note": "nutriting.com live 07/2026",
+   "pack_g": 300,
+   "serving_g": 15,
+   "active_per_100g": 100,
+   "active_per_serving_g": 15,
+   "form": "collagène bovin hydrolysé type I (grass fed, Brésil), ingrédient unique",
+   "vegan": false,
+   "additives": [],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutriting.com/nu-shop/complement-alimentaire-collagene",
+   "ean": null,
+   "notes": "20 portions de 15 g, sans additif.",
+   "id": "nutriting-nucollagen-neutre-300-g",
+   "form_tier": 16,
+   "form_note": "Generic hydrolysed peptides.",
+   "collagen_g_day": 15,
+   "dose_tier": 20,
+   "dose_note": "15 g peptides/day — in the studied range.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.245,
+    "std": 0.83,
+    "std_label": "€ / 10 g collagen",
+    "days_per_pack": 20,
+    "price_tier": 2
+   },
+   "label_hash": "e4764f06ea33",
+   "rank_in_category": 9
+  },
+  {
+   "category": "collagen",
+   "format": "powder",
+   "brand": "Colpropur",
+   "name": "Colpropur Care",
+   "variant": "neutre · 300 g",
+   "price_eur": 32.0,
+   "price_note": "PVC officiel (29,90-35,90 en pharmacie, non vérifié live)",
+   "pack_g": 300,
+   "serving_g": 10,
+   "active_per_100g": 100,
+   "active_per_serving_g": 10,
+   "form": "collagène hydrolysé COLPROPUR (Protein S.A.) + vitamine C",
+   "vegan": false,
+   "additives": [],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Colpropur®",
+   "full_label": true,
+   "flags": [
+    "prix non vérifié en direct"
+   ],
+   "confidence": "medium",
+   "url": "https://www.atida.fr/colpropur-care-neutre-collagene-hydrolyse-30-doses-300g.html",
+   "ean": null,
+   "notes": "Distribué dans 2000+ pharmacies FR.",
+   "id": "colpropur-colpropur-care-neutre-300-g",
+   "form_tier": 16,
+   "form_note": "Generic hydrolysed peptides.",
+   "collagen_g_day": 10,
+   "dose_tier": 20,
+   "dose_note": "10 g peptides/day — in the studied range.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Colpropur®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 8,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.067,
+    "std": 1.067,
+    "std_label": "€ / 10 g collagen",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "85c2cf341a23",
+   "rank_in_category": 5
+  },
+  {
+   "category": "collagen",
+   "format": "powder",
+   "brand": "Vital Proteins",
+   "name": "Collagen Peptides",
+   "variant": "neutre · 567 g",
+   "price_eur": 33.99,
+   "price_note": "Redcare live 07/2026 (-24% vs PPC 44,90)",
+   "pack_g": 567,
+   "serving_g": 20,
+   "active_per_100g": 100,
+   "active_per_serving_g": 20,
+   "form": "peptides de collagène bovin hydrolysés, ingrédient unique",
+   "vegan": false,
+   "additives": [],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "traces de lait possibles"
+   ],
+   "confidence": "high",
+   "url": "https://www.redcare-pharmacie.fr/beaute/F00374775/vital-proteins-collagen-peptides.htm",
+   "ean": "0850008654305",
+   "notes": "Nestlé Health Science, ~28 portions.",
+   "id": "vital-proteins-collagen-peptides-neutre-567-g",
+   "form_tier": 16,
+   "form_note": "Generic hydrolysed peptides.",
+   "collagen_g_day": 20,
+   "dose_tier": 20,
+   "dose_note": "20 g peptides/day — in the studied range.",
+   "purity_tags": [],
+   "additives_detail": [],
+   "banned": [],
+   "review_flags": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.199,
+    "std": 0.599,
+    "std_label": "€ / 10 g collagen",
+    "days_per_pack": 28,
+    "price_tier": 2
+   },
+   "label_hash": "96cd99a3a001",
+   "rank_in_category": 8
+  },
+  {
+   "category": "collagen",
+   "format": "powder",
+   "brand": "Olimp Sport Nutrition",
+   "name": "Collaregen",
+   "variant": "400 g",
+   "price_eur": 32.99,
+   "price_note": "olimpstore.fr live 07/2026",
+   "pack_g": 400,
+   "serving_g": 5.5,
+   "active_per_100g": 90.9,
+   "active_per_serving_g": 5,
+   "form": "hydrolysat de gélatine (origine animale, type non précisé) + vit C PureWay-C",
+   "vegan": false,
+   "additives": [
+    "correcteur d'acidité : acide malique",
+    "acide citrique",
+    "maltodextrine",
+    "arômes",
+    "édulcorant : sucralose",
+    "édulcorant : cyclamates",
+    "colorants selon parfum (E150c, E133, bleu patenté V, E132...)"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "PureWay-C®",
+   "full_label": true,
+   "flags": [
+    "cyclamates",
+    "multiples colorants selon parfum"
+   ],
+   "confidence": "high",
+   "url": "https://olimpstore.fr/olimp-collaregen-400-g-90",
+   "ean": null,
+   "notes": "5 g collagène/dose de 5,5 g.",
+   "id": "olimp-sport-nutrition-collaregen-400-g",
+   "form_tier": 16,
+   "form_note": "Generic hydrolysed peptides.",
+   "collagen_g_day": 5,
+   "dose_tier": 20,
+   "dose_note": "5 g peptides/day — in the studied range.",
+   "purity_tags": [
+    "unknown",
+    "bulking_filler",
+    "unknown",
+    "sweetener_d",
+    "sweetener_b"
+   ],
+   "additives_detail": [
+    "correcteur d'acidité : acide malique",
+    "acide citrique",
+    "maltodextrine",
+    "arômes",
+    "édulcorant : sucralose",
+    "édulcorant : cyclamates",
+    "colorants selon parfum (E150c, E133, bleu patenté V, E132...)"
+   ],
+   "banned": [],
+   "review_flags": [
+    "correcteur d'acidité : acide malique",
+    "arômes"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "PureWay-C®",
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 16,
+    "transparency": 8,
+    "total": 60,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.454,
+    "std": 0.907,
+    "std_label": "€ / 10 g collagen",
+    "days_per_pack": 73,
+    "price_tier": 2
+   },
+   "label_hash": "03c6f69d8b46",
+   "rank_in_category": 13
+  },
+  {
+   "category": "collagen",
+   "format": "powder",
+   "brand": "BioTechUSA",
+   "name": "Collagen",
+   "variant": "framboise noire · 300 g",
+   "price_eur": 33.9,
+   "price_note": "shop.biotechusa.fr live 07/2026",
+   "pack_g": 300,
+   "serving_g": 15,
+   "active_per_100g": 88,
+   "active_per_serving_g": 13,
+   "form": "collagène bovin hydrolysé 88% + acide hyaluronique + vit C/E",
+   "vegan": false,
+   "additives": [
+    "acidifiant : acide citrique",
+    "antiagglomérant : oxyde de magnésium",
+    "arômes",
+    "graisse de coco partiellement hydrogénée",
+    "lait écrémé en poudre",
+    "émulsifiants : E471, E472a",
+    "sirop de glucose",
+    "saccharose",
+    "édulcorant : sucralose",
+    "colorant : E129 rouge allura AC",
+    "colorant : E132 indigotine"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "avertissement E129 activité/attention des enfants sur l'étiquette",
+    "contient lait"
+   ],
+   "confidence": "high",
+   "url": "https://shop.biotechusa.fr/products/collagen-300-g",
+   "ean": null,
+   "notes": "20 doses de 15 g.",
+   "id": "biotechusa-collagen-framboise-noire-300-g",
+   "form_tier": 16,
+   "form_note": "Generic hydrolysed peptides.",
+   "collagen_g_day": 13,
+   "dose_tier": 20,
+   "dose_note": "13 g peptides/day — in the studied range.",
+   "purity_tags": [
+    "unknown",
+    "unknown",
+    "banned",
+    "unknown",
+    "unknown",
+    "added_sugar",
+    "added_sugar",
+    "sweetener_d",
+    "artificial_colour",
+    "unknown"
+   ],
+   "additives_detail": [
+    "acidifiant : acide citrique",
+    "antiagglomérant : oxyde de magnésium",
+    "arômes",
+    "graisse de coco partiellement hydrogénée",
+    "lait écrémé en poudre",
+    "émulsifiants : E471, E472a",
+    "sirop de glucose",
+    "saccharose",
+    "édulcorant : sucralose",
+    "colorant : E129 rouge allura AC",
+    "colorant : E132 indigotine"
+   ],
+   "banned": [
+    "trans_fat"
+   ],
+   "review_flags": [
+    "antiagglomérant : oxyde de magnésium",
+    "arômes",
+    "lait écrémé en poudre",
+    "émulsifiants : E471, E472a",
+    "colorant : E132 indigotine"
+   ],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 0,
+    "transparency": 4,
+    "total": 0,
+    "grade": "E",
+    "red_card": true,
+    "banned_substances": [
+     "trans_fat"
+    ]
+   },
+   "value": {
+    "cost_per_day": 1.695,
+    "std": 1.284,
+    "std_label": "€ / 10 g collagen",
+    "days_per_pack": 20,
+    "price_tier": 2
+   },
+   "label_hash": "4e129cfd645f",
+   "rank_in_category": 16
+  },
+  {
+   "category": "whey",
    "brand": "Eiyolab",
    "name": "Native Whey HT",
    "variant": "vanille · 750 g",
@@ -6298,7 +10281,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "da04357a43e4",
-   "rank_in_category": 9
+   "rank_in_category": 10
   },
   {
    "category": "whey",
@@ -6376,7 +10359,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "c6389af1863b",
-   "rank_in_category": 11
+   "rank_in_category": 13
   },
   {
    "category": "whey",
@@ -6440,10 +10423,10 @@ const KLEERER_DATA = {
     "std": 1.678,
     "std_label": "€ / 25 g protein",
     "days_per_pack": 19,
-    "price_tier": 5
+    "price_tier": 4
    },
    "label_hash": "e345c9e3382e",
-   "rank_in_category": 3
+   "rank_in_category": 4
   },
   {
    "category": "whey",
@@ -6508,10 +10491,10 @@ const KLEERER_DATA = {
     "std": 1.494,
     "std_label": "€ / 25 g protein",
     "days_per_pack": 25,
-    "price_tier": 4
+    "price_tier": 3
    },
    "label_hash": "bd7732bf9668",
-   "rank_in_category": 7
+   "rank_in_category": 8
   },
   {
    "category": "whey",
@@ -6578,10 +10561,10 @@ const KLEERER_DATA = {
     "std": 1.622,
     "std_label": "€ / 25 g protein",
     "days_per_pack": 30,
-    "price_tier": 5
+    "price_tier": 4
    },
    "label_hash": "9085347891d5",
-   "rank_in_category": 2
+   "rank_in_category": 3
   },
   {
    "category": "whey",
@@ -6645,7 +10628,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "bc73b99dfec2",
-   "rank_in_category": 5
+   "rank_in_category": 6
   },
   {
    "category": "whey",
@@ -6735,7 +10718,7 @@ const KLEERER_DATA = {
     "price_tier": 4
    },
    "label_hash": "da1820dcdc34",
-   "rank_in_category": 6
+   "rank_in_category": 7
   },
   {
    "category": "creatine",
@@ -6864,7 +10847,7 @@ const KLEERER_DATA = {
     "std": 0.272,
     "std_label": "€ / 3 g creatine",
     "days_per_pack": 167,
-    "price_tier": 4
+    "price_tier": 3
    },
    "label_hash": "c786d817bb2a",
    "rank_in_category": 2
@@ -7059,7 +11042,7 @@ const KLEERER_DATA = {
     "std": 0.22,
     "std_label": "€ / 3 g creatine",
     "days_per_pack": 143,
-    "price_tier": 3
+    "price_tier": 2
    },
    "label_hash": "45862d6a093c",
    "rank_in_category": 7
@@ -7132,7 +11115,7 @@ const KLEERER_DATA = {
     "std": 0.273,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 60,
-    "price_tier": 4
+    "price_tier": 3
    },
    "label_hash": "3c4a6c80faed",
    "rank_in_category": 3
@@ -7283,7 +11266,7 @@ const KLEERER_DATA = {
     "std": 0.188,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 90,
-    "price_tier": 3
+    "price_tier": 2
    },
    "label_hash": "2a8d2c2a0ba8",
    "rank_in_category": 2
@@ -7365,10 +11348,10 @@ const KLEERER_DATA = {
     "std": 0.101,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 100,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "64e952baec95",
-   "rank_in_category": 5
+   "rank_in_category": 7
   },
   {
    "category": "zinc",
@@ -7445,10 +11428,10 @@ const KLEERER_DATA = {
     "std": 0.332,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 60,
-    "price_tier": 5
+    "price_tier": 3
    },
    "label_hash": "5d5100ba4f9a",
-   "rank_in_category": 4
+   "rank_in_category": 6
   },
   {
    "category": "zinc",
@@ -7521,10 +11504,10 @@ const KLEERER_DATA = {
     "std": 0.267,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 60,
-    "price_tier": 4
+    "price_tier": 3
    },
    "label_hash": "ae8b236664b3",
-   "rank_in_category": 7
+   "rank_in_category": 11
   },
   {
    "category": "zinc",
@@ -7595,10 +11578,10 @@ const KLEERER_DATA = {
     "std": 0.111,
     "std_label": "€ / 15 mg Zn",
     "days_per_pack": 120,
-    "price_tier": 1
+    "price_tier": 2
    },
    "label_hash": "745935b7a2e1",
-   "rank_in_category": 6
+   "rank_in_category": 10
   },
   {
    "category": "vitamin_c",
@@ -7974,7 +11957,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "042eb1941316",
-   "rank_in_category": 6
+   "rank_in_category": 11
   },
   {
    "category": "vitamin_c",
@@ -8070,7 +12053,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "f2800270cf1b",
-   "rank_in_category": 5
+   "rank_in_category": 8
   }
  ]
 };
