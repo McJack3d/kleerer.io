@@ -33,6 +33,15 @@ sources:
     ean: 3401560047585
     render: static
 
+  - id: biotechusa-collagen-framboise-noire-300-g
+    product_id: biotechusa-collagen-framboise-noire-300-g
+    brand: BioTechUSA
+    name: Collagen
+    category: collagen
+    url: https://shop.biotechusa.fr/products/collagen-300-g
+    ean: null
+    render: js
+
   - id: colnatur-colnatur-classic-neutre-306-g
     product_id: colnatur-colnatur-classic-neutre-306-g
     brand: Colnatur
@@ -41,6 +50,15 @@ sources:
     url: https://farma2go.com/fr/products/colnatur-soluble-collagene-neutro-classique-306g
     ean: null
     render: static
+
+  - id: colpropur-colpropur-care-neutre-300-g
+    product_id: colpropur-colpropur-care-neutre-300-g
+    brand: Colpropur
+    name: "Colpropur Care"
+    category: collagen
+    url: https://www.atida.fr/colpropur-care-neutre-collagene-hydrolyse-30-doses-300g.html
+    ean: null
+    render: js
 
   - id: d-lab-absolu-de-collagene-flacon-verre-84-comprimes
     product_id: d-lab-absolu-de-collagene-flacon-verre-84-comprimes
@@ -114,6 +132,33 @@ sources:
     ean: null
     render: static
 
+  - id: nutriting-nucollagen-neutre-300-g
+    product_id: nutriting-nucollagen-neutre-300-g
+    brand: nutriting
+    name: nuCollagen
+    category: collagen
+    url: https://www.nutriting.com/nu-shop/complement-alimentaire-collagene
+    ean: null
+    render: js
+
+  - id: olimp-sport-nutrition-collaregen-400-g
+    product_id: olimp-sport-nutrition-collaregen-400-g
+    brand: "Olimp Sport Nutrition"
+    name: Collaregen
+    category: collagen
+    url: https://olimpstore.fr/olimp-collaregen-400-g-90
+    ean: null
+    render: js
+
+  - id: vital-proteins-collagen-peptides-neutre-567-g
+    product_id: vital-proteins-collagen-peptides-neutre-567-g
+    brand: "Vital Proteins"
+    name: "Collagen Peptides"
+    category: collagen
+    url: https://www.redcare-pharmacie.fr/beaute/F00374775/vital-proteins-collagen-peptides.htm
+    ean: 0850008654305
+    render: static
+
   - id: am-nutrition-pure-creatine-creapure-nature-500-g
     product_id: am-nutrition-pure-creatine-creapure-nature-500-g
     brand: "AM Nutrition"
@@ -123,12 +168,57 @@ sources:
     ean: null
     render: js
 
+  - id: biotechusa-100-creatine-monohydrate-neutre-500-g
+    product_id: biotechusa-100-creatine-monohydrate-neutre-500-g
+    brand: BioTechUSA
+    name: "100% Creatine Monohydrate"
+    category: creatine
+    url: https://shop.biotechusa.fr/products/100-micronized-creatine-monohydrate-500-g
+    ean: null
+    render: js
+
+  - id: corength-decathlon-creatine-monohydrate-creapure-neutre-300-g
+    product_id: corength-decathlon-creatine-monohydrate-creapure-neutre-300-g
+    brand: "Corength (Decathlon)"
+    name: "Créatine monohydrate Creapure®"
+    category: creatine
+    url: https://www.decathlon.fr/p/creatine-monohydrate-creapure-gout-neutre-300g/_/R-p-327680
+    ean: null
+    render: js
+
+  - id: inshape-nutrition-creatine-en-poudre-neutre-300-g
+    product_id: inshape-nutrition-creatine-en-poudre-neutre-300-g
+    brand: "InShape Nutrition"
+    name: "Créatine en poudre"
+    category: creatine
+    url: https://www.inshape-nutrition.com/products/creatine-en-poudre
+    ean: null
+    render: js
+
   - id: nutri-co-creatine-monohydrate-creapure-neutre-300-g
     product_id: nutri-co-creatine-monohydrate-creapure-neutre-300-g
     brand: Nutri&Co
     name: "Créatine monohydrate Creapure®"
     category: creatine
     url: https://nutriandco.com/fr/produits/creatine
+    ean: null
+    render: js
+
+  - id: nutriting-nucrea-poudre-500-g
+    product_id: nutriting-nucrea-poudre-500-g
+    brand: nutriting
+    name: nuCrea+
+    category: creatine
+    url: https://www.nutriting.com/nu-shop/complement-alimentaire-creatine
+    ean: null
+    render: js
+
+  - id: olimp-sport-nutrition-creatine-monohydrate-creapure-neutre-500-g
+    product_id: olimp-sport-nutrition-creatine-monohydrate-creapure-neutre-500-g
+    brand: "Olimp Sport Nutrition"
+    name: "Creatine Monohydrate Creapure®"
+    category: creatine
+    url: https://olimpstore.fr/olimp-creatine-monohydrate-powder-creapure-500-g-95
     ean: null
     render: js
 
@@ -177,6 +267,15 @@ sources:
     ean: null
     render: js
 
+  - id: fleurance-nature-magnesium-marin-b6-60-comprimes
+    product_id: fleurance-nature-magnesium-marin-b6-60-comprimes
+    brand: "Fleurance Nature"
+    name: "Magnésium marin-B6"
+    category: magnesium
+    url: https://www.fleurancenature.fr/p/magnesium-marin-b6-59310.html
+    ean: null
+    render: js
+
   - id: forte-pharma-magnesium-300-marin-comprimes-56
     product_id: forte-pharma-magnesium-300-marin-comprimes-56
     brand: "Forté Pharma"
@@ -204,6 +303,33 @@ sources:
     ean: null
     render: static
 
+  - id: nat-form-magnesium-marin-vitamine-b6-80-gelules
+    product_id: nat-form-magnesium-marin-vitamine-b6-80-gelules
+    brand: "Nat & Form"
+    name: "Magnésium marin + Vitamine B6"
+    category: magnesium
+    url: https://www.redcare-pharmacie.fr/hygiene-et-sante/F00134466/nat-form-magnesium-marin-vitamine-b6.htm
+    ean: 3535400007474
+    render: static
+
+  - id: nhco-magnesium-amino-chelate-84-gelules
+    product_id: nhco-magnesium-amino-chelate-84-gelules
+    brand: NHCO
+    name: "Magnésium Amino-chélaté"
+    category: magnesium
+    url: https://www.newpharma.fr/nhco/860001/nhco-nutrition-magnesium-amino-chelate-84-gelules.html
+    ean: null
+    render: static
+
+  - id: nutergia-ergymag-45-gelules
+    product_id: nutergia-ergymag-45-gelules
+    brand: Nutergia
+    name: Ergymag
+    category: magnesium
+    url: https://www.pharma-gdd.com/fr/nutergia-ergymag-magnesium
+    ean: 3664524000112
+    render: js
+
   - id: nutrimuscle-complexe-magnesium-gelules-60
     product_id: nutrimuscle-complexe-magnesium-gelules-60
     brand: Nutrimuscle
@@ -222,6 +348,24 @@ sources:
     ean: null
     render: static
 
+  - id: pure-encapsulations-glycinate-de-magnesium-90-capsules
+    product_id: pure-encapsulations-glycinate-de-magnesium-90-capsules
+    brand: "Pure Encapsulations"
+    name: "Glycinate de Magnésium"
+    category: magnesium
+    url: https://www.newpharma.fr/pure-encapsulations/522236/pure-encapsulations-glycinate-de-magnesium-90-capsules.html
+    ean: null
+    render: static
+
+  - id: superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml
+    product_id: superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml
+    brand: Superdiet
+    name: "Magnésium marin et Vitamine B6"
+    category: magnesium
+    url: https://www.superdiet.com/fr/p14372_magnesium_marin_et_vitamine_b6_20_ampoules.php
+    ean: null
+    render: js
+
   - id: arkopharma-arkorelax-sommeil-fort-8h-30-comprimes-bicouches
     product_id: arkopharma-arkorelax-sommeil-fort-8h-30-comprimes-bicouches
     brand: Arkopharma
@@ -230,6 +374,15 @@ sources:
     url: https://fr.arkopharma.com/products/arkorelax-r-sommeil-fort-8h-copy
     ean: 3578835501230
     render: static
+
+  - id: bayer-euphytosenuit-lp-1-9-mg-30-comprimes-bi-couche
+    product_id: bayer-euphytosenuit-lp-1-9-mg-30-comprimes-bi-couche
+    brand: Bayer
+    name: "EuphytoseNuit LP 1,9 mg"
+    category: melatonin
+    url: https://www.euphytosegamme.fr/en-plus-de-dormir-reposez-vous/euphytosenuit-lp-comprimes
+    ean: 3534510001662
+    render: js
 
   - id: cuure-melatonine-90-gelules
     product_id: cuure-melatonine-90-gelules
@@ -249,6 +402,15 @@ sources:
     ean: null
     render: js
 
+  - id: iprad-chronodorm-melatonine-1-mg-30-comprimes-sublinguaux
+    product_id: iprad-chronodorm-melatonine-1-mg-30-comprimes-sublinguaux
+    brand: IPRAD
+    name: "ChronoDorm Mélatonine 1 mg"
+    category: melatonin
+    url: https://www.newpharma.fr/chronodorm/630660/chronodorm-melatonine-1mg-comprimes-sublinguaux-30.html
+    ean: 3401560082623
+    render: static
+
   - id: mium-lab-gummies-sommeil-sans-sucres-42-gommes
     product_id: mium-lab-gummies-sommeil-sans-sucres-42-gommes
     brand: "Mium Lab"
@@ -267,6 +429,15 @@ sources:
     ean: 3664798011050
     render: js
 
+  - id: valdispert-melatonine-1-9-mg-40-comprimes-orodispersibles
+    product_id: valdispert-melatonine-1-9-mg-40-comprimes-orodispersibles
+    brand: Valdispert
+    name: "Mélatonine 1,9 mg"
+    category: melatonin
+    url: https://www.valdispert.fr/product/valdispert-melatonine-1-9mg
+    ean: 3614810005383
+    render: js
+
   - id: zzzquil-sommeil-gummies-natura-30-gommes-fruits-des-bois
     product_id: zzzquil-sommeil-gummies-natura-30-gommes-fruits-des-bois
     brand: ZzzQuil
@@ -276,6 +447,15 @@ sources:
     ean: 8001841491110
     render: js
 
+  - id: alvityl-vitalite-a-avaler-40-comprimes
+    product_id: alvityl-vitalite-a-avaler-40-comprimes
+    brand: Alvityl
+    name: "Vitalité à avaler"
+    category: multivitamin
+    url: https://alvityl.fr/alvityl-produits/alvityl-vitalite-a-avaler/
+    ean: 3664492022864
+    render: js
+
   - id: argalys-multivitamines-et-mineraux-60-gelules
     product_id: argalys-multivitamines-et-mineraux-60-gelules
     brand: Argalys
@@ -283,6 +463,33 @@ sources:
     category: multivitamin
     url: https://www.argalys.com/products/multivitamines
     ean: 3760280070052
+    render: js
+
+  - id: arkopharma-azinc-vitalite-adulte-120-gelules
+    product_id: arkopharma-azinc-vitalite-adulte-120-gelules
+    brand: Arkopharma
+    name: "Azinc Vitalité Adulte"
+    category: multivitamin
+    url: https://fr.arkopharma.com/products/azinc-vitalite-gelules
+    ean: 3578835502800
+    render: static
+
+  - id: bayer-berocca-energie-30-comprimes
+    product_id: bayer-berocca-energie-30-comprimes
+    brand: Bayer
+    name: "Berocca Energie"
+    category: multivitamin
+    url: https://www.pharma-gdd.com/fr/berocca-energie-comprimes
+    ean: 3534510000665
+    render: js
+
+  - id: bion3-p-g-bion3-defense-adultes-30-comprimes
+    product_id: bion3-p-g-bion3-defense-adultes-30-comprimes
+    brand: "Bion3 (P&G)"
+    name: "Bion3 Défense Adultes"
+    category: multivitamin
+    url: https://www.bion3.com/fr-fr/produits/bion3-defense-comprimes
+    ean: 3401377618190
     render: js
 
   - id: cuure-multivitamines-60-gelules
@@ -321,6 +528,15 @@ sources:
     ean: null
     render: js
 
+  - id: isoxan-isoxan-adulte-20-comprimes
+    product_id: isoxan-isoxan-adulte-20-comprimes
+    brand: Isoxan
+    name: "Isoxan Adulte"
+    category: multivitamin
+    url: https://isoxan.com/produits/isoxan-adulte/
+    ean: 3401554166858
+    render: js
+
   - id: nutrimuscle-multivitamines-poudre-pot-60-g-88-doses
     product_id: nutrimuscle-multivitamines-poudre-pot-60-g-88-doses
     brand: Nutrimuscle
@@ -357,6 +573,15 @@ sources:
     ean: null
     render: js
 
+  - id: fleurance-nature-omega-3-omegavie-60-capsules
+    product_id: fleurance-nature-omega-3-omegavie-60-capsules
+    brand: "Fleurance Nature"
+    name: "Oméga 3 (Omegavie®)"
+    category: omega3
+    url: https://www.fleurancenature.fr/p/omega-3-13266.html
+    ean: 3700211132664
+    render: js
+
   - id: laboratoire-lescuyer-omega-3-60-capsules
     product_id: laboratoire-lescuyer-omega-3-60-capsules
     brand: "Laboratoire Lescuyer"
@@ -365,6 +590,15 @@ sources:
     url: https://www.laboratoire-lescuyer.com/cholesterol-cardiovasculaire/omega-3
     ean: 3701414500717
     render: static
+
+  - id: nat-form-omega-3-epax-90-capsules
+    product_id: nat-form-omega-3-epax-90-capsules
+    brand: "Nat & Form"
+    name: "Oméga-3 EPAX®"
+    category: omega3
+    url: https://www.nat-form.com/products/omega-3-premium
+    ean: null
+    render: js
 
   - id: novoma-omega-3-epax-120-capsules
     product_id: novoma-omega-3-epax-120-capsules
@@ -382,6 +616,33 @@ sources:
     category: omega3
     url: https://www.nutrimuscle.com/products/omega-3-epax
     ean: null
+    render: js
+
+  - id: om3-isodisnatura-om3-equilibre-emotionnel-60-capsules
+    product_id: om3-isodisnatura-om3-equilibre-emotionnel-60-capsules
+    brand: "OM3 (Isodisnatura)"
+    name: "OM3 Équilibre Émotionnel"
+    category: omega3
+    url: https://www.pharmaciedesdrakkars.com/om3-equilibre-emotionnel-19mg
+    ean: 5425013130011
+    render: js
+
+  - id: pure-encapsulations-epa-dha-essentiels-1000-mg-90-capsules
+    product_id: pure-encapsulations-epa-dha-essentiels-1000-mg-90-capsules
+    brand: "Pure Encapsulations"
+    name: "EPA/DHA Essentiels 1000 mg"
+    category: omega3
+    url: https://www.pureencapsulations.fr/produits/epadha-essentiels
+    ean: 1210000900548
+    render: js
+
+  - id: solaray-super-omega-3-7-9-120-capsules-molles
+    product_id: solaray-super-omega-3-7-9-120-capsules-molles
+    brand: Solaray
+    name: "Super Omega 3-7-9"
+    category: omega3
+    url: https://www.naturitas.fr/p/complements/acides-gras-et-omegas/huile-de-poisson/super-omega-3-7-9-120-capsules-solaray
+    ean: 0076280610093
     render: js
 
   - id: unae-omega-3-de-poissons-sauvages-msc-bouteille-150-ml
@@ -402,6 +663,15 @@ sources:
     ean: null
     render: js
 
+  - id: biocodex-symbiosys-alflorex-30-gelules
+    product_id: biocodex-symbiosys-alflorex-30-gelules
+    brand: Biocodex
+    name: "Symbiosys Alflorex+"
+    category: probiotics
+    url: https://www.symbiosys.fr/symbiosys-alflorex-v71890.html
+    ean: 3583310000146
+    render: js
+
   - id: biocyte-microbiote-atb-probiotiques-10-gelules
     product_id: biocyte-microbiote-atb-probiotiques-10-gelules
     brand: Biocyte
@@ -420,12 +690,30 @@ sources:
     ean: null
     render: js
 
+  - id: mayoly-spindler-probiolog-fort-30-gelules-gastro-resistantes
+    product_id: mayoly-spindler-probiolog-fort-30-gelules-gastro-resistantes
+    brand: "Mayoly Spindler"
+    name: "Probiolog Fort"
+    category: probiotics
+    url: https://www.pharma-gdd.com/fr/probiolog-fort
+    ean: 3760001040678
+    render: js
+
   - id: novoma-probiotiques-formule-probio-60-gelules
     product_id: novoma-probiotiques-formule-probio-60-gelules
     brand: Novoma
     name: "Probiotiques (Formule Probio)"
     category: probiotics
     url: https://novoma.com/products/formule-probio
+    ean: null
+    render: js
+
+  - id: nutergia-ergyphilus-plus-30-gelules
+    product_id: nutergia-ergyphilus-plus-30-gelules
+    brand: Nutergia
+    name: "Ergyphilus Plus"
+    category: probiotics
+    url: https://www.nutergia.com/fr/fr/nos-complements-alimentaires/probiotiques/ergyphilus-plus
     ean: null
     render: js
 
@@ -456,6 +744,24 @@ sources:
     ean: null
     render: js
 
+  - id: pileje-lactibiane-tolerance-30-gelules
+    product_id: pileje-lactibiane-tolerance-30-gelules
+    brand: PiLeJe
+    name: "Lactibiane Tolérance"
+    category: probiotics
+    url: https://solutions.pileje.fr/fr/produit/lactibiane-tolerance-30-gelules
+    ean: null
+    render: js
+
+  - id: dieti-natura-acerola-25-comprimes
+    product_id: dieti-natura-acerola-25-comprimes
+    brand: "Dieti Natura"
+    name: Acérola
+    category: vitamin_c
+    url: https://www.dieti-natura.com/acerola.html
+    ean: null
+    render: js
+
   - id: dynveo-vitamine-c-liposomale-quali-c-60-gelules-500-mg
     product_id: dynveo-vitamine-c-liposomale-quali-c-60-gelules-500-mg
     brand: Dynveo
@@ -463,6 +769,15 @@ sources:
     category: vitamin_c
     url: https://www.dynveo.fr/products/vitamine-c-liposomale
     ean: null
+    render: js
+
+  - id: fleurance-nature-acerola-1000-bio-tube-20-comprimes
+    product_id: fleurance-nature-acerola-1000-bio-tube-20-comprimes
+    brand: "Fleurance Nature"
+    name: "Acérola 1000 Bio"
+    category: vitamin_c
+    url: https://www.fleurancenature.fr/p/vitaminnature-acerola-1000-bio-59276.html
+    ean: 3700211192767
     render: js
 
   - id: juvamine-vitamine-c-1000-mg-30-comprimes-effervescents-orange
@@ -483,6 +798,15 @@ sources:
     ean: null
     render: js
 
+  - id: nat-form-acerola-1000-bio-100-comprimes-a-croquer
+    product_id: nat-form-acerola-1000-bio-100-comprimes-a-croquer
+    brand: "Nat & Form"
+    name: "Acérola 1000 Bio"
+    category: vitamin_c
+    url: https://www.pharma-gdd.com/fr/nat-form-acerola-1000-bio
+    ean: 3535400023139
+    render: js
+
   - id: novoma-vitamine-c-quali-c-120-gelules-1000-mg-jour
     product_id: novoma-vitamine-c-quali-c-120-gelules-1000-mg-jour
     brand: Novoma
@@ -501,6 +825,15 @@ sources:
     ean: null
     render: js
 
+  - id: pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules
+    product_id: pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules
+    brand: "Pure Encapsulations"
+    name: "Vitamine C 1000 Tamponnée"
+    category: vitamin_c
+    url: https://www.newpharma.fr/pure-encapsulations/600745/pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules.html
+    ean: null
+    render: static
+
   - id: solgar-ester-c-plus-500-mg-100-gelules-vegetales
     product_id: solgar-ester-c-plus-500-mg-100-gelules-vegetales
     brand: Solgar
@@ -509,6 +842,15 @@ sources:
     url: https://www.redcare-pharmacie.fr/hygiene-et-sante/BE03232618/solgar-ester-c-plus-500-mg-vitamin-c.htm
     ean: null
     render: static
+
+  - id: superdiet-acerola-1000-vitalite-bio-24-comprimes-a-croquer
+    product_id: superdiet-acerola-1000-vitalite-bio-24-comprimes-a-croquer
+    brand: Superdiet
+    name: "Acérola 1000 Vitalité Bio"
+    category: vitamin_c
+    url: https://www.superdiet.com/fr/p91_acerola_1000_bio_24_comprimes.php
+    ean: null
+    render: js
 
   - id: argalys-vitamine-d3-vegetale-spray-spray-30-ml-240-pulverisations
     product_id: argalys-vitamine-d3-vegetale-spray-spray-30-ml-240-pulverisations
@@ -528,6 +870,15 @@ sources:
     ean: null
     render: js
 
+  - id: dieti-natura-vitamine-d3-60-gelules
+    product_id: dieti-natura-vitamine-d3-60-gelules
+    brand: "Dieti Natura"
+    name: "Vitamine D3"
+    category: vitamin_d3
+    url: https://www.dieti-natura.com/vitamine-d3.html
+    ean: null
+    render: js
+
   - id: dynveo-vitamine-d3-vegetale-1000-ui-gelules-60
     product_id: dynveo-vitamine-d3-vegetale-1000-ui-gelules-60
     brand: Dynveo
@@ -535,6 +886,15 @@ sources:
     category: vitamin_d3
     url: https://www.dynveo.fr/products/vitamine-d3
     ean: 3770000228434
+    render: js
+
+  - id: fleurance-nature-vitamine-d3-flacon-15-ml-300-gouttes
+    product_id: fleurance-nature-vitamine-d3-flacon-15-ml-300-gouttes
+    brand: "Fleurance Nature"
+    name: "Vitamine D3"
+    category: vitamin_d3
+    url: https://www.fleurancenature.fr/p/vitamine-d3-17129.html
+    ean: null
     render: js
 
   - id: mium-lab-gummies-vitamine-d-sans-sucres-42-gummies-gout-mangue
@@ -546,6 +906,24 @@ sources:
     ean: 3760325682615
     render: js
 
+  - id: nutergia-ergy-d-flacon-15-ml-340-gouttes
+    product_id: nutergia-ergy-d-flacon-15-ml-340-gouttes
+    brand: Nutergia
+    name: "Ergy D"
+    category: vitamin_d3
+    url: https://www.pharma-gdd.com/fr/ergy-d-15-ml
+    ean: 3664524001850
+    render: js
+
+  - id: pure-encapsulations-vitamine-d3-1000-ui-60-capsules
+    product_id: pure-encapsulations-vitamine-d3-1000-ui-60-capsules
+    brand: "Pure Encapsulations"
+    name: "Vitamine D3 1000 UI"
+    category: vitamin_d3
+    url: https://www.newpharma.fr/pure-encapsulations/522242/pure-encapsulations-vitamine-d3-1000ui-60-capsules.html
+    ean: null
+    render: static
+
   - id: unae-vitamine-d3-vegetale-flacon-15-ml-300-gouttes
     product_id: unae-vitamine-d3-vegetale-flacon-15-ml-300-gouttes
     brand: UNAE
@@ -553,6 +931,15 @@ sources:
     category: vitamin_d3
     url: https://www.unae.fr/boutique/vitamined3/vitamine-d3-vegetale-extraite-du-lichen/
     ean: 3760305220066
+    render: js
+
+  - id: vit-all-vitamine-d3-2000-ui-100-capsules
+    product_id: vit-all-vitamine-d3-2000-ui-100-capsules
+    brand: Vit'all+
+    name: "Vitamine D3 2000 UI"
+    category: vitamin_d3
+    url: https://www.vitalplus.com/catalogue/articulations-capital-osseux/vitamine-d3-2000-ui-cholecalciferol-50-mcg/
+    ean: 3700195679049
     render: js
 
   - id: vitavea-vitamine-d-1000-ui-comprimes-90
@@ -570,6 +957,15 @@ sources:
     name: "PURE Whey Isolate"
     category: whey
     url: https://www.amnutrition.fr/products/whey-isolate
+    ean: null
+    render: js
+
+  - id: corength-decathlon-whey-proteine-chocolat-900-g
+    product_id: corength-decathlon-whey-proteine-chocolat-900-g
+    brand: "Corength (Decathlon)"
+    name: "Whey Protéine"
+    category: whey
+    url: https://www.alltricks.com/F-11928-nutrition/P-2696524-decathlon_nutrition_whey_protein_powder_chocolate_900g
     ean: null
     render: js
 
@@ -591,12 +987,30 @@ sources:
     ean: null
     render: js
 
+  - id: inshape-nutrition-whey-protein-neutre-1-kg
+    product_id: inshape-nutrition-whey-protein-neutre-1-kg
+    brand: "InShape Nutrition"
+    name: "Whey Protein"
+    category: whey
+    url: https://www.inshape-nutrition.com/products/whey-protein
+    ean: null
+    render: js
+
   - id: nutri-co-whey-isolate-native-neutre-900-g
     product_id: nutri-co-whey-isolate-native-neutre-900-g
     brand: Nutri&Co
     name: "Whey Isolate Native"
     category: whey
     url: https://nutriandco.com/fr/produits/whey-isolate-native
+    ean: null
+    render: js
+
+  - id: nutrimuscle-native-whey-isolate-chocolat-1-kg
+    product_id: nutrimuscle-native-whey-isolate-chocolat-1-kg
+    brand: Nutrimuscle
+    name: "Native Whey Isolate"
+    category: whey
+    url: https://www.nutrimuscle.com/products/whey-native-isolate
     ean: null
     render: js
 
@@ -617,6 +1031,15 @@ sources:
     url: https://protealpes.com/produit/vanille/
     ean: null
     render: static
+
+  - id: scitec-nutrition-100-whey-protein-professional-500-g
+    product_id: scitec-nutrition-100-whey-protein-professional-500-g
+    brand: "Scitec Nutrition"
+    name: "100% Whey Protein Professional"
+    category: whey
+    url: https://www.optigura.fr/product/100-whey-protein-professional
+    ean: null
+    render: js
 
   - id: superphysique-nutrition-super-whey-proteine-bio-nature-2-kg
     product_id: superphysique-nutrition-super-whey-proteine-bio-nature-2-kg
@@ -645,6 +1068,15 @@ sources:
     ean: 3770008244221
     render: js
 
+  - id: dieti-natura-zinc-60-gelules
+    product_id: dieti-natura-zinc-60-gelules
+    brand: "Dieti Natura"
+    name: Zinc
+    category: zinc
+    url: https://www.dieti-natura.com/zinc.html
+    ean: null
+    render: js
+
   - id: dynveo-zinc-bisglycinate-60-gelules-10-mg-traacs
     product_id: dynveo-zinc-bisglycinate-60-gelules-10-mg-traacs
     brand: Dynveo
@@ -652,6 +1084,15 @@ sources:
     category: zinc
     url: https://www.dynveo.fr/products/zinc-bisglycinate-chelate
     ean: 3770000228892
+    render: js
+
+  - id: fleurance-nature-zinc-bisglycinate-90-gelules-pilulier-verre
+    product_id: fleurance-nature-zinc-bisglycinate-90-gelules-pilulier-verre
+    brand: "Fleurance Nature"
+    name: "Zinc Bisglycinate"
+    category: zinc
+    url: https://www.fleurancenature.fr/p/zinc-bisglycinate-13355.html
+    ean: null
     render: js
 
   - id: granions-zinc-bisglycinate-15-mg-60-gelules
@@ -663,6 +1104,15 @@ sources:
     ean: null
     render: static
 
+  - id: nhco-zinc-bisglycinate-84-gelules
+    product_id: nhco-zinc-bisglycinate-84-gelules
+    brand: NHCO
+    name: "Zinc bisglycinate"
+    category: zinc
+    url: https://nhco-nutrition.com/produit/zinc/
+    ean: null
+    render: js
+
   - id: novoma-zinc-bisglycinate-120-gelules-15-mg-b6
     product_id: novoma-zinc-bisglycinate-120-gelules-15-mg-b6
     brand: Novoma
@@ -670,6 +1120,15 @@ sources:
     category: zinc
     url: https://novoma.com/products/zinc-bisglycinate
     ean: 3052351247969
+    render: js
+
+  - id: nutergia-oligomax-zinc-flacon-150-ml-30-doses
+    product_id: nutergia-oligomax-zinc-flacon-150-ml-30-doses
+    brand: Nutergia
+    name: "Oligomax Zinc"
+    category: zinc
+    url: https://www.pharma-gdd.com/fr/nutergia-oligomax-zinc-150-ml
+    ean: 3401560008678
     render: js
 
   - id: nutripure-zinc-bisglycinate-90-gelules-15-mg-albion
@@ -691,7 +1150,6 @@ sources:
     render: static
 
 # --- manual sources (kept across regenerations) ---
-
   # Amazon.fr listings (render: js — needs the headless renderer)
   - id: amz-myprotein-impact-whey
     product_id: myprotein-impact-whey
