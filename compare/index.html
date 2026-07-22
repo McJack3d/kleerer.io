@@ -121,6 +121,15 @@
   .btn.primary{background:var(--ink); color:var(--bg)}
   .btn.primary:hover{opacity:.8; background:var(--ink)}
   .btn.added{background:var(--ink); color:var(--bg)}
+  .btn.buy{text-decoration:none; display:inline-flex; align-items:center; border-style:dashed}
+  .profile{max-width:1180px; margin:0 auto; padding:10px var(--pad) 0}
+  .pbox{border:1px solid var(--line); border-radius:2px; padding:12px 14px; display:flex; gap:10px; flex-wrap:wrap; align-items:end; font-size:.78rem}
+  .pbox label{display:flex; flex-direction:column; gap:3px; color:var(--muted); font-size:.68rem}
+  .pbox input,.pbox select{border:1px solid var(--line); border-radius:2px; padding:6px 8px; font-family:inherit; font-size:.8rem; background:var(--bg); width:76px}
+  .pbox select{width:auto}
+  .pbox .hint{color:var(--faint); font-size:.68rem; flex-basis:100%}
+  .fit-ok{color:var(--gA); font-weight:700} .fit-low{color:var(--gC); font-weight:700} .fit-high{color:var(--gE); font-weight:700}
+  .chip.fit{border-color:var(--gA); color:var(--gA)}
 
   /* ---------- compare tray ---------- */
   .tray{position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--ink); color:var(--bg); transform:translateY(110%); transition:.25s}
@@ -213,9 +222,22 @@
 
 <section class="hero">
   <h1>compare<span class="logo-dot">.</span></h1>
-  <p class="sub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an open-source Health &amp; Compo Score computed from its label and public proofs, and a price per gram of <i>actual</i> active, not per kilo of powder. No sponsors, no affiliate links.</p>
+  <p class="sub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.</p>
   <div class="stats" id="stats"></div>
 </section>
+
+<div class="profile">
+  <div class="pbox">
+    <label>weight (kg)<input id="pw" type="number" min="35" max="200" placeholder="70"></label>
+    <label>height (cm)<input id="ph" type="number" min="120" max="230" placeholder="175"></label>
+    <label>sex<select id="ps"><option value="m">male</option><option value="f">female</option></select></label>
+    <label>age<input id="pa" type="number" min="18" max="99" placeholder="30"></label>
+    <label>activity<select id="pac"><option value="sedentary">sedentary</option><option value="active" selected>active</option><option value="athlete">athlete</option></select></label>
+    <button class="btn primary" onclick="saveProfile()">apply</button>
+    <button class="btn" onclick="clearProfile()">clear</button>
+    <span class="hint">optional — personalises the "dosage vs your needs" line on every product (healthy adults; evidence-based ranges, EFSA upper limits respected; not medical advice)</span>
+  </div>
+</div>
 
 <div class="controls">
   <div class="pills" id="pills"></div>
@@ -314,6 +336,66 @@ function setCat(k){ cat = k;
   render();
 }
 
+/* ---------- personalised dosing (healthy adults; sources in METHODOLOGY) ---- */
+let PROFILE = null;
+try { PROFILE = JSON.parse(localStorage.getItem("kleerer_profile")||"null"); } catch(e){}
+function saveProfile(){
+  const w=+document.getElementById("pw").value, h=+document.getElementById("ph").value,
+        a=+document.getElementById("pa").value;
+  if(!w||!h||!a){ alert("Fill weight, height and age."); return; }
+  PROFILE={w,h,a,s:document.getElementById("ps").value,ac:document.getElementById("pac").value};
+  try{ localStorage.setItem("kleerer_profile", JSON.stringify(PROFILE)); }catch(e){}
+  render();
+}
+function clearProfile(){ PROFILE=null; try{localStorage.removeItem("kleerer_profile");}catch(e){} render(); }
+function loadProfileUI(){
+  if(!PROFILE) return;
+  document.getElementById("pw").value=PROFILE.w; document.getElementById("ph").value=PROFILE.h;
+  document.getElementById("pa").value=PROFILE.a; document.getElementById("ps").value=PROFILE.s;
+  document.getElementById("pac").value=PROFILE.ac;
+}
+// returns {lo, hi, unit, note} = personalised daily target range, or null
+function targetFor(cat){
+  if(!PROFILE) return null;
+  const {w,h,a,s,ac}=PROFILE, bmi=w/((h/100)**2);
+  const gkg={sedentary:[0.83,1.2],active:[1.4,1.8],athlete:[1.6,2.2]}[ac];
+  switch(cat){
+    case "whey": return {lo:Math.round(gkg[0]*w), hi:Math.round(gkg[1]*w), unit:"g protein (total diet)", note:`${gkg[0]}–${gkg[1]} g/kg (ISSN / Morton 2018) — supplements top up food`};
+    case "creatine": { const d=Math.min(5,Math.max(3,Math.round(0.04*w*10)/10)); return {lo:3, hi:d, unit:"g creatine", note:"~0.04 g/kg, floor 3 g (ISSN)"}; }
+    case "vitamin_d3": { let lo=800, hi=bmi>=30?4000:2000; if(a>=65) lo=1000; return {lo, hi, unit:"IU vitamin D3", note:bmi>=30?"higher need with BMI ≥ 30 (Endocrine Society); EFSA UL 4000":"EFSA UL 4000 IU"}; }
+    case "magnesium": { const ai=Math.min(s==="m"?420:360, Math.round(6*w)); return {lo:100, hi:300, unit:"mg supplemental Mg", note:`your total need ≈ ${ai} mg/day (~6 mg/kg, ANSES); food covers most`}; }
+    case "omega3": { const r={sedentary:[250,500],active:[500,1000],athlete:[1000,2000]}[ac]; return {lo:r[0], hi:r[1], unit:"mg EPA+DHA", note:"EFSA baseline 250; higher for active/cardio (ISSN)"}; }
+    case "zinc": { const base=s==="m"?11:8; const hi=ac==="athlete"?base+4:base+2; return {lo:base, hi:Math.min(hi,25), unit:"mg zinc", note:"EFSA PRI; sweat losses raise athlete needs; UL 25"}; }
+    case "vitamin_c": { const lo=110, hi=ac==="athlete"?200:155; return {lo, hi, unit:"mg vitamin C", note:"ANSES 110 mg; up to ~200 for heavy training"}; }
+    case "collagen": return {lo:5, hi:ac==="athlete"?15:10, unit:"g peptides", note:"5–15 g in trials (joints/skin)"};
+    case "probiotics": return {lo:10, hi:20, unit:"billion CFU", note:"typical studied range; no established body-weight scaling"};
+    case "melatonin": return {lo:0.5, hi:1.9, unit:"mg melatonin", note:"EFSA claim ≥1 mg; French supplement ceiling 1.9 mg"+(a>=55?"; often more useful 55+":"")};
+    default: return null;
+  }
+}
+function productDailyDose(p){
+  if(p.category==="whey") return p.active_per_serving_g;                      // per serving
+  if(p.category==="creatine") return p.active_per_serving_g;
+  if(p.category==="collagen") return ("pack_g" in p)?p.active_per_serving_g:(p.active_per_unit*p.units_per_day);
+  if(p.active_per_unit!=null && p.units_per_day!=null) return p.active_per_unit*p.units_per_day;
+  return null;
+}
+function doseFit(p){
+  const t=targetFor(p.category); if(!t) return null;
+  const d=productDailyDose(p); if(d==null) return null;
+  if(p.category==="whey"){                                                    // serving vs total-day target
+    const pct=Math.round(d/t.lo*100);
+    return {cls:"fit-ok", label:`1 serving = ${d} g ≈ ${pct}% of your min daily protein target (${t.lo} g)`, t, d};
+  }
+  const cls = d < t.lo ? "fit-low" : (d > t.hi ? "fit-high" : "fit-ok");
+  const word = cls==="fit-ok" ? "fits your target" : (cls==="fit-low" ? "below your target" : "above your target");
+  return {cls, label:`${d} ${t.unit.split(" ")[0]==="g"?"g":""} vs your ${t.lo}–${t.hi} ${t.unit} → ${word}`, t, d, word};
+}
+function doseFitChip(p){
+  const f=doseFit(p); if(!f||p.category==="whey") return "";
+  return f.cls==="fit-ok" ? `<span class="chip fit">✓ fits you</span>` : "";
+}
+
 /* ---------- cards ---------- */
 const ZONE_FLAG = {FR:"🇫🇷", EU:"🇪🇺", EXTRA_EU:"🌍", UNKNOWN:"—"};
 const ZONE_LABEL = {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"};
@@ -359,10 +441,11 @@ function card(p){
       ${[["composition", s.form+s.dose, 40], ["purity", s.purity, 30], ["transparency", s.transparency, 30]]
         .map(([l,v,m]) => `<div class="bar"><div class="t"><span>${l}</span><span>${v}/${m}</span></div><div class="bg"><div class="fg" style="width:${v/m*100}%"></div></div></div>`).join("")}
     </div>
-    <div class="chips">${chipset(p)}</div>
+    <div class="chips">${chipset(p)}${doseFitChip(p)}</div>
     <div class="card-actions">
       <button class="btn primary" onclick="openDetail('${p.id}')">details</button>
       <button class="btn ${inCmp?"added":""}" onclick="toggleCompare('${p.id}')">${inCmp?"✓ added":"+ compare"}</button>
+      ${(p.url && !s.red_card)?`<a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow" title="direct product page — kleerer has no affiliation and earns nothing">buy ↗</a>`:""}
     </div>
   </article>`;
 }
@@ -474,9 +557,14 @@ function openDetail(id){
       <p style="font-size:.85rem">${provBadge(p)} <b>${esc(ZONE_LABEL[prov.zone]||"unknown")}</b>${prov.country?` · ${esc(prov.country)}`:""}
       ${prov.malus?` <span style="color:var(--muted)">(−${prov.malus} proximity, shown separately — not in the health score)</span>`:""}</p>
     </div>
+    ${(function(){const f=doseFit(p); if(!f) return PROFILE?"":`<div class="sec"><h3>dosage vs your needs</h3><p style="font-size:.78rem;color:var(--muted)">Fill in your profile (top of the page) to see how this dose compares to your personal target.</p></div>`;
+      return `<div class="sec"><h3>dosage vs your needs</h3>
+        <p style="font-size:.85rem"><span class="${f.cls}">${esc(f.label)}</span></p>
+        <p style="font-size:.7rem;color:var(--muted)">${esc(f.t.note)} · guidance for healthy adults, not medical advice</p></div>`;})()}
     <div class="sec"><h3>what you actually get</h3>
       <ul class="plain"><li>${esc(activesLine(p))}</li><li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
+    ${(p.url && !s.red_card)?`<div class="sec"><a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">buy — direct product page ↗</a> <span style="font-size:.68rem;color:var(--faint)">no affiliation, kleerer earns nothing</span></div>`:""}
     ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>needs human review</h3>${p.review_flags.map(f=>`<div class="flagbox">⚑ unrecognised ingredient: ${esc(f)} — help us classify it</div>`).join("")}</div>`:""}
     ${p.flags.length ? `<div class="sec"><h3>watch-outs</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
     <p class="footnote">Scored with methodology v${META.methodology_version} from the public label and brand documents — not from independent lab testing. Not medical advice.</p>`;
@@ -540,6 +628,7 @@ function closeModal(){
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
+loadProfileUI();
 render();
 </script>
 </body>

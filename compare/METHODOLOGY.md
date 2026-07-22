@@ -86,3 +86,19 @@ We flag each product's **country of manufacture** and a zone: 🇫🇷 made in F
 
 ## Known limitations (v1.2)
 Scores rely on label data and public documents, not independent lab work; per-flavour variations exist; the auto-tagger is keyword-based and fails safe to *review* on unusual strings; form and dose tiers compress live scientific debate into single numbers; sweetener science in particular is still evolving. Corrections and pull requests to the scoring rules are welcome — that is the point of an open method.
+
+## Personalised intake references (v1.3 — "dosage vs your needs")
+Optional profile (weight, height, sex, age, activity) personalises a **target
+range per category**, for healthy adults, never exceeding EFSA upper limits:
+protein 0.83 g/kg (sedentary RDA) to 1.4–2.2 g/kg (active/athlete — [ISSN position
+stand](https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8), [Morton 2018 meta-analysis](https://bjsm.bmj.com/content/52/6/376)) ·
+creatine ~0.04 g/kg, floor 3 g (ISSN) · vitamin D3 800–2000 IU, upper bound 4000
+with BMI ≥ 30 ([Endocrine Society](https://academic.oup.com/jcem/article/96/7/1911/2833671)) and floor 1000 at 65+ ·
+magnesium total need ~6 mg/kg (ANSES), supplemental range 100–300 mg ·
+omega-3 250–500 mg EPA+DHA baseline (EFSA) up to 1–2 g when very active ·
+zinc EFSA PRI 8/11 mg (F/M) +2–4 mg for heavy sweating, UL 25 · vitamin C
+110 mg (ANSES) up to ~200 in heavy training · collagen 5–15 g (trial range) ·
+probiotics 10–20 bn CFU (no validated body-weight scaling) · melatonin 0.5–1.9 mg
+(French ceiling). The verdict shown ("below / fits / above your target") is
+general guidance for healthy adults — not medical advice, and no substitute for
+blood work or a professional.
