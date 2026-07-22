@@ -5,7 +5,7 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-07-19",
+  "generated": "2026-07-22",
   "n_products": 163,
   "n_categories": 11,
   "n_red_cards": 1,
