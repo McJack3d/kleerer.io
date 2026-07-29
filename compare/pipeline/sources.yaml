@@ -177,12 +177,30 @@ sources:
     ean: null
     render: js
 
+  - id: bulk-creatine
+    product_id: bulk-creatine
+    brand: Bulk
+    name: "Creatine Monohydrate"
+    category: creatine
+    url: https://www.amazon.fr/dp/B00SP2ZKW8
+    ean: null
+    render: js
+
   - id: corength-decathlon-creatine-monohydrate-creapure-neutre-300-g
     product_id: corength-decathlon-creatine-monohydrate-creapure-neutre-300-g
     brand: "Corength (Decathlon)"
     name: "Créatine monohydrate Creapure®"
     category: creatine
     url: https://www.decathlon.fr/p/creatine-monohydrate-creapure-gout-neutre-300g/_/R-p-327680
+    ean: null
+    render: js
+
+  - id: esn-ultrapure-creatine
+    product_id: esn-ultrapure-creatine
+    brand: ESN
+    name: "Ultrapure Creatine Monohydrate"
+    category: creatine
+    url: https://www.amazon.fr/dp/B0057ED9AM
     ean: null
     render: js
 
@@ -195,6 +213,15 @@ sources:
     ean: null
     render: js
 
+  - id: myprotein-creatine
+    product_id: myprotein-creatine
+    brand: Myprotein
+    name: "Creatine Monohydrate"
+    category: creatine
+    url: https://fr.myprotein.com/p/nutrition-sportive/creatine-monohydrate-en-poudre/10530050/
+    ean: null
+    render: js
+
   - id: nutri-co-creatine-monohydrate-creapure-neutre-300-g
     product_id: nutri-co-creatine-monohydrate-creapure-neutre-300-g
     brand: Nutri&Co
@@ -203,6 +230,24 @@ sources:
     url: https://nutriandco.com/fr/produits/creatine
     ean: null
     render: js
+
+  - id: nutrimuscle-creapure
+    product_id: nutrimuscle-creapure
+    brand: Nutrimuscle
+    name: "Creatine Creapure® Powder"
+    category: creatine
+    url: https://www.nutrimuscle.com/products/creatine-creapure-r-en-poudre
+    ean: null
+    render: js
+
+  - id: nutripure-creapure
+    product_id: nutripure-creapure
+    brand: Nutripure
+    name: "Creatine Monohydrate Creapure®"
+    category: creatine
+    url: https://www.nutripure.fr/fr/musculation/16-creatine-monohydrate-creapure.html
+    ean: null
+    render: static
 
   - id: nutriting-nucrea-poudre-500-g
     product_id: nutriting-nucrea-poudre-500-g
@@ -219,6 +264,15 @@ sources:
     name: "Creatine Monohydrate Creapure®"
     category: creatine
     url: https://olimpstore.fr/olimp-creatine-monohydrate-powder-creapure-500-g-95
+    ean: null
+    render: js
+
+  - id: on-micronised-creatine
+    product_id: on-micronised-creatine
+    brand: "Optimum Nutrition"
+    name: "Micronised Creatine Powder"
+    category: creatine
+    url: https://www.amazon.fr/dp/B00T7L20EC
     ean: null
     render: js
 
@@ -303,6 +357,15 @@ sources:
     ean: null
     render: static
 
+  - id: mivolis-mg-400
+    product_id: mivolis-mg-400
+    brand: "Mivolis (dm)"
+    name: "Magnesium 400"
+    category: magnesium
+    url: https://www.dm.de/p/d/3104277/mivolis-magnesium-400-tabletten-60-st
+    ean: null
+    render: js
+
   - id: nat-form-magnesium-marin-vitamine-b6-80-gelules
     product_id: nat-form-magnesium-marin-vitamine-b6-80-gelules
     brand: "Nat & Form"
@@ -321,6 +384,15 @@ sources:
     ean: null
     render: static
 
+  - id: novoma-magnesium
+    product_id: novoma-magnesium
+    brand: Novoma
+    name: "Magnésium Bisglycinate + Taurine & B6"
+    category: magnesium
+    url: https://novoma.com/products/magnesium-bisglycinate
+    ean: null
+    render: js
+
   - id: nutergia-ergymag-45-gelules
     product_id: nutergia-ergymag-45-gelules
     brand: Nutergia
@@ -328,6 +400,15 @@ sources:
     category: magnesium
     url: https://www.pharma-gdd.com/fr/nutergia-ergymag-magnesium
     ean: 3664524000112
+    render: js
+
+  - id: nutrico-magnesium
+    product_id: nutrico-magnesium
+    brand: Nutri&Co
+    name: "Le Magnésium (Magshape™ + malate + bisglycinate, B6)"
+    category: magnesium
+    url: https://lasante.net/espace-para/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/tonus-et-fatigue/nutrico-magnesium-120-gelules.html
+    ean: null
     render: js
 
   - id: nutrimuscle-complexe-magnesium-gelules-60
@@ -338,6 +419,15 @@ sources:
     url: https://www.nutrimuscle.com/products/complexe-magnesium-gelules
     ean: null
     render: js
+
+  - id: nutripure-magnesium
+    product_id: nutripure-magnesium
+    brand: Nutripure
+    name: "Magnésium Bisglycinate + Taurine + B6"
+    category: magnesium
+    url: https://www.nutripure.fr/fr/sante/3-magnesium-taurine-B6.html
+    ean: null
+    render: static
 
   - id: onatera-magnesium-bisglycinate-300-mg-gelules-90
     product_id: onatera-magnesium-bisglycinate-300-mg-gelules-90
@@ -356,6 +446,24 @@ sources:
     url: https://www.newpharma.fr/pure-encapsulations/522236/pure-encapsulations-glycinate-de-magnesium-90-capsules.html
     ean: null
     render: static
+
+  - id: solgar-mg-citrate
+    product_id: solgar-mg-citrate
+    brand: Solgar
+    name: "Magnesium Citrate"
+    category: magnesium
+    url: https://www.pharma-gdd.com/fr/solgar-magnesium-citrate-comprimes
+    ean: null
+    render: js
+
+  - id: sunday-mg-glycinate
+    product_id: sunday-mg-glycinate
+    brand: "Sunday Natural"
+    name: "Magnesium Glycinate Pure"
+    category: magnesium
+    url: https://www.sunday.de/en/magnesium-glycinate-pure-capsules.html
+    ean: null
+    render: js
 
   - id: superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml
     product_id: superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml
@@ -537,6 +645,33 @@ sources:
     ean: 3401554166858
     render: js
 
+  - id: myprotein-alpha-men
+    product_id: myprotein-alpha-men
+    brand: Myprotein
+    name: "Alpha Men Multivitamin"
+    category: multivitamin
+    url: https://fr.myprotein.com/p/nutrition-sportive/alpha-men-comprimes-multivitamines/10530421/
+    ean: null
+    render: js
+
+  - id: now-adam
+    product_id: now-adam
+    brand: "NOW Foods"
+    name: "ADAM Men's Multivitamin"
+    category: multivitamin
+    url: https://www.nowfoods.com/products/supplements/adam-mens-multiple-vitamin-veg-capsules
+    ean: null
+    render: js
+
+  - id: nutrico-le-multi
+    product_id: nutrico-le-multi
+    brand: Nutri&Co
+    name: "Le Multi (25 bioactive nutrients)"
+    category: multivitamin
+    url: https://nutriandco.com/fr/produits/multivitamines
+    ean: null
+    render: js
+
   - id: nutrimuscle-multivitamines-poudre-pot-60-g-88-doses
     product_id: nutrimuscle-multivitamines-poudre-pot-60-g-88-doses
     brand: Nutrimuscle
@@ -554,6 +689,24 @@ sources:
     url: https://www.nutripure.fr/fr/sante/1-multi-vitamines-mineraux.html
     ean: null
     render: static
+
+  - id: solgar-vm75
+    product_id: solgar-vm75
+    brand: Solgar
+    name: "Formula VM-75"
+    category: multivitamin
+    url: https://www.redcare-pharmacie.fr/hygiene-et-sante/BE09801624/solgar-formula.htm
+    ean: null
+    render: static
+
+  - id: sunday-essentials-multi
+    product_id: sunday-essentials-multi
+    brand: "Sunday Natural"
+    name: "Essentials All in One Premium"
+    category: multivitamin
+    url: https://www.sunday.de/en/multivitamin-essentials-all-in-one-premium.html
+    ean: null
+    render: js
 
   - id: arkopharma-arkogelules-omega-3-60-capsules
     product_id: arkopharma-arkogelules-omega-3-60-capsules
@@ -591,12 +744,39 @@ sources:
     ean: 3701414500717
     render: static
 
+  - id: myprotein-omega3
+    product_id: myprotein-omega3
+    brand: Myprotein
+    name: "Essential Omega-3 (1000 mg, 18/12)"
+    category: omega3
+    url: https://fr.myprotein.com/p/nutrition-sportive/omega-3-en-gelules/10529329/
+    ean: null
+    render: js
+
   - id: nat-form-omega-3-epax-90-capsules
     product_id: nat-form-omega-3-epax-90-capsules
     brand: "Nat & Form"
     name: "Oméga-3 EPAX®"
     category: omega3
     url: https://www.nat-form.com/products/omega-3-premium
+    ean: null
+    render: js
+
+  - id: norsan-omega3-total
+    product_id: norsan-omega3-total
+    brand: Norsan
+    name: "Omega-3 Total (liquid)"
+    category: omega3
+    url: https://www.amazon.fr/dp/B08X4XVPFM
+    ean: null
+    render: js
+
+  - id: norsan-omega3-vegan
+    product_id: norsan-omega3-vegan
+    brand: Norsan
+    name: "Omega-3 Vegan (algae oil)"
+    category: omega3
+    url: https://www.norsan.fr/shop/huile-d-algue-omega-3-vegan/
     ean: null
     render: js
 
@@ -609,6 +789,24 @@ sources:
     ean: null
     render: js
 
+  - id: now-ultra-omega3
+    product_id: now-ultra-omega3
+    brand: "NOW Foods"
+    name: "Ultra Omega-3 (500 EPA / 250 DHA)"
+    category: omega3
+    url: https://www.amazon.fr/dp/B0043MPTAW
+    ean: null
+    render: js
+
+  - id: nutrico-omega3
+    product_id: nutrico-omega3
+    brand: Nutri&Co
+    name: "Omega 3 EPAX® Ultra-Pure"
+    category: omega3
+    url: https://nutriandco.com/fr/produits/omega-3
+    ean: null
+    render: js
+
   - id: nutrimuscle-omega-3-epax-60-capsules
     product_id: nutrimuscle-omega-3-epax-60-capsules
     brand: Nutrimuscle
@@ -617,6 +815,15 @@ sources:
     url: https://www.nutrimuscle.com/products/omega-3-epax
     ean: null
     render: js
+
+  - id: nutripure-omega3
+    product_id: nutripure-omega3
+    brand: Nutripure
+    name: "Omega 3 EPAX®"
+    category: omega3
+    url: https://www.nutripure.fr/fr/sante/2-omega-3-EPAX.html
+    ean: null
+    render: static
 
   - id: om3-isodisnatura-om3-equilibre-emotionnel-60-capsules
     product_id: om3-isodisnatura-om3-equilibre-emotionnel-60-capsules
@@ -651,6 +858,15 @@ sources:
     name: "Oméga-3 de poissons sauvages MSC"
     category: omega3
     url: https://unae.fr/boutique/omega-3/omega3-de-poissons-sauvages-issus-de-la-peche-durable/
+    ean: null
+    render: js
+
+  - id: whc-unocardio-1000
+    product_id: whc-unocardio-1000
+    brand: WHC
+    name: "UnoCardio 1000 + Vitamin D 1000"
+    category: omega3
+    url: https://www.amazon.fr/dp/B00M42XIVK
     ean: null
     render: js
 
@@ -906,6 +1122,24 @@ sources:
     ean: 3760325682615
     render: js
 
+  - id: mivolis-d3-1000
+    product_id: mivolis-d3-1000
+    brand: "Mivolis (dm)"
+    name: "Vitamin D3 Perlen 1000 IU"
+    category: vitamin_d3
+    url: https://www.dm.de/mivolis-vitamin-d3-perlen-1000-i-e-60-st-p4066447249163.html
+    ean: null
+    render: js
+
+  - id: now-d3-5000
+    product_id: now-d3-5000
+    brand: "NOW Foods"
+    name: "Vitamin D-3 5000 IU High Potency"
+    category: vitamin_d3
+    url: https://www.nowfoods.com/products/supplements/vitamin-d3-5000-iu-softgels
+    ean: null
+    render: js
+
   - id: nutergia-ergy-d-flacon-15-ml-340-gouttes
     product_id: nutergia-ergy-d-flacon-15-ml-340-gouttes
     brand: Nutergia
@@ -915,6 +1149,24 @@ sources:
     ean: 3664524001850
     render: js
 
+  - id: nutrico-d3-vegan
+    product_id: nutrico-d3-vegan
+    brand: Nutri&Co
+    name: "Vitamine D3 Végétale (drops)"
+    category: vitamin_d3
+    url: https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/nutrico-vitamine-d-vegetale-15-ml.html
+    ean: null
+    render: js
+
+  - id: nutripure-d3-k2
+    product_id: nutripure-d3-k2
+    brand: Nutripure
+    name: "Vitamine D3 + K2-MK7 1000 IU"
+    category: vitamin_d3
+    url: https://www.nutripure.fr/fr/sante/54-vitamine-d3-k2-mk7.html
+    ean: null
+    render: static
+
   - id: pure-encapsulations-vitamine-d3-1000-ui-60-capsules
     product_id: pure-encapsulations-vitamine-d3-1000-ui-60-capsules
     brand: "Pure Encapsulations"
@@ -923,6 +1175,24 @@ sources:
     url: https://www.newpharma.fr/pure-encapsulations/522242/pure-encapsulations-vitamine-d3-1000ui-60-capsules.html
     ean: null
     render: static
+
+  - id: solgar-d3-1000
+    product_id: solgar-d3-1000
+    brand: Solgar
+    name: "Vitamin D3 1000 IU"
+    category: vitamin_d3
+    url: https://www.newpharma.fr/solgar/508704/solgar-vitamine-d3-1000iu-25-g-softgels-100.html
+    ean: null
+    render: static
+
+  - id: sunday-d3-drops
+    product_id: sunday-d3-drops
+    brand: "Sunday Natural"
+    name: "Vitamin D3 1000 IU Drops"
+    category: vitamin_d3
+    url: https://www.sunday.de/en/vitamin-d3-1-000-iu-1-750-drops.html
+    ean: null
+    render: js
 
   - id: unae-vitamine-d3-vegetale-flacon-15-ml-300-gouttes
     product_id: unae-vitamine-d3-vegetale-flacon-15-ml-300-gouttes
@@ -960,6 +1230,15 @@ sources:
     ean: null
     render: js
 
+  - id: bulk-pure-whey
+    product_id: bulk-pure-whey
+    brand: Bulk
+    name: "Pure Whey Protein"
+    category: whey
+    url: https://www.amazon.fr/dp/B00HF63AYA
+    ean: null
+    render: js
+
   - id: corength-decathlon-whey-proteine-chocolat-900-g
     product_id: corength-decathlon-whey-proteine-chocolat-900-g
     brand: "Corength (Decathlon)"
@@ -987,12 +1266,30 @@ sources:
     ean: null
     render: js
 
+  - id: esn-designer-whey
+    product_id: esn-designer-whey
+    brand: ESN
+    name: "Designer Whey Protein"
+    category: whey
+    url: https://www.amazon.fr/dp/B08HD8JC65
+    ean: null
+    render: js
+
   - id: inshape-nutrition-whey-protein-neutre-1-kg
     product_id: inshape-nutrition-whey-protein-neutre-1-kg
     brand: "InShape Nutrition"
     name: "Whey Protein"
     category: whey
     url: https://www.inshape-nutrition.com/products/whey-protein
+    ean: null
+    render: js
+
+  - id: myprotein-impact-whey
+    product_id: myprotein-impact-whey
+    brand: Myprotein
+    name: "Impact Whey Protein"
+    category: whey
+    url: https://fr.myprotein.com/p/nutrition-sportive/impact-whey-protein/10530943/
     ean: null
     render: js
 
@@ -1014,6 +1311,15 @@ sources:
     ean: null
     render: js
 
+  - id: nutrimuscle-whey-native
+    product_id: nutrimuscle-whey-native
+    brand: Nutrimuscle
+    name: "Whey Native"
+    category: whey
+    url: https://www.nutrimuscle.com/products/whey-native
+    ean: null
+    render: js
+
   - id: nutripure-whey-isolate-native-neutre-750-g
     product_id: nutripure-whey-isolate-native-neutre-750-g
     brand: Nutripure
@@ -1023,6 +1329,15 @@ sources:
     ean: null
     render: static
 
+  - id: on-gold-standard-whey
+    product_id: on-gold-standard-whey
+    brand: "Optimum Nutrition"
+    name: "Gold Standard 100% Whey"
+    category: whey
+    url: https://www.amazon.fr/dp/B000GISTZ4
+    ean: null
+    render: js
+
   - id: protealpes-whey-proteine-gamme-classique-vanille-750-g
     product_id: protealpes-whey-proteine-gamme-classique-vanille-750-g
     brand: Protéalpes
@@ -1031,6 +1346,15 @@ sources:
     url: https://protealpes.com/produit/vanille/
     ean: null
     render: static
+
+  - id: prozis-real-whey
+    product_id: prozis-real-whey
+    brand: Prozis
+    name: "100% Real Whey Protein"
+    category: whey
+    url: https://www.amazon.fr/dp/B07486HGFG
+    ean: null
+    render: js
 
   - id: scitec-nutrition-100-whey-protein-professional-500-g
     product_id: scitec-nutrition-100-whey-protein-professional-500-g

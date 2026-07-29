@@ -5,7 +5,7 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-07-22",
+  "generated": "2026-07-29",
   "n_products": 163,
   "n_categories": 11,
   "n_red_cards": 1,
@@ -47,6 +47,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "medium",
    "notes": "Flavoured versions add sucralose. Europe's biggest D2C whey.",
+   "url": "https://fr.myprotein.com/p/nutrition-sportive/impact-whey-protein/10530943/",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -115,6 +116,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "medium",
    "notes": "EU labels vary by flavour: 22.6–24 g protein per ~30 g scoop.",
+   "url": "https://www.amazon.fr/dp/B000GISTZ4",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -182,6 +184,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "Germany's #1 whey by volume. Protein content flavour-dependent (20.7–23.7 g/30 g).",
+   "url": "https://www.amazon.fr/dp/B08HD8JC65",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -245,6 +248,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "In-house QC only; Bulk's Informed Sport range does not cover this SKU.",
+   "url": "https://www.amazon.fr/dp/B00HF63AYA",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -304,6 +308,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "Ingredient list of the Nature flavour: native WPC — nothing else. No lecithin, no sweetener.",
+   "url": "https://www.nutrimuscle.com/products/whey-native",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -367,6 +372,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "low",
    "notes": "Largest Iberian brand, ships EU-wide.",
+   "url": "https://www.amazon.fr/dp/B07486HGFG",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -424,6 +430,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "low",
    "notes": "100% creatine monohydrate, no excipients.",
+   "url": "https://fr.myprotein.com/p/nutrition-sportive/creatine-monohydrate-en-poudre/10530050/",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -481,6 +488,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "500 g ≈ 142 servings.",
+   "url": "https://www.amazon.fr/dp/B0057ED9AM",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -536,6 +544,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "low",
    "notes": "Allergen cross-contact warning (milk/soy) from shared facility.",
+   "url": "https://www.amazon.fr/dp/B00SP2ZKW8",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -594,6 +603,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "low",
    "notes": "~176 servings per Amazon.de listing.",
+   "url": "https://www.amazon.fr/dp/B00T7L20EC",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -653,6 +663,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "Creapure carries ~2× premium vs generic (€100–113/kg vs €43–56/kg).",
+   "url": "https://www.nutrimuscle.com/products/creatine-creapure-r-en-poudre",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -711,6 +722,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "French brand, ships EU-wide.",
+   "url": "https://www.nutripure.fr/fr/musculation/16-creatine-monohydrate-creapure.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -772,6 +784,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "1 drop = 1000 IU; ~500 days per bottle at 1 drop/day.",
+   "url": "https://lasante.net/espace-para/bien-etre-et-minceur/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/nutrico-vitamine-d-vegetale-15-ml.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -833,6 +846,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "No public batch COA.",
+   "url": "https://www.newpharma.fr/solgar/508704/solgar-vitamine-d3-1000iu-25-g-softgels-100.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -892,6 +906,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "Best price-per-IU of the panel: €9.90 for 1.75M IU.",
+   "url": "https://www.sunday.de/en/vitamin-d3-1-000-iu-1-750-drops.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -954,6 +969,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "3 drops = 1000 IU D3 + 37.5 µg K2; ~200 days per bottle.",
+   "url": "https://www.nutripure.fr/fr/sante/54-vitamine-d3-k2-mk7.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1018,6 +1034,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "low",
    "notes": "US-style high dose; scored at label serving.",
+   "url": "https://www.nowfoods.com/products/supplements/vitamin-d3-5000-iu-softgels",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1077,6 +1094,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "medium",
    "notes": "Drugstore budget contrast: clean formula, zero lab transparency.",
+   "url": "https://www.dm.de/mivolis-vitamin-d3-perlen-1000-i-e-60-st-p4066447249163.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1144,6 +1162,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "high",
    "notes": "Credit where due: the exact salt breakdown is fully declared on label.",
+   "url": "https://lasante.net/espace-para/bien-etre-complements-alimentaires/vitalite-defenses-immunitaires/tonus-et-fatigue/nutrico-magnesium-120-gelules.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1204,6 +1223,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "240 mg elemental/day — within the EFSA supplemental UL (250 mg).",
+   "url": "https://www.nutripure.fr/fr/sante/3-magnesium-taurine-B6.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1265,6 +1285,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "high",
    "notes": "40-day supply at full dose.",
+   "url": "https://novoma.com/products/magnesium-bisglycinate",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1336,6 +1357,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "medium",
    "notes": "Excipient list from standard Solgar label.",
+   "url": "https://www.pharma-gdd.com/fr/solgar-magnesium-citrate-comprimes",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1397,6 +1419,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "high",
    "notes": "Dose adjustable per capsule (75 mg each).",
+   "url": "https://www.sunday.de/en/magnesium-glycinate-pure-capsules.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1472,6 +1495,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "high",
    "notes": "Budget contrast: €0.05/day, 8 technological additives, zero lab transparency.",
+   "url": "https://www.dm.de/p/d/3104277/mivolis-magnesium-400-tabletten-60-st",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1535,6 +1559,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "One of the strongest EPA doses per euro among premium brands.",
+   "url": "https://www.nutripure.fr/fr/sante/2-omega-3-EPAX.html",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1598,6 +1623,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "No.1 omega-3 brand in German pharmacies. Bottle = 25 days.",
+   "url": "https://www.amazon.fr/dp/B08X4XVPFM",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1662,6 +1688,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "40 days per bottle at 3 caps/day.",
+   "url": "https://nutriandco.com/fr/produits/omega-3",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1724,6 +1751,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "medium",
    "notes": "Premium benchmark; highest cost per capsule of the set.",
+   "url": "https://www.amazon.fr/dp/B00M42XIVK",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1789,6 +1817,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "low",
    "notes": "75% concentration US mass-market concentrate.",
+   "url": "https://www.amazon.fr/dp/B0043MPTAW",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1850,6 +1879,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "low",
    "notes": "The cheap low-concentration contrast product.",
+   "url": "https://fr.myprotein.com/p/nutrition-sportive/omega-3-en-gelules/10529329/",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1913,6 +1943,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "Bottle = 20 days; includes vegan D3 800 IU per dose.",
+   "url": "https://www.norsan.fr/shop/huile-d-algue-omega-3-vegan/",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1983,6 +2014,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "low",
    "notes": "60 days per pack — cheapest cost/day of the multi set at street price.",
+   "url": "https://fr.myprotein.com/p/nutrition-sportive/alpha-men-comprimes-multivitamines/10530421/",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2053,6 +2085,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "high",
    "notes": "30 days per pack at 3 caps/day.",
+   "url": "https://nutriandco.com/fr/produits/multivitamines",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2125,6 +2158,7 @@ const KLEERER_DATA = {
    ],
    "confidence": "medium",
    "notes": "The megadose contrast product.",
+   "url": "https://www.redcare-pharmacie.fr/hygiene-et-sante/BE09801624/solgar-formula.htm",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2192,6 +2226,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "medium",
    "notes": "30 servings per bottle; includes saw palmetto, lycopene, CoQ10.",
+   "url": "https://www.nowfoods.com/products/supplements/adam-mens-multiple-vitamin-veg-capsules",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2262,7 +2297,7 @@ const KLEERER_DATA = {
     "full_label": true
    },
    "flags": [
-    "Brand winding down — long-term availability uncertain"
+    "Delisted — foodspring ceased trading 30 June 2025; the brand's storefront no longer resolves. Kept for historical price/label comparison only."
    ],
    "confidence": "medium",
    "notes": "50 days per pack.",
@@ -2330,6 +2365,7 @@ const KLEERER_DATA = {
    "flags": [],
    "confidence": "high",
    "notes": "30 days at full dose (4 caps) or 60 days at half dose.",
+   "url": "https://www.sunday.de/en/multivitamin-essentials-all-in-one-premium.html",
    "banned": [],
    "review_flags": [
     "Tapioca dextrin (carrier)"
