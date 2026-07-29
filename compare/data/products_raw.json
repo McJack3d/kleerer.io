@@ -343,7 +343,8 @@
       "transparency": {"coa_published": true, "third_party_cert": true, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "high",
       "notes": "No.1 omega-3 brand in German pharmacies. Bottle = 25 days.",
-      "url": "https://www.amazon.fr/dp/B08X4XVPFM"
+      "url": "https://www.amazon.fr/dp/B08X4XVPFM",
+      "secondary_actives": [{"category": "vitamin_d3", "per_day": 800, "source": "manufacturer: 800 IU vitamin D3 per 8 ml daily dose"}]
     },
     {
       "id": "nutrico-omega3", "category": "omega3", "brand": "Nutri&Co", "name": "Omega 3 EPAX® Ultra-Pure", "variant": "120 capsules",
@@ -369,7 +370,8 @@
       "transparency": {"coa_published": true, "third_party_cert": true, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "medium",
       "notes": "Premium benchmark; highest cost per capsule of the set.",
-      "url": "https://www.amazon.fr/dp/B00M42XIVK"
+      "url": "https://www.amazon.fr/dp/B00M42XIVK",
+      "secondary_actives": [{"category": "vitamin_d3", "per_day": 1000, "source": "declared in product name (1000 IU vitamin D3 per softgel)"}]
     },
     {
       "id": "now-ultra-omega3", "category": "omega3", "brand": "NOW Foods", "name": "Ultra Omega-3 (500 EPA / 250 DHA)", "variant": "90 softgels",
@@ -408,7 +410,8 @@
       "transparency": {"coa_published": true, "third_party_cert": false, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "high",
       "notes": "Bottle = 20 days; includes vegan D3 800 IU per dose.",
-      "url": "https://www.norsan.fr/shop/huile-d-algue-omega-3-vegan/"
+      "url": "https://www.norsan.fr/shop/huile-d-algue-omega-3-vegan/",
+      "secondary_actives": [{"category": "vitamin_d3", "per_day": 800, "source": "manufacturer: 800 IU vegan vitamin D3 per 5 ml daily dose"}]
     },
 
     {

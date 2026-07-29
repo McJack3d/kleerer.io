@@ -2,7 +2,7 @@
 
 **The independent supplement comparator — score the label, price the active.**
 
-First product of the kleerer. roadmap. Every supplement gets a transparent **Health & Compo Score** (0–100, grades A–E) computed from its label and public proofs, a price per gram of *actual* active, and a **personalised dosage check** against your own targets. **163 real products across 11 categories** (whey, creatine, vitamin D3, magnesium, omega-3, multivitamin, zinc, vitamin C, collagen, probiotics, melatonin), EU with a French-market focus, snapshot July 2026. No sponsors, no affiliate links, no paid placements.
+First product of the kleerer. roadmap. Every supplement gets a transparent **Health & Compo Score** (0–100, grades A–E) computed from its label and public proofs, a price per gram of *actual* active, a **personalised dosage check** against your own targets, and a **stack builder** (p2, beta) that sums whatever you combine — built-in secondary actives included — and warns when the total quietly crosses an EU upper limit. **163 real products across 11 categories** (whey, creatine, vitamin D3, magnesium, omega-3, multivitamin, zinc, vitamin C, collagen, probiotics, melatonin), EU with a French-market focus, snapshot July 2026. No sponsors, no affiliate links, no paid placements.
 
 ## Run it
 
