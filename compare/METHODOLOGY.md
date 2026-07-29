@@ -6,7 +6,7 @@
 
 **What the score is not.** It is not medical advice, not a measure of whether *you* need the product, and not a lab test — we score label composition and public transparency, not actual batch content.
 
-**v1.2 scope.** 112 products, 11 categories, EU with a French-market focus. Snapshot July 2026.
+**Scope.** 163 products, 11 categories, EU with a French-market focus. Snapshot July 2026. Scoring methodology v1.2; personalised dosing model v2.
 
 ---
 
@@ -87,18 +87,73 @@ We flag each product's **country of manufacture** and a zone: 🇫🇷 made in F
 ## Known limitations (v1.2)
 Scores rely on label data and public documents, not independent lab work; per-flavour variations exist; the auto-tagger is keyword-based and fails safe to *review* on unusual strings; form and dose tiers compress live scientific debate into single numbers; sweetener science in particular is still evolving. Corrections and pull requests to the scoring rules are welcome — that is the point of an open method.
 
-## Personalised intake references (v1.3 — "dosage vs your needs")
-Optional profile (weight, height, sex, age, activity) personalises a **target
-range per category**, for healthy adults, never exceeding EFSA upper limits:
-protein 0.83 g/kg (sedentary RDA) to 1.4–2.2 g/kg (active/athlete — [ISSN position
-stand](https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8), [Morton 2018 meta-analysis](https://bjsm.bmj.com/content/52/6/376)) ·
-creatine ~0.04 g/kg, floor 3 g (ISSN) · vitamin D3 800–2000 IU, upper bound 4000
-with BMI ≥ 30 ([Endocrine Society](https://academic.oup.com/jcem/article/96/7/1911/2833671)) and floor 1000 at 65+ ·
-magnesium total need ~6 mg/kg (ANSES), supplemental range 100–300 mg ·
-omega-3 250–500 mg EPA+DHA baseline (EFSA) up to 1–2 g when very active ·
-zinc EFSA PRI 8/11 mg (F/M) +2–4 mg for heavy sweating, UL 25 · vitamin C
-110 mg (ANSES) up to ~200 in heavy training · collagen 5–15 g (trial range) ·
-probiotics 10–20 bn CFU (no validated body-weight scaling) · melatonin 0.5–1.9 mg
-(French ceiling). The verdict shown ("below / fits / above your target") is
-general guidance for healthy adults — not medical advice, and no substitute for
-blood work or a professional.
+## Personalised dosing — "dosage vs your needs" (model v2)
+
+An optional profile (weight, age, sex, activity; height optional) turns every product's
+label dose into an answer to *"is this right for me?"*. **It never touches the Health &
+Compo Score** — two people looking at the same product see the same grade.
+
+### Two questions, deliberately kept apart
+
+The model answers them separately, because conflating them is how a dosage checker
+becomes noise:
+
+1. **Is it in your effective band?** — a personalised `lo–hi` range, built from your
+   profile where the evidence supports scaling.
+2. **Does it breach a regulatory limit?** — an `ul`, identical for everyone. A matter of
+   law and safety, not preference.
+
+| State | Meaning | Colour |
+|---|---|---|
+| **✓ fits you** | inside your personalised band | green |
+| **↓ under-dosed for you** | below the band — the label serving won't get you there | amber |
+| **↑ more than you need** | above your band, **within every regulatory limit** — safe, just more than you need; a cost question | neutral |
+| **⚠ over the *n* limit** | breaches a statutory upper limit | red |
+
+Only the last state is red. Earlier versions painted *any* dose above the optimal band in
+red, which flagged 10 of 11 vitamin C products and 8 of 11 zinc products as if they were
+dangerous when none breached any limit — the same false-alarm inflation the additive
+penalties are explicitly designed to avoid.
+
+### Upper limits, and what they actually mean
+
+A UL breach is reported with its **consequence**, because ULs are not all the same kind of
+thing. Proportionate wording matters as much here as it does for sweeteners (§2a):
+
+| Nutrient | Limit | What the limit is actually about |
+|---|---|---|
+| Vitamin D3 | 4000 IU/day (EFSA) | genuine toxicity ceiling — hypercalcaemia |
+| Zinc | 25 mg/day (EFSA) | competes with copper absorption |
+| Magnesium | 250 mg/day supplemental (EFSA) | **gut tolerance** (osmotic diarrhoea), not toxicity; applies to supplements, not food |
+| Vitamin C | 1000 mg/day (ANSES advisory) | gut tolerance, not toxicity |
+| Melatonin | 1.9 mg (French ceiling) | regulatory: above it the product is a medicine, not a supplement |
+| Omega-3 | 5000 mg EPA+DHA (EFSA: no concern below) | rarely reached by any product |
+
+13 of 19 magnesium products in the catalogue exceed the 250 mg supplemental UL — mostly
+well-tolerated chelates dosed there on purpose. The product says so rather than implying harm.
+
+### What we personalise, and what we honestly don't
+
+Scaling is applied **only where the literature scales**. Where it doesn't, the band is the
+same for everyone and the interface says so out loud instead of inventing a number.
+
+| Category | Personalised by | Reference |
+|---|---|---|
+| Whey / protein | weight, activity, age | 0.83 g/kg (sedentary RDA) → 1.4–2.2 g/kg ([ISSN](https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8), [Morton 2018](https://bjsm.bmj.com/content/52/6/376)); floor 1.0–1.2 g/kg at 65+ (ESPEN / PROT-AGE) |
+| Vitamin D3 | age, BMI | 800–2000 IU; floor 1000 at 65+; up to 4000 at BMI ≥ 30 ([Endocrine Society](https://academic.oup.com/jcem/article/96/7/1911/2833671)) |
+| Magnesium | weight, sex | total need ~6 mg/kg capped at the ANSES PRI (360 F / 420 M); supplement fills ~25–60% of it |
+| Zinc | sex, activity | EFSA PRI 8/11 mg (F/M), +7–10 mg for heavy training, capped at UL 25 |
+| Omega-3 | activity | 250 mg EFSA adequate intake → 1–2 g when very active (ISSN) |
+| Vitamin C | age, activity | ANSES PRI 110 mg (120 at 65+), ~200 mg in heavy training |
+| Creatine | weight **above ~100 kg only** | ISSN maintenance is a **flat 3–5 g/day**; heavier bodies to ~0.05 g/kg |
+| Collagen | activity only | trials dose 5–15 g as **absolute** amounts — the literature does not scale by body weight |
+| Probiotics | **not personalised** | effect is strain-specific and not dose-linear; studied range ~1–50 bn CFU; no weight/sex/age scaling established |
+| Melatonin | **not personalised** | 0.5–1.9 mg regardless of body size; a note flags that endogenous melatonin declines past 55 |
+| Multivitamin | **no single target exists** | 20+ nutrients each with their own target; we say so and point to the single-nutrient categories rather than fake one number |
+
+A previous version scaled creatine as `0.04 g/kg` capped at 3–5 g, which collapsed the band
+to `3–3 g` for anyone under ~85 kg and flagged a standard scoop as "above target" until
+125 kg. Flat 3–5 g is what ISSN actually says.
+
+The verdict is general guidance for healthy adults — **not medical advice**, and no
+substitute for blood work or a professional.
