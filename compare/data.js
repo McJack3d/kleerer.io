@@ -1624,6 +1624,13 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "No.1 omega-3 brand in German pharmacies. Bottle = 25 days.",
    "url": "https://www.amazon.fr/dp/B08X4XVPFM",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 800,
+     "source": "manufacturer: 800 IU vitamin D3 per 8 ml daily dose"
+    }
+   ],
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1752,6 +1759,13 @@ const KLEERER_DATA = {
    "confidence": "medium",
    "notes": "Premium benchmark; highest cost per capsule of the set.",
    "url": "https://www.amazon.fr/dp/B00M42XIVK",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 1000,
+     "source": "declared in product name (1000 IU vitamin D3 per softgel)"
+    }
+   ],
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1944,6 +1958,13 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "Bottle = 20 days; includes vegan D3 800 IU per dose.",
    "url": "https://www.norsan.fr/shop/huile-d-algue-omega-3-vegan/",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 800,
+     "source": "manufacturer: 800 IU vegan vitamin D3 per 5 ml daily dose"
+    }
+   ],
    "banned": [],
    "review_flags": [],
    "provenance": {

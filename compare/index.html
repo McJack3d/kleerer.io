@@ -141,6 +141,13 @@
   .chip.fit-high{border-color:var(--line); color:var(--muted)}
   .chip.fit-over{border-color:var(--gE); background:rgba(185,58,23,.07); color:var(--gE)}
   .doselegend{display:flex; justify-content:space-between; gap:8px; font-size:.62rem; color:var(--faint)}
+  /* stack */
+  .stkrow{padding:10px 0; border-bottom:1px solid var(--soft); font-size:.8rem}
+  .stkrow:last-child{border-bottom:none}
+  .stk-head{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap}
+  .stk-note{font-size:.7rem; color:var(--muted); margin-top:4px}
+  #stackbtn.on{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+  .card-actions{flex-wrap:wrap}
 
   /* ---------- compare tray ---------- */
   .tray{position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--ink); color:var(--bg); transform:translateY(110%); transition:.25s}
@@ -233,7 +240,7 @@
 
 <section class="hero">
   <h1>compare<span class="logo-dot">.</span></h1>
-  <p class="sub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.</p>
+  <p class="sub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs — and <b>my stack</b> sums whatever you combine, catching doses that quietly cross an EU limit. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.</p>
   <div class="stats" id="stats"></div>
 </section>
 
@@ -259,6 +266,7 @@
       <input id="q" type="text" placeholder="search brand or product…" oninput="render()">
     </div>
     <button class="pill" id="fitpill" onclick="toggleFitOnly()" title="show only products whose daily dose lands in your personal target band">fits me</button>
+    <button class="pill" id="stackbtn" onclick="openStack()" title="everything you'd take per day, summed nutrient by nutrient and checked against the EU limits — and your bands, with a profile">my stack (0)</button>
     <select id="sort" onchange="render()">
       <option value="score">sort: best score</option>
       <option value="fit">sort: best fit for me</option>
@@ -286,7 +294,7 @@
     <p style="margin-top:10px">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
-      <span>p1 · compare — open method, private data · MIT · v1.3</span>
+      <span>p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.4</span>
       <span>methodology v1.2 · dosing model v2</span>
     </div>
   </div>
@@ -370,6 +378,7 @@ function saveProfile(){
   try{ localStorage.setItem("kleerer_profile", JSON.stringify(PROFILE)); }catch(e){}
   syncProfileUI(); render();
   if(OPEN_DETAIL) openDetail(OPEN_DETAIL);                          // keep an open modal in sync
+  else if(OPEN_STACK) openStack();
 }
 function clearProfile(){
   PROFILE=null; FIT_ONLY=false;
@@ -377,6 +386,7 @@ function clearProfile(){
   ["pw","ph","pa"].forEach(id=>document.getElementById(id).value="");
   syncProfileUI(); render();
   if(OPEN_DETAIL) openDetail(OPEN_DETAIL);
+  else if(OPEN_STACK) openStack();
 }
 function loadProfileUI(){
   if(!PROFILE) return;
@@ -407,6 +417,17 @@ function toggleFitOnly(){ if(!PROFILE) return; FIT_ONLY=!FIT_ONLY; syncProfileUI
 const fmtNum = n => Number.isInteger(n) ? String(n)
   : String(Math.round(n*100)/100).replace(/\.0+$/,"");             // kills 999.9000000000001
 
+/* Regulatory ceilings — profile-independent, so the stack check works for everyone.
+   Each carries its consequence: ULs are not all the same kind of thing. */
+const LIMITS = {
+  vitamin_d3:{ul:4000, why:"sustained intake above the UL risks hypercalcaemia — this is a genuine toxicity ceiling"},
+  magnesium:{ul:250, why:"EFSA set this limit on gut tolerance (osmotic diarrhoea), not toxicity, and it covers supplements only — not magnesium from food. Well-tolerated chelates are often dosed above it deliberately"},
+  zinc:{ul:25, why:"sustained intake above the UL competes with copper absorption"},
+  vitamin_c:{ul:1000, why:"an ANSES advisory ceiling on gut tolerance, not a toxicity threshold"},
+  melatonin:{ul:1.9, why:"a French regulatory ceiling for food supplements, not a toxicity threshold — above it the product is a medicine, not a supplement"},
+  omega3:{ul:5000, why:"EFSA finds supplemental EPA+DHA up to 5000 mg/day raises no safety concern"}
+};
+
 /* Personalised daily target.
    -> {lo, hi, ul, unit, note, scaled}   ul = null when no regulatory limit exists
    -> {kind:"multi"} for multivitamins, which have no single meaningful dose target
@@ -435,7 +456,7 @@ function targetFor(cat){
       let lo=800, hi=2000;
       if(a>=65) lo=1000;
       if(bmi!=null && bmi>=30){ lo=1000; hi=4000; }
-      return {lo, hi, ul:4000, ulWhy:"sustained intake above the UL risks hypercalcaemia — this is a genuine toxicity ceiling", unit:"IU vitamin D3",
+      return {lo, hi, ul:LIMITS.vitamin_d3.ul, ulWhy:LIMITS.vitamin_d3.why, unit:"IU vitamin D3",
               note:(bmi!=null&&bmi>=30) ? `BMI ${bmi.toFixed(1)} — sequestration in adipose tissue raises the requirement (Endocrine Society); EFSA UL 4000 IU/day`
                  : (a>=65 ? "floor raised for 65+ (skin synthesis falls with age); EFSA UL 4000 IU/day"
                           : (bmi==null ? "add your height to refine this — BMI ≥ 30 raises the target; EFSA UL 4000 IU/day"
@@ -448,7 +469,7 @@ function targetFor(cat){
       // the EFSA supplemental UL of 250 mg/day.
       const ai=Math.min(s==="m"?420:360, Math.round(6*w));
       const lo=Math.round(ai*0.25), hi=Math.min(250, Math.round(ai*0.6));
-      return {lo, hi, ul:250, ulWhy:"EFSA set this limit on gut tolerance (osmotic diarrhoea), not toxicity, and it covers supplements only — not magnesium from food. Well-tolerated chelates are often dosed above it deliberately", unit:"mg elemental Mg",
+      return {lo, hi, ul:LIMITS.magnesium.ul, ulWhy:LIMITS.magnesium.why, unit:"mg elemental Mg",
               note:`your total need ≈ ${ai} mg/day (~6 mg/kg, capped at the ${s==="m"?"male 420":"female 360"} mg PRI, ANSES); diet covers most, so a supplement should fill ${lo}–${hi} mg. EFSA UL for supplements is 250 mg/day`,
               scaled:"weight and sex"};
     }
@@ -456,20 +477,20 @@ function targetFor(cat){
       // EFSA adequate intake 250 mg; higher for cardio/training (ISSN).
       // EFSA: supplemental EPA+DHA up to 5 g/day raises no safety concern.
       const r={sedentary:[250,500],active:[500,1000],athlete:[1000,2000]}[ac];
-      return {lo:r[0], hi:r[1], ul:5000, unit:"mg EPA+DHA",
+      return {lo:r[0], hi:r[1], ul:LIMITS.omega3.ul, ulWhy:LIMITS.omega3.why, unit:"mg EPA+DHA",
               note:`EFSA adequate intake is 250 mg/day; ${ac} adults benefit from more (ISSN). EFSA finds supplemental intakes up to 5000 mg/day raise no safety concern, so a higher dose is a cost question, not a safety one`,
               scaled:"activity"};
     }
     case "zinc": {
       const base=s==="m"?11:8;                                     // EFSA PRI
       const hi=Math.min(25, base+(ac==="athlete"?10:7));
-      return {lo:base, hi, ul:25, ulWhy:"sustained intake above the UL competes with copper absorption", unit:"mg zinc",
+      return {lo:base, hi, ul:LIMITS.zinc.ul, ulWhy:LIMITS.zinc.why, unit:"mg zinc",
               note:`EFSA PRI is ${base} mg/day for ${s==="m"?"men":"women"}${ac==="athlete"?"; sweat and training losses raise it":""}. The EFSA UL is 25 mg/day — sustained intake above that impairs copper absorption`,
               scaled:"sex and activity"};
     }
     case "vitamin_c": {
       const lo = a>=65?120:110, hi = ac==="athlete"?200:180;        // ANSES PRI
-      return {lo, hi, ul:1000, ulWhy:"an ANSES advisory ceiling on gut tolerance, not a toxicity threshold", unit:"mg vitamin C",
+      return {lo, hi, ul:LIMITS.vitamin_c.ul, ulWhy:LIMITS.vitamin_c.why, unit:"mg vitamin C",
               note:`ANSES PRI is ${lo} mg/day${ac==="athlete"?"; heavy training raises turnover to ~200 mg":""}. Above that there is no established added benefit, but no harm either — ANSES advises staying at or below 1000 mg/day from supplements`,
               scaled:"age and activity"};
     }
@@ -485,7 +506,7 @@ function targetFor(cat){
               scaled:false};
     }
     case "melatonin": {
-      return {lo:0.5, hi:1.9, ul:1.9, ulWhy:"a French regulatory ceiling for food supplements, not a toxicity threshold — above it the product is a medicine, not a supplement", unit:"mg melatonin",
+      return {lo:0.5, hi:1.9, ul:LIMITS.melatonin.ul, ulWhy:LIMITS.melatonin.why, unit:"mg melatonin",
               note:"EFSA allows the sleep-onset claim from 1 mg (0.5 mg for jet lag); 1.9 mg is the French regulatory ceiling for a food supplement"
                 +(a>=55?". Endogenous melatonin declines past 55, where supplementation tends to help most":". No body-weight scaling is established"),
               scaled:a>=55?"age (note only)":false};
@@ -559,6 +580,158 @@ function doseBar(f){
     </div></div>`;
 }
 
+/* ---------- stack (p2, first slice — lives inside p1) ------------------------
+   Sums what a basket of products would deliver per day, per nutrient, including
+   declared built-in secondary actives (an omega-3 carrying 800 IU D3 counts
+   toward the vitamin-D total). Checks every total against the EU limits — which
+   needs NO profile — and against your personal band when a profile is set.
+   Multivitamins have no per-nutrient breakdown coded yet, so instead of guessing
+   we say the totals are lower bounds. -------------------------------------- */
+let STACK = [];
+try { STACK = (JSON.parse(localStorage.getItem("kleerer_stack")||"[]")||[]).filter(id => P.some(p => p.id === id)); } catch(e){}
+let OPEN_STACK = false;
+const STACK_UNITS = {whey:"g protein (per serving)", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
+  magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
+  collagen:"g collagen peptides", probiotics:"billion CFU", melatonin:"mg melatonin"};
+
+function toggleStack(id){
+  const p = P.find(x => x.id === id);
+  if (!p || p.scores.red_card) return;
+  if (STACK.includes(id)) STACK = STACK.filter(x => x !== id);
+  else {
+    if (STACK.length >= 12) { alert("Stack up to 12 products."); return; }
+    STACK.push(id);
+  }
+  try{ localStorage.setItem("kleerer_stack", JSON.stringify(STACK)); }catch(e){}
+  renderStackBtn(); render();
+  if (OPEN_STACK) openStack();
+  else if (OPEN_DETAIL) openDetail(OPEN_DETAIL);
+}
+function renderStackBtn(){
+  const b = document.getElementById("stackbtn");
+  b.textContent = `my stack (${STACK.length})`;
+  b.classList.toggle("on", STACK.length > 0);
+}
+
+// category -> [{p, amount, builtIn}] + the multivitamins we cannot decompose
+function stackContributions(items){
+  const contrib = {}, multis = [];
+  for (const p of items){
+    if (p.category === "multivitamin"){ multis.push(p); continue; }
+    const d = productDailyDose(p);
+    if (d != null) (contrib[p.category] = contrib[p.category]||[]).push({p, amount:d});
+    for (const sa of (p.secondary_actives||[]))
+      (contrib[sa.category] = contrib[sa.category]||[]).push({p, amount:sa.per_day, builtIn:true});
+  }
+  return {contrib, multis};
+}
+
+// actives a label *mentions* outside its own category that we have not coded —
+// surfaced instead of silently ignored (same philosophy as "needs review")
+const MENTIONS = [["vitamin_d3",/vitamine?\s*d\s*3?\b/i], ["vitamin_c",/vitamine?\s*c\b/i],
+  ["zinc",/\bzinc\b/i], ["magnesium",/magn[eé]sium/i], ["melatonin",/m[eé]latonine?/i],
+  ["collagen",/collag[eè]ne|collagen/i]];
+function uncodedMentions(p){
+  if (p.category === "multivitamin") return [];
+  const txt = (p.name + " " + (p.variant||"") + " " + (p.form||"")).toLowerCase();
+  const coded = new Set((p.secondary_actives||[]).map(s => s.category));
+  return MENTIONS.filter(([c,re]) => c !== p.category && !coded.has(c) && re.test(txt)).map(([c]) => c);
+}
+
+// one nutrient row of the stack: total, verdict (limit first, then band), contributors
+function stackRowHTML(catKey, entries){
+  const total = entries.reduce((s,e) => s + e.amount, 0);
+  const unit = STACK_UNITS[catKey] || "";
+  const lim = LIMITS[catKey];
+  const t = PROFILE ? targetFor(catKey) : null;
+  let chip = "", note = "", bar = "";
+  if (lim && total > lim.ul){
+    chip = `<span class="chip fit-over">⚠ over the ${fmtNum(lim.ul)} limit</span>`;
+    note = `<div class="stk-note" style="color:var(--gE)">combined ${fmtNum(total)} ${unit} exceeds the ${fmtNum(lim.ul)} regulatory limit for supplements. ${esc(lim.why)}.</div>`;
+  } else if (t && t.lo != null && catKey !== "whey"){
+    const st = total < t.lo ? "low" : (total > t.hi ? "high" : "ok");
+    chip = st === "ok" ? `<span class="chip fit-ok">✓ in your band</span>`
+        : st === "low" ? `<span class="chip fit-low">↓ below your band</span>`
+        : `<span class="chip fit-high">↑ more than you need</span>`;
+  } else if (lim){
+    chip = `<span class="chip">within the ${fmtNum(lim.ul)} limit</span>`;
+  }
+  if (t && t.lo != null && catKey !== "whey") bar = doseBar({t, d: total});
+  if (catKey === "whey" && t && t.lo != null)
+    note = `<div class="stk-note">≈ ${Math.round(total/t.lo*100)}% of your ${t.lo} g/day minimum — one serving of each shake, food does the rest.</div>`;
+  const from = (entries.length > 1 || entries.some(e => e.builtIn))
+    ? `<div class="stk-note">from: ${entries.map(e =>
+        `${esc(e.p.brand)} ${fmtNum(e.amount)}${e.builtIn ? " <b>(built-in)</b>" : ""}`).join(" + ")}</div>`
+    : "";
+  return `<div class="stkrow">
+    <div class="stk-head"><b>${CATLABEL[catKey]||catKey}</b>
+      <span>total <b>${fmtNum(total)}</b> ${unit} ${chip}</span></div>
+    ${from}${bar}${note}
+  </div>`;
+}
+
+const GAP_CATS = ["vitamin_d3","magnesium","omega3","zinc","vitamin_c"];  // nutrients with official reference intakes; everything else is goal-dependent
+function gapSuggest(catKey){
+  const cands = P.filter(p => p.category === catKey && !p.scores.red_card)
+    .map(p => ({p, f: doseFit(p)})).filter(x => x.f && x.f.state === "ok");
+  if (!cands.length) return null;
+  const best  = [...cands].sort((a,b) => b.p.scores.total - a.p.scores.total || a.p.value.std - b.p.value.std)[0].p;
+  const cheap = [...cands].sort((a,b) => a.p.value.std - b.p.value.std || b.p.scores.total - a.p.scores.total)[0].p;
+  return {best, cheap};
+}
+
+function openStack(){
+  const items = STACK.map(id => P.find(p => p.id === id)).filter(Boolean);
+  let html = `<button class="close" onclick="closeModal()">✕</button>
+    <div class="prose"><h2>my stack</h2></div>`;
+  if (!items.length){
+    html += `<p style="font-size:.85rem;color:var(--muted);margin-top:10px">Empty. Add products with the <b>+ stack</b> button on any card — mix categories freely. The stack sums what you would actually swallow per day, nutrient by nutrient, checks every total against the EU upper limits${PROFILE ? " and your personal bands" : ""}, and catches overlaps: an omega-3 with built-in vitamin D counts toward your vitamin-D total.</p>
+    ${PROFILE ? "" : `<p style="font-size:.72rem;color:var(--faint);margin-top:8px">The limit checks work without a profile; fill one in (top of the page) to also see your personal target bands here.</p>`}`;
+    showModal(html); OPEN_STACK = true; return;
+  }
+  const costDay = items.reduce((s,p) => s + p.value.cost_per_day, 0);
+  const {contrib, multis} = stackContributions(items);
+  const catOrder = CATS.map(([k]) => k).filter(k => contrib[k]);
+
+  html += `<div class="sec"><h3>${items.length} product${items.length>1?"s":""}</h3>
+    <ul class="plain">${items.map(p => `<li><span style="flex:1">${esc(p.brand)} — ${esc(p.name)}
+      <span style="color:var(--faint)">· ${eur(p.value.cost_per_day)}/day</span></span>
+      <button class="close" style="position:static;width:22px;height:22px;font-size:.7rem" onclick="toggleStack('${p.id}')">✕</button></li>`).join("")}</ul>
+    <div class="kv" style="margin-top:10px">
+      <div class="cell"><b>${eur(costDay)}</b><span>per day, all together</span></div>
+      <div class="cell"><b>${eur(costDay*30)}</b><span>per month (~30 days)</span></div>
+    </div></div>`;
+
+  html += `<div class="sec"><h3>combined daily intake${PROFILE ? " vs your targets" : " vs EU limits"}</h3>
+    ${catOrder.map(k => stackRowHTML(k, contrib[k])).join("") ||
+      `<p style="font-size:.78rem;color:var(--muted)">Nothing to sum yet.</p>`}</div>`;
+
+  if (multis.length)
+    html += `<div class="flagbox" style="margin-top:14px">⚑ ${multis.map(p => esc(p.brand+" "+p.name)).join(", ")} — a multivitamin adds 20+ nutrients (typically zinc, vitamin D, C, magnesium) whose per-product amounts aren't coded in our data yet. <b>The totals above are lower bounds</b>: treat any nutrient already near its limit as potentially over. Coding multivitamin labels is on the roadmap.</div>`;
+
+  const mentions = items.flatMap(p => uncodedMentions(p).map(c => ({p, c})));
+  if (mentions.length)
+    html += `<div class="flagbox" style="margin-top:8px">⚑ declared but not yet coded: ${mentions.map(m =>
+      `${esc(m.p.brand)} ${esc(m.p.name)} mentions <b>${CATLABEL[m.c]||m.c}</b>`).join(" · ")} — not counted in the totals above.</div>`;
+
+  if (PROFILE){
+    const gaps = GAP_CATS.filter(k => !contrib[k]);
+    if (gaps.length){
+      html += `<div class="sec"><h3>not covered by this stack</h3>
+        <p style="font-size:.72rem;color:var(--muted);margin-bottom:8px">A varied diet may already cover these — nothing here is a prompt to buy more.${multis.length ? " Your multivitamin likely covers part of them too." : ""} If you do want to cover one:</p>
+        ${gaps.map(k => { const g = gapSuggest(k); if (!g) return "";
+          const link = p => `<a href="#" onclick="openDetail('${p.id}');return false">${esc(p.brand)} ${esc(p.name)}</a>`;
+          return `<div class="stkrow"><div class="stk-head"><b>${CATLABEL[k]}</b>
+            <span style="font-size:.72rem">best for you: ${link(g.best)} (${g.best.scores.grade} · ${eur(g.best.value.cost_per_day)}/day)${g.cheap.id !== g.best.id ? ` · cheapest fit: ${link(g.cheap)} (${eur(g.cheap.value.cost_per_day)}/day)` : ""}</span></div></div>`; }).join("")}</div>`;
+    }
+  } else {
+    html += `<p style="font-size:.72rem;color:var(--faint);margin-top:14px">Fill in your profile (top of the page) to see the totals against your personal bands and what this stack doesn't cover.</p>`;
+  }
+
+  html += `<p class="footnote">The stack counts supplements only — food intake is on top of everything shown here. Built-in secondary actives are included only where the manufacturer declares them. Guidance for healthy adults, not medical advice.</p>`;
+  showModal(html, true); OPEN_STACK = true;
+}
+
 /* ---------- cards ---------- */
 const ZONE_FLAG = {FR:"🇫🇷", EU:"🇪🇺", EXTRA_EU:"🌍", UNKNOWN:"—"};
 const ZONE_LABEL = {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"};
@@ -582,7 +755,7 @@ function chipset(p){
   return chips.join("");
 }
 function card(p){
-  const s = p.scores, inCmp = compare.includes(p.id);
+  const s = p.scores, inCmp = compare.includes(p.id), inStk = STACK.includes(p.id);
   return `<article class="card${s.red_card?" redcard":""}">
     <span class="conf" title="data confidence: ${p.confidence}" style="background:${CONF[p.confidence]}"></span>
     ${s.red_card?`<div class="redcard-banner">🟥 red card · banned: ${esc((s.banned_substances||[]).join(", ").replace(/_/g," "))}</div>`:""}
@@ -608,6 +781,7 @@ function card(p){
     <div class="card-actions">
       <button class="btn primary" onclick="openDetail('${p.id}')">details</button>
       <button class="btn ${inCmp?"added":""}" onclick="toggleCompare('${p.id}')">${inCmp?"✓ added":"+ compare"}</button>
+      ${!s.red_card?`<button class="btn ${inStk?"added":""}" onclick="toggleStack('${p.id}')" title="add to your daily stack — combined doses are checked against the EU limits">${inStk?"✓ stacked":"+ stack"}</button>`:""}
       ${(p.url && !s.red_card)?`<a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow" title="direct product page — kleerer has no affiliation and earns nothing">buy ↗</a>`:""}
     </div>
   </article>`;
@@ -757,9 +931,10 @@ function openDetail(id){
           ? "Personalised to your "+esc(f.t.scaled)+"."
           : "This band is <b>not</b> personalised: no body-weight, sex or age scaling is established for this nutrient, so it is the same for everyone."} Guidance for healthy adults — not medical advice.</p></div>`;})()}
     <div class="sec"><h3>what you actually get</h3>
-      <ul class="plain"><li>${esc(activesLine(p))}</li><li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
+      <ul class="plain"><li>${esc(activesLine(p))}</li>${(p.secondary_actives||[]).map(sa =>
+        `<li>+ built-in: ${fmtNum(sa.per_day)} ${esc(STACK_UNITS[sa.category]||sa.category)} / day — counted in your stack totals</li>`).join("")}<li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
-    ${(p.url && !s.red_card)?`<div class="sec"><a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">buy — direct product page ↗</a> <span style="font-size:.68rem;color:var(--faint)">no affiliation, kleerer earns nothing</span></div>`:""}
+    ${!s.red_card?`<div class="sec"><button class="btn ${STACK.includes(id)?"added":""}" onclick="toggleStack('${id}')">${STACK.includes(id)?"✓ in your stack":"+ add to my stack"}</button>${p.url?` <a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">buy — direct product page ↗</a> <span style="font-size:.68rem;color:var(--faint)">no affiliation, kleerer earns nothing</span>`:""}</div>`:""}
     ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>needs human review</h3>${p.review_flags.map(f=>`<div class="flagbox">⚑ unrecognised ingredient: ${esc(f)} — help us classify it</div>`).join("")}</div>`:""}
     ${p.flags.length ? `<div class="sec"><h3>watch-outs</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
     <p class="footnote">Scored with methodology v${META.methodology_version} from the public label and brand documents — not from independent lab testing. Not medical advice.</p>`;
@@ -798,6 +973,9 @@ function openMethodology(){
     <tr><th>⚠ over the EU limit</th><td>breaches a statutory upper limit (vitamin D 4000 IU, zinc 25 mg, supplemental magnesium 250 mg, melatonin 1.9 mg…)</td></tr></table>
     <p><b>We only personalise what the evidence lets us.</b> Protein scales with body weight and activity (ISSN / Morton 2018, ESPEN past 65); magnesium with weight and sex (~6 mg/kg, capped at the ANSES PRI); vitamin D with age and BMI; zinc with sex and activity (EFSA PRI). But collagen trials dose in absolute grams, and probiotics are strain-specific and not dose-linear — so those bands are <b>the same for everyone, and the product says so</b> instead of inventing a personalised number. Multivitamins get no single target at all: 20+ nutrients each have their own, so we point you to the per-nutrient categories rather than pretend one number exists.</p>
     <p>Personalised dosing never touches the Health &amp; Compo Score — two people looking at the same product see the same grade. It is guidance for healthy adults and <b>not medical advice</b>.</p>
+    <h4>My stack (beta) — combined doses, checked</h4>
+    <p>Add any products to a stack and we sum what you would actually swallow per day, nutrient by nutrient — including <b>declared built-in actives</b> (an omega-3 carrying 800 IU of vitamin D counts toward your vitamin-D total). Every total is checked against the EU upper limits — that works <b>without</b> a profile — and against your personal bands with one. Two 300 mg magnesiums quietly total 600 mg against a 250 mg supplemental limit; nothing on the label warns you, the stack does.</p>
+    <p><b>Honest boundary:</b> multivitamin labels aren't per-nutrient coded in our data yet, so a stack containing one shows its totals as <i>lower bounds</i> and says so, rather than guessing. Products whose name declares an extra active we haven't coded are flagged, not silently ignored — the same rule as unrecognised ingredients.</p>
     <h4>Provenance (separate axis, not in the health score)</h4>
     <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
     <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>
@@ -813,7 +991,7 @@ function openAbout(){
     <h4>Independence</h4>
     <p>No sponsors, no affiliate links, no paid placements. Covers ${META.n_products} EU/FR products across ${META.n_categories} categories (snapshot ${META.snapshot}). The <b>scoring method</b> — script and rules — is open-source (MIT) so it can be audited and challenged; the <b>dataset and its daily price/label history</b> stay private, because that accumulating archive is what makes kleerer hard to replicate. If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
     <h4>Roadmap</h4>
-    <p>p1: this comparator, with a personalised dosing check on every product. Next: automated price &amp; label pipeline (source audit is Phase 1), broader categories, and a full profile → needs → <b>stack</b> journey — a minimal basket that covers your gaps at the lowest price per active, and warns when stacking two products pushes a nutrient over its upper limit.</p>
+    <p>p1: this comparator, with a personalised dosing check on every product. p2, <b>stack</b>, ships inside it (beta): build a basket across categories and it sums the combined daily doses — built-in actives included — warning when two products quietly push a nutrient over its EU limit, and showing what your profile's targets leave uncovered. Next: per-nutrient coding of multivitamin labels (so stack totals stop being lower bounds), the automated price &amp; label pipeline (source audit is Phase 1), and broader categories.</p>
     <p>The daily price-and-label archive stays <b>private</b>, and deliberately so — it is the asset, and publishing it would hand a scraper the one thing that took years to accumulate. What the site shows is today's catalogue; the history stays behind the wall.</p>
     <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>
   </div>`);
@@ -821,7 +999,7 @@ function openAbout(){
 
 /* ---------- modal plumbing ---------- */
 function showModal(html, wide){
-  OPEN_DETAIL = null;
+  OPEN_DETAIL = null; OPEN_STACK = false;
   const box = document.getElementById("modalbox");
   box.className = "modal" + (wide ? " wide" : "");
   box.innerHTML = html;
@@ -831,12 +1009,13 @@ function showModal(html, wide){
 function closeModal(){
   document.getElementById("overlay").classList.remove("show");
   document.body.style.overflow = "";
-  OPEN_DETAIL = null;
+  OPEN_DETAIL = null; OPEN_STACK = false;
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
 loadProfileUI();
 syncProfileUI();
+renderStackBtn();
 render();
 </script>
 </body>

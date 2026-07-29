@@ -157,3 +157,26 @@ to `3–3 g` for anyone under ~85 kg and flagged a standard scoop as "above targ
 
 The verdict is general guidance for healthy adults — **not medical advice**, and no
 substitute for blood work or a professional.
+
+## Stacking — "my stack" (p2, beta)
+
+Users can add any products to a persistent stack. The engine sums the **combined daily
+intake per nutrient** — including declared built-in secondary actives, coded in the data
+as `secondary_actives` (e.g. WHC UnoCardio and both NORSAN oils carry 800–1000 IU of
+vitamin D3 per daily dose on top of their omega-3) — and checks every total twice:
+
+1. **against the regulatory limits** (`LIMITS` table) — profile-independent, works for
+   every visitor: two 300 mg magnesium products total 600 mg against the 250 mg
+   supplemental UL, and each breach is reported with its consequence;
+2. **against the user's personal bands** when a profile is set, plus a "not covered"
+   list restricted to nutrients with official reference intakes (D3, magnesium, omega-3,
+   zinc, vitamin C — everything else is goal-dependent and is not suggested), each with
+   a best-scoring and a cheapest fitting product.
+
+**Honest boundaries.** Multivitamins have no per-nutrient breakdown coded yet, so any
+stack containing one displays its totals as *lower bounds* and says so — coding those
+labels is the next data milestone. A product whose *name* declares an extra active we
+have not coded (e.g. a collagen "+ Vitamine C") is flagged as uncounted rather than
+silently ignored — the same fail-visible rule as unrecognised ingredients. Secondary
+actives are only coded where the manufacturer declares the amount; nothing is estimated.
+
