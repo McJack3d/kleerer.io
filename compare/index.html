@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Independent supplement comparator: an evidence-based Health &amp; Compo Score (A–E) and price per gram of actual active for 112 EU/French products across 11 categories. No sponsors, no affiliate links.">
+<meta name="description" content="Independent supplement comparator: an evidence-based Health &amp; Compo Score (A–E) price per gram of actual active, and a personalised dosage check for 163 EU/French products across 11 categories. No sponsors, no affiliate links.">
 <meta name="robots" content="index,follow">
 <meta name="keywords" content="compléments alimentaires, supplements, health score, whey, créatine, magnésium, oméga-3, comparateur, additifs, édulcorants">
 <link rel="canonical" href="https://kleerer.com/compare/">
@@ -128,8 +128,19 @@
   .pbox input,.pbox select{border:1px solid var(--line); border-radius:2px; padding:6px 8px; font-family:inherit; font-size:.8rem; background:var(--bg); width:76px}
   .pbox select{width:auto}
   .pbox .hint{color:var(--faint); font-size:.68rem; flex-basis:100%}
-  .fit-ok{color:var(--gA); font-weight:700} .fit-low{color:var(--gC); font-weight:700} .fit-high{color:var(--gE); font-weight:700}
-  .chip.fit{border-color:var(--gA); color:var(--gA)}
+  .pbox.on{border-color:var(--ink)}
+  .pstatus{flex-basis:100%; font-size:.72rem; color:var(--gA); font-weight:700}
+  .pstatus.off{color:var(--faint); font-weight:400}
+  /* dose-fit states: only "over" is red — being above the optimal band is not a safety issue */
+  .fit-ok{color:var(--gA); font-weight:700}
+  .fit-low{color:var(--gC); font-weight:700}
+  .fit-high{color:var(--muted); font-weight:700}
+  .fit-over{color:var(--gE); font-weight:700}
+  .chip.fit-ok{border-color:var(--gA); color:var(--gA)}
+  .chip.fit-low{border-color:var(--gC); color:var(--gC)}
+  .chip.fit-high{border-color:var(--line); color:var(--muted)}
+  .chip.fit-over{border-color:var(--gE); background:rgba(185,58,23,.07); color:var(--gE)}
+  .doselegend{display:flex; justify-content:space-between; gap:8px; font-size:.62rem; color:var(--faint)}
 
   /* ---------- compare tray ---------- */
   .tray{position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--ink); color:var(--bg); transform:translateY(110%); transition:.25s}
@@ -227,15 +238,16 @@
 </section>
 
 <div class="profile">
-  <div class="pbox">
+  <div class="pbox" id="pbox">
     <label>weight (kg)<input id="pw" type="number" min="35" max="200" placeholder="70"></label>
-    <label>height (cm)<input id="ph" type="number" min="120" max="230" placeholder="175"></label>
+    <label>height (cm)<input id="ph" type="number" min="120" max="230" placeholder="optional"></label>
     <label>sex<select id="ps"><option value="m">male</option><option value="f">female</option></select></label>
     <label>age<input id="pa" type="number" min="18" max="99" placeholder="30"></label>
     <label>activity<select id="pac"><option value="sedentary">sedentary</option><option value="active" selected>active</option><option value="athlete">athlete</option></select></label>
     <button class="btn primary" onclick="saveProfile()">apply</button>
     <button class="btn" onclick="clearProfile()">clear</button>
-    <span class="hint">optional — personalises the "dosage vs your needs" line on every product (healthy adults; evidence-based ranges, EFSA upper limits respected; not medical advice)</span>
+    <span class="pstatus off" id="pstatus">no profile — every product shows its dose, none is checked against you</span>
+    <span class="hint">optional — personalises the "dosage vs your needs" line on every product. Weight and age are required; height only sharpens the vitamin&nbsp;D target (via BMI). Healthy adults; evidence-based ranges, EU upper limits respected; not medical advice.</span>
   </div>
 </div>
 
@@ -246,8 +258,10 @@
       <span style="color:var(--faint);font-size:.8rem">&gt;</span>
       <input id="q" type="text" placeholder="search brand or product…" oninput="render()">
     </div>
+    <button class="pill" id="fitpill" onclick="toggleFitOnly()" title="show only products whose daily dose lands in your personal target band">fits me</button>
     <select id="sort" onchange="render()">
       <option value="score">sort: best score</option>
+      <option value="fit">sort: best fit for me</option>
       <option value="value">sort: best value (€ / active)</option>
       <option value="price">sort: price, low → high</option>
       <option value="brand">sort: brand a–z</option>
@@ -272,8 +286,8 @@
     <p style="margin-top:10px">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
-      <span>p1 · compare — open method, private data · MIT · v1.2</span>
-      <span>methodology v1.2</span>
+      <span>p1 · compare — open method, private data · MIT · v1.3</span>
+      <span>methodology v1.2 · dosing model v2</span>
     </div>
   </div>
 </footer>
@@ -336,40 +350,147 @@ function setCat(k){ cat = k;
   render();
 }
 
-/* ---------- personalised dosing (healthy adults; sources in METHODOLOGY) ---- */
+/* ---------- personalised dosing — model v2 (healthy adults; sources in METHODOLOGY)
+   Two independent questions, deliberately kept apart:
+     1. is this dose in YOUR effective band?   (lo–hi, personalised where evidence allows)
+     2. does it breach a REGULATORY limit?     (ul — same for everyone, safety, not preference)
+   Being above the optimal band is not a safety issue and is never shown in red;
+   only a UL breach is. Where no body-weight/age scaling is established (probiotics,
+   collagen, melatonin) we say so rather than fake a personalised number.        */
 let PROFILE = null;
+let FIT_ONLY = false;
+let OPEN_DETAIL = null;                       // id of the product open in the modal, if any
 try { PROFILE = JSON.parse(localStorage.getItem("kleerer_profile")||"null"); } catch(e){}
+
 function saveProfile(){
-  const w=+document.getElementById("pw").value, h=+document.getElementById("ph").value,
-        a=+document.getElementById("pa").value;
-  if(!w||!h||!a){ alert("Fill weight, height and age."); return; }
-  PROFILE={w,h,a,s:document.getElementById("ps").value,ac:document.getElementById("pac").value};
+  const w=+document.getElementById("pw").value, a=+document.getElementById("pa").value,
+        h=+document.getElementById("ph").value;                     // optional — BMI only
+  if(!w||!a){ alert("Weight and age are required. Height is optional (it only sharpens the vitamin D target)."); return; }
+  PROFILE={w,h:h||null,a,s:document.getElementById("ps").value,ac:document.getElementById("pac").value};
   try{ localStorage.setItem("kleerer_profile", JSON.stringify(PROFILE)); }catch(e){}
-  render();
+  syncProfileUI(); render();
+  if(OPEN_DETAIL) openDetail(OPEN_DETAIL);                          // keep an open modal in sync
 }
-function clearProfile(){ PROFILE=null; try{localStorage.removeItem("kleerer_profile");}catch(e){} render(); }
+function clearProfile(){
+  PROFILE=null; FIT_ONLY=false;
+  try{localStorage.removeItem("kleerer_profile");}catch(e){}
+  ["pw","ph","pa"].forEach(id=>document.getElementById(id).value="");
+  syncProfileUI(); render();
+  if(OPEN_DETAIL) openDetail(OPEN_DETAIL);
+}
 function loadProfileUI(){
   if(!PROFILE) return;
-  document.getElementById("pw").value=PROFILE.w; document.getElementById("ph").value=PROFILE.h;
+  document.getElementById("pw").value=PROFILE.w;
+  document.getElementById("ph").value=PROFILE.h||"";
   document.getElementById("pa").value=PROFILE.a; document.getElementById("ps").value=PROFILE.s;
   document.getElementById("pac").value=PROFILE.ac;
 }
-// returns {lo, hi, unit, note} = personalised daily target range, or null
+function syncProfileUI(){
+  const box=document.getElementById("pbox"), st=document.getElementById("pstatus"),
+        pill=document.getElementById("fitpill");
+  box.classList.toggle("on", !!PROFILE);
+  pill.style.display = PROFILE ? "" : "none";
+  pill.classList.toggle("on", FIT_ONLY);
+  if(!PROFILE){
+    st.className="pstatus off";
+    st.textContent="no profile — every product shows its dose, none is checked against you";
+    FIT_ONLY=false;
+    return;
+  }
+  const {w,h,a,s,ac}=PROFILE;
+  st.className="pstatus";
+  st.textContent=`profile active — ${w} kg${h?" · "+h+" cm":""} · ${a} y · ${s==="m"?"male":"female"} · ${ac}`
+    + " · every dose below is now checked against your targets";
+}
+function toggleFitOnly(){ if(!PROFILE) return; FIT_ONLY=!FIT_ONLY; syncProfileUI(); render(); }
+
+const fmtNum = n => Number.isInteger(n) ? String(n)
+  : String(Math.round(n*100)/100).replace(/\.0+$/,"");             // kills 999.9000000000001
+
+/* Personalised daily target.
+   -> {lo, hi, ul, unit, note, scaled}   ul = null when no regulatory limit exists
+   -> {kind:"multi"} for multivitamins, which have no single meaningful dose target
+   -> null when there is no profile                                            */
 function targetFor(cat){
   if(!PROFILE) return null;
-  const {w,h,a,s,ac}=PROFILE, bmi=w/((h/100)**2);
-  const gkg={sedentary:[0.83,1.2],active:[1.4,1.8],athlete:[1.6,2.2]}[ac];
+  const {w,h,a,s,ac}=PROFILE;
+  const bmi = h ? w/((h/100)**2) : null;
   switch(cat){
-    case "whey": return {lo:Math.round(gkg[0]*w), hi:Math.round(gkg[1]*w), unit:"g protein (total diet)", note:`${gkg[0]}–${gkg[1]} g/kg (ISSN / Morton 2018) — supplements top up food`};
-    case "creatine": { const d=Math.min(5,Math.max(3,Math.round(0.04*w*10)/10)); return {lo:3, hi:d, unit:"g creatine", note:"~0.04 g/kg, floor 3 g (ISSN)"}; }
-    case "vitamin_d3": { let lo=800, hi=bmi>=30?4000:2000; if(a>=65) lo=1000; return {lo, hi, unit:"IU vitamin D3", note:bmi>=30?"higher need with BMI ≥ 30 (Endocrine Society); EFSA UL 4000":"EFSA UL 4000 IU"}; }
-    case "magnesium": { const ai=Math.min(s==="m"?420:360, Math.round(6*w)); return {lo:100, hi:300, unit:"mg supplemental Mg", note:`your total need ≈ ${ai} mg/day (~6 mg/kg, ANSES); food covers most`}; }
-    case "omega3": { const r={sedentary:[250,500],active:[500,1000],athlete:[1000,2000]}[ac]; return {lo:r[0], hi:r[1], unit:"mg EPA+DHA", note:"EFSA baseline 250; higher for active/cardio (ISSN)"}; }
-    case "zinc": { const base=s==="m"?11:8; const hi=ac==="athlete"?base+4:base+2; return {lo:base, hi:Math.min(hi,25), unit:"mg zinc", note:"EFSA PRI; sweat losses raise athlete needs; UL 25"}; }
-    case "vitamin_c": { const lo=110, hi=ac==="athlete"?200:155; return {lo, hi, unit:"mg vitamin C", note:"ANSES 110 mg; up to ~200 for heavy training"}; }
-    case "collagen": return {lo:5, hi:ac==="athlete"?15:10, unit:"g peptides", note:"5–15 g in trials (joints/skin)"};
-    case "probiotics": return {lo:10, hi:20, unit:"billion CFU", note:"typical studied range; no established body-weight scaling"};
-    case "melatonin": return {lo:0.5, hi:1.9, unit:"mg melatonin", note:"EFSA claim ≥1 mg; French supplement ceiling 1.9 mg"+(a>=55?"; often more useful 55+":"")};
+    case "whey": {
+      // ISSN/Morton 2018 g/kg bodyweight; ESPEN/PROT-AGE raise the floor past 65.
+      let gkg={sedentary:[0.83,1.2],active:[1.4,1.8],athlete:[1.6,2.2]}[ac];
+      if(a>=65) gkg=[Math.max(gkg[0],1.0), Math.max(gkg[1],1.2)];
+      return {lo:Math.round(gkg[0]*w), hi:Math.round(gkg[1]*w), ul:null, unit:"g protein",
+              note:`${gkg[0]}–${gkg[1]} g/kg/day for a ${w} kg ${ac} adult${a>=65?" aged 65+ (ESPEN)":" (ISSN / Morton 2018)"} — this is your TOTAL diet target; a supplement only tops up food`,
+              scaled:"weight, activity and age"};
+    }
+    case "creatine": {
+      // ISSN: maintenance 3–5 g/day flat; heavier athletes to ~0.05 g/kg. No EFSA UL.
+      const hi=Math.max(5, Math.round(0.05*w));
+      return {lo:3, hi, ul:null, unit:"g creatine",
+              note:`ISSN maintenance is a flat 3–5 g/day; heavier or heavily-training bodies sit at the top (~0.05 g/kg → ${hi} g at ${w} kg). No EU upper limit is set`,
+              scaled: hi>5 ? "weight (above 100 kg)" : false};
+    }
+    case "vitamin_d3": {
+      let lo=800, hi=2000;
+      if(a>=65) lo=1000;
+      if(bmi!=null && bmi>=30){ lo=1000; hi=4000; }
+      return {lo, hi, ul:4000, ulWhy:"sustained intake above the UL risks hypercalcaemia — this is a genuine toxicity ceiling", unit:"IU vitamin D3",
+              note:(bmi!=null&&bmi>=30) ? `BMI ${bmi.toFixed(1)} — sequestration in adipose tissue raises the requirement (Endocrine Society); EFSA UL 4000 IU/day`
+                 : (a>=65 ? "floor raised for 65+ (skin synthesis falls with age); EFSA UL 4000 IU/day"
+                          : (bmi==null ? "add your height to refine this — BMI ≥ 30 raises the target; EFSA UL 4000 IU/day"
+                                       : "EFSA UL 4000 IU/day")),
+              scaled:"age and BMI"};
+    }
+    case "magnesium": {
+      // Total need ~6 mg/kg capped at the PRI; food covers most of it.
+      // The supplemental band is derived from YOUR total need, and never exceeds
+      // the EFSA supplemental UL of 250 mg/day.
+      const ai=Math.min(s==="m"?420:360, Math.round(6*w));
+      const lo=Math.round(ai*0.25), hi=Math.min(250, Math.round(ai*0.6));
+      return {lo, hi, ul:250, ulWhy:"EFSA set this limit on gut tolerance (osmotic diarrhoea), not toxicity, and it covers supplements only — not magnesium from food. Well-tolerated chelates are often dosed above it deliberately", unit:"mg elemental Mg",
+              note:`your total need ≈ ${ai} mg/day (~6 mg/kg, capped at the ${s==="m"?"male 420":"female 360"} mg PRI, ANSES); diet covers most, so a supplement should fill ${lo}–${hi} mg. EFSA UL for supplements is 250 mg/day`,
+              scaled:"weight and sex"};
+    }
+    case "omega3": {
+      // EFSA adequate intake 250 mg; higher for cardio/training (ISSN).
+      // EFSA: supplemental EPA+DHA up to 5 g/day raises no safety concern.
+      const r={sedentary:[250,500],active:[500,1000],athlete:[1000,2000]}[ac];
+      return {lo:r[0], hi:r[1], ul:5000, unit:"mg EPA+DHA",
+              note:`EFSA adequate intake is 250 mg/day; ${ac} adults benefit from more (ISSN). EFSA finds supplemental intakes up to 5000 mg/day raise no safety concern, so a higher dose is a cost question, not a safety one`,
+              scaled:"activity"};
+    }
+    case "zinc": {
+      const base=s==="m"?11:8;                                     // EFSA PRI
+      const hi=Math.min(25, base+(ac==="athlete"?10:7));
+      return {lo:base, hi, ul:25, ulWhy:"sustained intake above the UL competes with copper absorption", unit:"mg zinc",
+              note:`EFSA PRI is ${base} mg/day for ${s==="m"?"men":"women"}${ac==="athlete"?"; sweat and training losses raise it":""}. The EFSA UL is 25 mg/day — sustained intake above that impairs copper absorption`,
+              scaled:"sex and activity"};
+    }
+    case "vitamin_c": {
+      const lo = a>=65?120:110, hi = ac==="athlete"?200:180;        // ANSES PRI
+      return {lo, hi, ul:1000, ulWhy:"an ANSES advisory ceiling on gut tolerance, not a toxicity threshold", unit:"mg vitamin C",
+              note:`ANSES PRI is ${lo} mg/day${ac==="athlete"?"; heavy training raises turnover to ~200 mg":""}. Above that there is no established added benefit, but no harm either — ANSES advises staying at or below 1000 mg/day from supplements`,
+              scaled:"age and activity"};
+    }
+    case "collagen": {
+      // Trials dose in absolute grams, not per kg — do not fake weight scaling.
+      return {lo:5, hi:ac==="athlete"?15:10, ul:null, unit:"g peptides",
+              note:"clinical trials use 5 g (skin) to 15 g (joints, tendon loading) as absolute doses — collagen peptide research does not scale by body weight, so this band moves with your activity only",
+              scaled:"activity only"};
+    }
+    case "probiotics": {
+      return {lo:5, hi:50, ul:null, unit:"billion CFU",
+              note:"studied doses span roughly 1–50 billion CFU and the effect is strain-specific, not dose-linear — more CFU is not inherently better. No body-weight, sex or age scaling is established, so this band is the same for everyone",
+              scaled:false};
+    }
+    case "melatonin": {
+      return {lo:0.5, hi:1.9, ul:1.9, ulWhy:"a French regulatory ceiling for food supplements, not a toxicity threshold — above it the product is a medicine, not a supplement", unit:"mg melatonin",
+              note:"EFSA allows the sleep-onset claim from 1 mg (0.5 mg for jet lag); 1.9 mg is the French regulatory ceiling for a food supplement"
+                +(a>=55?". Endogenous melatonin declines past 55, where supplementation tends to help most":". No body-weight scaling is established"),
+              scaled:a>=55?"age (note only)":false};
+    }
+    case "multivitamin": return {kind:"multi"};
     default: return null;
   }
 }
@@ -380,20 +501,62 @@ function productDailyDose(p){
   if(p.active_per_unit!=null && p.units_per_day!=null) return p.active_per_unit*p.units_per_day;
   return null;
 }
+/* -> {state, cls, label, chip, t, d}
+   state: "low" | "ok" | "high" | "over" | "multi"
+   "high" = above your optimal band but within every regulatory limit — informational.
+   "over" = breaches a statutory upper limit — the only state shown in red.        */
 function doseFit(p){
   const t=targetFor(p.category); if(!t) return null;
+  if(t.kind==="multi") return {state:"multi", cls:"", t};
   const d=productDailyDose(p); if(d==null) return null;
-  if(p.category==="whey"){                                                    // serving vs total-day target
+  const D=fmtNum(d);
+
+  if(p.category==="whey"){                       // a serving tops up a whole-day target
+    // No band comparison here: a single serving is *meant* to be a fraction of the
+    // daily total, so plotting it against 105–135 g would read as "under-dosed".
     const pct=Math.round(d/t.lo*100);
-    return {cls:"fit-ok", label:`1 serving = ${d} g ≈ ${pct}% of your min daily protein target (${t.lo} g)`, t, d};
+    return {state:"ok", cls:"fit-ok", t, d, noBar:true,
+            label:`1 serving = ${D} g protein ≈ ${pct}% of your ${t.lo} g/day minimum (your total-diet target is ${t.lo}–${t.hi} g — food does most of it)`,
+            chip:`≈${pct}% of your daily protein`};
   }
-  const cls = d < t.lo ? "fit-low" : (d > t.hi ? "fit-high" : "fit-ok");
-  const word = cls==="fit-ok" ? "fits your target" : (cls==="fit-low" ? "below your target" : "above your target");
-  return {cls, label:`${d} ${t.unit.split(" ")[0]==="g"?"g":""} vs your ${t.lo}–${t.hi} ${t.unit} → ${word}`, t, d, word};
+  if(t.ul!=null && d>t.ul)
+    return {state:"over", cls:"fit-over", t, d,
+            label:`${D} ${t.unit} per day — above the ${fmtNum(t.ul)} regulatory limit for supplements (your effective band is ${fmtNum(t.lo)}–${fmtNum(t.hi)})`
+                  + (t.ulWhy?`. What that means: ${t.ulWhy}`:""),
+            chip:`⚠ over the ${fmtNum(t.ul)} limit`};
+  if(d<t.lo)
+    return {state:"low", cls:"fit-low", t, d,
+            label:`${D} ${t.unit} per day — below your ${fmtNum(t.lo)}–${fmtNum(t.hi)} target; you would need more than the label serving`,
+            chip:`↓ under-dosed for you`};
+  if(d>t.hi)
+    return {state:"high", cls:"fit-high", t, d,
+            label:`${D} ${t.unit} per day — above your ${fmtNum(t.lo)}–${fmtNum(t.hi)} optimal band but within every regulatory limit: safe, just more than you need`,
+            chip:`↑ more than you need`};
+  return {state:"ok", cls:"fit-ok", t, d,
+          label:`${D} ${t.unit} per day — inside your ${fmtNum(t.lo)}–${fmtNum(t.hi)} target`,
+          chip:`✓ fits you`};
 }
 function doseFitChip(p){
-  const f=doseFit(p); if(!f||p.category==="whey") return "";
-  return f.cls==="fit-ok" ? `<span class="chip fit">✓ fits you</span>` : "";
+  const f=doseFit(p);
+  if(!f || f.state==="multi") return "";
+  return `<span class="chip ${f.cls}" title="${esc(f.label)}">${esc(f.chip)}</span>`;
+}
+/* Where the product's daily dose sits against the band — drawn to scale. */
+function doseBar(f){
+  const {t,d}=f, top = t.ul!=null ? Math.max(t.ul, d)*1.05 : Math.max(t.hi*1.6, d*1.1);
+  const pct = x => Math.min(100, Math.max(0, x/top*100));
+  return `<div style="position:relative;margin-top:10px">
+    <div style="position:relative;height:7px;background:var(--soft);border-radius:1px">
+      <div style="position:absolute;left:${pct(t.lo)}%;width:${pct(t.hi)-pct(t.lo)}%;height:100%;background:rgba(26,122,62,.4)"></div>
+      ${t.ul!=null?`<div style="position:absolute;left:${pct(t.ul)}%;right:0;height:100%;background:rgba(185,58,23,.16)"></div>
+        <div style="position:absolute;left:${pct(t.ul)}%;top:-3px;width:1px;height:13px;background:var(--gE)"></div>`:""}
+      <div style="position:absolute;left:${pct(d)}%;top:-4px;width:2px;height:15px;background:var(--ink)"></div>
+    </div>
+    <div class="doselegend" style="margin-top:5px">
+      <span>0</span>
+      <span style="color:var(--gA)">your band ${fmtNum(t.lo)}–${fmtNum(t.hi)}</span>
+      ${t.ul!=null?`<span style="color:var(--gE)">EU limit ${fmtNum(t.ul)}</span>`:`<span>no EU limit set</span>`}
+    </div></div>`;
 }
 
 /* ---------- cards ---------- */
@@ -450,23 +613,37 @@ function card(p){
   </article>`;
 }
 
+const FIT_RANK = {ok:0, high:1, low:2, over:3, multi:4};
 function render(){
   const q = document.getElementById("q").value.trim().toLowerCase();
   const sort = document.getElementById("sort").value;
   let list = P.filter(p => (cat==="all" || p.category===cat) &&
     (!q || (p.brand + " " + p.name + " " + p.form).toLowerCase().includes(q)));
+  const scope = list.length;                 // matching search + category, before the fit filter
+  const matched = PROFILE ? list.filter(p => { const f=doseFit(p); return f && f.state==="ok"; }).length : 0;
+  if (FIT_ONLY && PROFILE) list = list.filter(p => { const f=doseFit(p); return f && f.state==="ok"; });
   const sorters = {
     score: (a,b) => b.scores.total - a.scores.total || a.value.std - b.value.std,
+    fit:   (a,b) => { const fa=doseFit(a), fb=doseFit(b);
+                      const ra=fa?FIT_RANK[fa.state]:5, rb=fb?FIT_RANK[fb.state]:5;
+                      return ra-rb || b.scores.total-a.scores.total || a.value.std-b.value.std; },
     value: (a,b) => a.value.std - b.value.std,
     price: (a,b) => a.price_eur - b.price_eur,
     brand: (a,b) => a.brand.localeCompare(b.brand)
   };
   list.sort(sorters[sort]);
   document.getElementById("grid").innerHTML = list.map(card).join("") ||
-    `<p style="color:var(--muted);font-size:.85rem">No products match.</p>`;
-  document.getElementById("count").textContent = list.length + " of " + P.length + " products";
-  if (sort === "value" && cat === "all")
-    document.getElementById("count").textContent += " · value sort is only meaningful within a category";
+    `<p style="color:var(--muted);font-size:.85rem">${FIT_ONLY
+      ? "No product in this category lands in your target band. Clear the “fits me” filter to see how close the others get."
+      : "No products match."}</p>`;
+  const where = cat==="all" ? "products" : CATLABEL[cat] + " products";
+  let n = FIT_ONLY
+    ? `${list.length} of ${scope} ${where} fit your profile`
+    : `${list.length} of ${P.length} products`;
+  if (PROFILE && !FIT_ONLY) n += ` · ${matched} of these match your profile`;
+  if (sort === "fit" && !PROFILE) n += " · fit sort needs a profile (top of the page)";
+  if (sort === "value" && cat === "all") n += " · value sort is only meaningful within a category";
+  document.getElementById("count").textContent = n;
 }
 
 /* ---------- compare ---------- */
@@ -513,6 +690,13 @@ function openCompare(){
       ${cmpRow("days per pack", items.map(p => "~" + p.value.days_per_pack), best(p => p.value.days_per_pack))}
       ${cmpRow("form", items.map(p => esc(p.form)), -1)}
       ${cmpRow("daily actives", items.map(p => esc(activesLine(p))), -1)}
+      ${(function(){
+        const fits = items.map(doseFit);
+        if(!PROFILE || fits.some(f => !f || f.state==="multi")) return "";
+        return cmpRow("dose vs your needs", fits.map(f =>
+          `<span class="${f.cls}">${esc(f.chip)}</span><br><span style="color:var(--muted);font-size:.7rem">${esc(f.label)}</span>`),
+          fits.findIndex(f => f.state==="ok"));
+      })()}
       ${cmpRow("additives", items.map(p => p.additives_detail.length ? p.additives_detail.map(esc).join("<br>") : "<span class='best'>None</span>"), -1)}
       ${cmpRow("certifications", items.map(p => p.certifications.length ? p.certifications.map(esc).join("<br>") : "—"), -1)}
       ${cmpRow("watch-outs", items.map(p => p.flags.length ? p.flags.map(esc).join("<br>") : "—"), -1)}
@@ -557,10 +741,21 @@ function openDetail(id){
       <p style="font-size:.85rem">${provBadge(p)} <b>${esc(ZONE_LABEL[prov.zone]||"unknown")}</b>${prov.country?` · ${esc(prov.country)}`:""}
       ${prov.malus?` <span style="color:var(--muted)">(−${prov.malus} proximity, shown separately — not in the health score)</span>`:""}</p>
     </div>
-    ${(function(){const f=doseFit(p); if(!f) return PROFILE?"":`<div class="sec"><h3>dosage vs your needs</h3><p style="font-size:.78rem;color:var(--muted)">Fill in your profile (top of the page) to see how this dose compares to your personal target.</p></div>`;
+    ${(function(){
+      const f=doseFit(p);
+      if(!f) return `<div class="sec"><h3>dosage vs your needs</h3><p style="font-size:.78rem;color:var(--muted)">${
+        PROFILE ? "This product's label does not state a daily dose we can check against your profile."
+                : "Fill in your profile (top of the page) to see how this dose compares to your personal target."}</p></div>`;
+      if(f.state==="multi") return `<div class="sec"><h3>dosage vs your needs</h3>
+        <p style="font-size:.85rem">A multivitamin has no single dose to check — it carries 20+ nutrients, each with its own target.</p>
+        <p style="font-size:.7rem;color:var(--muted)">Its “effective dosing” score (${p.scores.dose}/20) already grades whether the label lands near 100% NRV across the board rather than megadosing the cheap B vitamins. Compare individual nutrients in the single-nutrient categories instead.</p></div>`;
       return `<div class="sec"><h3>dosage vs your needs</h3>
         <p style="font-size:.85rem"><span class="${f.cls}">${esc(f.label)}</span></p>
-        <p style="font-size:.7rem;color:var(--muted)">${esc(f.t.note)} · guidance for healthy adults, not medical advice</p></div>`;})()}
+        ${f.noBar?"":doseBar(f)}
+        <p style="font-size:.7rem;color:var(--muted);margin-top:10px">${esc(f.t.note)}.</p>
+        <p style="font-size:.7rem;color:var(--faint)">${f.t.scaled
+          ? "Personalised to your "+esc(f.t.scaled)+"."
+          : "This band is <b>not</b> personalised: no body-weight, sex or age scaling is established for this nutrient, so it is the same for everyone."} Guidance for healthy adults — not medical advice.</p></div>`;})()}
     <div class="sec"><h3>what you actually get</h3>
       <ul class="plain"><li>${esc(activesLine(p))}</li><li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
@@ -569,6 +764,7 @@ function openDetail(id){
     ${p.flags.length ? `<div class="sec"><h3>watch-outs</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
     <p class="footnote">Scored with methodology v${META.methodology_version} from the public label and brand documents — not from independent lab testing. Not medical advice.</p>`;
   showModal(html);
+  OPEN_DETAIL = id;                      // set after showModal, which clears it
 }
 
 /* ---------- methodology / about ---------- */
@@ -594,6 +790,14 @@ function openMethodology(){
     <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
     <h4>Price level &amp; value (separate from the health score)</h4>
     <p><b>€ / standard dose</b> per category (€/25 g protein, €/1000 IU D3, €/10 g collagen…) plus a <b>price level 1–5</b> — a within-category affordability band (1 = cheapest per dose, 5 = priciest). A "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one.</p>
+    <h4>Personalised dosing (separate from the health score)</h4>
+    <p>If you fill in the optional profile, every product's daily dose is checked against <b>your</b> target. We keep two questions strictly apart. <b>Is it in your effective band?</b> — a personalised range built from your weight, sex, age and activity. <b>Does it breach a legal limit?</b> — the EU/ANSES upper limit, which is identical for everyone. A dose <i>above your band but below every limit</i> is safe, just more than you need: it is never shown in red. Only a genuine upper-limit breach is.</p>
+    <table><tr><th>✓ fits you</th><td>inside your personalised band</td></tr>
+    <tr><th>↓ under-dosed for you</th><td>below the band — the label serving would not get you there</td></tr>
+    <tr><th>↑ more than you need</th><td>above the band, within every regulatory limit — a cost question, not a safety one</td></tr>
+    <tr><th>⚠ over the EU limit</th><td>breaches a statutory upper limit (vitamin D 4000 IU, zinc 25 mg, supplemental magnesium 250 mg, melatonin 1.9 mg…)</td></tr></table>
+    <p><b>We only personalise what the evidence lets us.</b> Protein scales with body weight and activity (ISSN / Morton 2018, ESPEN past 65); magnesium with weight and sex (~6 mg/kg, capped at the ANSES PRI); vitamin D with age and BMI; zinc with sex and activity (EFSA PRI). But collagen trials dose in absolute grams, and probiotics are strain-specific and not dose-linear — so those bands are <b>the same for everyone, and the product says so</b> instead of inventing a personalised number. Multivitamins get no single target at all: 20+ nutrients each have their own, so we point you to the per-nutrient categories rather than pretend one number exists.</p>
+    <p>Personalised dosing never touches the Health &amp; Compo Score — two people looking at the same product see the same grade. It is guidance for healthy adults and <b>not medical advice</b>.</p>
     <h4>Provenance (separate axis, not in the health score)</h4>
     <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
     <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>
@@ -609,13 +813,15 @@ function openAbout(){
     <h4>Independence</h4>
     <p>No sponsors, no affiliate links, no paid placements. Covers ${META.n_products} EU/FR products across ${META.n_categories} categories (snapshot ${META.snapshot}). The <b>scoring method</b> — script and rules — is open-source (MIT) so it can be audited and challenged; the <b>dataset and its daily price/label history</b> stay private, because that accumulating archive is what makes kleerer hard to replicate. If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
     <h4>Roadmap</h4>
-    <p>p1: this comparator. Next: automated price &amp; label pipeline (source audit is Phase 1 of the roadmap), broader categories, and a personalised profile → needs → products journey.</p>
+    <p>p1: this comparator, with a personalised dosing check on every product. Next: automated price &amp; label pipeline (source audit is Phase 1), broader categories, and a full profile → needs → <b>stack</b> journey — a minimal basket that covers your gaps at the lowest price per active, and warns when stacking two products pushes a nutrient over its upper limit.</p>
+    <p>The daily price-and-label archive stays <b>private</b>, and deliberately so — it is the asset, and publishing it would hand a scraper the one thing that took years to accumulate. What the site shows is today's catalogue; the history stays behind the wall.</p>
     <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>
   </div>`);
 }
 
 /* ---------- modal plumbing ---------- */
 function showModal(html, wide){
+  OPEN_DETAIL = null;
   const box = document.getElementById("modalbox");
   box.className = "modal" + (wide ? " wide" : "");
   box.innerHTML = html;
@@ -625,10 +831,12 @@ function showModal(html, wide){
 function closeModal(){
   document.getElementById("overlay").classList.remove("show");
   document.body.style.overflow = "";
+  OPEN_DETAIL = null;
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
 loadProfileUI();
+syncProfileUI();
 render();
 </script>
 </body>

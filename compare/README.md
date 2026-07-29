@@ -2,7 +2,7 @@
 
 **The independent supplement comparator — score the label, price the active.**
 
-First product of the kleerer. roadmap. Every supplement gets a transparent **Health & Compo Score** (0–100, grades A–E) computed from its label and public proofs, plus a price per gram of *actual* active. **112 real products across 11 categories** (whey, creatine, vitamin D3, magnesium, omega-3, multivitamin, zinc, vitamin C, collagen, probiotics, melatonin), EU with a French-market focus, snapshot July 2026. No sponsors, no affiliate links, no paid placements.
+First product of the kleerer. roadmap. Every supplement gets a transparent **Health & Compo Score** (0–100, grades A–E) computed from its label and public proofs, a price per gram of *actual* active, and a **personalised dosage check** against your own targets. **163 real products across 11 categories** (whey, creatine, vitamin D3, magnesium, omega-3, multivitamin, zinc, vitamin C, collagen, probiotics, melatonin), EU with a French-market focus, snapshot July 2026. No sponsors, no affiliate links, no paid placements.
 
 ## Run it
 
@@ -13,8 +13,8 @@ No build step, no server needed — open `compare/index.html` in any browser, or
 ```
 index.html                the app (single file, vanilla JS, zero runtime deps)
 data.js                   generated dataset with scores — do not edit by hand
-data/products_raw.json    curated source (v1, coded): 37 EU products
-data/fr/*.json            French-market source (75 products, free-text labels)
+data/products_raw.json    curated source (v1, coded): 37 EU products, each with a buy link
+data/fr/*.json            French-market source (126 products, free-text labels)
 scripts/autotag.py        auto-tagger: free-text label → coded tags + form tiers
 scripts/build_scores.py   scoring engine — normalizes + scores → data.js
 METHODOLOGY.md            full Health & Compo Score methodology (v1.1)
