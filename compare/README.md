@@ -12,6 +12,7 @@ No build step, no server needed — open `compare/index.html` in any browser, or
 
 ```
 index.html                the app (single file, vanilla JS, zero runtime deps)
+i18n.js                   UI translations (en/fr) + browser-language detection
 data.js                   generated dataset with scores — do not edit by hand
 data/products_raw.json    curated source (v1, coded): 37 EU products, each with a buy link
 data/fr/*.json            French-market source (126 products, free-text labels)
@@ -38,6 +39,21 @@ The script validates every score range, rejects duplicate ids, and prints the fu
 The app and the score can be cloned quickly. The [`pipeline/`](pipeline/) can't — it produces a **versioned time-series** of prices and label compositions that can only be accumulated day by day. It fetches tracked products politely (robots.txt, rate-limits, honest UA), snapshots price + label into a dated, content-hashed archive, and diffs each day against the last to catch price moves and silent reformulations. A [daily GitHub Action](../.github/workflows/daily-pipeline.yml) runs it and commits the archive. See [pipeline/README.md](pipeline/README.md).
 
 **Storage note.** The archive lives in git for now (small, auditable, free). Once daily snapshots across thousands of products outgrow git comfortably (roughly when `pipeline/snapshots/` passes a few hundred MB), the same JSON files move unchanged to object storage (S3/R2) and git keeps only the reports. Nothing about the format changes.
+
+## Language
+
+The interface is bilingual (English / French). The language comes from the browser's own
+`navigator.language`, with a manual toggle in the header that wins and is remembered in
+`localStorage` (shared with the root page). **We never geolocate the visitor's IP**: that
+would mean sending their address to a third-party service — breaking the zero-dependency,
+no-external-request design — and it answers the wrong question anyway, since a French
+speaker in London wants French.
+
+Two honest limits. Translation covers the **interface**; product-level editorial fields in
+the dataset (`notes`, `flags`, `form_note`, `price_note`) stay in the language they were
+authored in, so a French product's notes read in French in both UIs. And because switching
+happens client-side, **crawlers index the English markup** — real per-language SEO needs
+prerendered `/fr/` routes, which is a separate change.
 
 ## Data honesty
 

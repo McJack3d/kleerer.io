@@ -81,6 +81,10 @@
   select{border:1px solid var(--line); border-radius:2px; padding:7px 9px; font-size:.78rem; font-family:inherit; color:var(--ink); background:var(--bg); outline:none}
   select:focus{border-color:var(--ink)}
   .count{font-size:.72rem; color:var(--faint); margin-left:auto}
+  .langsw{display:flex; gap:0; border:1px solid var(--line); border-radius:2px; overflow:hidden; margin-left:6px}
+  .langsw button{background:none; border:none; padding:5px 9px; font-size:.7rem; color:var(--muted); letter-spacing:.04em}
+  .langsw button.on{background:var(--ink); color:var(--bg)}
+  .langsw button:not(.on):hover{color:var(--ink)}
 
   /* ---------- grid ---------- */
   .grid{max-width:1180px; margin:0 auto; padding:20px var(--pad) 70px; display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px}
@@ -230,31 +234,35 @@
 <header>
   <div class="hwrap">
     <a class="logo-s" href="../">kleerer<span class="logo-dot">.</span></a>
-    <span class="crumb">/ p1 · compare</span>
+    <span class="crumb" data-i18n="crumb">/ p1 · compare</span>
     <nav class="hnav">
-      <button onclick="openMethodology()">methodology</button>
-      <button onclick="openAbout()">about</button>
+      <button onclick="openMethodology()" data-i18n="navMethodology">methodology</button>
+      <button onclick="openAbout()" data-i18n="navAbout">about</button>
+      <span class="langsw" id="langsw">
+        <button onclick="setLang('en')" data-lang="en" title="Show in English">EN</button>
+        <button onclick="setLang('fr')" data-lang="fr" title="Afficher en français">FR</button>
+      </span>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <h1>compare<span class="logo-dot">.</span></h1>
-  <p class="sub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs — and <b>my stack</b> sums whatever you combine, catching doses that quietly cross an EU limit. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.</p>
+  <p class="sub" data-i18n-html="heroSub">The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs — and <b>my stack</b> sums whatever you combine, catching doses that quietly cross an EU limit. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.</p>
   <div class="stats" id="stats"></div>
 </section>
 
 <div class="profile">
   <div class="pbox" id="pbox">
-    <label>weight (kg)<input id="pw" type="number" min="35" max="200" placeholder="70"></label>
-    <label>height (cm)<input id="ph" type="number" min="120" max="230" placeholder="optional"></label>
-    <label>sex<select id="ps"><option value="m">male</option><option value="f">female</option></select></label>
-    <label>age<input id="pa" type="number" min="18" max="99" placeholder="30"></label>
-    <label>activity<select id="pac"><option value="sedentary">sedentary</option><option value="active" selected>active</option><option value="athlete">athlete</option></select></label>
-    <button class="btn primary" onclick="saveProfile()">apply</button>
-    <button class="btn" onclick="clearProfile()">clear</button>
+    <label><span data-i18n="pWeight">weight (kg)</span><input id="pw" type="number" min="35" max="200" placeholder="70"></label>
+    <label><span data-i18n="pHeight">height (cm)</span><input id="ph" type="number" min="120" max="230" data-i18n-ph="pHeightPlaceholder" placeholder="optional"></label>
+    <label><span data-i18n="pSex">sex</span><select id="ps"><option value="m" data-i18n="pMale">male</option><option value="f" data-i18n="pFemale">female</option></select></label>
+    <label><span data-i18n="pAge">age</span><input id="pa" type="number" min="18" max="99" placeholder="30"></label>
+    <label><span data-i18n="pActivity">activity</span><select id="pac"><option value="sedentary" data-i18n="pSedentary">sedentary</option><option value="active" selected data-i18n="pActive">active</option><option value="athlete" data-i18n="pAthlete">athlete</option></select></label>
+    <button class="btn primary" onclick="saveProfile()" data-i18n="pApply">apply</button>
+    <button class="btn" onclick="clearProfile()" data-i18n="pClear">clear</button>
     <span class="pstatus off" id="pstatus">no profile — every product shows its dose, none is checked against you</span>
-    <span class="hint">optional — personalises the "dosage vs your needs" line on every product. Weight and age are required; height only sharpens the vitamin&nbsp;D target (via BMI). Healthy adults; evidence-based ranges, EU upper limits respected; not medical advice.</span>
+    <span class="hint" data-i18n-html="pHint">optional — personalises the "dosage vs your needs" line on every product. Weight and age are required; height only sharpens the vitamin&nbsp;D target (via BMI). Healthy adults; evidence-based ranges, EU upper limits respected; not medical advice.</span>
   </div>
 </div>
 
@@ -263,16 +271,16 @@
   <div class="bar2">
     <div class="search">
       <span style="color:var(--faint);font-size:.8rem">&gt;</span>
-      <input id="q" type="text" placeholder="search brand or product…" oninput="render()">
+      <input id="q" type="text" data-i18n-ph="searchPlaceholder" placeholder="search brand or product…" oninput="render()">
     </div>
-    <button class="pill" id="fitpill" onclick="toggleFitOnly()" title="show only products whose daily dose lands in your personal target band">fits me</button>
-    <button class="pill" id="stackbtn" onclick="openStack()" title="everything you'd take per day, summed nutrient by nutrient and checked against the EU limits — and your bands, with a profile">my stack (0)</button>
+    <button class="pill" id="fitpill" onclick="toggleFitOnly()" data-i18n="fitPill" data-i18n-title="fitPillTitle">fits me</button>
+    <button class="pill" id="stackbtn" onclick="openStack()" data-i18n-title="stackBtnTitle">my stack (0)</button>
     <select id="sort" onchange="render()">
-      <option value="score">sort: best score</option>
-      <option value="fit">sort: best fit for me</option>
-      <option value="value">sort: best value (€ / active)</option>
-      <option value="price">sort: price, low → high</option>
-      <option value="brand">sort: brand a–z</option>
+      <option value="score" data-i18n="sortScore">sort: best score</option>
+      <option value="fit" data-i18n="sortFit">sort: best fit for me</option>
+      <option value="value" data-i18n="sortValue">sort: best value (€ / active)</option>
+      <option value="price" data-i18n="sortPrice">sort: price, low → high</option>
+      <option value="brand" data-i18n="sortBrand">sort: brand a–z</option>
     </select>
     <span class="count" id="count"></span>
   </div>
@@ -290,27 +298,25 @@
 
 <footer>
   <div class="fwrap">
-    <p class="disclaimer"><b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.</p>
-    <p style="margin-top:10px">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
+    <p class="disclaimer" data-i18n-html="footDisclaimer"><b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.</p>
+    <p style="margin-top:10px" data-i18n-html="footPrices">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
-      <span>p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.4</span>
-      <span>methodology v1.2 · dosing model v2</span>
+      <span data-i18n="footMeta">p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.5</span>
+      <span data-i18n="footVersions">methodology v1.2 · dosing model v2</span>
     </div>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="data.js"></script>
 <script>
 const P = KLEERER_DATA.products;
 const META = KLEERER_DATA.meta;
-const CATS = [
-  ["all","all"], ["whey","whey"], ["creatine","creatine"], ["vitamin_d3","vitamin d3"],
-  ["magnesium","magnesium"], ["omega3","omega-3"], ["multivitamin","multivitamin"],
-  ["zinc","zinc"], ["vitamin_c","vitamin c"], ["collagen","collagen"],
-  ["probiotics","probiotics"], ["melatonin","melatonin"]
-];
-const CATLABEL = Object.fromEntries(CATS);
+const CAT_KEYS = ["all","whey","creatine","vitamin_d3","magnesium","omega3","multivitamin",
+  "zinc","vitamin_c","collagen","probiotics","melatonin"];
+const CATS = CAT_KEYS.map(k => [k, k]);                 // shape kept; labels resolved live
+const catLabel = k => T("cats")[k] || k;
 const GCOLOR = {A:"var(--gA)", B:"var(--gB)", C:"var(--gC)", D:"var(--gD)", E:"var(--gE)"};
 const CONF = {high:"#1a7a3e", medium:"#c49a00", low:"#c26410"};
 let cat = "all";
@@ -324,35 +330,26 @@ const valueFmt = p => {
   return (v < 0.1 ? "€" + v.toFixed(3) : "€" + v.toFixed(2));
 };
 function activesLine(p){
-  switch(p.category){
-    case "whey": return `${p.active_per_100g} g protein / 100 g · ${p.active_per_serving_g} g per ${p.serving_g} g serving`;
-    case "creatine": return `${p.active_per_serving_g} g creatine per ${p.serving_g} g serving · ${p.active_per_100g} g / 100 g`;
-    case "vitamin_d3": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} IU / day (${p.units_per_day} × ${p.unit_name})`;
-    case "magnesium": return `${p.active_per_unit*p.units_per_day} mg elemental Mg / day (${p.units_per_day} × ${p.unit_name})`;
-    case "omega3": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} mg EPA+DHA / day (${p.units_per_day} × ${p.unit_name})`;
-    case "zinc": return `${(p.active_per_unit*p.units_per_day)} mg elemental Zn / day (${p.units_per_day} × ${p.unit_name})`;
-    case "vitamin_c": return `${(p.active_per_unit*p.units_per_day).toLocaleString()} mg vitamin C / day (${p.units_per_day} × ${p.unit_name})`;
-    case "collagen": return "pack_g" in p
-      ? `${p.active_per_serving_g} g collagen per ${p.serving_g} g serving`
-      : `${(p.active_per_unit*p.units_per_day).toFixed(2)} g collagen / day (${p.units_per_day} × ${p.unit_name})`;
-    case "probiotics": return `${(p.active_per_unit*p.units_per_day)} billion CFU / day (${p.units_per_day} × ${p.unit_name})`;
-    case "melatonin": return `${(p.active_per_unit*p.units_per_day)} mg melatonin / day (${p.units_per_day} × ${p.unit_name})`;
-    default: return `${p.units_per_day} ${p.unit_name}s / day`;
-  }
+  const A = T("actives");
+  if (p.category === "collagen") return ("pack_g" in p) ? A.collagenPowder(p) : A.collagenCaps(p);
+  return (A[p.category] || A.fallback)(p);
 }
 
 /* ---------- stats ---------- */
-document.getElementById("stats").innerHTML = `
-  <div class="stat"><b>${META.n_products}</b><span>products scored</span></div>
-  <div class="stat"><b>${META.n_categories}</b><span>categories</span></div>
-  <div class="stat"><b>${META.region}</b><span>market scope</span></div>
-  <div class="stat"><b>${META.snapshot}</b><span>price snapshot</span></div>
-  <div class="stat"><b>100%</b><span>open data &amp; method</span></div>`;
+function renderStats(){
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><b>${META.n_products}</b><span>${T("statProducts")}</span></div>
+    <div class="stat"><b>${META.n_categories}</b><span>${T("statCategories")}</span></div>
+    <div class="stat"><b>${META.region}</b><span>${T("statRegion")}</span></div>
+    <div class="stat"><b>${META.snapshot}</b><span>${T("statSnapshot")}</span></div>
+    <div class="stat"><b>100%</b><span>${T("statOpen")}</span></div>`;
+}
 
 /* ---------- pills ---------- */
-const pillbox = document.getElementById("pills");
-pillbox.innerHTML = CATS.map(([k,l]) =>
-  `<button class="pill${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${l}</button>`).join("");
+function renderPills(){
+  document.getElementById("pills").innerHTML = CAT_KEYS.map(k =>
+    `<button class="pill${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${catLabel(k)}</button>`).join("");
+}
 function setCat(k){ cat = k;
   document.querySelectorAll(".pill").forEach(b => b.classList.toggle("on", b.dataset.k===k));
   render();
@@ -373,7 +370,7 @@ try { PROFILE = JSON.parse(localStorage.getItem("kleerer_profile")||"null"); } c
 function saveProfile(){
   const w=+document.getElementById("pw").value, a=+document.getElementById("pa").value,
         h=+document.getElementById("ph").value;                     // optional — BMI only
-  if(!w||!a){ alert("Weight and age are required. Height is optional (it only sharpens the vitamin D target)."); return; }
+  if(!w||!a){ alert(T("pAlertRequired")); return; }
   PROFILE={w,h:h||null,a,s:document.getElementById("ps").value,ac:document.getElementById("pac").value};
   try{ localStorage.setItem("kleerer_profile", JSON.stringify(PROFILE)); }catch(e){}
   syncProfileUI(); render();
@@ -403,14 +400,14 @@ function syncProfileUI(){
   pill.classList.toggle("on", FIT_ONLY);
   if(!PROFILE){
     st.className="pstatus off";
-    st.textContent="no profile — every product shows its dose, none is checked against you";
+    st.textContent=T("pStatusNone");
     FIT_ONLY=false;
     return;
   }
   const {w,h,a,s,ac}=PROFILE;
   st.className="pstatus";
-  st.textContent=`profile active — ${w} kg${h?" · "+h+" cm":""} · ${a} y · ${s==="m"?"male":"female"} · ${ac}`
-    + " · every dose below is now checked against your targets";
+  st.textContent=T("pStatusOn")(w,h,a, s==="m"?T("pMale"):T("pFemale"),
+    {sedentary:T("pSedentary"),active:T("pActive"),athlete:T("pAthlete")}[ac]);
 }
 function toggleFitOnly(){ if(!PROFILE) return; FIT_ONLY=!FIT_ONLY; syncProfileUI(); render(); }
 
@@ -419,14 +416,11 @@ const fmtNum = n => Number.isInteger(n) ? String(n)
 
 /* Regulatory ceilings — profile-independent, so the stack check works for everyone.
    Each carries its consequence: ULs are not all the same kind of thing. */
-const LIMITS = {
-  vitamin_d3:{ul:4000, why:"sustained intake above the UL risks hypercalcaemia — this is a genuine toxicity ceiling"},
-  magnesium:{ul:250, why:"EFSA set this limit on gut tolerance (osmotic diarrhoea), not toxicity, and it covers supplements only — not magnesium from food. Well-tolerated chelates are often dosed above it deliberately"},
-  zinc:{ul:25, why:"sustained intake above the UL competes with copper absorption"},
-  vitamin_c:{ul:1000, why:"an ANSES advisory ceiling on gut tolerance, not a toxicity threshold"},
-  melatonin:{ul:1.9, why:"a French regulatory ceiling for food supplements, not a toxicity threshold — above it the product is a medicine, not a supplement"},
-  omega3:{ul:5000, why:"EFSA finds supplemental EPA+DHA up to 5000 mg/day raises no safety concern"}
-};
+const UL = {vitamin_d3:4000, magnesium:250, zinc:25, vitamin_c:1000, melatonin:1.9, omega3:5000};
+const LIMITS = new Proxy({}, {                       // ul is data, why is translated at read time
+  get: (_, k) => UL[k] === undefined ? undefined : {ul: UL[k], why: T("ulWhy")[k]},
+  has: (_, k) => k in UL
+});
 
 /* Personalised daily target.
    -> {lo, hi, ul, unit, note, scaled}   ul = null when no regulatory limit exists
@@ -441,27 +435,27 @@ function targetFor(cat){
       // ISSN/Morton 2018 g/kg bodyweight; ESPEN/PROT-AGE raise the floor past 65.
       let gkg={sedentary:[0.83,1.2],active:[1.4,1.8],athlete:[1.6,2.2]}[ac];
       if(a>=65) gkg=[Math.max(gkg[0],1.0), Math.max(gkg[1],1.2)];
-      return {lo:Math.round(gkg[0]*w), hi:Math.round(gkg[1]*w), ul:null, unit:"g protein",
-              note:`${gkg[0]}–${gkg[1]} g/kg/day for a ${w} kg ${ac} adult${a>=65?" aged 65+ (ESPEN)":" (ISSN / Morton 2018)"} — this is your TOTAL diet target; a supplement only tops up food`,
-              scaled:"weight, activity and age"};
+      const acL={sedentary:T("pSedentary"),active:T("pActive"),athlete:T("pAthlete")}[ac];
+      return {lo:Math.round(gkg[0]*w), hi:Math.round(gkg[1]*w), ul:null, unit:T("units").whey,
+              note:T("notes").whey(gkg[0],gkg[1],w,acL,a>=65),
+              scaled:T("scaledBy").wheyAll};
     }
     case "creatine": {
       // ISSN: maintenance 3–5 g/day flat; heavier athletes to ~0.05 g/kg. No EFSA UL.
       const hi=Math.max(5, Math.round(0.05*w));
-      return {lo:3, hi, ul:null, unit:"g creatine",
-              note:`ISSN maintenance is a flat 3–5 g/day; heavier or heavily-training bodies sit at the top (~0.05 g/kg → ${hi} g at ${w} kg). No EU upper limit is set`,
-              scaled: hi>5 ? "weight (above 100 kg)" : false};
+      return {lo:3, hi, ul:null, unit:T("units").creatine,
+              note:T("notes").creatine(hi,w),
+              scaled: hi>5 ? T("scaledBy").creatineWeight : false};
     }
     case "vitamin_d3": {
       let lo=800, hi=2000;
       if(a>=65) lo=1000;
       if(bmi!=null && bmi>=30){ lo=1000; hi=4000; }
-      return {lo, hi, ul:LIMITS.vitamin_d3.ul, ulWhy:LIMITS.vitamin_d3.why, unit:"IU vitamin D3",
-              note:(bmi!=null&&bmi>=30) ? `BMI ${bmi.toFixed(1)} — sequestration in adipose tissue raises the requirement (Endocrine Society); EFSA UL 4000 IU/day`
-                 : (a>=65 ? "floor raised for 65+ (skin synthesis falls with age); EFSA UL 4000 IU/day"
-                          : (bmi==null ? "add your height to refine this — BMI ≥ 30 raises the target; EFSA UL 4000 IU/day"
-                                       : "EFSA UL 4000 IU/day")),
-              scaled:"age and BMI"};
+      const N=T("notes");
+      return {lo, hi, ul:LIMITS.vitamin_d3.ul, ulWhy:LIMITS.vitamin_d3.why, unit:T("units").vitamin_d3,
+              note:(bmi!=null&&bmi>=30) ? N.d3Bmi(bmi.toFixed(1))
+                 : (a>=65 ? N.d3Old : (bmi==null ? N.d3NoHeight : N.d3Plain)),
+              scaled:T("scaledBy").d3};
     }
     case "magnesium": {
       // Total need ~6 mg/kg capped at the PRI; food covers most of it.
@@ -469,47 +463,44 @@ function targetFor(cat){
       // the EFSA supplemental UL of 250 mg/day.
       const ai=Math.min(s==="m"?420:360, Math.round(6*w));
       const lo=Math.round(ai*0.25), hi=Math.min(250, Math.round(ai*0.6));
-      return {lo, hi, ul:LIMITS.magnesium.ul, ulWhy:LIMITS.magnesium.why, unit:"mg elemental Mg",
-              note:`your total need ≈ ${ai} mg/day (~6 mg/kg, capped at the ${s==="m"?"male 420":"female 360"} mg PRI, ANSES); diet covers most, so a supplement should fill ${lo}–${hi} mg. EFSA UL for supplements is 250 mg/day`,
-              scaled:"weight and sex"};
+      return {lo, hi, ul:LIMITS.magnesium.ul, ulWhy:LIMITS.magnesium.why, unit:T("units").magnesium,
+              note:T("notes").magnesium(ai, s==="m"?T("notes").magnesiumPriM:T("notes").magnesiumPriF, lo, hi),
+              scaled:T("scaledBy").magnesium};
     }
     case "omega3": {
       // EFSA adequate intake 250 mg; higher for cardio/training (ISSN).
       // EFSA: supplemental EPA+DHA up to 5 g/day raises no safety concern.
       const r={sedentary:[250,500],active:[500,1000],athlete:[1000,2000]}[ac];
-      return {lo:r[0], hi:r[1], ul:LIMITS.omega3.ul, ulWhy:LIMITS.omega3.why, unit:"mg EPA+DHA",
-              note:`EFSA adequate intake is 250 mg/day; ${ac} adults benefit from more (ISSN). EFSA finds supplemental intakes up to 5000 mg/day raise no safety concern, so a higher dose is a cost question, not a safety one`,
-              scaled:"activity"};
+      return {lo:r[0], hi:r[1], ul:LIMITS.omega3.ul, ulWhy:LIMITS.omega3.why, unit:T("units").omega3,
+              note:T("notes").omega3({sedentary:T("pSedentary"),active:T("pActive"),athlete:T("pAthlete")}[ac]),
+              scaled:T("scaledBy").omega3};
     }
     case "zinc": {
       const base=s==="m"?11:8;                                     // EFSA PRI
       const hi=Math.min(25, base+(ac==="athlete"?10:7));
-      return {lo:base, hi, ul:LIMITS.zinc.ul, ulWhy:LIMITS.zinc.why, unit:"mg zinc",
-              note:`EFSA PRI is ${base} mg/day for ${s==="m"?"men":"women"}${ac==="athlete"?"; sweat and training losses raise it":""}. The EFSA UL is 25 mg/day — sustained intake above that impairs copper absorption`,
-              scaled:"sex and activity"};
+      return {lo:base, hi, ul:LIMITS.zinc.ul, ulWhy:LIMITS.zinc.why, unit:T("units").zinc,
+              note:T("notes").zinc(base, s==="m"?T("notes").zincMen:T("notes").zincWomen, ac==="athlete"),
+              scaled:T("scaledBy").zinc};
     }
     case "vitamin_c": {
       const lo = a>=65?120:110, hi = ac==="athlete"?200:180;        // ANSES PRI
-      return {lo, hi, ul:LIMITS.vitamin_c.ul, ulWhy:LIMITS.vitamin_c.why, unit:"mg vitamin C",
-              note:`ANSES PRI is ${lo} mg/day${ac==="athlete"?"; heavy training raises turnover to ~200 mg":""}. Above that there is no established added benefit, but no harm either — ANSES advises staying at or below 1000 mg/day from supplements`,
-              scaled:"age and activity"};
+      return {lo, hi, ul:LIMITS.vitamin_c.ul, ulWhy:LIMITS.vitamin_c.why, unit:T("units").vitamin_c,
+              note:T("notes").vitaminC(lo, ac==="athlete"),
+              scaled:T("scaledBy").vitaminC};
     }
     case "collagen": {
       // Trials dose in absolute grams, not per kg — do not fake weight scaling.
-      return {lo:5, hi:ac==="athlete"?15:10, ul:null, unit:"g peptides",
-              note:"clinical trials use 5 g (skin) to 15 g (joints, tendon loading) as absolute doses — collagen peptide research does not scale by body weight, so this band moves with your activity only",
-              scaled:"activity only"};
+      return {lo:5, hi:ac==="athlete"?15:10, ul:null, unit:T("units").collagen,
+              note:T("notes").collagen, scaled:T("scaledBy").collagen};
     }
     case "probiotics": {
-      return {lo:5, hi:50, ul:null, unit:"billion CFU",
-              note:"studied doses span roughly 1–50 billion CFU and the effect is strain-specific, not dose-linear — more CFU is not inherently better. No body-weight, sex or age scaling is established, so this band is the same for everyone",
-              scaled:false};
+      return {lo:5, hi:50, ul:null, unit:T("units").probiotics,
+              note:T("notes").probiotics, scaled:false};
     }
     case "melatonin": {
-      return {lo:0.5, hi:1.9, ul:LIMITS.melatonin.ul, ulWhy:LIMITS.melatonin.why, unit:"mg melatonin",
-              note:"EFSA allows the sleep-onset claim from 1 mg (0.5 mg for jet lag); 1.9 mg is the French regulatory ceiling for a food supplement"
-                +(a>=55?". Endogenous melatonin declines past 55, where supplementation tends to help most":". No body-weight scaling is established"),
-              scaled:a>=55?"age (note only)":false};
+      return {lo:0.5, hi:1.9, ul:LIMITS.melatonin.ul, ulWhy:LIMITS.melatonin.why, unit:T("units").melatonin,
+              note:T("notes").melatonin(a>=55),
+              scaled:a>=55?T("scaledBy").melatoninAge:false};
     }
     case "multivitamin": return {kind:"multi"};
     default: return null;
@@ -535,27 +526,23 @@ function doseFit(p){
   if(p.category==="whey"){                       // a serving tops up a whole-day target
     // No band comparison here: a single serving is *meant* to be a fraction of the
     // daily total, so plotting it against 105–135 g would read as "under-dosed".
-    const pct=Math.round(d/t.lo*100);
+    const pct=Math.round(d/t.lo*100), F=T("fit");
     return {state:"ok", cls:"fit-ok", t, d, noBar:true,
-            label:`1 serving = ${D} g protein ≈ ${pct}% of your ${t.lo} g/day minimum (your total-diet target is ${t.lo}–${t.hi} g — food does most of it)`,
-            chip:`≈${pct}% of your daily protein`};
+            label:F.wheyLabel(D,pct,t.lo,t.hi), chip:F.wheyChip(pct)};
   }
+  const F=T("fit"), LO=fmtNum(t.lo), HI=fmtNum(t.hi);
   if(t.ul!=null && d>t.ul)
     return {state:"over", cls:"fit-over", t, d,
-            label:`${D} ${t.unit} per day — above the ${fmtNum(t.ul)} regulatory limit for supplements (your effective band is ${fmtNum(t.lo)}–${fmtNum(t.hi)})`
-                  + (t.ulWhy?`. What that means: ${t.ulWhy}`:""),
-            chip:`⚠ over the ${fmtNum(t.ul)} limit`};
+            label:F.overLabel(D,t.unit,fmtNum(t.ul),LO,HI) + (t.ulWhy?F.overWhat(t.ulWhy):""),
+            chip:F.overChip(fmtNum(t.ul))};
   if(d<t.lo)
     return {state:"low", cls:"fit-low", t, d,
-            label:`${D} ${t.unit} per day — below your ${fmtNum(t.lo)}–${fmtNum(t.hi)} target; you would need more than the label serving`,
-            chip:`↓ under-dosed for you`};
+            label:F.lowLabel(D,t.unit,LO,HI), chip:F.lowChip};
   if(d>t.hi)
     return {state:"high", cls:"fit-high", t, d,
-            label:`${D} ${t.unit} per day — above your ${fmtNum(t.lo)}–${fmtNum(t.hi)} optimal band but within every regulatory limit: safe, just more than you need`,
-            chip:`↑ more than you need`};
+            label:F.highLabel(D,t.unit,LO,HI), chip:F.highChip};
   return {state:"ok", cls:"fit-ok", t, d,
-          label:`${D} ${t.unit} per day — inside your ${fmtNum(t.lo)}–${fmtNum(t.hi)} target`,
-          chip:`✓ fits you`};
+          label:F.okLabel(D,t.unit,LO,HI), chip:F.okChip};
 }
 function doseFitChip(p){
   const f=doseFit(p);
@@ -575,8 +562,8 @@ function doseBar(f){
     </div>
     <div class="doselegend" style="margin-top:5px">
       <span>0</span>
-      <span style="color:var(--gA)">your band ${fmtNum(t.lo)}–${fmtNum(t.hi)}</span>
-      ${t.ul!=null?`<span style="color:var(--gE)">EU limit ${fmtNum(t.ul)}</span>`:`<span>no EU limit set</span>`}
+      <span style="color:var(--gA)">${T("barYourBand")(fmtNum(t.lo),fmtNum(t.hi))}</span>
+      ${t.ul!=null?`<span style="color:var(--gE)">${T("barEuLimit")(fmtNum(t.ul))}</span>`:`<span>${T("barNoLimit")}</span>`}
     </div></div>`;
 }
 
@@ -590,16 +577,14 @@ function doseBar(f){
 let STACK = [];
 try { STACK = (JSON.parse(localStorage.getItem("kleerer_stack")||"[]")||[]).filter(id => P.some(p => p.id === id)); } catch(e){}
 let OPEN_STACK = false;
-const STACK_UNITS = {whey:"g protein (per serving)", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
-  magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
-  collagen:"g collagen peptides", probiotics:"billion CFU", melatonin:"mg melatonin"};
+const stackUnit = k => T("stackUnits")[k] || "";
 
 function toggleStack(id){
   const p = P.find(x => x.id === id);
   if (!p || p.scores.red_card) return;
   if (STACK.includes(id)) STACK = STACK.filter(x => x !== id);
   else {
-    if (STACK.length >= 12) { alert("Stack up to 12 products."); return; }
+    if (STACK.length >= 12) { alert(T("stack").alertMax); return; }
     STACK.push(id);
   }
   try{ localStorage.setItem("kleerer_stack", JSON.stringify(STACK)); }catch(e){}
@@ -609,7 +594,7 @@ function toggleStack(id){
 }
 function renderStackBtn(){
   const b = document.getElementById("stackbtn");
-  b.textContent = `my stack (${STACK.length})`;
+  b.textContent = T("stackBtn")(STACK.length);
   b.classList.toggle("on", STACK.length > 0);
 }
 
@@ -641,31 +626,31 @@ function uncodedMentions(p){
 // one nutrient row of the stack: total, verdict (limit first, then band), contributors
 function stackRowHTML(catKey, entries){
   const total = entries.reduce((s,e) => s + e.amount, 0);
-  const unit = STACK_UNITS[catKey] || "";
-  const lim = LIMITS[catKey];
+  const unit = stackUnit(catKey);
+  const lim = LIMITS[catKey], S = T("stack");
   const t = PROFILE ? targetFor(catKey) : null;
   let chip = "", note = "", bar = "";
   if (lim && total > lim.ul){
-    chip = `<span class="chip fit-over">⚠ over the ${fmtNum(lim.ul)} limit</span>`;
-    note = `<div class="stk-note" style="color:var(--gE)">combined ${fmtNum(total)} ${unit} exceeds the ${fmtNum(lim.ul)} regulatory limit for supplements. ${esc(lim.why)}.</div>`;
+    chip = `<span class="chip fit-over">${esc(S.overChip(fmtNum(lim.ul)))}</span>`;
+    note = `<div class="stk-note" style="color:var(--gE)">${esc(S.overNote(fmtNum(total),unit,fmtNum(lim.ul),lim.why))}</div>`;
   } else if (t && t.lo != null && catKey !== "whey"){
     const st = total < t.lo ? "low" : (total > t.hi ? "high" : "ok");
-    chip = st === "ok" ? `<span class="chip fit-ok">✓ in your band</span>`
-        : st === "low" ? `<span class="chip fit-low">↓ below your band</span>`
-        : `<span class="chip fit-high">↑ more than you need</span>`;
+    chip = st === "ok" ? `<span class="chip fit-ok">${esc(S.inBand)}</span>`
+        : st === "low" ? `<span class="chip fit-low">${esc(S.belowBand)}</span>`
+        : `<span class="chip fit-high">${esc(S.aboveBand)}</span>`;
   } else if (lim){
-    chip = `<span class="chip">within the ${fmtNum(lim.ul)} limit</span>`;
+    chip = `<span class="chip">${esc(S.withinLimit(fmtNum(lim.ul)))}</span>`;
   }
   if (t && t.lo != null && catKey !== "whey") bar = doseBar({t, d: total});
   if (catKey === "whey" && t && t.lo != null)
-    note = `<div class="stk-note">≈ ${Math.round(total/t.lo*100)}% of your ${t.lo} g/day minimum — one serving of each shake, food does the rest.</div>`;
+    note = `<div class="stk-note">${esc(S.wheyNote(Math.round(total/t.lo*100), t.lo))}</div>`;
   const from = (entries.length > 1 || entries.some(e => e.builtIn))
-    ? `<div class="stk-note">from: ${entries.map(e =>
-        `${esc(e.p.brand)} ${fmtNum(e.amount)}${e.builtIn ? " <b>(built-in)</b>" : ""}`).join(" + ")}</div>`
+    ? `<div class="stk-note">${esc(S.from)} ${entries.map(e =>
+        `${esc(e.p.brand)} ${fmtNum(e.amount)}${e.builtIn ? " <b>"+esc(S.builtIn)+"</b>" : ""}`).join(" + ")}</div>`
     : "";
   return `<div class="stkrow">
-    <div class="stk-head"><b>${CATLABEL[catKey]||catKey}</b>
-      <span>total <b>${fmtNum(total)}</b> ${unit} ${chip}</span></div>
+    <div class="stk-head"><b>${catLabel(catKey)}</b>
+      <span>${esc(S.total)} <b>${fmtNum(total)}</b> ${unit} ${chip}</span></div>
     ${from}${bar}${note}
   </div>`;
 }
@@ -682,107 +667,108 @@ function gapSuggest(catKey){
 
 function openStack(){
   const items = STACK.map(id => P.find(p => p.id === id)).filter(Boolean);
+  const S = T("stack");
   let html = `<button class="close" onclick="closeModal()">✕</button>
-    <div class="prose"><h2>my stack</h2></div>`;
+    <div class="prose"><h2>${esc(S.title)}</h2></div>`;
   if (!items.length){
-    html += `<p style="font-size:.85rem;color:var(--muted);margin-top:10px">Empty. Add products with the <b>+ stack</b> button on any card — mix categories freely. The stack sums what you would actually swallow per day, nutrient by nutrient, checks every total against the EU upper limits${PROFILE ? " and your personal bands" : ""}, and catches overlaps: an omega-3 with built-in vitamin D counts toward your vitamin-D total.</p>
-    ${PROFILE ? "" : `<p style="font-size:.72rem;color:var(--faint);margin-top:8px">The limit checks work without a profile; fill one in (top of the page) to also see your personal target bands here.</p>`}`;
+    html += `<p style="font-size:.85rem;color:var(--muted);margin-top:10px">${S.empty(!!PROFILE)}</p>
+    ${PROFILE ? "" : `<p style="font-size:.72rem;color:var(--faint);margin-top:8px">${esc(S.emptyNoProfile)}</p>`}`;
     showModal(html); OPEN_STACK = true; return;
   }
   const costDay = items.reduce((s,p) => s + p.value.cost_per_day, 0);
   const {contrib, multis} = stackContributions(items);
   const catOrder = CATS.map(([k]) => k).filter(k => contrib[k]);
 
-  html += `<div class="sec"><h3>${items.length} product${items.length>1?"s":""}</h3>
+  html += `<div class="sec"><h3>${esc(S.products(items.length))}</h3>
     <ul class="plain">${items.map(p => `<li><span style="flex:1">${esc(p.brand)} — ${esc(p.name)}
-      <span style="color:var(--faint)">· ${eur(p.value.cost_per_day)}/day</span></span>
+      <span style="color:var(--faint)">· ${eur(p.value.cost_per_day)}</span></span>
       <button class="close" style="position:static;width:22px;height:22px;font-size:.7rem" onclick="toggleStack('${p.id}')">✕</button></li>`).join("")}</ul>
     <div class="kv" style="margin-top:10px">
-      <div class="cell"><b>${eur(costDay)}</b><span>per day, all together</span></div>
-      <div class="cell"><b>${eur(costDay*30)}</b><span>per month (~30 days)</span></div>
+      <div class="cell"><b>${eur(costDay)}</b><span>${esc(S.perDay)}</span></div>
+      <div class="cell"><b>${eur(costDay*30)}</b><span>${esc(S.perMonth)}</span></div>
     </div></div>`;
 
-  html += `<div class="sec"><h3>combined daily intake${PROFILE ? " vs your targets" : " vs EU limits"}</h3>
+  html += `<div class="sec"><h3>${esc(S.combined(!!PROFILE))}</h3>
     ${catOrder.map(k => stackRowHTML(k, contrib[k])).join("") ||
-      `<p style="font-size:.78rem;color:var(--muted)">Nothing to sum yet.</p>`}</div>`;
+      `<p style="font-size:.78rem;color:var(--muted)">${esc(S.nothing)}</p>`}</div>`;
 
   if (multis.length)
-    html += `<div class="flagbox" style="margin-top:14px">⚑ ${multis.map(p => esc(p.brand+" "+p.name)).join(", ")} — a multivitamin adds 20+ nutrients (typically zinc, vitamin D, C, magnesium) whose per-product amounts aren't coded in our data yet. <b>The totals above are lower bounds</b>: treat any nutrient already near its limit as potentially over. Coding multivitamin labels is on the roadmap.</div>`;
+    html += `<div class="flagbox" style="margin-top:14px">${S.multiWarn(multis.map(p => esc(p.brand+" "+p.name)).join(", "))}</div>`;
 
   const mentions = items.flatMap(p => uncodedMentions(p).map(c => ({p, c})));
   if (mentions.length)
-    html += `<div class="flagbox" style="margin-top:8px">⚑ declared but not yet coded: ${mentions.map(m =>
-      `${esc(m.p.brand)} ${esc(m.p.name)} mentions <b>${CATLABEL[m.c]||m.c}</b>`).join(" · ")} — not counted in the totals above.</div>`;
+    html += `<div class="flagbox" style="margin-top:8px">${S.mentionWarn(mentions.map(m =>
+      S.mentions(esc(m.p.brand), esc(m.p.name), catLabel(m.c))).join(" · "))}</div>`;
 
   if (PROFILE){
     const gaps = GAP_CATS.filter(k => !contrib[k]);
     if (gaps.length){
-      html += `<div class="sec"><h3>not covered by this stack</h3>
-        <p style="font-size:.72rem;color:var(--muted);margin-bottom:8px">A varied diet may already cover these — nothing here is a prompt to buy more.${multis.length ? " Your multivitamin likely covers part of them too." : ""} If you do want to cover one:</p>
+      html += `<div class="sec"><h3>${esc(S.notCovered)}</h3>
+        <p style="font-size:.72rem;color:var(--muted);margin-bottom:8px">${esc(S.notCoveredIntro(multis.length>0))}</p>
         ${gaps.map(k => { const g = gapSuggest(k); if (!g) return "";
           const link = p => `<a href="#" onclick="openDetail('${p.id}');return false">${esc(p.brand)} ${esc(p.name)}</a>`;
-          return `<div class="stkrow"><div class="stk-head"><b>${CATLABEL[k]}</b>
-            <span style="font-size:.72rem">best for you: ${link(g.best)} (${g.best.scores.grade} · ${eur(g.best.value.cost_per_day)}/day)${g.cheap.id !== g.best.id ? ` · cheapest fit: ${link(g.cheap)} (${eur(g.cheap.value.cost_per_day)}/day)` : ""}</span></div></div>`; }).join("")}</div>`;
+          return `<div class="stkrow"><div class="stk-head"><b>${catLabel(k)}</b>
+            <span style="font-size:.72rem">${esc(S.bestForYou)} ${link(g.best)} (${g.best.scores.grade} · ${eur(g.best.value.cost_per_day)})${g.cheap.id !== g.best.id ? ` · ${esc(S.cheapestFit)} ${link(g.cheap)} (${eur(g.cheap.value.cost_per_day)})` : ""}</span></div></div>`; }).join("")}</div>`;
     }
   } else {
-    html += `<p style="font-size:.72rem;color:var(--faint);margin-top:14px">Fill in your profile (top of the page) to see the totals against your personal bands and what this stack doesn't cover.</p>`;
+    html += `<p style="font-size:.72rem;color:var(--faint);margin-top:14px">${esc(S.profileHint)}</p>`;
   }
 
-  html += `<p class="footnote">The stack counts supplements only — food intake is on top of everything shown here. Built-in secondary actives are included only where the manufacturer declares them. Guidance for healthy adults, not medical advice.</p>`;
+  html += `<p class="footnote">${esc(S.footnote)}</p>`;
   showModal(html, true); OPEN_STACK = true;
 }
 
 /* ---------- cards ---------- */
 const ZONE_FLAG = {FR:"🇫🇷", EU:"🇪🇺", EXTRA_EU:"🌍", UNKNOWN:"—"};
-const ZONE_LABEL = {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"};
+const zoneLabel = z => T("zones")[z] || T("detail").unknown;
 function priceLevel(tier){
-  return `<span class="plevel" title="price level ${tier}/5 (1=cheapest per dose, 5=priciest)">`
+  return `<span class="plevel" title="${esc(T("priceLevelTitle")(tier))}">`
     + "€".repeat(tier) + `<span class="off">${"€".repeat(5-tier)}</span></span>`;
 }
 function provBadge(p){
   const z = (p.provenance && p.provenance.zone) || "UNKNOWN";
   const c = p.provenance && p.provenance.country ? " · " + esc(p.provenance.country) : "";
-  return `<span title="${ZONE_LABEL[z]}${c}">${ZONE_FLAG[z]}</span>`;
+  return `<span title="${esc(zoneLabel(z))}${c}">${ZONE_FLAG[z]}</span>`;
 }
 function chipset(p){
   const chips = [];
   if (p.transparency.branded_ingredient) chips.push(`<span class="chip cert">${esc(p.transparency.branded_ingredient)}</span>`);
-  if (p.transparency.coa_published) chips.push(`<span class="chip cert">COA published</span>`);
-  if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">3rd-party tested</span>`);
-  if (p.vegan) chips.push(`<span class="chip">vegan</span>`);
-  if (p.review_flags && p.review_flags.length) chips.push(`<span class="chip review" title="unrecognised ingredient — needs human review">⚑ needs review</span>`);
-  if (p.flags.length) chips.push(`<span class="chip warn">⚠ ${p.flags.length} flag${p.flags.length>1?"s":""}</span>`);
+  if (p.transparency.coa_published) chips.push(`<span class="chip cert">${esc(T("chipCoa"))}</span>`);
+  if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">${esc(T("chipThirdParty"))}</span>`);
+  if (p.vegan) chips.push(`<span class="chip">${esc(T("chipVegan"))}</span>`);
+  if (p.review_flags && p.review_flags.length) chips.push(`<span class="chip review" title="${esc(T("chipReviewTitle"))}">${esc(T("chipReview"))}</span>`);
+  if (p.flags.length) chips.push(`<span class="chip warn">${esc(T("chipFlags")(p.flags.length))}</span>`);
   return chips.join("");
 }
 function card(p){
   const s = p.scores, inCmp = compare.includes(p.id), inStk = STACK.includes(p.id);
   return `<article class="card${s.red_card?" redcard":""}">
-    <span class="conf" title="data confidence: ${p.confidence}" style="background:${CONF[p.confidence]}"></span>
-    ${s.red_card?`<div class="redcard-banner">🟥 red card · banned: ${esc((s.banned_substances||[]).join(", ").replace(/_/g," "))}</div>`:""}
+    <span class="conf" title="${esc(T("confTitle")(T("confidence")[p.confidence]))}" style="background:${CONF[p.confidence]}"></span>
+    ${s.red_card?`<div class="redcard-banner">${esc(T("redCardBanner")((s.banned_substances||[]).join(", ").replace(/_/g," ")))}</div>`:""}
     <div class="card-top">
       <div class="gradeb" style="background:${GCOLOR[s.grade]}"><b>${s.grade}</b><span>${s.total}/100</span></div>
       <div>
-        <div class="brand">${esc(p.brand)} · ${CATLABEL[p.category]}</div>
+        <div class="brand">${esc(p.brand)} · ${catLabel(p.category)}</div>
         <div class="pname">${esc(p.name)}</div>
         <div class="variant">${esc(p.variant)}</div>
       </div>
     </div>
     <div class="price-row">
       <span class="price">${eur(p.price_eur)}</span>
-      <span class="perday">${eur(p.value.cost_per_day)}/day · ~${p.value.days_per_pack} days</span>
+      <span class="perday">${esc(T("perDayShort")(eur(p.value.cost_per_day), p.value.days_per_pack))}</span>
     </div>
     <div class="meta-row">${priceLevel(p.value.price_tier)} <span>·</span> ${provBadge(p)}</div>
     <div class="value-chip">${valueFmt(p)} <span>${esc(p.value.std_label.replace("€ / ","/ "))}</span></div>
     <div class="bars">
-      ${[["composition", s.form+s.dose, 40], ["purity", s.purity, 30], ["transparency", s.transparency, 30]]
+      ${[[T("barComposition"), s.form+s.dose, 40], [T("barPurity"), s.purity, 30], [T("barTransparency"), s.transparency, 30]]
         .map(([l,v,m]) => `<div class="bar"><div class="t"><span>${l}</span><span>${v}/${m}</span></div><div class="bg"><div class="fg" style="width:${v/m*100}%"></div></div></div>`).join("")}
     </div>
     <div class="chips">${chipset(p)}${doseFitChip(p)}</div>
     <div class="card-actions">
-      <button class="btn primary" onclick="openDetail('${p.id}')">details</button>
-      <button class="btn ${inCmp?"added":""}" onclick="toggleCompare('${p.id}')">${inCmp?"✓ added":"+ compare"}</button>
-      ${!s.red_card?`<button class="btn ${inStk?"added":""}" onclick="toggleStack('${p.id}')" title="add to your daily stack — combined doses are checked against the EU limits">${inStk?"✓ stacked":"+ stack"}</button>`:""}
-      ${(p.url && !s.red_card)?`<a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow" title="direct product page — kleerer has no affiliation and earns nothing">buy ↗</a>`:""}
+      <button class="btn primary" onclick="openDetail('${p.id}')">${esc(T("btnDetails"))}</button>
+      <button class="btn ${inCmp?"added":""}" onclick="toggleCompare('${p.id}')">${esc(inCmp?T("btnCompared"):T("btnCompare"))}</button>
+      ${!s.red_card?`<button class="btn ${inStk?"added":""}" onclick="toggleStack('${p.id}')" title="${esc(T("btnStackTitle"))}">${esc(inStk?T("btnStacked"):T("btnStack"))}</button>`:""}
+      ${(p.url && !s.red_card)?`<a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow" title="${esc(T("btnBuyTitle"))}">${esc(T("btnBuy"))}</a>`:""}
     </div>
   </article>`;
 }
@@ -807,16 +793,13 @@ function render(){
   };
   list.sort(sorters[sort]);
   document.getElementById("grid").innerHTML = list.map(card).join("") ||
-    `<p style="color:var(--muted);font-size:.85rem">${FIT_ONLY
-      ? "No product in this category lands in your target band. Clear the “fits me” filter to see how close the others get."
-      : "No products match."}</p>`;
-  const where = cat==="all" ? "products" : CATLABEL[cat] + " products";
-  let n = FIT_ONLY
-    ? `${list.length} of ${scope} ${where} fit your profile`
-    : `${list.length} of ${P.length} products`;
-  if (PROFILE && !FIT_ONLY) n += ` · ${matched} of these match your profile`;
-  if (sort === "fit" && !PROFILE) n += " · fit sort needs a profile (top of the page)";
-  if (sort === "value" && cat === "all") n += " · value sort is only meaningful within a category";
+    `<p style="color:var(--muted);font-size:.85rem">${esc(FIT_ONLY ? T("emptyFit") : T("emptyNone"))}</p>`;
+  const where = cat==="all" ? T("whereProducts") : T("whereCat")(catLabel(cat));
+  let n = FIT_ONLY ? T("countFit")(list.length, scope, where)
+                   : T("countPlain")(list.length, P.length);
+  if (PROFILE && !FIT_ONLY) n += T("countMatched")(matched);
+  if (sort === "fit" && !PROFILE) n += T("countNeedsProfile");
+  if (sort === "value" && cat === "all") n += T("countValueWarn");
   document.getElementById("count").textContent = n;
 }
 
@@ -824,10 +807,10 @@ function render(){
 function toggleCompare(id){
   if (compare.includes(id)) compare = compare.filter(x => x !== id);
   else {
-    if (compare.length >= 3) { alert("Compare up to 3 products."); return; }
+    if (compare.length >= 3) { alert(T("alertCompareMax")); return; }
     const first = P.find(x => x.id === compare[0]);
     const nxt = P.find(x => x.id === id);
-    if (first && nxt.category !== first.category) { alert("Compare products within the same category."); return; }
+    if (first && nxt.category !== first.category) { alert(T("alertCompareSame")); return; }
     compare.push(id);
   }
   renderTray(); render();
@@ -839,8 +822,8 @@ function renderTray(){
   document.getElementById("traywrap").innerHTML =
     compare.map(id => { const p = P.find(x => x.id === id);
       return `<span class="titem">${esc(p.brand)} — ${esc(p.name)} <button onclick="toggleCompare('${id}')">✕</button></span>`; }).join("") +
-    `<button class="clear" onclick="compare=[];renderTray();render()">clear</button>
-     <button class="go" onclick="openCompare()">compare (${compare.length})</button>`;
+    `<button class="clear" onclick="compare=[];renderTray();render()">${esc(T("trayClear"))}</button>
+     <button class="go" onclick="openCompare()">${esc(T("trayGo")(compare.length))}</button>`;
 }
 function cmpRow(label, cells, bestIdx){
   return `<tr><th>${label}</th>${cells.map((c,i) =>
@@ -850,94 +833,95 @@ function openCompare(){
   const items = compare.map(id => P.find(x => x.id === id));
   const best = f => { const vals = items.map(f); const m = Math.max(...vals); return vals.filter(v=>v===m).length===1 ? vals.indexOf(m) : -1; };
   const bestLow = f => { const vals = items.map(f); const m = Math.min(...vals); return vals.filter(v=>v===m).length===1 ? vals.indexOf(m) : -1; };
+  const C = T("cmp");
   let html = `<button class="close" onclick="closeModal()">✕</button>
-    <div class="prose"><h2>Side-by-side</h2></div>
+    <div class="prose"><h2>${esc(C.title)}</h2></div>
     <table class="ctable">
       <tr><th></th>${items.map(p => `<td><b>${esc(p.brand)}</b><br>${esc(p.name)}<br><span style="color:var(--muted);font-size:.72rem">${esc(p.variant)}</span></td>`).join("")}</tr>
-      ${cmpRow("score", items.map(p => `<span class="mini-grade" style="background:${GCOLOR[p.scores.grade]}">${p.scores.grade}</span> ${p.scores.total}/100`), best(p => p.scores.total))}
-      ${cmpRow("composition & efficacy", items.map(p => (p.scores.form + p.scores.dose) + "/40"), best(p => p.scores.form + p.scores.dose))}
-      ${cmpRow("purity & additives", items.map(p => p.scores.purity + "/30"), best(p => p.scores.purity))}
-      ${cmpRow("transparency & testing", items.map(p => p.scores.transparency + "/30"), best(p => p.scores.transparency))}
-      ${cmpRow("price", items.map(p => eur(p.price_eur)), bestLow(p => p.price_eur))}
+      ${cmpRow(C.score, items.map(p => `<span class="mini-grade" style="background:${GCOLOR[p.scores.grade]}">${p.scores.grade}</span> ${p.scores.total}/100`), best(p => p.scores.total))}
+      ${cmpRow(C.composition, items.map(p => (p.scores.form + p.scores.dose) + "/40"), best(p => p.scores.form + p.scores.dose))}
+      ${cmpRow(C.purity, items.map(p => p.scores.purity + "/30"), best(p => p.scores.purity))}
+      ${cmpRow(C.transparency, items.map(p => p.scores.transparency + "/30"), best(p => p.scores.transparency))}
+      ${cmpRow(C.price, items.map(p => eur(p.price_eur)), bestLow(p => p.price_eur))}
       ${cmpRow(items[0].value.std_label.toLowerCase(), items.map(valueFmt), bestLow(p => p.value.std))}
-      ${cmpRow("cost / day", items.map(p => eur(p.value.cost_per_day)), bestLow(p => p.value.cost_per_day))}
-      ${cmpRow("days per pack", items.map(p => "~" + p.value.days_per_pack), best(p => p.value.days_per_pack))}
-      ${cmpRow("form", items.map(p => esc(p.form)), -1)}
-      ${cmpRow("daily actives", items.map(p => esc(activesLine(p))), -1)}
+      ${cmpRow(C.costDay, items.map(p => eur(p.value.cost_per_day)), bestLow(p => p.value.cost_per_day))}
+      ${cmpRow(C.daysPack, items.map(p => "~" + p.value.days_per_pack), best(p => p.value.days_per_pack))}
+      ${cmpRow(C.form, items.map(p => esc(p.form)), -1)}
+      ${cmpRow(C.actives, items.map(p => esc(activesLine(p))), -1)}
       ${(function(){
         const fits = items.map(doseFit);
         if(!PROFILE || fits.some(f => !f || f.state==="multi")) return "";
-        return cmpRow("dose vs your needs", fits.map(f =>
+        return cmpRow(C.doseVsNeeds, fits.map(f =>
           `<span class="${f.cls}">${esc(f.chip)}</span><br><span style="color:var(--muted);font-size:.7rem">${esc(f.label)}</span>`),
           fits.findIndex(f => f.state==="ok"));
       })()}
-      ${cmpRow("additives", items.map(p => p.additives_detail.length ? p.additives_detail.map(esc).join("<br>") : "<span class='best'>None</span>"), -1)}
-      ${cmpRow("certifications", items.map(p => p.certifications.length ? p.certifications.map(esc).join("<br>") : "—"), -1)}
-      ${cmpRow("watch-outs", items.map(p => p.flags.length ? p.flags.map(esc).join("<br>") : "—"), -1)}
+      ${cmpRow(C.additives, items.map(p => p.additives_detail.length ? p.additives_detail.map(esc).join("<br>") : `<span class='best'>${esc(C.none)}</span>`), -1)}
+      ${cmpRow(C.certifications, items.map(p => p.certifications.length ? p.certifications.map(esc).join("<br>") : "—"), -1)}
+      ${cmpRow(C.watchouts, items.map(p => p.flags.length ? p.flags.map(esc).join("<br>") : "—"), -1)}
     </table>
-    <p class="footnote">Green = best of the selection. Price snapshot ${META.snapshot}; promo-heavy brands can be much cheaper in practice.</p>`;
+    <p class="footnote">${esc(C.footnote(META.snapshot))}</p>`;
   showModal(html, true);
 }
 
 /* ---------- detail ---------- */
 function openDetail(id){
   const p = P.find(x => x.id === id), s = p.scores;
+  const D = T("detail");
   const rows = [
-    ["Form quality", s.form, 20, p.form_note],
-    ["Effective dosing", s.dose, 20, p.dose_note || activesLine(p)],
-    ["Purity & additives", s.purity, 30, p.additives_detail.length ? p.additives_detail.join(" · ") : "No additives — clean label"],
-    ["Transparency & testing", s.transparency, 30, p.certifications.length ? p.certifications.join(" · ") : "No public certifications or COAs"]
+    [D.rowForm, s.form, 20, p.form_note],
+    [D.rowDose, s.dose, 20, p.dose_note || activesLine(p)],
+    [D.rowPurity, s.purity, 30, p.additives_detail.length ? p.additives_detail.join(" · ") : D.noAdditives],
+    [D.rowTransparency, s.transparency, 30, p.certifications.length ? p.certifications.join(" · ") : D.noCerts]
   ];
   const prov = p.provenance || {zone:"UNKNOWN"};
   let html = `<button class="close" onclick="closeModal()">✕</button>
-    ${s.red_card?`<div class="redcard-banner" style="margin-bottom:14px">🟥 red card — contains a substance banned or restricted by EU / FDA / WHO: ${esc((s.banned_substances||[]).join(", ").replace(/_/g," "))}. Score forced to 0.</div>`:""}
+    ${s.red_card?`<div class="redcard-banner" style="margin-bottom:14px">${esc(D.redCardLong((s.banned_substances||[]).join(", ").replace(/_/g," ")))}</div>`:""}
     <div class="m-head">
       <div class="gradeb lg" style="background:${GCOLOR[s.grade]}"><b>${s.grade}</b><span>${s.total}/100</span></div>
       <div class="m-title">
-        <div class="brand">${esc(p.brand)} · ${CATLABEL[p.category]} · #${p.rank_in_category} in category</div>
+        <div class="brand">${esc(p.brand)} · ${catLabel(p.category)} · ${esc(D.rankInCat(p.rank_in_category))}</div>
         <h2>${esc(p.name)}</h2>
         <div class="m-sub">${esc(p.variant)} — ${esc(p.form)}</div>
-        <div class="m-score">Health &amp; Compo Score <b>${s.total}</b> / 100 · data confidence: <b style="color:${CONF[p.confidence]}">${p.confidence}</b></div>
+        <div class="m-score">${D.scoreLine(s.total, `<span style="color:${CONF[p.confidence]}">${esc(T("confidence")[p.confidence])}</span>`)}</div>
       </div>
     </div>
-    <div class="sec"><h3>score breakdown</h3>
+    <div class="sec"><h3>${esc(D.secBreakdown)}</h3>
       ${rows.map(([l,v,m,note]) => `<div class="srow"><span>${l}</span><div class="bg"><div class="fg" style="width:${v/m*100}%"></div></div><span class="pts">${v}/${m}</span>${note?`<div class="snote">${esc(note)}</div>`:""}</div>`).join("")}
     </div>
-    <div class="sec"><h3>price &amp; value</h3>
+    <div class="sec"><h3>${D.secPrice}</h3>
       <div class="kv">
-        <div class="cell"><b>${eur(p.price_eur)}</b><span>list price · ${esc(p.variant)}</span></div>
+        <div class="cell"><b>${eur(p.price_eur)}</b><span>${esc(D.listPrice)} · ${esc(p.variant)}</span></div>
         <div class="cell"><b>${valueFmt(p)}</b><span>${esc(p.value.std_label)}</span></div>
-        <div class="cell"><b>${priceLevel(p.value.price_tier)}</b><span>price level ${p.value.price_tier}/5 in category</span></div>
+        <div class="cell"><b>${priceLevel(p.value.price_tier)}</b><span>${esc(D.priceLevelCell(p.value.price_tier))}</span></div>
       </div>
       <p style="font-size:.72rem;color:var(--muted);margin-top:8px">${esc(p.price_note)}</p>
     </div>
-    <div class="sec"><h3>provenance</h3>
-      <p style="font-size:.85rem">${provBadge(p)} <b>${esc(ZONE_LABEL[prov.zone]||"unknown")}</b>${prov.country?` · ${esc(prov.country)}`:""}
-      ${prov.malus?` <span style="color:var(--muted)">(−${prov.malus} proximity, shown separately — not in the health score)</span>`:""}</p>
+    <div class="sec"><h3>${esc(D.secProvenance)}</h3>
+      <p style="font-size:.85rem">${provBadge(p)} <b>${esc(zoneLabel(prov.zone))}</b>${prov.country?` · ${esc(prov.country)}`:""}
+      ${prov.malus?` <span style="color:var(--muted)">${esc(D.provMalus(prov.malus))}</span>`:""}</p>
     </div>
     ${(function(){
       const f=doseFit(p);
-      if(!f) return `<div class="sec"><h3>dosage vs your needs</h3><p style="font-size:.78rem;color:var(--muted)">${
-        PROFILE ? "This product's label does not state a daily dose we can check against your profile."
-                : "Fill in your profile (top of the page) to see how this dose compares to your personal target."}</p></div>`;
-      if(f.state==="multi") return `<div class="sec"><h3>dosage vs your needs</h3>
-        <p style="font-size:.85rem">A multivitamin has no single dose to check — it carries 20+ nutrients, each with its own target.</p>
-        <p style="font-size:.7rem;color:var(--muted)">Its “effective dosing” score (${p.scores.dose}/20) already grades whether the label lands near 100% NRV across the board rather than megadosing the cheap B vitamins. Compare individual nutrients in the single-nutrient categories instead.</p></div>`;
-      return `<div class="sec"><h3>dosage vs your needs</h3>
+      if(!f) return `<div class="sec"><h3>${esc(D.secDosage)}</h3><p style="font-size:.78rem;color:var(--muted)">${
+        esc(PROFILE ? D.noDose : D.fillProfile)}</p></div>`;
+      if(f.state==="multi") return `<div class="sec"><h3>${esc(D.secDosage)}</h3>
+        <p style="font-size:.85rem">${esc(D.multiLead)}</p>
+        <p style="font-size:.7rem;color:var(--muted)">${esc(D.multiNote(p.scores.dose))}</p></div>`;
+      return `<div class="sec"><h3>${esc(D.secDosage)}</h3>
         <p style="font-size:.85rem"><span class="${f.cls}">${esc(f.label)}</span></p>
         ${f.noBar?"":doseBar(f)}
         <p style="font-size:.7rem;color:var(--muted);margin-top:10px">${esc(f.t.note)}.</p>
         <p style="font-size:.7rem;color:var(--faint)">${f.t.scaled
-          ? "Personalised to your "+esc(f.t.scaled)+"."
-          : "This band is <b>not</b> personalised: no body-weight, sex or age scaling is established for this nutrient, so it is the same for everyone."} Guidance for healthy adults — not medical advice.</p></div>`;})()}
-    <div class="sec"><h3>what you actually get</h3>
+          ? esc(D.personalisedTo(f.t.scaled))
+          : D.notPersonalised}${esc(D.guidance)}</p></div>`;})()}
+    <div class="sec"><h3>${esc(D.secGet)}</h3>
       <ul class="plain"><li>${esc(activesLine(p))}</li>${(p.secondary_actives||[]).map(sa =>
-        `<li>+ built-in: ${fmtNum(sa.per_day)} ${esc(STACK_UNITS[sa.category]||sa.category)} / day — counted in your stack totals</li>`).join("")}<li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
+        `<li>${esc(D.builtIn(fmtNum(sa.per_day), stackUnit(sa.category)))}</li>`).join("")}<li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
-    ${!s.red_card?`<div class="sec"><button class="btn ${STACK.includes(id)?"added":""}" onclick="toggleStack('${id}')">${STACK.includes(id)?"✓ in your stack":"+ add to my stack"}</button>${p.url?` <a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">buy — direct product page ↗</a> <span style="font-size:.68rem;color:var(--faint)">no affiliation, kleerer earns nothing</span>`:""}</div>`:""}
-    ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>needs human review</h3>${p.review_flags.map(f=>`<div class="flagbox">⚑ unrecognised ingredient: ${esc(f)} — help us classify it</div>`).join("")}</div>`:""}
-    ${p.flags.length ? `<div class="sec"><h3>watch-outs</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
-    <p class="footnote">Scored with methodology v${META.methodology_version} from the public label and brand documents — not from independent lab testing. Not medical advice.</p>`;
+    ${!s.red_card?`<div class="sec"><button class="btn ${STACK.includes(id)?"added":""}" onclick="toggleStack('${id}')">${esc(STACK.includes(id)?D.btnInStack:D.btnAddStack)}</button>${p.url?` <a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${esc(D.btnBuyLong)}</a> <span style="font-size:.68rem;color:var(--faint)">${esc(D.noAffiliation)}</span>`:""}</div>`:""}
+    ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>${esc(D.secReview)}</h3>${p.review_flags.map(f=>`<div class="flagbox">${esc(D.reviewFlag(f))}</div>`).join("")}</div>`:""}
+    ${p.flags.length ? `<div class="sec"><h3>${esc(D.secWatchouts)}</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
+    <p class="footnote">${esc(D.footnote(META.methodology_version))}</p>`;
   showModal(html);
   OPEN_DETAIL = id;                      // set after showModal, which clears it
 }
@@ -945,56 +929,35 @@ function openDetail(id){
 /* ---------- methodology / about ---------- */
 function openMethodology(){
   showModal(`<button class="close" onclick="closeModal()">✕</button>
-  <div class="prose">
-    <h2>How the Health &amp; Compo Score works</h2>
-    <p>Every product is scored 0–100 by an <b>open</b> script using only the label and public proofs, never marketing claims. The <b>method is open</b> so it can be audited; the <b>dataset and its price/label history are not published</b> — that accumulating archive is kleerer's moat. <b>Price is never part of the health score.</b></p>
-    <h4>🟥 Red card</h4>
-    <p>A product containing a substance banned, withdrawn or restricted by <b>any</b> of EU-EFSA, US-FDA or WHO (titanium dioxide E171, industrial trans fat, BVO, potassium bromate, Red 3, propylparaben…) is forced to <b>0 / grade E</b> — a banned additive is a disqualification, not a deduction. Strictest-guideline-wins: if one body flags it, we flag it.</p>
-    <h4>Composition &amp; efficacy — 40 pts</h4>
-    <p><b>Form quality (20):</b> chelated magnesium beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; strain-coded probiotics beat un-coded. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values, with penalties for exceeding EU upper limits.</p>
-    <h4>Purity &amp; additives — 30 pts</h4>
-    <p>Start at 30, subtract per additive, <b>proportionate to the health evidence</b>: fully hydrogenated fat −25, undisclosed/proprietary blend −10, BHA/BHT −10, <b>added sugar −8</b>, then sweeteners tiered by evidence (see below), azo colours −3, polyols/carriers/emulsifiers/fillers/coatings −2 each. Natural sweeteners (stevia, monk fruit), carrier oils, capsule shells and natural flavours are neutral. An unrecognised ingredient is never ignored — it's flagged <b>needs review</b> (−2 provisional).</p>
-    <h4>Our position on sweeteners (evidence-based)</h4>
-    <p>Regulators (EFSA, FDA, WHO/JECFA) uphold sweetener safety at their acceptable daily intakes. Large cohorts (NutriNet-Santé, &gt;100 000 adults) and lab studies report <i>signals</i> — not proven causation — for some. We apply mild, proportionate precaution: <b>Tier D</b> sucralose/erythritol/xylitol −6 (mechanistic/CV signal), <b>Tier C</b> aspartame/acesulfame-K −4 (cohort signal), <b>Tier B</b> saccharin/cyclamate −2, <b>Tier A</b> stevia/monk fruit 0. Crucially, <b>added sugar (−8) is penalised more than any sweetener</b>, because the evidence that sugar harms health is stronger. We do not claim "sweeteners cause cancer".</p>
-    <h4>Transparency &amp; testing — 30 pts</h4>
-    <table><tr><th>Published batch analyses / COAs</th><td>+12</td></tr>
-    <tr><th>Recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF…)</th><td>+10</td></tr>
-    <tr><th>Branded traceable raw ingredient (Creapure®, EPAX®, Peptan®…)</th><td>+4</td></tr>
-    <tr><th>Fully quantified label, no proprietary blend</th><td>+4</td></tr></table>
-    <h4>Grades</h4>
-    <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
-    <h4>Price level &amp; value (separate from the health score)</h4>
-    <p><b>€ / standard dose</b> per category (€/25 g protein, €/1000 IU D3, €/10 g collagen…) plus a <b>price level 1–5</b> — a within-category affordability band (1 = cheapest per dose, 5 = priciest). A "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one.</p>
-    <h4>Personalised dosing (separate from the health score)</h4>
-    <p>If you fill in the optional profile, every product's daily dose is checked against <b>your</b> target. We keep two questions strictly apart. <b>Is it in your effective band?</b> — a personalised range built from your weight, sex, age and activity. <b>Does it breach a legal limit?</b> — the EU/ANSES upper limit, which is identical for everyone. A dose <i>above your band but below every limit</i> is safe, just more than you need: it is never shown in red. Only a genuine upper-limit breach is.</p>
-    <table><tr><th>✓ fits you</th><td>inside your personalised band</td></tr>
-    <tr><th>↓ under-dosed for you</th><td>below the band — the label serving would not get you there</td></tr>
-    <tr><th>↑ more than you need</th><td>above the band, within every regulatory limit — a cost question, not a safety one</td></tr>
-    <tr><th>⚠ over the EU limit</th><td>breaches a statutory upper limit (vitamin D 4000 IU, zinc 25 mg, supplemental magnesium 250 mg, melatonin 1.9 mg…)</td></tr></table>
-    <p><b>We only personalise what the evidence lets us.</b> Protein scales with body weight and activity (ISSN / Morton 2018, ESPEN past 65); magnesium with weight and sex (~6 mg/kg, capped at the ANSES PRI); vitamin D with age and BMI; zinc with sex and activity (EFSA PRI). But collagen trials dose in absolute grams, and probiotics are strain-specific and not dose-linear — so those bands are <b>the same for everyone, and the product says so</b> instead of inventing a personalised number. Multivitamins get no single target at all: 20+ nutrients each have their own, so we point you to the per-nutrient categories rather than pretend one number exists.</p>
-    <p>Personalised dosing never touches the Health &amp; Compo Score — two people looking at the same product see the same grade. It is guidance for healthy adults and <b>not medical advice</b>.</p>
-    <h4>My stack (beta) — combined doses, checked</h4>
-    <p>Add any products to a stack and we sum what you would actually swallow per day, nutrient by nutrient — including <b>declared built-in actives</b> (an omega-3 carrying 800 IU of vitamin D counts toward your vitamin-D total). Every total is checked against the EU upper limits — that works <b>without</b> a profile — and against your personal bands with one. Two 300 mg magnesiums quietly total 600 mg against a 250 mg supplemental limit; nothing on the label warns you, the stack does.</p>
-    <p><b>Honest boundary:</b> multivitamin labels aren't per-nutrient coded in our data yet, so a stack containing one shows its totals as <i>lower bounds</i> and says so, rather than guessing. Products whose name declares an extra active we haven't coded are flagged, not silently ignored — the same rule as unrecognised ingredients.</p>
-    <h4>Provenance (separate axis, not in the health score)</h4>
-    <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
-    <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>
-  </div>`);
+  <div class="prose">${T("methodology")()}</div>`);
 }
 function openAbout(){
   showModal(`<button class="close" onclick="closeModal()">✕</button>
-  <div class="prose">
-    <h2>About kleerer.</h2>
-    <p><b>kleerer.</b> makes health data available to individuals seeking advice or recommendations. The project open-sources science-based resources and technologies to help people enhance their well-being — this comparator (p1) is the first product of that roadmap.</p>
-    <h4>Why it exists</h4>
-    <p>Supplement marketing sells stories; labels tell the truth. kleerer. reads the label for you: what form the active is in, whether the dose is effective, what else is in the capsule, and what the brand actually proves with third-party tests — then prices the product per gram of active, not per kilo of powder.</p>
-    <h4>Independence</h4>
-    <p>No sponsors, no affiliate links, no paid placements. Covers ${META.n_products} EU/FR products across ${META.n_categories} categories (snapshot ${META.snapshot}). The <b>scoring method</b> — script and rules — is open-source (MIT) so it can be audited and challenged; the <b>dataset and its daily price/label history</b> stay private, because that accumulating archive is what makes kleerer hard to replicate. If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
-    <h4>Roadmap</h4>
-    <p>p1: this comparator, with a personalised dosing check on every product. p2, <b>stack</b>, ships inside it (beta): build a basket across categories and it sums the combined daily doses — built-in actives included — warning when two products quietly push a nutrient over its EU limit, and showing what your profile's targets leave uncovered. Next: per-nutrient coding of multivitamin labels (so stack totals stop being lower bounds), the automated price &amp; label pipeline (source audit is Phase 1), and broader categories.</p>
-    <p>The daily price-and-label archive stays <b>private</b>, and deliberately so — it is the asset, and publishing it would hand a scraper the one thing that took years to accumulate. What the site shows is today's catalogue; the history stays behind the wall.</p>
-    <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>
-  </div>`);
+  <div class="prose">${T("about")(META)}</div>`);
+}
+
+/* ---------- language ------------------------------------------------------
+   Applies the current language to static markup (data-i18n*) and re-renders
+   every dynamic surface. A manual choice always beats the browser default. */
+function setLang(l){
+  if (l !== "en" && l !== "fr") return;
+  LANG = l;
+  try { localStorage.setItem(LANG_KEY, l); } catch(e){}
+  applyLang();
+}
+function applyLang(){
+  document.documentElement.lang = T("htmlLang");
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute("content", T("metaDesc"));
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = T(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = T(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = T(el.dataset.i18nPh); });
+  document.querySelectorAll("[data-i18n-title]").forEach(el => { el.title = T(el.dataset.i18nTitle); });
+  document.querySelectorAll("#langsw button").forEach(b =>
+    b.classList.toggle("on", b.dataset.lang === LANG));
+  renderStats(); renderPills(); syncProfileUI(); renderStackBtn(); renderTray(); render();
+  if (OPEN_DETAIL) openDetail(OPEN_DETAIL);
+  else if (OPEN_STACK) openStack();
 }
 
 /* ---------- modal plumbing ---------- */
@@ -1014,9 +977,7 @@ function closeModal(){
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
 loadProfileUI();
-syncProfileUI();
-renderStackBtn();
-render();
+applyLang();
 </script>
 </body>
 </html>
