@@ -143,8 +143,8 @@ en: {
     inBand: "✓ in your band", belowBand: "↓ below your band", aboveBand: "↑ more than you need",
     withinLimit: ul => `within the ${ul} limit`,
     wheyNote: (pct,lo) => `≈ ${pct}% of your ${lo} g/day minimum — one serving of each shake, food does the rest.`,
-    from: "from:", builtIn: "(built-in)",
-    multiWarn: (names,any) => `⚑ ${names} — a multivitamin adds 20+ nutrients (typically zinc, vitamin D, C, magnesium) whose per-product amounts aren't coded in our data yet. <b>The totals above are lower bounds</b>: treat any nutrient already near its limit as potentially over. Coding multivitamin labels is on the roadmap.`,
+    from: "from:", builtIn: "(built-in)", fromMulti: "(from multivitamin)",
+    multiWarn: names => `⚑ Still uncoded, so <b>not counted above</b>: ${names}. Every other nutrient in this stack — including what your multivitamin contributes — is counted in full. Treat the listed nutrients as potentially higher than shown.`,
     mentionWarn: list => `⚑ declared but not yet coded: ${list} — not counted in the totals above.`,
     mentions: (brand,name,cat) => `${brand} ${name} mentions <b>${cat}</b>`,
     notCovered: "not covered by this stack",
@@ -155,6 +155,23 @@ en: {
     alertMax: "Stack up to 12 products."
   },
 
+
+  priceCtx: {
+    listChip: r => `usually −${r[0]}–${r[1]}%`,
+    listTitle: "the price shown is the list price — this brand runs near-permanent promotions, so you normally pay less",
+    listLong: r => `The price above is the list price. This brand discounts structurally, so the effective price is typically ${r[0]}–${r[1]}% lower — which also makes the € / active figure above a worst case.`,
+    promoChip: "⚠ captured on promo",
+    promoTitle: "this price was captured during a promotion — it is lower than the usual price, so the value ranking flatters this product",
+    promoLong: (pct, normal) => `This price was captured during a promotion${pct?` (−${pct}%)`:""}${normal?`, against a normal price of ${normal}`:""}. The € / active and price-level figures above are therefore better than this product usually offers.`,
+    stableLong: "This brand does not run promotions — the price above is what you actually pay."
+  },
+  contribute: {
+    line: url => `Spotted something wrong — a price, a dose, an ingredient? <a href="${url}" target="_blank" rel="noopener">Open a correction</a>. The dataset and the scoring script are public; corrections arrive as auditable changes, and the fix applies to every product equally.`,
+    btnReview: "Help classify this ingredient ↗",
+    titleReview: (b,n) => `[data] classify unrecognised ingredient — ${b} ${n}`,
+    titleFix: (b,n) => `[data] correction — ${b} ${n}`,
+    body: (p, flags) => `Product: ${p.brand} — ${p.name} (${p.variant})\nProduct id: ${p.id}\nCategory: ${p.category}\n${flags?`Unrecognised ingredient(s): ${flags}\n`:""}\n**What is wrong / what should it be?**\n\n\n**Source** (label photo, brand page, COA):\n\n`
+  },
   zones: {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"},
   confidence: {high:"high", medium:"medium", low:"low"},
   priceLevelTitle: tier => `price level ${tier}/5 (1=cheapest per dose, 5=priciest)`,
@@ -208,7 +225,10 @@ en: {
     unknown: "unknown",
     noDose: "This product's label does not state a daily dose we can check against your profile.",
     fillProfile: "Fill in your profile (top of the page) to see how this dose compares to your personal target.",
-    multiLead: "A multivitamin has no single dose to check — it carries 20+ nutrients, each with its own target.",
+    multiLead: "A multivitamin has no single dose to check — it carries 20+ nutrients, each with its own target. Here is what it contributes to the limit-bearing ones:",
+    absent: "not in this formula", perDayWord: "day",
+    multiCoded: "Counted in full in your stack totals",
+    multiMissing: list => `Not yet coded from this label, so not counted in stack totals: ${list}.`,
     multiNote: d => `Its “effective dosing” score (${d}/20) already grades whether the label lands near 100% NRV across the board rather than megadosing the cheap B vitamins. Compare individual nutrients in the single-nutrient categories instead.`,
     personalisedTo: s => `Personalised to your ${s}.`,
     notPersonalised: "This band is <b>not</b> personalised: no body-weight, sex or age scaling is established for this nutrient, so it is the same for everyone.",
@@ -407,8 +427,8 @@ fr: {
     inBand: "✓ dans votre fourchette", belowBand: "↓ sous votre fourchette", aboveBand: "↑ plus que nécessaire",
     withinLimit: ul => `dans la limite de ${ul}`,
     wheyNote: (pct,lo) => `≈ ${pct} % de votre minimum de ${lo} g/jour — une portion de chaque shake, l'alimentation fait le reste.`,
-    from: "provenance :", builtIn: "(intégré)",
-    multiWarn: names => `⚑ ${names} — un multivitamines apporte plus de 20 nutriments (typiquement zinc, vitamine D, C, magnésium) dont les quantités par produit ne sont pas encore codées dans nos données. <b>Les totaux ci-dessus sont des minorants</b> : considérez comme potentiellement dépassé tout nutriment déjà proche de sa limite. Le codage des étiquettes de multivitamines est prévu à la feuille de route.`,
+    from: "provenance :", builtIn: "(intégré)", fromMulti: "(via multivitamines)",
+    multiWarn: names => `⚑ Pas encore codé, donc <b>non comptabilisé ci-dessus</b> : ${names}. Tout le reste de cette routine — y compris ce qu'apporte votre multivitamines — est compté intégralement. Considérez les nutriments listés comme potentiellement plus élevés qu'affiché.`,
     mentionWarn: list => `⚑ déclaré mais pas encore codé : ${list} — non comptabilisé dans les totaux ci-dessus.`,
     mentions: (brand,name,cat) => `${brand} ${name} mentionne <b>${cat}</b>`,
     notCovered: "non couvert par cette routine",
@@ -419,6 +439,23 @@ fr: {
     alertMax: "Jusqu'à 12 produits dans la routine."
   },
 
+
+  priceCtx: {
+    listChip: r => `souvent −${r[0]} à −${r[1]} %`,
+    listTitle: "le prix affiché est le prix public — cette marque pratique des promotions quasi permanentes, vous payez normalement moins",
+    listLong: r => `Le prix ci-dessus est le prix public. Cette marque remise structurellement : le prix effectif est généralement inférieur de ${r[0]} à ${r[1]} %, ce qui fait aussi du € / actif affiché une hypothèse haute.`,
+    promoChip: "⚠ relevé en promotion",
+    promoTitle: "ce prix a été relevé pendant une promotion — il est inférieur au prix habituel, le classement au rapport qualité-prix avantage donc ce produit",
+    promoLong: (pct, normal) => `Ce prix a été relevé pendant une promotion${pct?` (−${pct} %)`:""}${normal?`, pour un prix habituel de ${normal}`:""}. Le € / actif et le niveau de prix ci-dessus sont donc meilleurs que ce que ce produit propose habituellement.`,
+    stableLong: "Cette marque ne pratique pas de promotions — le prix ci-dessus est celui que vous payez réellement."
+  },
+  contribute: {
+    line: url => `Vous avez repéré une erreur — un prix, un dosage, un ingrédient ? <a href="${url}" target="_blank" rel="noopener">Proposez une correction</a>. Le jeu de données et le script de notation sont publics ; les corrections arrivent sous forme de modifications auditables, et le correctif s'applique à tous les produits de la même façon.`,
+    btnReview: "Aidez-nous à classer cet ingrédient ↗",
+    titleReview: (b,n) => `[data] classer un ingrédient non reconnu — ${b} ${n}`,
+    titleFix: (b,n) => `[data] correction — ${b} ${n}`,
+    body: (p, flags) => `Produit : ${p.brand} — ${p.name} (${p.variant})\nIdentifiant : ${p.id}\nCatégorie : ${p.category}\n${flags?`Ingrédient(s) non reconnu(s) : ${flags}\n`:""}\n**Qu'est-ce qui est incorrect, et que faudrait-il ?**\n\n\n**Source** (photo d'étiquette, page de la marque, certificat d'analyse) :\n\n`
+  },
   zones: {FR:"fabriqué en France", EU:"fabriqué dans l'UE", EXTRA_EU:"fabriqué hors UE", UNKNOWN:"origine inconnue"},
   confidence: {high:"élevée", medium:"moyenne", low:"faible"},
   priceLevelTitle: tier => `niveau de prix ${tier}/5 (1 = le moins cher par dose, 5 = le plus cher)`,
@@ -472,7 +509,10 @@ fr: {
     unknown: "inconnue",
     noDose: "L'étiquette de ce produit n'indique pas de dose journalière que nous puissions confronter à votre profil.",
     fillProfile: "Renseignez votre profil (en haut de la page) pour voir comment cette dose se compare à votre cible personnelle.",
-    multiLead: "Un multivitamines n'a pas de dose unique à vérifier — il apporte plus de 20 nutriments, chacun avec sa propre cible.",
+    multiLead: "Un multivitamines n'a pas de dose unique à vérifier — il apporte plus de 20 nutriments, chacun avec sa propre cible. Voici ce qu'il apporte pour ceux qui ont une limite réglementaire :",
+    absent: "absent de cette formule", perDayWord: "jour",
+    multiCoded: "Comptabilisé intégralement dans les totaux de votre routine",
+    multiMissing: list => `Pas encore codé depuis cette étiquette, donc non comptabilisé dans les totaux : ${list}.`,
     multiNote: d => `Son score de « dosage efficace » (${d}/20) évalue déjà si l'étiquette se situe près de 100 % des VNR sur l'ensemble, plutôt que de surdoser les vitamines B bon marché. Comparez plutôt les nutriments un par un dans les catégories mono-nutriment.`,
     personalisedTo: s => `Personnalisé selon votre ${s}.`,
     notPersonalised: "Cette fourchette n'est <b>pas</b> personnalisée : aucun ajustement au poids, au sexe ou à l'âge n'est établi pour ce nutriment, elle est donc la même pour tout le monde.",
@@ -545,6 +585,10 @@ fr: {
 /* ---------- language selection ---------- */
 const LANG_KEY = "kleerer_lang";
 function detectLang(){
+  // A prerendered /fr/ or /en/ route pins its language: the URL is the promise the
+  // crawler indexed, so it must win over both the stored choice and the browser.
+  if (window.KLEERER_FORCE_LANG === "fr" || window.KLEERER_FORCE_LANG === "en")
+    return window.KLEERER_FORCE_LANG;
   try { const saved = localStorage.getItem(LANG_KEY); if (saved === "fr" || saved === "en") return saved; } catch(e){}
   const nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
   return /^fr\b/i.test(nav) ? "fr" : "en";            // fr, fr-FR, fr-BE, fr-CA…

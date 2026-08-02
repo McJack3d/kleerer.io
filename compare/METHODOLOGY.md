@@ -173,7 +173,20 @@ vitamin D3 per daily dose on top of their omega-3) — and checks every total tw
    zinc, vitamin C — everything else is goal-dependent and is not suggested), each with
    a best-scoring and a cheapest fitting product.
 
-**Honest boundaries.** Multivitamins have no per-nutrient breakdown coded yet, so any
+**Multivitamins, per nutrient.** Each multivitamin carries a `nutrients` map of what it
+contributes per daily dose for the four nutrients with a regulatory ceiling (vitamin D3,
+zinc, magnesium, vitamin C). A key present means coded, `0` means confirmed absent, a
+missing key means unknown. The stack sums every coded nutrient in full and names only the
+uncoded ones, so partial coding still yields real totals. Today: 2 of 18 complete, 12
+partial (mostly vitamin D, the nutrient most often doubled up), 4 uncoded.
+
+**Price context.** A product may carry one coarse derived fact about its price: that the
+shown figure is a list price the brand structurally discounts, or that the snapshot was
+captured during a promotion and therefore flatters the value ranking, or that pricing is
+stable. It is a single field, never a series — the daily archive that produces it stays
+private and nothing about its history is reconstructible from what is published.
+
+**Honest boundaries.** Multivitamins whose labels are not yet coded are named individually rather than caveating every multivitamin, and any
 stack containing one displays its totals as *lower bounds* and says so — coding those
 labels is the next data milestone. A product whose *name* declares an extra active we
 have not coded (e.g. a collagen "+ Vitamine C") is flagged as uncounted rather than
