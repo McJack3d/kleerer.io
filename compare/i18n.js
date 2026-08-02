@@ -1,0 +1,558 @@
+// kleerer. — UI translations (en / fr). Hand-written, not machine-translated.
+//
+// Language is chosen from the browser's own stated preference (navigator.language),
+// never from IP geolocation: geolocation needs a third-party lookup (an external
+// request carrying the visitor's IP, which this site refuses to make), and it
+// answers the wrong question anyway — a French speaker in London wants French.
+// A manual toggle always wins and is remembered in localStorage.
+//
+// Scope: this file covers the INTERFACE. Product-level editorial fields in the
+// dataset (notes, flags, form_note, price_note) stay in the language they were
+// authored in — translating the catalogue is a data task, not a UI one.
+
+const I18N = {
+
+/* ===================== ENGLISH ===================== */
+en: {
+  htmlLang: "en",
+  langName: "EN",
+  langSwitchTitle: "Afficher en français",
+  metaDesc: "Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 163 EU/French products across 11 categories. No sponsors, no affiliate links.",
+
+  crumb: "/ p1 · compare",
+  navMethodology: "methodology",
+  navAbout: "about",
+
+  heroSub: `The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs — and <b>my stack</b> sums whatever you combine, catching doses that quietly cross an EU limit. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.`,
+
+  statProducts: "products scored",
+  statCategories: "categories",
+  statRegion: "market scope",
+  statSnapshot: "price snapshot",
+  statOpen: "open data &amp; method",
+
+  pWeight: "weight (kg)", pHeight: "height (cm)", pHeightPlaceholder: "optional",
+  pSex: "sex", pMale: "male", pFemale: "female",
+  pAge: "age", pActivity: "activity",
+  pSedentary: "sedentary", pActive: "active", pAthlete: "athlete",
+  pApply: "apply", pClear: "clear",
+  pStatusNone: "no profile — every product shows its dose, none is checked against you",
+  pStatusOn: (w,h,a,s,ac) => `profile active — ${w} kg${h?" · "+h+" cm":""} · ${a} y · ${s} · ${ac} · every dose below is now checked against your targets`,
+  pHint: `optional — personalises the "dosage vs your needs" line on every product. Weight and age are required; height only sharpens the vitamin&nbsp;D target (via BMI). Healthy adults; evidence-based ranges, EU upper limits respected; not medical advice.`,
+  pAlertRequired: "Weight and age are required. Height is optional (it only sharpens the vitamin D target).",
+
+  searchPlaceholder: "search brand or product…",
+  fitPill: "fits me",
+  fitPillTitle: "show only products whose daily dose lands in your personal target band",
+  stackBtn: n => `my stack (${n})`,
+  stackBtnTitle: "everything you'd take per day, summed nutrient by nutrient and checked against the EU limits — and your bands, with a profile",
+  sortScore: "sort: best score", sortFit: "sort: best fit for me",
+  sortValue: "sort: best value (€ / active)", sortPrice: "sort: price, low → high",
+  sortBrand: "sort: brand a–z",
+
+  cats: {all:"all", whey:"whey", creatine:"creatine", vitamin_d3:"vitamin d3", magnesium:"magnesium",
+    omega3:"omega-3", multivitamin:"multivitamin", zinc:"zinc", vitamin_c:"vitamin c",
+    collagen:"collagen", probiotics:"probiotics", melatonin:"melatonin"},
+
+  units: {whey:"g protein", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
+    magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
+    collagen:"g peptides", probiotics:"billion CFU", melatonin:"mg melatonin"},
+  stackUnits: {whey:"g protein (per serving)", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
+    magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
+    collagen:"g collagen peptides", probiotics:"billion CFU", melatonin:"mg melatonin"},
+
+  actives: {
+    whey: p => `${p.active_per_100g} g protein / 100 g · ${p.active_per_serving_g} g per ${p.serving_g} g serving`,
+    creatine: p => `${p.active_per_serving_g} g creatine per ${p.serving_g} g serving · ${p.active_per_100g} g / 100 g`,
+    vitamin_d3: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("en")} IU / day (${p.units_per_day} × ${p.unit_name})`,
+    magnesium: p => `${p.active_per_unit*p.units_per_day} mg elemental Mg / day (${p.units_per_day} × ${p.unit_name})`,
+    omega3: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("en")} mg EPA+DHA / day (${p.units_per_day} × ${p.unit_name})`,
+    zinc: p => `${p.active_per_unit*p.units_per_day} mg elemental Zn / day (${p.units_per_day} × ${p.unit_name})`,
+    vitamin_c: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("en")} mg vitamin C / day (${p.units_per_day} × ${p.unit_name})`,
+    collagenPowder: p => `${p.active_per_serving_g} g collagen per ${p.serving_g} g serving`,
+    collagenCaps: p => `${(p.active_per_unit*p.units_per_day).toFixed(2)} g collagen / day (${p.units_per_day} × ${p.unit_name})`,
+    probiotics: p => `${p.active_per_unit*p.units_per_day} billion CFU / day (${p.units_per_day} × ${p.unit_name})`,
+    melatonin: p => `${p.active_per_unit*p.units_per_day} mg melatonin / day (${p.units_per_day} × ${p.unit_name})`,
+    fallback: p => `${p.units_per_day} ${p.unit_name}s / day`
+  },
+
+  ulWhy: {
+    vitamin_d3: "sustained intake above the UL risks hypercalcaemia — this is a genuine toxicity ceiling",
+    magnesium: "EFSA set this limit on gut tolerance (osmotic diarrhoea), not toxicity, and it covers supplements only — not magnesium from food. Well-tolerated chelates are often dosed above it deliberately",
+    zinc: "sustained intake above the UL competes with copper absorption",
+    vitamin_c: "an ANSES advisory ceiling on gut tolerance, not a toxicity threshold",
+    melatonin: "a French regulatory ceiling for food supplements, not a toxicity threshold — above it the product is a medicine, not a supplement",
+    omega3: "EFSA finds supplemental EPA+DHA up to 5000 mg/day raises no safety concern"
+  },
+
+  scaledBy: {
+    wheyAll: "weight, activity and age", creatineWeight: "weight (above 100 kg)",
+    d3: "age and BMI", magnesium: "weight and sex", omega3: "activity",
+    zinc: "sex and activity", vitaminC: "age and activity", collagen: "activity only",
+    melatoninAge: "age (note only)"
+  },
+
+  notes: {
+    whey: (lo,hi,w,ac,old) => `${lo}–${hi} g/kg/day for a ${w} kg ${ac} adult${old?" aged 65+ (ESPEN)":" (ISSN / Morton 2018)"} — this is your TOTAL diet target; a supplement only tops up food`,
+    creatine: (hi,w) => `ISSN maintenance is a flat 3–5 g/day; heavier or heavily-training bodies sit at the top (~0.05 g/kg → ${hi} g at ${w} kg). No EU upper limit is set`,
+    d3Bmi: bmi => `BMI ${bmi} — sequestration in adipose tissue raises the requirement (Endocrine Society); EFSA UL 4000 IU/day`,
+    d3Old: "floor raised for 65+ (skin synthesis falls with age); EFSA UL 4000 IU/day",
+    d3NoHeight: "add your height to refine this — BMI ≥ 30 raises the target; EFSA UL 4000 IU/day",
+    d3Plain: "EFSA UL 4000 IU/day",
+    magnesium: (ai,sexPri,lo,hi) => `your total need ≈ ${ai} mg/day (~6 mg/kg, capped at the ${sexPri} mg PRI, ANSES); diet covers most, so a supplement should fill ${lo}–${hi} mg. EFSA UL for supplements is 250 mg/day`,
+    magnesiumPriM: "male 420", magnesiumPriF: "female 360",
+    omega3: ac => `EFSA adequate intake is 250 mg/day; ${ac} adults benefit from more (ISSN). EFSA finds supplemental intakes up to 5000 mg/day raise no safety concern, so a higher dose is a cost question, not a safety one`,
+    zinc: (base,men,athlete) => `EFSA PRI is ${base} mg/day for ${men}${athlete?"; sweat and training losses raise it":""}. The EFSA UL is 25 mg/day — sustained intake above that impairs copper absorption`,
+    zincMen: "men", zincWomen: "women",
+    vitaminC: (lo,athlete) => `ANSES PRI is ${lo} mg/day${athlete?"; heavy training raises turnover to ~200 mg":""}. Above that there is no established added benefit, but no harm either — ANSES advises staying at or below 1000 mg/day from supplements`,
+    collagen: "clinical trials use 5 g (skin) to 15 g (joints, tendon loading) as absolute doses — collagen peptide research does not scale by body weight, so this band moves with your activity only",
+    probiotics: "studied doses span roughly 1–50 billion CFU and the effect is strain-specific, not dose-linear — more CFU is not inherently better. No body-weight, sex or age scaling is established, so this band is the same for everyone",
+    melatonin: old => "EFSA allows the sleep-onset claim from 1 mg (0.5 mg for jet lag); 1.9 mg is the French regulatory ceiling for a food supplement"
+      + (old ? ". Endogenous melatonin declines past 55, where supplementation tends to help most" : ". No body-weight scaling is established")
+  },
+
+  fit: {
+    wheyLabel: (d,pct,lo,hi) => `1 serving = ${d} g protein ≈ ${pct}% of your ${lo} g/day minimum (your total-diet target is ${lo}–${hi} g — food does most of it)`,
+    wheyChip: pct => `≈${pct}% of your daily protein`,
+    overLabel: (d,unit,ul,lo,hi) => `${d} ${unit} per day — above the ${ul} regulatory limit for supplements (your effective band is ${lo}–${hi})`,
+    overWhat: why => `. What that means: ${why}`,
+    overChip: ul => `⚠ over the ${ul} limit`,
+    lowLabel: (d,unit,lo,hi) => `${d} ${unit} per day — below your ${lo}–${hi} target; you would need more than the label serving`,
+    lowChip: "↓ under-dosed for you",
+    highLabel: (d,unit,lo,hi) => `${d} ${unit} per day — above your ${lo}–${hi} optimal band but within every regulatory limit: safe, just more than you need`,
+    highChip: "↑ more than you need",
+    okLabel: (d,unit,lo,hi) => `${d} ${unit} per day — inside your ${lo}–${hi} target`,
+    okChip: "✓ fits you"
+  },
+
+  barYourBand: (lo,hi) => `your band ${lo}–${hi}`,
+  barEuLimit: ul => `EU limit ${ul}`,
+  barNoLimit: "no EU limit set",
+
+  stack: {
+    title: "my stack",
+    empty: profile => `Empty. Add products with the <b>+ stack</b> button on any card — mix categories freely. The stack sums what you would actually swallow per day, nutrient by nutrient, checks every total against the EU upper limits${profile ? " and your personal bands" : ""}, and catches overlaps: an omega-3 with built-in vitamin D counts toward your vitamin-D total.`,
+    emptyNoProfile: "The limit checks work without a profile; fill one in (top of the page) to also see your personal target bands here.",
+    products: n => `${n} product${n>1?"s":""}`,
+    perDay: "per day, all together", perMonth: "per month (~30 days)",
+    combined: profile => `combined daily intake${profile ? " vs your targets" : " vs EU limits"}`,
+    nothing: "Nothing to sum yet.",
+    total: "total",
+    overChip: ul => `⚠ over the ${ul} limit`,
+    overNote: (total,unit,ul,why) => `combined ${total} ${unit} exceeds the ${ul} regulatory limit for supplements. ${why}.`,
+    inBand: "✓ in your band", belowBand: "↓ below your band", aboveBand: "↑ more than you need",
+    withinLimit: ul => `within the ${ul} limit`,
+    wheyNote: (pct,lo) => `≈ ${pct}% of your ${lo} g/day minimum — one serving of each shake, food does the rest.`,
+    from: "from:", builtIn: "(built-in)",
+    multiWarn: (names,any) => `⚑ ${names} — a multivitamin adds 20+ nutrients (typically zinc, vitamin D, C, magnesium) whose per-product amounts aren't coded in our data yet. <b>The totals above are lower bounds</b>: treat any nutrient already near its limit as potentially over. Coding multivitamin labels is on the roadmap.`,
+    mentionWarn: list => `⚑ declared but not yet coded: ${list} — not counted in the totals above.`,
+    mentions: (brand,name,cat) => `${brand} ${name} mentions <b>${cat}</b>`,
+    notCovered: "not covered by this stack",
+    notCoveredIntro: hasMulti => `A varied diet may already cover these — nothing here is a prompt to buy more.${hasMulti ? " Your multivitamin likely covers part of them too." : ""} If you do want to cover one:`,
+    bestForYou: "best for you:", cheapestFit: "cheapest fit:",
+    profileHint: "Fill in your profile (top of the page) to see the totals against your personal bands and what this stack doesn't cover.",
+    footnote: "The stack counts supplements only — food intake is on top of everything shown here. Built-in secondary actives are included only where the manufacturer declares them. Guidance for healthy adults, not medical advice.",
+    alertMax: "Stack up to 12 products."
+  },
+
+  zones: {FR:"made in France", EU:"made in EU", EXTRA_EU:"made outside EU", UNKNOWN:"origin unknown"},
+  confidence: {high:"high", medium:"medium", low:"low"},
+  priceLevelTitle: tier => `price level ${tier}/5 (1=cheapest per dose, 5=priciest)`,
+
+  chipCoa: "COA published", chipThirdParty: "3rd-party tested", chipVegan: "vegan",
+  chipReview: "⚑ needs review", chipReviewTitle: "unrecognised ingredient — needs human review",
+  chipFlags: n => `⚠ ${n} flag${n>1?"s":""}`,
+
+  barComposition: "composition", barPurity: "purity", barTransparency: "transparency",
+  btnDetails: "details", btnCompare: "+ compare", btnCompared: "✓ added",
+  btnStack: "+ stack", btnStacked: "✓ stacked",
+  btnStackTitle: "add to your daily stack — combined doses are checked against the EU limits",
+  btnBuy: "buy ↗", btnBuyTitle: "direct product page — kleerer has no affiliation and earns nothing",
+  perDayShort: (c,d) => `${c}/day · ~${d} days`,
+  confTitle: c => `data confidence: ${c}`,
+  redCardBanner: subs => `🟥 red card · banned: ${subs}`,
+
+  countPlain: (n,total) => `${n} of ${total} products`,
+  countFit: (n,scope,where) => `${n} of ${scope} ${where} fit your profile`,
+  countMatched: n => ` · ${n} of these match your profile`,
+  countNeedsProfile: " · fit sort needs a profile (top of the page)",
+  countValueWarn: " · value sort is only meaningful within a category",
+  whereProducts: "products", whereCat: c => `${c} products`,
+  emptyFit: "No product in this category lands in your target band. Clear the “fits me” filter to see how close the others get.",
+  emptyNone: "No products match.",
+
+  trayClear: "clear", trayGo: n => `compare (${n})`,
+  alertCompareMax: "Compare up to 3 products.",
+  alertCompareSame: "Compare products within the same category.",
+
+  cmp: {
+    title: "Side-by-side", score: "score", composition: "composition & efficacy",
+    purity: "purity & additives", transparency: "transparency & testing", price: "price",
+    costDay: "cost / day", daysPack: "days per pack", form: "form", actives: "daily actives",
+    doseVsNeeds: "dose vs your needs", additives: "additives", certifications: "certifications",
+    watchouts: "watch-outs", none: "None",
+    footnote: snap => `Green = best of the selection. Price snapshot ${snap}; promo-heavy brands can be much cheaper in practice.`
+  },
+
+  detail: {
+    rowForm: "Form quality", rowDose: "Effective dosing", rowPurity: "Purity & additives",
+    rowTransparency: "Transparency & testing",
+    noAdditives: "No additives — clean label", noCerts: "No public certifications or COAs",
+    rankInCat: n => `#${n} in category`,
+    scoreLine: (total,conf) => `Health &amp; Compo Score <b>${total}</b> / 100 · data confidence: <b>${conf}</b>`,
+    secBreakdown: "score breakdown", secPrice: "price &amp; value", secProvenance: "provenance",
+    secDosage: "dosage vs your needs", secGet: "what you actually get",
+    secReview: "needs human review", secWatchouts: "watch-outs",
+    listPrice: "list price", priceLevelCell: tier => `price level ${tier}/5 in category`,
+    provMalus: m => `(−${m} proximity, shown separately — not in the health score)`,
+    unknown: "unknown",
+    noDose: "This product's label does not state a daily dose we can check against your profile.",
+    fillProfile: "Fill in your profile (top of the page) to see how this dose compares to your personal target.",
+    multiLead: "A multivitamin has no single dose to check — it carries 20+ nutrients, each with its own target.",
+    multiNote: d => `Its “effective dosing” score (${d}/20) already grades whether the label lands near 100% NRV across the board rather than megadosing the cheap B vitamins. Compare individual nutrients in the single-nutrient categories instead.`,
+    personalisedTo: s => `Personalised to your ${s}.`,
+    notPersonalised: "This band is <b>not</b> personalised: no body-weight, sex or age scaling is established for this nutrient, so it is the same for everyone.",
+    guidance: " Guidance for healthy adults — not medical advice.",
+    builtIn: (amt,unit) => `+ built-in: ${amt} ${unit} / day — counted in your stack totals`,
+    btnInStack: "✓ in your stack", btnAddStack: "+ add to my stack",
+    btnBuyLong: "buy — direct product page ↗", noAffiliation: "no affiliation, kleerer earns nothing",
+    reviewFlag: f => `⚑ unrecognised ingredient: ${f} — help us classify it`,
+    redCardLong: subs => `🟥 red card — contains a substance banned or restricted by EU / FDA / WHO: ${subs}. Score forced to 0.`,
+    footnote: v => `Scored with methodology v${v} from the public label and brand documents — not from independent lab testing. Not medical advice.`
+  },
+
+  footDisclaimer: `<b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.`,
+  footPrices: `Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.`,
+  footMeta: "p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.5",
+  footVersions: "methodology v1.2 · dosing model v2",
+
+  methodology: () => `
+    <h2>How the Health &amp; Compo Score works</h2>
+    <p>Every product is scored 0–100 by an <b>open</b> script using only the label and public proofs, never marketing claims. The <b>method is open</b> so it can be audited; the <b>dataset and its price/label history are not published</b> — that accumulating archive is kleerer's moat. <b>Price is never part of the health score.</b></p>
+    <h4>🟥 Red card</h4>
+    <p>A product containing a substance banned, withdrawn or restricted by <b>any</b> of EU-EFSA, US-FDA or WHO (titanium dioxide E171, industrial trans fat, BVO, potassium bromate, Red 3, propylparaben…) is forced to <b>0 / grade E</b> — a banned additive is a disqualification, not a deduction. Strictest-guideline-wins: if one body flags it, we flag it.</p>
+    <h4>Composition &amp; efficacy — 40 pts</h4>
+    <p><b>Form quality (20):</b> chelated magnesium beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; strain-coded probiotics beat un-coded. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values, with penalties for exceeding EU upper limits.</p>
+    <h4>Purity &amp; additives — 30 pts</h4>
+    <p>Start at 30, subtract per additive, <b>proportionate to the health evidence</b>: fully hydrogenated fat −25, undisclosed/proprietary blend −10, BHA/BHT −10, <b>added sugar −8</b>, then sweeteners tiered by evidence (see below), azo colours −3, polyols/carriers/emulsifiers/fillers/coatings −2 each. Natural sweeteners (stevia, monk fruit), carrier oils, capsule shells and natural flavours are neutral. An unrecognised ingredient is never ignored — it's flagged <b>needs review</b> (−2 provisional).</p>
+    <h4>Our position on sweeteners (evidence-based)</h4>
+    <p>Regulators (EFSA, FDA, WHO/JECFA) uphold sweetener safety at their acceptable daily intakes. Large cohorts (NutriNet-Santé, &gt;100 000 adults) and lab studies report <i>signals</i> — not proven causation — for some. We apply mild, proportionate precaution: <b>Tier D</b> sucralose/erythritol/xylitol −6 (mechanistic/CV signal), <b>Tier C</b> aspartame/acesulfame-K −4 (cohort signal), <b>Tier B</b> saccharin/cyclamate −2, <b>Tier A</b> stevia/monk fruit 0. Crucially, <b>added sugar (−8) is penalised more than any sweetener</b>, because the evidence that sugar harms health is stronger. We do not claim "sweeteners cause cancer".</p>
+    <h4>Transparency &amp; testing — 30 pts</h4>
+    <table><tr><th>Published batch analyses / COAs</th><td>+12</td></tr>
+    <tr><th>Recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF…)</th><td>+10</td></tr>
+    <tr><th>Branded traceable raw ingredient (Creapure®, EPAX®, Peptan®…)</th><td>+4</td></tr>
+    <tr><th>Fully quantified label, no proprietary blend</th><td>+4</td></tr></table>
+    <h4>Grades</h4>
+    <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
+    <h4>Price level &amp; value (separate from the health score)</h4>
+    <p><b>€ / standard dose</b> per category (€/25 g protein, €/1000 IU D3, €/10 g collagen…) plus a <b>price level 1–5</b> — a within-category affordability band (1 = cheapest per dose, 5 = priciest). A "cheap" €19 fish oil can cost more per gram of EPA+DHA than a €50 one.</p>
+    <h4>Personalised dosing (separate from the health score)</h4>
+    <p>If you fill in the optional profile, every product's daily dose is checked against <b>your</b> target. We keep two questions strictly apart. <b>Is it in your effective band?</b> — a personalised range built from your weight, sex, age and activity. <b>Does it breach a legal limit?</b> — the EU/ANSES upper limit, which is identical for everyone. A dose <i>above your band but below every limit</i> is safe, just more than you need: it is never shown in red. Only a genuine upper-limit breach is.</p>
+    <table><tr><th>✓ fits you</th><td>inside your personalised band</td></tr>
+    <tr><th>↓ under-dosed for you</th><td>below the band — the label serving would not get you there</td></tr>
+    <tr><th>↑ more than you need</th><td>above the band, within every regulatory limit — a cost question, not a safety one</td></tr>
+    <tr><th>⚠ over the EU limit</th><td>breaches a statutory upper limit (vitamin D 4000 IU, zinc 25 mg, supplemental magnesium 250 mg, melatonin 1.9 mg…)</td></tr></table>
+    <p><b>We only personalise what the evidence lets us.</b> Protein scales with body weight and activity (ISSN / Morton 2018, ESPEN past 65); magnesium with weight and sex (~6 mg/kg, capped at the ANSES PRI); vitamin D with age and BMI; zinc with sex and activity (EFSA PRI). But collagen trials dose in absolute grams, and probiotics are strain-specific and not dose-linear — so those bands are <b>the same for everyone, and the product says so</b> instead of inventing a personalised number. Multivitamins get no single target at all: 20+ nutrients each have their own, so we point you to the per-nutrient categories rather than pretend one number exists.</p>
+    <p>Personalised dosing never touches the Health &amp; Compo Score — two people looking at the same product see the same grade. It is guidance for healthy adults and <b>not medical advice</b>.</p>
+    <h4>My stack (beta) — combined doses, checked</h4>
+    <p>Add any products to a stack and we sum what you would actually swallow per day, nutrient by nutrient — including <b>declared built-in actives</b> (an omega-3 carrying 800 IU of vitamin D counts toward your vitamin-D total). Every total is checked against the EU upper limits — that works <b>without</b> a profile — and against your personal bands with one. Two 300 mg magnesiums quietly total 600 mg against a 250 mg supplemental limit; nothing on the label warns you, the stack does.</p>
+    <p><b>Honest boundary:</b> multivitamin labels aren't per-nutrient coded in our data yet, so a stack containing one shows its totals as <i>lower bounds</i> and says so, rather than guessing. Products whose name declares an extra active we haven't coded are flagged, not silently ignored — the same rule as unrecognised ingredients.</p>
+    <h4>Provenance (separate axis, not in the health score)</h4>
+    <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
+    <h4>Language</h4>
+    <p>The interface follows your browser's language preference (French or English) and you can switch it any time with the toggle in the header — your choice is remembered. We never look up your IP to guess: that would mean sending your address to a third party, and it would answer the wrong question anyway. Note that product-level editorial notes come from the label in the language they were published in.</p>
+    <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>`,
+
+  about: META => `
+    <h2>About kleerer.</h2>
+    <p><b>kleerer.</b> makes health data available to individuals seeking advice or recommendations. The project open-sources science-based resources and technologies to help people enhance their well-being — this comparator (p1) is the first product of that roadmap.</p>
+    <h4>Why it exists</h4>
+    <p>Supplement marketing sells stories; labels tell the truth. kleerer. reads the label for you: what form the active is in, whether the dose is effective, what else is in the capsule, and what the brand actually proves with third-party tests — then prices the product per gram of active, not per kilo of powder.</p>
+    <h4>Independence</h4>
+    <p>No sponsors, no affiliate links, no paid placements. Covers ${META.n_products} EU/FR products across ${META.n_categories} categories (snapshot ${META.snapshot}). The <b>scoring method</b> — script and rules — is open-source (MIT) so it can be audited and challenged; the <b>dataset and its daily price/label history</b> stay private, because that accumulating archive is what makes kleerer hard to replicate. If a brand disagrees with a score, the fix is the same for everyone: publish better proof.</p>
+    <h4>Roadmap</h4>
+    <p>p1: this comparator, with a personalised dosing check on every product. p2, <b>stack</b>, ships inside it (beta): build a basket across categories and it sums the combined daily doses — built-in actives included — warning when two products quietly push a nutrient over its EU limit, and showing what your profile's targets leave uncovered. Next: per-nutrient coding of multivitamin labels (so stack totals stop being lower bounds), the automated price &amp; label pipeline (source audit is Phase 1), and broader categories.</p>
+    <p>The daily price-and-label archive stays <b>private</b>, and deliberately so — it is the asset, and publishing it would hand a scraper the one thing that took years to accumulate. What the site shows is today's catalogue; the history stays behind the wall.</p>
+    <p style="margin-top:14px"><b>Not medical advice.</b> Always consult a healthcare professional before supplementing.</p>`
+},
+
+/* ===================== FRANÇAIS ===================== */
+fr: {
+  htmlLang: "fr",
+  langName: "FR",
+  langSwitchTitle: "Switch to English",
+  metaDesc: "Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 163 produits UE/France dans 11 catégories. Sans sponsors, sans liens affiliés.",
+
+  crumb: "/ p1 · comparer",
+  navMethodology: "méthodologie",
+  navAbout: "à propos",
+
+  heroSub: `Le comparateur indépendant de compléments alimentaires — <b>on note l'étiquette, on chiffre l'actif</b>. Chaque produit reçoit un Health &amp; Compo Score fondé sur les preuves, un prix par gramme d'actif <i>réel</i>, et un contrôle du dosage face à <i>vos</i> besoins — et <b>ma routine</b> additionne tout ce que vous combinez, en repérant les doses qui franchissent discrètement une limite européenne. Derrière : une archive propriétaire des prix et des étiquettes, <b>enregistrée chaque jour et qui s'étoffe</b> — un historique que personne ne peut recréer après coup. Sans sponsors, sans liens affiliés.`,
+
+  statProducts: "produits notés",
+  statCategories: "catégories",
+  statRegion: "marché couvert",
+  statSnapshot: "relevé des prix",
+  statOpen: "méthode &amp; données ouvertes",
+
+  pWeight: "poids (kg)", pHeight: "taille (cm)", pHeightPlaceholder: "facultatif",
+  pSex: "sexe", pMale: "homme", pFemale: "femme",
+  pAge: "âge", pActivity: "activité",
+  pSedentary: "sédentaire", pActive: "actif", pAthlete: "sportif",
+  pApply: "appliquer", pClear: "effacer",
+  pStatusNone: "aucun profil — chaque produit affiche sa dose, aucune n'est confrontée à vos besoins",
+  pStatusOn: (w,h,a,s,ac) => `profil actif — ${w} kg${h?" · "+h+" cm":""} · ${a} ans · ${s} · ${ac} · chaque dose ci-dessous est désormais confrontée à vos cibles`,
+  pHint: `facultatif — personnalise la ligne « dosage vs vos besoins » sur chaque produit. Le poids et l'âge sont requis ; la taille ne sert qu'à affiner la cible de vitamine&nbsp;D (via l'IMC). Adultes en bonne santé ; fourchettes fondées sur les preuves, limites hautes européennes respectées ; ne constitue pas un avis médical.`,
+  pAlertRequired: "Le poids et l'âge sont requis. La taille est facultative (elle ne sert qu'à affiner la cible de vitamine D).",
+
+  searchPlaceholder: "rechercher une marque ou un produit…",
+  fitPill: "me convient",
+  fitPillTitle: "n'afficher que les produits dont la dose journalière tombe dans votre fourchette cible",
+  stackBtn: n => `ma routine (${n})`,
+  stackBtnTitle: "tout ce que vous prendriez par jour, additionné nutriment par nutriment et confronté aux limites européennes — et à vos fourchettes, avec un profil",
+  sortScore: "tri : meilleur score", sortFit: "tri : me convient le mieux",
+  sortValue: "tri : meilleur rapport (€ / actif)", sortPrice: "tri : prix croissant",
+  sortBrand: "tri : marque a–z",
+
+  cats: {all:"tout", whey:"whey", creatine:"créatine", vitamin_d3:"vitamine d3", magnesium:"magnésium",
+    omega3:"oméga-3", multivitamin:"multivitamines", zinc:"zinc", vitamin_c:"vitamine c",
+    collagen:"collagène", probiotics:"probiotiques", melatonin:"mélatonine"},
+
+  units: {whey:"g de protéines", creatine:"g de créatine", vitamin_d3:"UI de vitamine D3",
+    magnesium:"mg de Mg élémentaire", omega3:"mg d'EPA+DHA", zinc:"mg de zinc", vitamin_c:"mg de vitamine C",
+    collagen:"g de peptides", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine"},
+  stackUnits: {whey:"g de protéines (par portion)", creatine:"g de créatine", vitamin_d3:"UI de vitamine D3",
+    magnesium:"mg de Mg élémentaire", omega3:"mg d'EPA+DHA", zinc:"mg de zinc", vitamin_c:"mg de vitamine C",
+    collagen:"g de peptides de collagène", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine"},
+
+  actives: {
+    whey: p => `${p.active_per_100g} g de protéines / 100 g · ${p.active_per_serving_g} g par portion de ${p.serving_g} g`,
+    creatine: p => `${p.active_per_serving_g} g de créatine par portion de ${p.serving_g} g · ${p.active_per_100g} g / 100 g`,
+    vitamin_d3: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("fr")} UI / jour (${p.units_per_day} × ${p.unit_name})`,
+    magnesium: p => `${p.active_per_unit*p.units_per_day} mg de Mg élémentaire / jour (${p.units_per_day} × ${p.unit_name})`,
+    omega3: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("fr")} mg d'EPA+DHA / jour (${p.units_per_day} × ${p.unit_name})`,
+    zinc: p => `${p.active_per_unit*p.units_per_day} mg de Zn élémentaire / jour (${p.units_per_day} × ${p.unit_name})`,
+    vitamin_c: p => `${(p.active_per_unit*p.units_per_day).toLocaleString("fr")} mg de vitamine C / jour (${p.units_per_day} × ${p.unit_name})`,
+    collagenPowder: p => `${p.active_per_serving_g} g de collagène par portion de ${p.serving_g} g`,
+    collagenCaps: p => `${(p.active_per_unit*p.units_per_day).toFixed(2)} g de collagène / jour (${p.units_per_day} × ${p.unit_name})`,
+    probiotics: p => `${p.active_per_unit*p.units_per_day} milliards d'UFC / jour (${p.units_per_day} × ${p.unit_name})`,
+    melatonin: p => `${p.active_per_unit*p.units_per_day} mg de mélatonine / jour (${p.units_per_day} × ${p.unit_name})`,
+    fallback: p => `${p.units_per_day} ${p.unit_name}s / jour`
+  },
+
+  ulWhy: {
+    vitamin_d3: "un apport durablement supérieur à la LS expose à une hypercalcémie — c'est un vrai plafond de toxicité",
+    magnesium: "l'EFSA a fixé cette limite sur la tolérance digestive (diarrhée osmotique), pas sur la toxicité, et elle ne vise que les compléments — pas le magnésium alimentaire. Les chélates bien tolérés sont souvent dosés au-dessus, délibérément",
+    zinc: "un apport durablement supérieur à la LS entre en concurrence avec l'absorption du cuivre",
+    vitamin_c: "un plafond indicatif de l'ANSES sur la tolérance digestive, pas un seuil de toxicité",
+    melatonin: "un plafond réglementaire français pour les compléments alimentaires, pas un seuil de toxicité — au-delà, le produit relève du médicament, pas du complément",
+    omega3: "l'EFSA estime qu'un apport supplémentaire d'EPA+DHA jusqu'à 5000 mg/jour ne soulève aucune préoccupation de sécurité"
+  },
+
+  scaledBy: {
+    wheyAll: "poids, activité et âge", creatineWeight: "poids (au-delà de 100 kg)",
+    d3: "âge et IMC", magnesium: "poids et sexe", omega3: "activité",
+    zinc: "sexe et activité", vitaminC: "âge et activité", collagen: "activité uniquement",
+    melatoninAge: "âge (remarque seulement)"
+  },
+
+  notes: {
+    whey: (lo,hi,w,ac,old) => `${lo}–${hi} g/kg/jour pour un adulte ${ac} de ${w} kg${old?" de 65 ans et plus (ESPEN)":" (ISSN / Morton 2018)"} — c'est votre cible alimentaire TOTALE ; un complément ne fait que compléter l'alimentation`,
+    creatine: (hi,w) => `l'entretien selon l'ISSN est de 3–5 g/jour, sans ajustement ; les gabarits lourds ou très entraînés se placent en haut de la fourchette (~0,05 g/kg → ${hi} g à ${w} kg). Aucune limite haute européenne n'est fixée`,
+    d3Bmi: bmi => `IMC ${bmi} — la séquestration dans le tissu adipeux augmente le besoin (Endocrine Society) ; LS EFSA 4000 UI/jour`,
+    d3Old: "plancher relevé à partir de 65 ans (la synthèse cutanée diminue avec l'âge) ; LS EFSA 4000 UI/jour",
+    d3NoHeight: "ajoutez votre taille pour affiner — un IMC ≥ 30 relève la cible ; LS EFSA 4000 UI/jour",
+    d3Plain: "LS EFSA 4000 UI/jour",
+    magnesium: (ai,sexPri,lo,hi) => `votre besoin total ≈ ${ai} mg/jour (~6 mg/kg, plafonné à la RNP ${sexPri} mg, ANSES) ; l'alimentation en couvre l'essentiel, un complément doit donc combler ${lo}–${hi} mg. La LS EFSA pour les compléments est de 250 mg/jour`,
+    magnesiumPriM: "homme 420", magnesiumPriF: "femme 360",
+    omega3: ac => `l'apport satisfaisant EFSA est de 250 mg/jour ; les adultes ${ac}s tirent bénéfice de davantage (ISSN). L'EFSA estime qu'un apport supplémentaire jusqu'à 5000 mg/jour ne soulève aucune préoccupation de sécurité : une dose plus élevée est donc une question de coût, pas de sécurité`,
+    zinc: (base,men,athlete) => `la RNP EFSA est de ${base} mg/jour pour les ${men}${athlete?" ; la sueur et les pertes liées à l'entraînement l'augmentent":""}. La LS EFSA est de 25 mg/jour — au-delà, durablement, l'absorption du cuivre est altérée`,
+    zincMen: "hommes", zincWomen: "femmes",
+    vitaminC: (lo,athlete) => `la RNP ANSES est de ${lo} mg/jour${athlete?" ; un entraînement intensif porte le renouvellement à ~200 mg":""}. Au-delà, aucun bénéfice supplémentaire n'est établi, mais aucun risque non plus — l'ANSES conseille de rester à 1000 mg/jour au maximum via les compléments`,
+    collagen: "les essais cliniques utilisent 5 g (peau) à 15 g (articulations, sollicitation tendineuse) en doses absolues — la recherche sur les peptides de collagène n'ajuste pas au poids corporel, cette fourchette ne bouge donc qu'avec votre activité",
+    probiotics: "les doses étudiées s'étendent grosso modo de 1 à 50 milliards d'UFC et l'effet dépend de la souche, pas linéairement de la dose — davantage d'UFC n'est pas intrinsèquement mieux. Aucun ajustement au poids, au sexe ou à l'âge n'est établi : cette fourchette est donc la même pour tout le monde",
+    melatonin: old => "l'EFSA autorise l'allégation sur l'endormissement à partir de 1 mg (0,5 mg pour le décalage horaire) ; 1,9 mg est le plafond réglementaire français pour un complément alimentaire"
+      + (old ? ". La mélatonine endogène décline après 55 ans, âge où la supplémentation aide le plus souvent" : ". Aucun ajustement au poids corporel n'est établi")
+  },
+
+  fit: {
+    wheyLabel: (d,pct,lo,hi) => `1 portion = ${d} g de protéines ≈ ${pct} % de votre minimum de ${lo} g/jour (votre cible alimentaire totale est de ${lo}–${hi} g — l'alimentation en fait l'essentiel)`,
+    wheyChip: pct => `≈${pct} % de vos protéines du jour`,
+    overLabel: (d,unit,ul,lo,hi) => `${d} ${unit} par jour — au-dessus de la limite réglementaire de ${ul} pour les compléments (votre fourchette utile est ${lo}–${hi})`,
+    overWhat: why => `. Ce que cela signifie : ${why}`,
+    overChip: ul => `⚠ au-delà de la limite ${ul}`,
+    lowLabel: (d,unit,lo,hi) => `${d} ${unit} par jour — en dessous de votre cible ${lo}–${hi} ; il vous faudrait davantage que la portion indiquée`,
+    lowChip: "↓ sous-dosé pour vous",
+    highLabel: (d,unit,lo,hi) => `${d} ${unit} par jour — au-dessus de votre fourchette optimale ${lo}–${hi} mais dans toutes les limites réglementaires : sans risque, simplement plus que nécessaire`,
+    highChip: "↑ plus que nécessaire",
+    okLabel: (d,unit,lo,hi) => `${d} ${unit} par jour — dans votre cible ${lo}–${hi}`,
+    okChip: "✓ vous convient"
+  },
+
+  barYourBand: (lo,hi) => `votre fourchette ${lo}–${hi}`,
+  barEuLimit: ul => `limite UE ${ul}`,
+  barNoLimit: "aucune limite UE fixée",
+
+  stack: {
+    title: "ma routine",
+    empty: profile => `Vide. Ajoutez des produits avec le bouton <b>+ routine</b> sur n'importe quelle fiche — mélangez les catégories librement. La routine additionne ce que vous avaleriez réellement chaque jour, nutriment par nutriment, confronte chaque total aux limites hautes européennes${profile ? " et à vos fourchettes personnelles" : ""}, et repère les recoupements : un oméga-3 contenant de la vitamine D compte dans votre total de vitamine D.`,
+    emptyNoProfile: "Les contrôles de limites fonctionnent sans profil ; renseignez-en un (en haut de la page) pour voir aussi vos fourchettes cibles personnelles ici.",
+    products: n => `${n} produit${n>1?"s":""}`,
+    perDay: "par jour, tout compris", perMonth: "par mois (~30 jours)",
+    combined: profile => `apport journalier cumulé${profile ? " vs vos cibles" : " vs limites UE"}`,
+    nothing: "Rien à additionner pour l'instant.",
+    total: "total",
+    overChip: ul => `⚠ au-delà de la limite ${ul}`,
+    overNote: (total,unit,ul,why) => `le cumul de ${total} ${unit} dépasse la limite réglementaire de ${ul} pour les compléments. ${why}.`,
+    inBand: "✓ dans votre fourchette", belowBand: "↓ sous votre fourchette", aboveBand: "↑ plus que nécessaire",
+    withinLimit: ul => `dans la limite de ${ul}`,
+    wheyNote: (pct,lo) => `≈ ${pct} % de votre minimum de ${lo} g/jour — une portion de chaque shake, l'alimentation fait le reste.`,
+    from: "provenance :", builtIn: "(intégré)",
+    multiWarn: names => `⚑ ${names} — un multivitamines apporte plus de 20 nutriments (typiquement zinc, vitamine D, C, magnésium) dont les quantités par produit ne sont pas encore codées dans nos données. <b>Les totaux ci-dessus sont des minorants</b> : considérez comme potentiellement dépassé tout nutriment déjà proche de sa limite. Le codage des étiquettes de multivitamines est prévu à la feuille de route.`,
+    mentionWarn: list => `⚑ déclaré mais pas encore codé : ${list} — non comptabilisé dans les totaux ci-dessus.`,
+    mentions: (brand,name,cat) => `${brand} ${name} mentionne <b>${cat}</b>`,
+    notCovered: "non couvert par cette routine",
+    notCoveredIntro: hasMulti => `Une alimentation variée peut déjà les couvrir — rien ici n'est une incitation à acheter davantage.${hasMulti ? " Votre multivitamines en couvre probablement une partie." : ""} Si vous souhaitez tout de même en couvrir un :`,
+    bestForYou: "le meilleur pour vous :", cheapestFit: "le moins cher qui convient :",
+    profileHint: "Renseignez votre profil (en haut de la page) pour voir les totaux face à vos fourchettes personnelles et ce que cette routine ne couvre pas.",
+    footnote: "La routine ne compte que les compléments — les apports alimentaires s'ajoutent à tout ce qui est affiché ici. Les actifs secondaires intégrés ne sont inclus que lorsque le fabricant les déclare. Recommandations pour adultes en bonne santé, ne constitue pas un avis médical.",
+    alertMax: "Jusqu'à 12 produits dans la routine."
+  },
+
+  zones: {FR:"fabriqué en France", EU:"fabriqué dans l'UE", EXTRA_EU:"fabriqué hors UE", UNKNOWN:"origine inconnue"},
+  confidence: {high:"élevée", medium:"moyenne", low:"faible"},
+  priceLevelTitle: tier => `niveau de prix ${tier}/5 (1 = le moins cher par dose, 5 = le plus cher)`,
+
+  chipCoa: "analyses publiées", chipThirdParty: "testé par un tiers", chipVegan: "végan",
+  chipReview: "⚑ à vérifier", chipReviewTitle: "ingrédient non reconnu — nécessite une vérification humaine",
+  chipFlags: n => `⚠ ${n} alerte${n>1?"s":""}`,
+
+  barComposition: "composition", barPurity: "pureté", barTransparency: "transparence",
+  btnDetails: "détails", btnCompare: "+ comparer", btnCompared: "✓ ajouté",
+  btnStack: "+ routine", btnStacked: "✓ ajouté",
+  btnStackTitle: "ajouter à votre routine quotidienne — les doses cumulées sont confrontées aux limites européennes",
+  btnBuy: "acheter ↗", btnBuyTitle: "page produit directe — kleerer n'a aucune affiliation et ne gagne rien",
+  perDayShort: (c,d) => `${c}/jour · ~${d} jours`,
+  confTitle: c => `fiabilité des données : ${c}`,
+  redCardBanner: subs => `🟥 carton rouge · interdit : ${subs}`,
+
+  countPlain: (n,total) => `${n} produits sur ${total}`,
+  countFit: (n,scope,where) => `${n} ${where} sur ${scope} vous conviennent`,
+  countMatched: n => ` · ${n} d'entre eux correspondent à votre profil`,
+  countNeedsProfile: " · le tri par adéquation nécessite un profil (en haut de la page)",
+  countValueWarn: " · le tri par rapport qualité-prix n'a de sens qu'au sein d'une catégorie",
+  whereProducts: "produits", whereCat: c => `produits ${c}`,
+  emptyFit: "Aucun produit de cette catégorie ne tombe dans votre fourchette cible. Retirez le filtre « me convient » pour voir à quel point les autres s'en approchent.",
+  emptyNone: "Aucun produit ne correspond.",
+
+  trayClear: "effacer", trayGo: n => `comparer (${n})`,
+  alertCompareMax: "Comparez jusqu'à 3 produits.",
+  alertCompareSame: "Comparez des produits d'une même catégorie.",
+
+  cmp: {
+    title: "Comparaison", score: "score", composition: "composition & efficacité",
+    purity: "pureté & additifs", transparency: "transparence & tests", price: "prix",
+    costDay: "coût / jour", daysPack: "jours par pack", form: "forme", actives: "actifs journaliers",
+    doseVsNeeds: "dose vs vos besoins", additives: "additifs", certifications: "certifications",
+    watchouts: "points de vigilance", none: "Aucun",
+    footnote: snap => `Vert = le meilleur de la sélection. Relevé des prix ${snap} ; les marques très promotionnelles peuvent être bien moins chères en pratique.`
+  },
+
+  detail: {
+    rowForm: "Qualité de la forme", rowDose: "Dosage efficace", rowPurity: "Pureté & additifs",
+    rowTransparency: "Transparence & tests",
+    noAdditives: "Aucun additif — étiquette propre", noCerts: "Aucune certification ni analyse publique",
+    rankInCat: n => `n°${n} de la catégorie`,
+    scoreLine: (total,conf) => `Health &amp; Compo Score <b>${total}</b> / 100 · fiabilité des données : <b>${conf}</b>`,
+    secBreakdown: "détail du score", secPrice: "prix &amp; valeur", secProvenance: "provenance",
+    secDosage: "dosage vs vos besoins", secGet: "ce que vous obtenez vraiment",
+    secReview: "vérification humaine requise", secWatchouts: "points de vigilance",
+    listPrice: "prix public", priceLevelCell: tier => `niveau de prix ${tier}/5 dans la catégorie`,
+    provMalus: m => `(−${m} de proximité, affiché séparément — hors score santé)`,
+    unknown: "inconnue",
+    noDose: "L'étiquette de ce produit n'indique pas de dose journalière que nous puissions confronter à votre profil.",
+    fillProfile: "Renseignez votre profil (en haut de la page) pour voir comment cette dose se compare à votre cible personnelle.",
+    multiLead: "Un multivitamines n'a pas de dose unique à vérifier — il apporte plus de 20 nutriments, chacun avec sa propre cible.",
+    multiNote: d => `Son score de « dosage efficace » (${d}/20) évalue déjà si l'étiquette se situe près de 100 % des VNR sur l'ensemble, plutôt que de surdoser les vitamines B bon marché. Comparez plutôt les nutriments un par un dans les catégories mono-nutriment.`,
+    personalisedTo: s => `Personnalisé selon votre ${s}.`,
+    notPersonalised: "Cette fourchette n'est <b>pas</b> personnalisée : aucun ajustement au poids, au sexe ou à l'âge n'est établi pour ce nutriment, elle est donc la même pour tout le monde.",
+    guidance: " Recommandations pour adultes en bonne santé — ne constitue pas un avis médical.",
+    builtIn: (amt,unit) => `+ intégré : ${amt} ${unit} / jour — comptabilisé dans les totaux de votre routine`,
+    btnInStack: "✓ dans votre routine", btnAddStack: "+ ajouter à ma routine",
+    btnBuyLong: "acheter — page produit directe ↗", noAffiliation: "aucune affiliation, kleerer ne gagne rien",
+    reviewFlag: f => `⚑ ingrédient non reconnu : ${f} — aidez-nous à le classer`,
+    redCardLong: subs => `🟥 carton rouge — contient une substance interdite ou restreinte par l'UE / la FDA / l'OMS : ${subs}. Score ramené à 0.`,
+    footnote: v => `Noté avec la méthodologie v${v} à partir de l'étiquette publique et des documents de la marque — pas d'analyses en laboratoire indépendant. Ne constitue pas un avis médical.`
+  },
+
+  footDisclaimer: `<b>Ne constitue pas un avis médical.</b> Les scores reflètent uniquement la composition de l'étiquette et la transparence publique — ni l'adéquation d'un complément à votre cas, ni une vérification indépendante du contenu des lots. Les compléments alimentaires ne remplacent pas une alimentation variée. Parlez-en à un professionnel de santé avant toute supplémentation, en particulier en cas de grossesse, de traitement en cours ou de pathologie.`,
+  footPrices: `Les prix sont des prix publics UE, relevé de <b>juillet 2026</b> — plusieurs marques (Myprotein, Bulk, Prozis) pratiquent des promotions structurelles, les prix effectifs peuvent donc être inférieurs de 30 à 45 %. La fiabilité des données est signalée produit par produit. Vous avez repéré une erreur ? Le jeu de données et le script de notation sont ouverts — corrigez-nous.`,
+  footMeta: "p1 · comparer + p2 · routine (bêta) — méthode ouverte, données privées · MIT · v1.5",
+  footVersions: "méthodologie v1.2 · modèle de dosage v2",
+
+  methodology: () => `
+    <h2>Comment fonctionne le Health &amp; Compo Score</h2>
+    <p>Chaque produit est noté de 0 à 100 par un script <b>ouvert</b>, à partir de la seule étiquette et des preuves publiques, jamais des allégations marketing. La <b>méthode est ouverte</b> pour pouvoir être auditée ; le <b>jeu de données et son historique de prix et d'étiquettes ne sont pas publiés</b> — cette archive qui s'accumule est la barrière à l'entrée de kleerer. <b>Le prix n'entre jamais dans le score santé.</b></p>
+    <h4>🟥 Carton rouge</h4>
+    <p>Un produit contenant une substance interdite, retirée ou restreinte par <b>l'une quelconque</b> des autorités UE-EFSA, US-FDA ou OMS (dioxyde de titane E171, graisses trans industrielles, BVO, bromate de potassium, Rouge 3, propylparabène…) est ramené à <b>0 / note E</b> — un additif interdit est une disqualification, pas une déduction. La règle la plus stricte l'emporte : si une seule autorité le signale, nous le signalons.</p>
+    <h4>Composition &amp; efficacité — 40 pts</h4>
+    <p><b>Qualité de la forme (20) :</b> le magnésium chélaté l'emporte sur l'oxyde ; l'oméga-3 rTG sur les esters éthyliques ; la Creapure® sur un monohydrate non documenté ; les probiotiques à souche identifiée sur les autres. <b>Dosage efficace (20) :</b> dose journalière face aux fourchettes efficaces publiées et aux valeurs de référence EFSA, avec pénalités en cas de dépassement des limites hautes européennes.</p>
+    <h4>Pureté &amp; additifs — 30 pts</h4>
+    <p>On part de 30, on retranche par additif, <b>proportionnellement au niveau de preuve sanitaire</b> : graisse entièrement hydrogénée −25, mélange propriétaire non détaillé −10, BHA/BHT −10, <b>sucre ajouté −8</b>, puis les édulcorants par paliers de preuve (voir ci-dessous), colorants azoïques −3, polyols/supports/émulsifiants/charges/enrobages −2 chacun. Les édulcorants naturels (stévia, fruit du moine), huiles support, enveloppes de gélules et arômes naturels sont neutres. Un ingrédient non reconnu n'est jamais ignoré — il est signalé <b>à vérifier</b> (−2 à titre provisoire).</p>
+    <h4>Notre position sur les édulcorants (fondée sur les preuves)</h4>
+    <p>Les autorités (EFSA, FDA, OMS/JECFA) confirment l'innocuité des édulcorants à leurs doses journalières admissibles. De vastes cohortes (NutriNet-Santé, &gt; 100 000 adultes) et des études de laboratoire rapportent des <i>signaux</i> — non une causalité démontrée — pour certains d'entre eux. Nous appliquons une précaution légère et proportionnée : <b>palier D</b> sucralose/érythritol/xylitol −6 (signal mécanistique ou cardiovasculaire), <b>palier C</b> aspartame/acésulfame-K −4 (signal de cohorte), <b>palier B</b> saccharine/cyclamate −2, <b>palier A</b> stévia/fruit du moine 0. Surtout, <b>le sucre ajouté (−8) est plus pénalisé que n'importe quel édulcorant</b>, parce que les preuves de sa nocivité sont plus solides. Nous n'affirmons pas que « les édulcorants donnent le cancer ».</p>
+    <h4>Transparence &amp; tests — 30 pts</h4>
+    <table><tr><th>Analyses de lots / certificats publiés</th><td>+12</td></tr>
+    <tr><th>Certification tierce reconnue (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF…)</th><td>+10</td></tr>
+    <tr><th>Matière première de marque traçable (Creapure®, EPAX®, Peptan®…)</th><td>+4</td></tr>
+    <tr><th>Étiquette entièrement quantifiée, sans mélange propriétaire</th><td>+4</td></tr></table>
+    <h4>Notes</h4>
+    <p><b>A</b> ≥ 80 · <b>B</b> 65–79 · <b>C</b> 50–64 · <b>D</b> 35–49 · <b>E</b> &lt; 35</p>
+    <h4>Niveau de prix &amp; valeur (distincts du score santé)</h4>
+    <p><b>€ / dose standard</b> par catégorie (€/25 g de protéines, €/1000 UI de D3, €/10 g de collagène…) plus un <b>niveau de prix de 1 à 5</b> — une bande d'accessibilité au sein de la catégorie (1 = le moins cher par dose, 5 = le plus cher). Une huile de poisson « pas chère » à 19 € peut revenir plus cher au gramme d'EPA+DHA qu'une autre à 50 €.</p>
+    <h4>Dosage personnalisé (distinct du score santé)</h4>
+    <p>Si vous renseignez le profil facultatif, la dose journalière de chaque produit est confrontée à <b>votre</b> cible. Nous gardons deux questions strictement séparées. <b>Est-ce dans votre fourchette utile ?</b> — une fourchette personnalisée construite à partir de votre poids, sexe, âge et activité. <b>Cela franchit-il une limite légale ?</b> — la limite haute UE/ANSES, identique pour tout le monde. Une dose <i>au-dessus de votre fourchette mais sous toutes les limites</i> est sans risque, simplement plus que nécessaire : elle n'est jamais affichée en rouge. Seul un vrai dépassement de limite haute l'est.</p>
+    <table><tr><th>✓ vous convient</th><td>dans votre fourchette personnalisée</td></tr>
+    <tr><th>↓ sous-dosé pour vous</th><td>sous la fourchette — la portion indiquée ne vous y amènerait pas</td></tr>
+    <tr><th>↑ plus que nécessaire</th><td>au-dessus de la fourchette, dans toutes les limites réglementaires — une question de coût, pas de sécurité</td></tr>
+    <tr><th>⚠ au-delà de la limite UE</th><td>franchit une limite haute réglementaire (vitamine D 4000 UI, zinc 25 mg, magnésium des compléments 250 mg, mélatonine 1,9 mg…)</td></tr></table>
+    <p><b>Nous ne personnalisons que ce que les preuves permettent.</b> Les protéines s'ajustent au poids et à l'activité (ISSN / Morton 2018, ESPEN au-delà de 65 ans) ; le magnésium au poids et au sexe (~6 mg/kg, plafonné à la RNP ANSES) ; la vitamine D à l'âge et à l'IMC ; le zinc au sexe et à l'activité (RNP EFSA). Mais les essais sur le collagène dosent en grammes absolus, et les probiotiques dépendent de la souche sans linéarité de dose — ces fourchettes sont donc <b>les mêmes pour tout le monde, et le produit le dit</b> plutôt que d'inventer un chiffre personnalisé. Les multivitamines n'ont aucune cible unique : plus de 20 nutriments ont chacun la leur, nous vous renvoyons donc aux catégories par nutriment au lieu de faire croire qu'un seul chiffre existe.</p>
+    <p>Le dosage personnalisé ne touche jamais au Health &amp; Compo Score — deux personnes regardant le même produit voient la même note. Il s'agit de recommandations pour adultes en bonne santé et <b>non d'un avis médical</b>.</p>
+    <h4>Ma routine (bêta) — les doses cumulées, vérifiées</h4>
+    <p>Ajoutez des produits à une routine et nous additionnons ce que vous avaleriez réellement chaque jour, nutriment par nutriment — y compris les <b>actifs intégrés déclarés</b> (un oméga-3 apportant 800 UI de vitamine D compte dans votre total de vitamine D). Chaque total est confronté aux limites hautes européennes — cela fonctionne <b>sans</b> profil — et à vos fourchettes personnelles si vous en avez un. Deux magnésiums à 300 mg totalisent discrètement 600 mg face à une limite de 250 mg pour les compléments ; rien sur l'étiquette ne vous prévient, la routine si.</p>
+    <p><b>Limite assumée :</b> les étiquettes de multivitamines ne sont pas encore codées nutriment par nutriment dans nos données ; une routine qui en contient affiche donc ses totaux comme des <i>minorants</i>, et le dit, plutôt que de deviner. Les produits dont le nom déclare un actif supplémentaire non codé sont signalés, pas ignorés silencieusement — la même règle que pour les ingrédients non reconnus.</p>
+    <h4>Provenance (axe distinct, hors score santé)</h4>
+    <p>Nous signalons le pays de fabrication (🇫🇷 France · 🇪🇺 UE · 🌍 hors UE) et un léger malus de proximité (0/1/3) reflétant l'ancrage français de kleerer. Il est affiché <b>séparément</b> : un produit allemand irréprochable n'est pas « moins sain » qu'un produit français.</p>
+    <h4>Langue</h4>
+    <p>L'interface suit la préférence linguistique de votre navigateur (français ou anglais) et vous pouvez en changer à tout moment avec le sélecteur dans l'en-tête — votre choix est mémorisé. Nous ne consultons jamais votre adresse IP pour deviner : cela reviendrait à transmettre votre adresse à un tiers, et répondrait de toute façon à la mauvaise question. À noter : les remarques éditoriales propres à chaque produit reprennent l'étiquette dans la langue où elle a été publiée.</p>
+    <p>Détails complets, tables de pénalités, sources et limites : <b>METHODOLOGY.md</b> dans le dépôt.</p>`,
+
+  about: META => `
+    <h2>À propos de kleerer.</h2>
+    <p><b>kleerer.</b> rend les données de santé accessibles aux personnes en quête de conseils ou de recommandations. Le projet ouvre le code de ressources et de technologies fondées sur la science pour aider chacun à améliorer son bien-être — ce comparateur (p1) est le premier produit de cette feuille de route.</p>
+    <h4>Pourquoi il existe</h4>
+    <p>Le marketing des compléments vend des histoires ; les étiquettes disent la vérité. kleerer. lit l'étiquette pour vous : sous quelle forme se présente l'actif, si la dose est efficace, ce que contient d'autre la gélule, et ce que la marque prouve réellement par des tests tiers — puis chiffre le produit au gramme d'actif, et non au kilo de poudre.</p>
+    <h4>Indépendance</h4>
+    <p>Sans sponsors, sans liens affiliés, sans placements payants. Couvre ${META.n_products} produits UE/FR dans ${META.n_categories} catégories (relevé ${META.snapshot}). La <b>méthode de notation</b> — script et règles — est open source (MIT) pour pouvoir être auditée et contestée ; le <b>jeu de données et son historique quotidien de prix et d'étiquettes</b> restent privés, parce que cette archive qui s'accumule est ce qui rend kleerer difficile à répliquer. Si une marque conteste un score, le remède est le même pour tous : publier de meilleures preuves.</p>
+    <h4>Feuille de route</h4>
+    <p>p1 : ce comparateur, avec un contrôle de dosage personnalisé sur chaque produit. p2, <b>routine</b>, y est intégré (bêta) : composez un panier toutes catégories confondues et il additionne les doses journalières cumulées — actifs intégrés compris — en alertant lorsque deux produits poussent discrètement un nutriment au-delà de sa limite européenne, et en montrant ce que les cibles de votre profil laissent découvert. Ensuite : le codage nutriment par nutriment des étiquettes de multivitamines (pour que les totaux cessent d'être des minorants), le pipeline automatisé de prix et d'étiquettes (l'audit des sources constitue la phase 1) et l'élargissement des catégories.</p>
+    <p>L'archive quotidienne des prix et des étiquettes reste <b>privée</b>, et c'est délibéré — c'est l'actif, et la publier reviendrait à offrir à un aspirateur de données la seule chose qui a demandé des années d'accumulation. Le site montre le catalogue du jour ; l'historique reste derrière le mur.</p>
+    <p style="margin-top:14px"><b>Ne constitue pas un avis médical.</b> Consultez toujours un professionnel de santé avant toute supplémentation.</p>`
+}
+
+};
+
+/* ---------- language selection ---------- */
+const LANG_KEY = "kleerer_lang";
+function detectLang(){
+  try { const saved = localStorage.getItem(LANG_KEY); if (saved === "fr" || saved === "en") return saved; } catch(e){}
+  const nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  return /^fr\b/i.test(nav) ? "fr" : "en";            // fr, fr-FR, fr-BE, fr-CA…
+}
+let LANG = detectLang();
+// key lookup with English fallback, so a missing French string degrades instead of breaking
+function T(path){
+  const walk = o => path.split(".").reduce((v,k) => (v == null ? v : v[k]), o);
+  const v = walk(I18N[LANG]);
+  return v === undefined ? walk(I18N.en) : v;
+}

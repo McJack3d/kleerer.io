@@ -26,17 +26,75 @@
     }
     </script>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .langsw{position:absolute; top:0; right:0; display:flex; border:1px solid rgba(0,0,0,.18); border-radius:2px; overflow:hidden}
+      .langsw button{background:none; border:none; padding:4px 8px; font:inherit; font-size:.7rem; cursor:pointer; color:rgba(0,0,0,.56); letter-spacing:.04em}
+      .langsw button.on{background:#000; color:#f7f4eb}
+      .site-header{position:relative}
+    </style>
 </head>
 <body>
     <header class="site-header">
         <p class="logo">kleerer<span class="logo-dot">.</span></p>
+        <span class="langsw" id="langsw">
+          <button onclick="setLang('en')" data-lang="en">EN</button>
+          <button onclick="setLang('fr')" data-lang="fr">FR</button>
+        </span>
     </header>
 
     <main class="text">
-        <h1 class="motto">Makes health data available to individuals seeking advice or recommendations.</h1>
-        <p>The project aims to open-source and make available all science-based resources and technologies to accurately help users enhance their well-being.</p>
-        <p>The project will deliver in many different steps open-source innovative products that will dive toward this ambition.</p>
-        <p class="p1-line"><a href="compare/">p1 · compare — live →</a></p>
+        <h1 class="motto" id="motto">Makes health data available to individuals seeking advice or recommendations.</h1>
+        <p id="l1">The project aims to open-source and make available all science-based resources and technologies to accurately help users enhance their well-being.</p>
+        <p id="l2">The project will deliver in many different steps open-source innovative products that will dive toward this ambition.</p>
+        <p class="p1-line"><a href="compare/" id="p1link">p1 · compare — live →</a></p>
     </main>
+<script>
+// Same rule as the comparator: the browser's stated language preference, never
+// an IP lookup — no third party ever sees a visitor's address for this.
+const LANG_KEY = "kleerer_lang";
+const TXT = {
+  en: {
+    lang: "en",
+    desc: "kleerer. — independent, evidence-based health data. Makes supplement science available to individuals seeking advice or recommendations.",
+    motto: "Makes health data available to individuals seeking advice or recommendations.",
+    l1: "The project aims to open-source and make available all science-based resources and technologies to accurately help users enhance their well-being.",
+    l2: "The project will deliver in many different steps open-source innovative products that will dive toward this ambition.",
+    p1: "p1 · compare — live →"
+  },
+  fr: {
+    lang: "fr",
+    desc: "kleerer. — des données de santé indépendantes et fondées sur les preuves. Rend la science des compléments accessible à qui cherche des conseils ou des recommandations.",
+    motto: "Rend les données de santé accessibles à celles et ceux qui cherchent des conseils ou des recommandations.",
+    l1: "Le projet vise à ouvrir le code et à rendre accessibles toutes les ressources et technologies fondées sur la science, pour aider chacun à améliorer son bien-être avec justesse.",
+    l2: "Le projet livrera, étape après étape, des produits open source innovants qui poursuivent cette ambition.",
+    p1: "p1 · comparer — en ligne →"
+  }
+};
+function detectLang(){
+  try { const v = localStorage.getItem(LANG_KEY); if (v === "fr" || v === "en") return v; } catch(e){}
+  const nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  return /^fr\b/i.test(nav) ? "fr" : "en";
+}
+let LANG = detectLang();
+function setLang(l){
+  if (l !== "en" && l !== "fr") return;
+  LANG = l;
+  try { localStorage.setItem(LANG_KEY, l); } catch(e){}
+  applyLang();
+}
+function applyLang(){
+  const t = TXT[LANG];
+  document.documentElement.lang = t.lang;
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute("content", t.desc);
+  document.getElementById("motto").textContent = t.motto;
+  document.getElementById("l1").textContent = t.l1;
+  document.getElementById("l2").textContent = t.l2;
+  document.getElementById("p1link").textContent = t.p1;
+  document.querySelectorAll("#langsw button").forEach(b =>
+    b.classList.toggle("on", b.dataset.lang === LANG));
+}
+applyLang();
+</script>
 </body>
 </html>
