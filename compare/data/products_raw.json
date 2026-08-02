@@ -14,7 +14,8 @@
       "transparency": {"coa_published": false, "third_party_cert": true, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "medium",
       "notes": "Flavoured versions add sucralose. Europe's biggest D2C whey.",
-      "url": "https://fr.myprotein.com/p/nutrition-sportive/impact-whey-protein/10530943/"
+      "url": "https://fr.myprotein.com/p/nutrition-sportive/impact-whey-protein/10530943/",
+      "price_context": {"kind": "list_price", "typical_off_pct": [35, 45]}
     },
     {
       "id": "on-gold-standard-whey", "category": "whey", "brand": "Optimum Nutrition", "name": "Gold Standard 100% Whey", "variant": "Vanilla Ice Cream · 908 g",
@@ -66,7 +67,8 @@
       "transparency": {"coa_published": true, "third_party_cert": true, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "high",
       "notes": "Ingredient list of the Nature flavour: native WPC — nothing else. No lecithin, no sweetener.",
-      "url": "https://www.nutrimuscle.com/products/whey-native"
+      "url": "https://www.nutrimuscle.com/products/whey-native",
+      "price_context": {"kind": "stable"}
     },
     {
       "id": "prozis-real-whey", "category": "whey", "brand": "Prozis", "name": "100% Real Whey Protein", "variant": "Vanilla · 1 kg",
@@ -79,7 +81,8 @@
       "transparency": {"coa_published": false, "third_party_cert": false, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "low",
       "notes": "Largest Iberian brand, ships EU-wide.",
-      "url": "https://www.amazon.fr/dp/B07486HGFG"
+      "url": "https://www.amazon.fr/dp/B07486HGFG",
+      "price_context": {"kind": "list_price", "typical_off_pct": [30, 50]}
     },
 
     {
@@ -93,7 +96,8 @@
       "transparency": {"coa_published": false, "third_party_cert": true, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "low",
       "notes": "100% creatine monohydrate, no excipients.",
-      "url": "https://fr.myprotein.com/p/nutrition-sportive/creatine-monohydrate-en-poudre/10530050/"
+      "url": "https://fr.myprotein.com/p/nutrition-sportive/creatine-monohydrate-en-poudre/10530050/",
+      "price_context": {"kind": "list_price", "typical_off_pct": [15, 35]}
     },
     {
       "id": "esn-ultrapure-creatine", "category": "creatine", "brand": "ESN", "name": "Ultrapure Creatine Monohydrate", "variant": "Neutral · 500 g",
@@ -211,7 +215,8 @@
       "transparency": {"coa_published": true, "third_party_cert": false, "branded_ingredient": "VitaMK7®", "full_label": true},
       "flags": [], "confidence": "high",
       "notes": "3 drops = 1000 IU D3 + 37.5 µg K2; ~200 days per bottle.",
-      "url": "https://www.nutripure.fr/fr/sante/54-vitamine-d3-k2-mk7.html"
+      "url": "https://www.nutripure.fr/fr/sante/54-vitamine-d3-k2-mk7.html",
+      "price_context": {"kind": "promo_price", "off_pct": 10}
     },
     {
       "id": "now-d3-5000", "category": "vitamin_d3", "brand": "NOW Foods", "name": "Vitamin D-3 5000 IU High Potency", "variant": "240 softgels",
@@ -397,7 +402,8 @@
       "transparency": {"coa_published": false, "third_party_cert": false, "branded_ingredient": null, "full_label": true},
       "flags": ["No purity/TOTOX data published; no antioxidant declared"], "confidence": "low",
       "notes": "The cheap low-concentration contrast product.",
-      "url": "https://fr.myprotein.com/p/nutrition-sportive/omega-3-en-gelules/10529329/"
+      "url": "https://fr.myprotein.com/p/nutrition-sportive/omega-3-en-gelules/10529329/",
+      "price_context": {"kind": "list_price", "typical_off_pct": [30, 50]}
     },
     {
       "id": "norsan-omega3-vegan", "category": "omega3", "brand": "Norsan", "name": "Omega-3 Vegan (algae oil)", "variant": "100 ml",
@@ -426,7 +432,8 @@
       "transparency": {"coa_published": false, "third_party_cert": false, "branded_ingredient": null, "full_label": false},
       "flags": ["Contains gluten; traces of milk"], "confidence": "low",
       "notes": "60 days per pack — cheapest cost/day of the multi set at street price.",
-      "url": "https://fr.myprotein.com/p/nutrition-sportive/alpha-men-comprimes-multivitamines/10530421/"
+      "url": "https://fr.myprotein.com/p/nutrition-sportive/alpha-men-comprimes-multivitamines/10530421/",
+      "price_context": {"kind": "list_price", "typical_off_pct": [30, 45]}
     },
     {
       "id": "nutrico-le-multi", "category": "multivitamin", "brand": "Nutri&Co", "name": "Le Multi (25 bioactive nutrients)", "variant": "90 capsules",
@@ -440,7 +447,9 @@
       "transparency": {"coa_published": false, "third_party_cert": false, "branded_ingredient": "Quatrefolic® / K2VITAL®", "full_label": true},
       "flags": ["Allergens: fish/mollusc/crustacean (fucus iodine source)"], "confidence": "high",
       "notes": "30 days per pack at 3 caps/day.",
-      "url": "https://nutriandco.com/fr/produits/multivitamines"
+      "url": "https://nutriandco.com/fr/produits/multivitamines",
+      "nutrients": {"vitamin_d3": 1000},
+      "nutrients_source": "label: lichen D3 1000 IU per 3-capsule dose"
     },
     {
       "id": "solgar-vm75", "category": "multivitamin", "brand": "Solgar", "name": "Formula VM-75", "variant": "60 tablets",
@@ -481,7 +490,9 @@
       "certifications": ["Made in Germany"],
       "transparency": {"coa_published": false, "third_party_cert": false, "branded_ingredient": null, "full_label": true},
       "flags": ["Delisted — foodspring ceased trading 30 June 2025; the brand's storefront no longer resolves. Kept for historical price/label comparison only."], "confidence": "medium",
-      "notes": "50 days per pack."
+      "notes": "50 days per pack.",
+      "nutrients": {"zinc": 0, "magnesium": 0},
+      "nutrients_source": "label: 12 vitamins only, no minerals"
     },
     {
       "id": "sunday-essentials-multi", "category": "multivitamin", "brand": "Sunday Natural", "name": "Essentials All in One Premium", "variant": "120 capsules",
@@ -495,7 +506,9 @@
       "transparency": {"coa_published": true, "third_party_cert": false, "branded_ingredient": null, "full_label": true},
       "flags": [], "confidence": "high",
       "notes": "30 days at full dose (4 caps) or 60 days at half dose.",
-      "url": "https://www.sunday.de/en/multivitamin-essentials-all-in-one-premium.html"
+      "url": "https://www.sunday.de/en/multivitamin-essentials-all-in-one-premium.html",
+      "nutrients": {"vitamin_d3": 1000},
+      "nutrients_source": "label: vegan D3 1000 IU per 4-capsule dose"
     }
   ]
 }

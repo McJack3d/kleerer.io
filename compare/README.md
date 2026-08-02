@@ -13,11 +13,13 @@ No build step, no server needed — open `compare/index.html` in any browser, or
 ```
 index.html                the app (single file, vanilla JS, zero runtime deps)
 i18n.js                   UI translations (en/fr) + browser-language detection
+en/, fr/                  prerendered per-language routes (generated — do not edit)
 data.js                   generated dataset with scores — do not edit by hand
 data/products_raw.json    curated source (v1, coded): 37 EU products, each with a buy link
 data/fr/*.json            French-market source (126 products, free-text labels)
 scripts/autotag.py        auto-tagger: free-text label → coded tags + form tiers
 scripts/build_scores.py   scoring engine — normalizes + scores → data.js
+scripts/build_pages.py    prerenders /compare/en/ and /compare/fr/ for crawlers
 METHODOLOGY.md            full Health & Compo Score methodology (v1.1)
 pipeline/                 the data collection pipeline (the moat) — see pipeline/README.md
 ```
@@ -26,7 +28,8 @@ pipeline/                 the data collection pipeline (the moat) — see pipeli
 
 1. Add/fix a product: edit `data/products_raw.json` (coded schema) **or** drop a line in `data/fr/*.json` (plain label — the auto-tagger codes it for you).
 2. Rebuild: `python3 scripts/build_scores.py` (stdlib only, Python ≥ 3.8).
-3. Reload `index.html`.
+3. Refresh the prerendered routes: `python3 scripts/build_pages.py`.
+4. Reload `index.html`.
 
 The script validates every score range, rejects duplicate ids, and prints the full ranking so regressions are visible at a glance.
 
@@ -49,11 +52,38 @@ would mean sending their address to a third-party service — breaking the zero-
 no-external-request design — and it answers the wrong question anyway, since a French
 speaker in London wants French.
 
-Two honest limits. Translation covers the **interface**; product-level editorial fields in
+`scripts/build_pages.py` prerenders **`/compare/en/` and `/compare/fr/`** so crawlers see a
+translated `<title>`, meta description, Open Graph tags and `<html lang>` without running
+any JavaScript. All three URLs carry a reciprocal `hreflang` set; `/compare/` is the
+`x-default` that negotiates client-side, and each language route is canonical to itself.
+On a prerendered route the URL wins over the stored preference, and the toggle navigates
+to the sibling route so the page never contradicts its own canonical tag.
+
+One honest limit: translation covers the **interface**. Product-level editorial fields in
 the dataset (`notes`, `flags`, `form_note`, `price_note`) stay in the language they were
-authored in, so a French product's notes read in French in both UIs. And because switching
-happens client-side, **crawlers index the English markup** — real per-language SEO needs
-prerendered `/fr/` routes, which is a separate change.
+authored in, so a French product's notes read in French in both UIs.
+
+## Multivitamins, per nutrient
+
+Multivitamins have no single dose to check, so each one carries a `nutrients` map of what
+it contributes **per daily dose** for the four nutrients that have a regulatory ceiling
+(vitamin D3 in IU, zinc / magnesium / vitamin C in mg elemental). A key present means
+coded; `0` means confirmed absent from the formula; a **missing key means unknown**. The
+stack sums every coded nutrient in full and names only the genuinely uncoded ones — so a
+partially coded product still contributes real numbers instead of triggering a blanket
+caveat. `nutrients_source` records where each figure came from.
+
+Coverage today: 2 of 18 complete, 12 partial, 4 uncoded. Extending it is ordinary data
+work — add a `nutrients` block to the product in its source file and rebuild.
+
+## Price context
+
+Each product may carry a `price_context`: one coarse, derived fact, never a price series.
+`list_price` means the shown price is the list price and the product structurally sells
+below it (so its € / active is a worst case); `promo_price` means the snapshot was taken
+**during** a promotion, so the value ranking currently flatters it; `stable` means the
+price is what you pay. This is the only thing the private archive publishes about price
+history — a single field per product, with nothing reconstructible from it.
 
 ## Data honesty
 
