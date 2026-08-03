@@ -5,7 +5,7 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-07-29",
+  "generated": "2026-08-02",
   "n_products": 163,
   "n_categories": 11,
   "n_red_cards": 1,
@@ -48,6 +48,13 @@ const KLEERER_DATA = {
    "confidence": "medium",
    "notes": "Flavoured versions add sucralose. Europe's biggest D2C whey.",
    "url": "https://fr.myprotein.com/p/nutrition-sportive/impact-whey-protein/10530943/",
+   "price_context": {
+    "kind": "list_price",
+    "typical_off_pct": [
+     35,
+     45
+    ]
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -309,6 +316,9 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "Ingredient list of the Nature flavour: native WPC — nothing else. No lecithin, no sweetener.",
    "url": "https://www.nutrimuscle.com/products/whey-native",
+   "price_context": {
+    "kind": "stable"
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -373,6 +383,13 @@ const KLEERER_DATA = {
    "confidence": "low",
    "notes": "Largest Iberian brand, ships EU-wide.",
    "url": "https://www.amazon.fr/dp/B07486HGFG",
+   "price_context": {
+    "kind": "list_price",
+    "typical_off_pct": [
+     30,
+     50
+    ]
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -431,6 +448,13 @@ const KLEERER_DATA = {
    "confidence": "low",
    "notes": "100% creatine monohydrate, no excipients.",
    "url": "https://fr.myprotein.com/p/nutrition-sportive/creatine-monohydrate-en-poudre/10530050/",
+   "price_context": {
+    "kind": "list_price",
+    "typical_off_pct": [
+     15,
+     35
+    ]
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -970,6 +994,10 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "3 drops = 1000 IU D3 + 37.5 µg K2; ~200 days per bottle.",
    "url": "https://www.nutripure.fr/fr/sante/54-vitamine-d3-k2-mk7.html",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 10
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -1894,6 +1922,13 @@ const KLEERER_DATA = {
    "confidence": "low",
    "notes": "The cheap low-concentration contrast product.",
    "url": "https://fr.myprotein.com/p/nutrition-sportive/omega-3-en-gelules/10529329/",
+   "price_context": {
+    "kind": "list_price",
+    "typical_off_pct": [
+     30,
+     50
+    ]
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2036,6 +2071,13 @@ const KLEERER_DATA = {
    "confidence": "low",
    "notes": "60 days per pack — cheapest cost/day of the multi set at street price.",
    "url": "https://fr.myprotein.com/p/nutrition-sportive/alpha-men-comprimes-multivitamines/10530421/",
+   "price_context": {
+    "kind": "list_price",
+    "typical_off_pct": [
+     30,
+     45
+    ]
+   },
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2107,6 +2149,10 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "30 days per pack at 3 caps/day.",
    "url": "https://nutriandco.com/fr/produits/multivitamines",
+   "nutrients": {
+    "vitamin_d3": 1000
+   },
+   "nutrients_source": "label: lichen D3 1000 IU per 3-capsule dose",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2322,6 +2368,11 @@ const KLEERER_DATA = {
    ],
    "confidence": "medium",
    "notes": "50 days per pack.",
+   "nutrients": {
+    "zinc": 0,
+    "magnesium": 0
+   },
+   "nutrients_source": "label: 12 vitamins only, no minerals",
    "banned": [],
    "review_flags": [],
    "provenance": {
@@ -2387,6 +2438,10 @@ const KLEERER_DATA = {
    "confidence": "high",
    "notes": "30 days at full dose (4 caps) or 60 days at half dose.",
    "url": "https://www.sunday.de/en/multivitamin-essentials-all-in-one-premium.html",
+   "nutrients": {
+    "vitamin_d3": 1000
+   },
+   "nutrients_source": "label: vegan D3 1000 IU per 4-capsule dose",
    "banned": [],
    "review_flags": [
     "Tapioca dextrin (carrier)"
@@ -2741,6 +2796,11 @@ const KLEERER_DATA = {
    "url": "https://www.redcare-pharmacie.fr/beaute/BE03414935/biocyte-collagen-max-anti-age-collagene-poudre.htm",
    "ean": "3401560047585",
    "notes": "Actifs : AH 110 mg, vit C + 12 vitamines à 50% VNR.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 30,
+    "normal_eur": 39.9
+   },
    "id": "biocyte-collagen-max-cacao-260-g",
    "form_tier": 16,
    "form_note": "Generic hydrolysed peptides.",
@@ -3407,6 +3467,11 @@ const KLEERER_DATA = {
    "url": "https://www.argalys.com/en/products/vitamine-d",
    "ean": "3760280070175",
    "notes": "Format familial dès 4 ans.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 15,
+    "normal_eur": 16.9
+   },
    "id": "argalys-vitamine-d3-vegetale-spray-spray-30-ml-240-pulverisations",
    "form_tier": 20,
    "form_note": "Documented D3 source (lichen or lanolin).",
@@ -3938,6 +4003,11 @@ const KLEERER_DATA = {
    "url": "https://dailylab.com/products/absolu-de-magnesium",
    "ean": null,
    "notes": "Reformulé 2026, fabriqué en Auvergne.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 50,
+    "normal_eur": 24.0
+   },
    "id": "d-lab-magnesium-magnesium-daily-gelules-56",
    "form_tier": 10,
    "form_note": "Blend dominated by micro-encapsulated oxide (marketed 'liposomal').",
@@ -4639,6 +4709,10 @@ const KLEERER_DATA = {
    "url": "https://fr.arkopharma.com/products/azinc-vitalite-gelules",
    "ean": "3578835502800",
    "notes": "2 gélules/j = 100% VNR.",
+   "nutrients": {
+    "vitamin_d3": 200
+   },
+   "nutrients_source": "étiquette : vit D 5 µg/jour",
    "id": "arkopharma-azinc-vitalite-adulte-120-gelules",
    "form_tier": 8,
    "form_note": "Cheap forms (oxides, cyanocobalamin, retinol).",
@@ -4724,6 +4798,10 @@ const KLEERER_DATA = {
    "url": "https://alvityl.fr/alvityl-produits/alvityl-vitalite-a-avaler/",
    "ean": "3664492022864",
    "notes": "1 comprimé/j = 100% VNR.",
+   "nutrients": {
+    "vitamin_d3": 200
+   },
+   "nutrients_source": "étiquette : vit D 5 µg/jour",
    "id": "alvityl-vitalite-a-avaler-40-comprimes",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -4798,6 +4876,10 @@ const KLEERER_DATA = {
    "url": "https://www.bion3.com/fr-fr/produits/bion3-defense-comprimes",
    "ean": "3401377618190",
    "notes": "D 10 µg, C 120 mg, Zn 10 mg.",
+   "nutrients": {
+    "vitamin_d3": 400
+   },
+   "nutrients_source": "étiquette : vit D 10 µg/jour",
    "id": "bion3-p-g-bion3-defense-adultes-30-comprimes",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -4877,6 +4959,10 @@ const KLEERER_DATA = {
    "url": "https://www.pharma-gdd.com/fr/berocca-energie-comprimes",
    "ean": "3534510000665",
    "notes": "Complément (≠ Berocca médicament historique).",
+   "nutrients": {
+    "vitamin_d3": 0
+   },
+   "nutrients_source": "formule sans vitamine D",
    "id": "bayer-berocca-energie-30-comprimes",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -4954,6 +5040,10 @@ const KLEERER_DATA = {
    "url": "https://isoxan.com/produits/isoxan-adulte/",
    "ean": "3401554166858",
    "notes": "Positionné anti-fatigue.",
+   "nutrients": {
+    "vitamin_d3": 0
+   },
+   "nutrients_source": "formule sans vitamine D",
    "id": "isoxan-isoxan-adulte-20-comprimes",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -6111,6 +6201,10 @@ const KLEERER_DATA = {
    "url": "https://www.nutripure.fr/fr/sante/1-multi-vitamines-mineraux.html",
    "ean": null,
    "notes": "Méthylcobalamine, 5-MTHF, sélénométhionine, D3 25 µg. Sans fer/cuivre.",
+   "nutrients": {
+    "vitamin_d3": 1000
+   },
+   "nutrients_source": "étiquette : vit D 25 µg/jour",
    "id": "nutripure-multivitamines-60-gelules",
    "form_tier": 20,
    "form_note": "Bioactive / chelated forms.",
@@ -6184,6 +6278,12 @@ const KLEERER_DATA = {
    "url": "https://www.nutrimuscle.com/products/multivitamines",
    "ean": null,
    "notes": "Cyanocobalamine, pyridoxine HCl. Nombreux certificats d'analyse.",
+   "nutrients": {
+    "vitamin_d3": 240,
+    "zinc": 0,
+    "magnesium": 0
+   },
+   "nutrients_source": "étiquette : vit D 6 µg/jour ; 13 vitamines seules, sans minéraux",
    "id": "nutrimuscle-multivitamines-poudre-pot-60-g-88-doses",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -6254,6 +6354,13 @@ const KLEERER_DATA = {
    "url": "https://www.dynveo.fr/products/multivitamines",
    "ean": null,
    "notes": "K2 MK-7, D3 lichen, zinc bisglycinate. Gélules végétales sans additifs.",
+   "nutrients": {
+    "vitamin_d3": 200,
+    "zinc": 10,
+    "vitamin_c": 80,
+    "magnesium": 0
+   },
+   "nutrients_source": "table de composition dynveo.fr, pour 2 gélules (vérifié 08/2026)",
    "id": "dynveo-multivitamines-multi27-60-gelules",
    "form_tier": 20,
    "form_note": "Bioactive / chelated forms.",
@@ -6325,6 +6432,12 @@ const KLEERER_DATA = {
    "url": "https://cuure.com/produits/multivitamines",
    "ean": null,
    "notes": "Méthylfolate, méthylcobalamine, Mg bisglycinate. Sans fer/cuivre.",
+   "nutrients": {
+    "vitamin_d3": 800,
+    "zinc": 10,
+    "vitamin_c": 80
+   },
+   "nutrients_source": "données ingrédients cuure.com, par gélule x2/jour (vérifié 08/2026) ; magnésium déclaré en poids de bisglycinate, teneur élémentaire non déductible",
    "id": "cuure-multivitamines-60-gelules",
    "form_tier": 20,
    "form_note": "Bioactive / chelated forms.",
@@ -6472,6 +6585,13 @@ const KLEERER_DATA = {
    "url": "https://www.argalys.com/products/multivitamines",
    "ean": "3760280070052",
    "notes": "B12 renforcée 10 µg, D3 végétale. Adapté grossesse et dès 8 ans.",
+   "nutrients": {
+    "vitamin_d3": 400,
+    "zinc": 10,
+    "magnesium": 19,
+    "vitamin_c": 40
+   },
+   "nutrients_source": "table de composition argalys.com, 1 gélule/jour (vérifié 08/2026) ; Mg élémentaire dérivé de 5 % VNR x 375 mg",
    "id": "argalys-multivitamines-et-mineraux-60-gelules",
    "form_tier": 12,
    "form_note": "Standard vitamin/mineral forms.",
@@ -6554,6 +6674,14 @@ const KLEERER_DATA = {
    "url": "https://www.ericfavre.com/fr_fr/tonus-immunite/vitamino-cure-30-jours-p-160.htm",
    "ean": null,
    "notes": "Comprimé enrobé classique, dès 6 ans.",
+   "nutrients": {
+    "vitamin_d3": 200
+   },
+   "nutrients_source": "étiquette : vit D 5 µg/jour",
+   "price_context": {
+    "kind": "promo_price",
+    "normal_eur": 9.9
+   },
    "id": "eric-favre-vitamino-30-comprimes",
    "form_tier": 8,
    "form_note": "Cheap forms (oxides, cyanocobalamin, retinol).",
@@ -6846,6 +6974,10 @@ const KLEERER_DATA = {
    "url": "https://www.newpharma.fr/pure-encapsulations/522242/pure-encapsulations-vitamine-d3-1000ui-60-capsules.html",
    "ean": null,
    "notes": "Nestlé Health Science.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 29
+   },
    "id": "pure-encapsulations-vitamine-d3-1000-ui-60-capsules",
    "form_tier": 20,
    "form_note": "Documented D3 source (lichen or lanolin).",
@@ -7154,6 +7286,10 @@ const KLEERER_DATA = {
    "url": "https://www.redcare-pharmacie.fr/hygiene-et-sante/F00134466/nat-form-magnesium-marin-vitamine-b6.htm",
    "ean": "3535400007474",
    "notes": "177 mg élémentaire/gélule.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 42
+   },
    "id": "nat-form-magnesium-marin-vitamine-b6-80-gelules",
    "form_tier": 4,
    "form_note": "Oxide (incl. seawater 'marine') — lowest bioavailability.",
@@ -7378,6 +7514,9 @@ const KLEERER_DATA = {
    "url": "https://www.newpharma.fr/pure-encapsulations/522236/pure-encapsulations-glycinate-de-magnesium-90-capsules.html",
    "ean": null,
    "notes": "120 mg élémentaire/capsule.",
+   "price_context": {
+    "kind": "promo_price"
+   },
    "id": "pure-encapsulations-glycinate-de-magnesium-90-capsules",
    "form_tier": 20,
    "form_note": "Chelated magnesium — high bioavailability.",
@@ -8023,6 +8162,10 @@ const KLEERER_DATA = {
    "url": "https://www.dieti-natura.com/acerola.html",
    "ean": null,
    "notes": "550% VNR/comprimé.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 20
+   },
    "id": "dieti-natura-acerola-25-comprimes",
    "form_tier": 18,
    "form_note": "Buffered/whole-food vitamin C, gentle on the stomach.",
@@ -8101,6 +8244,9 @@ const KLEERER_DATA = {
    "url": "https://www.newpharma.fr/pure-encapsulations/600745/pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules.html",
    "ean": null,
    "notes": "Douce pour l'estomac.",
+   "price_context": {
+    "kind": "promo_price"
+   },
    "id": "pure-encapsulations-vitamine-c-1000-tamponnee-90-capsules",
    "form_tier": 16,
    "form_note": "Plain ascorbic acid — effective, standard form.",
@@ -10018,6 +10164,11 @@ const KLEERER_DATA = {
    "url": "https://www.redcare-pharmacie.fr/beaute/F00374775/vital-proteins-collagen-peptides.htm",
    "ean": "0850008654305",
    "notes": "Nestlé Health Science, ~28 portions.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 24,
+    "normal_eur": 44.9
+   },
    "id": "vital-proteins-collagen-peptides-neutre-567-g",
    "form_tier": 16,
    "form_note": "Generic hydrolysed peptides.",
@@ -10370,6 +10521,10 @@ const KLEERER_DATA = {
    "url": "https://www.ericfavre.com/en/proteins/iso-zero-100-whey-protein-vanilla-1-5kg-p-194-o-1204.htm",
    "ean": null,
    "notes": "Iso Zero est le flagship 2026.",
+   "price_context": {
+    "kind": "promo_price",
+    "off_pct": 15
+   },
    "id": "eric-favre-iso-zero-100-whey-protein-vanille-1-5-kg",
    "form_tier": 18,
    "form_note": "Isolate-led.",
