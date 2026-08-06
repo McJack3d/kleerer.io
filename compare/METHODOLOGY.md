@@ -1,4 +1,19 @@
+<!--
+SPDX-License-Identifier: CC-BY-NC-ND-4.0
+Copyright © 2026 kleerer. All rights not expressly granted are reserved.
+Licence: LICENSE-METHODOLOGY.md · https://creativecommons.org/licenses/by-nc-nd/4.0/
+Text-and-data-mining rights reserved — Dir. (EU) 2019/790 art. 4(3); CPI art. L.122-5-3.
+-->
+
 # kleerer. — Health & Compo Score methodology (v1.2)
+
+> **Licence.** This document is published under **CC BY-NC-ND 4.0** — quote it,
+> cite it, redistribute it verbatim with attribution. Commercial use and
+> modified or rebranded republication are not permitted; see
+> [`LICENSE-METHODOLOGY.md`](LICENSE-METHODOLOGY.md). The *code* implementing
+> this method is separately licensed under AGPL-3.0-only. Arguing with a rule
+> here, in public and by name, is expressly invited — that is what publishing it
+> is for.
 
 **Goal.** Give every supplement a transparent, reproducible 0–100 score based only on what is on the label and what the brand publicly proves — never on marketing claims. Free-text labels are turned into coded tags by an open auto-tagger ([`scripts/autotag.py`](scripts/autotag.py)) — the **same module the collection pipeline uses** — and scored by an open script ([`scripts/build_scores.py`](scripts/build_scores.py)).
 
@@ -47,7 +62,7 @@ Start at 30, subtract per additive (floor 0). Every ingredient string is classif
 | Artificial azo colour (E102/E110/E129…) | −3 | EU child-attention warning required |
 | Sweetener — Tier B (saccharin, cyclamate) | −2 | reassuring evidence but not natural |
 | Polyol (maltitol, sorbitol) · PEG carrier · artificial flavour · emulsifier · thickener · filler · anti-caking · coating | −2 each | technological additives, minor concern |
-| Unrecognised ingredient | −2 **+ flagged for human review** | never silently ignored (see §2c) |
+| Unrecognised ingredient | **product withheld from the site** | not scored at all until a human rules on it (see §2c) |
 
 Neutral (0): water, glycerine, gelatine and capsule shells, carrier oils, natural tocopherol/rosemary antioxidants, natural flavours, plant-based colour concentrates, citric acid, pectin, lactase, prebiotic fibres, and **Tier-A natural sweeteners (stevia, monk fruit)** — no credible harm signal.
 
@@ -70,8 +85,14 @@ For every additive we compare the positions of the EU (EFSA), the US FDA and the
 
 *Fully hydrogenated fat is not a red card — it is saturated, not trans — but scores −25. Calcium carbonate, the clean E171 replacement, is neutral.*
 
-### 2c. Unrecognised ingredients → human review
-When the tagger meets an ingredient it can't classify, it does **not** guess it away: the product is marked *needs review* on its card and in the dataset, and takes a conservative −2 in the meantime. This turns the long tail of odd label strings into a visible worklist (and, later, a community-contribution hook) instead of silent scoring errors.
+### 2c. Unrecognised ingredients → the product is withheld
+When the tagger meets an ingredient it can't classify, it does **not** guess it away, and it no longer scores it either. **The product is withheld from the site entirely** until a human has ruled on the string.
+
+Earlier versions of this method gave an unrecognised ingredient a "conservative" −2 and published the product with a *needs review* flag. That was the wrong instinct dressed up as a cautious one. A −2 is a claim — it says *whatever this is, it is minor* — and an unreadable string is precisely the case where we have no basis for that claim. It could be an inert bulking agent; it could be a substance that should red-card the product to grade E. Publishing a B for a label we cannot read is the exact failure this whole method exists to prevent, so the product does not ship.
+
+Every ruling is recorded in `data/review-ledger.json` against the normalised ingredient string, with the verdict (benign, a named additive penalty, or a red card), the reason, the reviewer and the date. Ruling on a string once releases every product carrying it. Corrections keep the superseded ruling, so what was believed and when stays auditable.
+
+A product that *is* published therefore carries the opposite signal from before: the card's **manually reviewed** section names each once-unreadable ingredient and shows what a human decided about it. That ruling is challengeable in public, same as any other rule here.
 
 ## 3. Transparency & Testing (0–30)
 Published COAs (+12) · recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF, Friend of the Sea…) (+10) · branded traceable ingredient (Creapure®, EPAX®, Peptan®, Quali-C®…) (+4) · fully quantified label, no proprietary blend (+4).

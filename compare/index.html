@@ -236,6 +236,7 @@
     .ctable th{width:110px}
   }
 </style>
+    <script src="../analytics.js" defer></script>
 </head>
 <body>
 
@@ -308,9 +309,10 @@
   <div class="fwrap">
     <p class="disclaimer" data-i18n-html="footDisclaimer"><b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.</p>
     <p style="margin-top:10px" data-i18n-html="footPrices">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
+    <p style="margin-top:10px" data-i18n-html="footRights">© 2026 kleerer. Code <b>AGPL-3.0</b> · methodology <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. This catalogue is a protected database (Dir. 96/9/EC; CPI art. L.341-1 ff.): individual facts are free to quote, extraction of a <b>substantial part</b> is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3); CPI art. L.122-5-3) — see <a href="/.well-known/tdmrep.json">tdmrep.json</a> and <a href="/terms/">terms</a>.</p>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
-      <span data-i18n="footMeta">p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.5</span>
+      <span data-i18n="footMeta">p1 · compare + p2 · stack (beta) — open method, private data · AGPL-3.0 · v1.5</span>
       <span data-i18n="footVersions">methodology v1.2 · dosing model v2</span>
     </div>
   </div>
@@ -764,13 +766,16 @@ function priceCtxLine(p){
 }
 
 /* ---------- contribute (p2/#5) ----------------------------------------------
-   Turns "needs review" from a liability into a contribution route: a prefilled
-   GitHub issue, so a correction arrives as a public, auditable change.        */
+   A prefilled GitHub issue, so a correction arrives as a public, auditable
+   change. The "review" flavour used to mean "we cannot read this ingredient,
+   help us" — it cannot mean that any more, because a product with an unread
+   ingredient is no longer published at all (methodology §2d). It now means
+   "a human ruled on this string; here is the ruling — challenge it".        */
 const REPO_ISSUE = "https://github.com/McJack3d/kleerer.io/issues/new";
 function contributeURL(p, kind){
   const K = T("contribute");
   const title = kind === "review" ? K.titleReview(p.brand, p.name) : K.titleFix(p.brand, p.name);
-  const body = K.body(p, (p.review_flags||[]).join(", "));
+  const body = K.body(p, (p.reviewed||[]).map(r => `${r.string} → ${r.verdict}`).join(", "));
   return `${REPO_ISSUE}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=data`;
 }
 
@@ -792,7 +797,7 @@ function chipset(p){
   if (p.transparency.coa_published) chips.push(`<span class="chip cert">${esc(T("chipCoa"))}</span>`);
   if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">${esc(T("chipThirdParty"))}</span>`);
   if (p.vegan) chips.push(`<span class="chip">${esc(T("chipVegan"))}</span>`);
-  if (p.review_flags && p.review_flags.length) chips.push(`<span class="chip review" title="${esc(T("chipReviewTitle"))}">${esc(T("chipReview"))}</span>`);
+  if (p.reviewed && p.reviewed.length) chips.push(`<span class="chip review" title="${esc(T("chipReviewTitle"))}">${esc(T("chipReview"))}</span>`);
   if (p.flags.length) chips.push(`<span class="chip warn">${esc(T("chipFlags")(p.flags.length))}</span>`);
   return chips.join("");
 }
@@ -984,8 +989,9 @@ function openDetail(id){
       <ul class="plain"><li>${esc(activesLine(p))}</li>${(p.secondary_actives||[]).map(sa =>
         `<li>${esc(D.builtIn(fmtNum(sa.per_day), stackUnit(sa.category)))}</li>`).join("")}<li>${esc(p.form)}</li>${p.notes?`<li>${esc(p.notes)}</li>`:""}</ul>
     </div>
-    ${!s.red_card?`<div class="sec"><button class="btn ${STACK.includes(id)?"added":""}" onclick="toggleStack('${id}')">${esc(STACK.includes(id)?D.btnInStack:D.btnAddStack)}</button>${p.url?` <a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${esc(D.btnBuyLong)}</a> <span style="font-size:.68rem;color:var(--faint)">${esc(D.noAffiliation)}</span>`:""}</div>`:""}
-    ${(p.review_flags&&p.review_flags.length)?`<div class="sec"><h3>${esc(D.secReview)}</h3>${p.review_flags.map(f=>`<div class="flagbox">${esc(D.reviewFlag(f))}</div>`).join("")}
+    ${!s.red_card?`<div class="sec"><button class="btn ${STACK.includes(id)?"added":""}" onclick="toggleStack('${id}')">${esc(STACK.includes(id)?D.btnInStack:D.btnAddStack)}</button>${p.url?` <a class="btn buy" href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${esc(D.btnBuyLong)}</a> <span style="font-size:.68rem;color:var(--faint)">${esc(D.noAffiliation)}</span>`
+      :(p.price_provenance?` <span style="font-size:.68rem;color:var(--faint)">${esc(D.inStore(p.price_provenance))}</span>`:"")}</div>`:""}
+    ${(p.reviewed&&p.reviewed.length)?`<div class="sec"><h3>${esc(D.secReview)}</h3>${p.reviewed.map(r=>`<div class="flagbox">${esc(D.reviewFlag(r))}</div>`).join("")}
       <a class="btn" style="margin-top:8px;display:inline-block;text-decoration:none" href="${esc(contributeURL(p,"review"))}" target="_blank" rel="noopener">${esc(T("contribute").btnReview)}</a></div>`:""}
     ${p.flags.length ? `<div class="sec"><h3>${esc(D.secWatchouts)}</h3>${p.flags.map(f => `<div class="flagbox">⚠ ${esc(f)}</div>`).join("")}</div>` : ""}
     <p class="footnote">${esc(D.footnote(META.methodology_version))}</p>

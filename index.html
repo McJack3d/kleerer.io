@@ -31,7 +31,12 @@
       .langsw button{background:none; border:none; padding:4px 8px; font:inherit; font-size:.7rem; cursor:pointer; color:rgba(0,0,0,.56); letter-spacing:.04em}
       .langsw button.on{background:#000; color:#f7f4eb}
       .site-header{position:relative}
+      .site-foot{max-width:78ch; font-size:.68rem; line-height:1.6; color:rgba(0,0,0,.42)}
+      .site-foot p+p{margin-top:6px}
+      .site-foot a{color:inherit; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.2)}
+      .site-foot a:hover{color:var(--ink); border-bottom-color:var(--ink)}
     </style>
+    <script src="analytics.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -48,6 +53,11 @@
         <p id="l2">The project will deliver in many different steps open-source innovative products that will dive toward this ambition.</p>
         <p class="p1-line"><a href="compare/" id="p1link">p1 · compare — live →</a></p>
     </main>
+
+    <footer class="site-foot">
+        <p id="rights">© 2026 kleerer. Code AGPL-3.0 · methodology CC BY-NC-ND 4.0 · catalogue CC BY-NC-SA 4.0. Database right asserted (Dir. 96/9/EC): single facts stay free to quote, extraction of a substantial part is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3)).</p>
+        <p><a href="terms/" id="termslink">terms</a> · <a href="bot/" id="botlink">crawler</a> · <a href="/.well-known/tdmrep.json">tdmrep.json</a></p>
+    </footer>
 <script>
 // Same rule as the comparator: the browser's stated language preference, never
 // an IP lookup — no third party ever sees a visitor's address for this.
@@ -59,7 +69,10 @@ const TXT = {
     motto: "Makes health data available to individuals seeking advice or recommendations.",
     l1: "The project aims to open-source and make available all science-based resources and technologies to accurately help users enhance their well-being.",
     l2: "The project will deliver in many different steps open-source innovative products that will dive toward this ambition.",
-    p1: "p1 · compare — live →"
+    p1: "p1 · compare — live →",
+    rights: "© 2026 kleerer. Code AGPL-3.0 · methodology CC BY-NC-ND 4.0 · catalogue CC BY-NC-SA 4.0. Database right asserted (Dir. 96/9/EC): single facts stay free to quote, extraction of a substantial part is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3)).",
+    terms: "terms",
+    bot: "crawler"
   },
   fr: {
     lang: "fr",
@@ -67,7 +80,10 @@ const TXT = {
     motto: "Rend les données de santé accessibles à celles et ceux qui cherchent des conseils ou des recommandations.",
     l1: "Le projet vise à ouvrir le code et à rendre accessibles toutes les ressources et technologies fondées sur la science, pour aider chacun à améliorer son bien-être avec justesse.",
     l2: "Le projet livrera, étape après étape, des produits open source innovants qui poursuivent cette ambition.",
-    p1: "p1 · comparer — en ligne →"
+    p1: "p1 · comparer — en ligne →",
+    rights: "© 2026 kleerer. Code AGPL-3.0 · méthodologie CC BY-NC-ND 4.0 · catalogue CC BY-NC-SA 4.0. Droit sui generis revendiqué (dir. 96/9/CE) : un fait isolé reste librement citable, l'extraction d'une partie substantielle est réservée. Droits de fouille de textes et de données réservés (dir. (UE) 2019/790 art. 4(3)).",
+    terms: "conditions",
+    bot: "robot"
   }
 };
 function detectLang(){
@@ -91,6 +107,9 @@ function applyLang(){
   document.getElementById("l1").textContent = t.l1;
   document.getElementById("l2").textContent = t.l2;
   document.getElementById("p1link").textContent = t.p1;
+  document.getElementById("rights").textContent = t.rights;
+  document.getElementById("termslink").textContent = t.terms;
+  document.getElementById("botlink").textContent = t.bot;
   document.querySelectorAll("#langsw button").forEach(b =>
     b.classList.toggle("on", b.dataset.lang === LANG));
 }

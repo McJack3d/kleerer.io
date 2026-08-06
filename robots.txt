@@ -1,0 +1,71 @@
+# kleerer. — https://kleerer.com/
+#
+# Text and data mining rights are expressly reserved over the archive, the
+# methodology, and the catalogue-as-a-database, under Article 4(3) of Directive
+# (EU) 2019/790 and Article L.122-5-3 of the French Code de la propriété
+# intellectuelle. Machine-readable form: /.well-known/tdmrep.json
+# Full terms: /NOTICE.md and /terms/
+#
+# The reservation is against BULK MINING, not against being read. The rule below
+# splits crawlers by what they are for, not by who runs them:
+#
+#   • search / citation / assistant-retrieval crawlers  -> allowed everywhere.
+#     We want to be found and cited. Visibility is the bottleneck, not copying.
+#   • training-corpus crawlers                          -> allowed on the public
+#     pages, denied on the methodology, the catalogue and the pipeline outputs.
+#
+# Reading a single price here is fine and always will be: a price is a fact, and
+# facts are not owned. Taking the series is the thing being refused.
+
+# ---------------------------------------------------------------- everyone ---
+User-agent: *
+Disallow: /compare/pipeline/snapshots/
+Disallow: /compare/pipeline/reports/
+
+# ------------------------------------------------- training-corpus crawlers ---
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: FacebookBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: PerplexityBot
+User-agent: Diffbot
+User-agent: omgili
+Disallow: /compare/METHODOLOGY.md
+Disallow: /compare/data.js
+Disallow: /compare/data/
+Disallow: /compare/pipeline/
+
+# --------------------------------------- search & citation: allowed in full ---
+# Named explicitly so a future tightening of the block above cannot catch them
+# by accident. Being quoted by an assistant is worth more to us than being
+# absent from a training set.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Applebot
+Allow: /

@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-only
+# Copyright (C) 2026 kleerer.
+#
+# This file is part of the kleerer scoring engine and collection pipeline.
+# Licensed under the GNU Affero General Public License v3.0 ONLY; see LICENSE.
+# A separate commercial licence is available for parties who cannot accept the
+# AGPL's obligations: hello@kleerer.com. The commercial licence covers this code
+# only -- it conveys NO right in the collected archive, which is unpublished and
+# all rights reserved. See NOTICE.md.
+
 """
 Dated, content-hashed snapshots — the archive layer.
 

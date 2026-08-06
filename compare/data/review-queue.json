@@ -1,0 +1,357 @@
+{
+ "generated": "2026-08-07",
+ "n_withheld_products": 24,
+ "n_pending_strings": 30,
+ "pending_strings": [
+  {
+   "string": "arômes",
+   "blocks_n_products": 7
+  },
+  {
+   "string": "Tapioca dextrin (carrier)",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "support comprimé multicouche",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "support comprimé pelliculé standard",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "support comprimé standard",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "arômes vanille-anis (contient lait)",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "antioxydant E341",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "hypromellose E464",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "émulsifiant E471",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "gélifiant E401",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "antiagglomérant E470b",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "farine de noix de coco",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "phosphate de calcium",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "jus concentré de citron",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "conservateur : sorbate de potassium",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "correcteur d'acidité : hydroxyde de potassium",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "fécule de manioc bio",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "excipients comprimé bicouche",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "arôme",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "arôme vanille",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "arômes (parfums aromatisés)",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "arômes naturels",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "Bacillus coagulans GBI-30 6086",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "correcteur d'acidité : acide malique",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "antiagglomérant : oxyde de magnésium",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "lait écrémé en poudre",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "émulsifiants : E471, E472a",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "colorant : E132 indigotine",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "poudre à lever : carbonate de soude",
+   "blocks_n_products": 1
+  },
+  {
+   "string": "colorant : E160",
+   "blocks_n_products": 1
+  }
+ ],
+ "withheld_products": [
+  {
+   "id": "am-nutrition-pure-whey-isolate-framboise-700-g",
+   "brand": "AM Nutrition",
+   "name": "PURE Whey Isolate",
+   "category": "whey",
+   "pending": [
+    "arômes"
+   ]
+  },
+  {
+   "id": "arkopharma-arkorelax-sommeil-fort-8h-30-comprimes-bicouches",
+   "brand": "Arkopharma",
+   "name": "Arkorelax Sommeil Fort 8H",
+   "category": "melatonin",
+   "pending": [
+    "excipients comprimé bicouche"
+   ]
+  },
+  {
+   "id": "bayer-berocca-energie-30-comprimes",
+   "brand": "Bayer",
+   "name": "Berocca Energie",
+   "category": "multivitamin",
+   "pending": [
+    "support comprimé pelliculé standard"
+   ]
+  },
+  {
+   "id": "bayer-euphytosenuit-lp-1-9-mg-30-comprimes-bi-couche",
+   "brand": "Bayer",
+   "name": "EuphytoseNuit LP 1,9 mg",
+   "category": "melatonin",
+   "pending": [
+    "antioxydant E341",
+    "hypromellose E464",
+    "émulsifiant E471",
+    "gélifiant E401",
+    "antiagglomérant E470b"
+   ]
+  },
+  {
+   "id": "biocyte-collagen-max-cacao-260-g",
+   "brand": "Biocyte",
+   "name": "Collagen Max",
+   "category": "collagen",
+   "pending": [
+    "arômes"
+   ]
+  },
+  {
+   "id": "bion3-p-g-bion3-defense-adultes-30-comprimes",
+   "brand": "Bion3 (P&G)",
+   "name": "Bion3 Défense Adultes",
+   "category": "multivitamin",
+   "pending": [
+    "support comprimé multicouche"
+   ]
+  },
+  {
+   "id": "biotechusa-collagen-framboise-noire-300-g",
+   "brand": "BioTechUSA",
+   "name": "Collagen",
+   "category": "collagen",
+   "pending": [
+    "antiagglomérant : oxyde de magnésium",
+    "arômes",
+    "lait écrémé en poudre",
+    "émulsifiants : E471, E472a",
+    "colorant : E132 indigotine"
+   ]
+  },
+  {
+   "id": "corength-decathlon-whey-proteine-chocolat-900-g",
+   "brand": "Corength (Decathlon)",
+   "name": "Whey Protéine",
+   "category": "whey",
+   "pending": [
+    "arômes naturels"
+   ]
+  },
+  {
+   "id": "dieti-natura-vitamine-d3-60-gelules",
+   "brand": "Dieti Natura",
+   "name": "Vitamine D3",
+   "category": "vitamin_d3",
+   "pending": [
+    "farine de noix de coco"
+   ]
+  },
+  {
+   "id": "eric-favre-iso-zero-100-whey-protein-vanille-1-5-kg",
+   "brand": "Eric Favre",
+   "name": "Iso Zero 100% Whey Protein",
+   "category": "whey",
+   "pending": [
+    "arômes"
+   ]
+  },
+  {
+   "id": "forte-pharma-fortenuit-8h-15-comprimes-bicouches",
+   "brand": "Forté Pharma",
+   "name": "FortéNuit 8h",
+   "category": "melatonin",
+   "pending": [
+    "arôme vanille"
+   ]
+  },
+  {
+   "id": "inshape-nutrition-whey-protein-neutre-1-kg",
+   "brand": "InShape Nutrition",
+   "name": "Whey Protein",
+   "category": "whey",
+   "pending": [
+    "arômes (parfums aromatisés)"
+   ]
+  },
+  {
+   "id": "isoxan-isoxan-adulte-20-comprimes",
+   "brand": "Isoxan",
+   "name": "Isoxan Adulte",
+   "category": "multivitamin",
+   "pending": [
+    "support comprimé standard"
+   ]
+  },
+  {
+   "id": "juvamine-vitamine-c-1000-mg-30-comprimes-effervescents-orange",
+   "brand": "Juvamine",
+   "name": "Vitamine C 1000 mg",
+   "category": "vitamin_c",
+   "pending": [
+    "poudre à lever : carbonate de soude",
+    "colorant : E160"
+   ]
+  },
+  {
+   "id": "mium-lab-gummies-sommeil-sans-sucres-42-gommes",
+   "brand": "Mium Lab",
+   "name": "Gummies Sommeil sans sucres",
+   "category": "melatonin",
+   "pending": [
+    "arôme"
+   ]
+  },
+  {
+   "id": "nutergia-ergymag-45-gelules",
+   "brand": "Nutergia",
+   "name": "Ergymag",
+   "category": "magnesium",
+   "pending": [
+    "phosphate de calcium"
+   ]
+  },
+  {
+   "id": "nutergia-oligomax-zinc-flacon-150-ml-30-doses",
+   "brand": "Nutergia",
+   "name": "Oligomax Zinc",
+   "category": "zinc",
+   "pending": [
+    "conservateur : sorbate de potassium",
+    "correcteur d'acidité : hydroxyde de potassium"
+   ]
+  },
+  {
+   "id": "nutrimuscle-native-whey-isolate-chocolat-1-kg",
+   "brand": "Nutrimuscle",
+   "name": "Native Whey Isolate",
+   "category": "whey",
+   "pending": [
+    "arômes",
+    "Bacillus coagulans GBI-30 6086"
+   ]
+  },
+  {
+   "id": "olimp-sport-nutrition-collaregen-400-g",
+   "brand": "Olimp Sport Nutrition",
+   "name": "Collaregen",
+   "category": "collagen",
+   "pending": [
+    "correcteur d'acidité : acide malique",
+    "arômes"
+   ]
+  },
+  {
+   "id": "scitec-nutrition-100-whey-protein-professional-500-g",
+   "brand": "Scitec Nutrition",
+   "name": "100% Whey Protein Professional",
+   "category": "whey",
+   "pending": [
+    "arômes"
+   ]
+  },
+  {
+   "id": "sunday-essentials-multi",
+   "brand": "Sunday Natural",
+   "name": "Essentials All in One Premium",
+   "category": "multivitamin",
+   "pending": [
+    "Tapioca dextrin (carrier)"
+   ]
+  },
+  {
+   "id": "superdiet-acerola-1000-vitalite-bio-24-comprimes-a-croquer",
+   "brand": "Superdiet",
+   "name": "Acérola 1000 Vitalité Bio",
+   "category": "vitamin_c",
+   "pending": [
+    "fécule de manioc bio"
+   ]
+  },
+  {
+   "id": "superdiet-magnesium-marin-et-vitamine-b6-20-ampoules-de-10-ml",
+   "brand": "Superdiet",
+   "name": "Magnésium marin et Vitamine B6",
+   "category": "magnesium",
+   "pending": [
+    "jus concentré de citron"
+   ]
+  },
+  {
+   "id": "valdispert-melatonine-1-9-mg-40-comprimes-orodispersibles",
+   "brand": "Valdispert",
+   "name": "Mélatonine 1,9 mg",
+   "category": "melatonin",
+   "pending": [
+    "arômes vanille-anis (contient lait)"
+   ]
+  }
+ ]
+}

@@ -167,8 +167,8 @@ en: {
   },
   contribute: {
     line: url => `Spotted something wrong — a price, a dose, an ingredient? <a href="${url}" target="_blank" rel="noopener">Open a correction</a>. The dataset and the scoring script are public; corrections arrive as auditable changes, and the fix applies to every product equally.`,
-    btnReview: "Help classify this ingredient ↗",
-    titleReview: (b,n) => `[data] classify unrecognised ingredient — ${b} ${n}`,
+    btnReview: "Challenge this ruling ↗",
+    titleReview: (b,n) => `[data] challenge an ingredient ruling — ${b} ${n}`,
     titleFix: (b,n) => `[data] correction — ${b} ${n}`,
     body: (p, flags) => `Product: ${p.brand} — ${p.name} (${p.variant})\nProduct id: ${p.id}\nCategory: ${p.category}\n${flags?`Unrecognised ingredient(s): ${flags}\n`:""}\n**What is wrong / what should it be?**\n\n\n**Source** (label photo, brand page, COA):\n\n`
   },
@@ -177,7 +177,7 @@ en: {
   priceLevelTitle: tier => `price level ${tier}/5 (1=cheapest per dose, 5=priciest)`,
 
   chipCoa: "COA published", chipThirdParty: "3rd-party tested", chipVegan: "vegan",
-  chipReview: "⚑ needs review", chipReviewTitle: "unrecognised ingredient — needs human review",
+  chipReview: "✓ manually reviewed", chipReviewTitle: "an ingredient here was unreadable by the auto-tagger and was ruled on by a human before this product was published",
   chipFlags: n => `⚠ ${n} flag${n>1?"s":""}`,
 
   barComposition: "composition", barPurity: "purity", barTransparency: "transparency",
@@ -219,7 +219,11 @@ en: {
     scoreLine: (total,conf) => `Health &amp; Compo Score <b>${total}</b> / 100 · data confidence: <b>${conf}</b>`,
     secBreakdown: "score breakdown", secPrice: "price &amp; value", secProvenance: "provenance",
     secDosage: "dosage vs your needs", secGet: "what you actually get",
-    secReview: "needs human review", secWatchouts: "watch-outs",
+    secReview: "manually reviewed", secWatchouts: "watch-outs",
+    inStore: pv => `In-store price — observed at ${pv.store}${pv.city?`, ${pv.city}`:""} on ${pv.observed_on}. One shop, one day: not a national price, and not re-checked daily like an online listing.`,
+    verdictLabel: v => v === "neutral" ? "benign — no penalty"
+      : v.startsWith("banned:") ? "banned substance — score forced to 0"
+      : `scored as ${v.split(":")[1].replace(/_/g, " ")}`,
     listPrice: "list price", priceLevelCell: tier => `price level ${tier}/5 in category`,
     provMalus: m => `(−${m} proximity, shown separately — not in the health score)`,
     unknown: "unknown",
@@ -236,14 +240,15 @@ en: {
     builtIn: (amt,unit) => `+ built-in: ${amt} ${unit} / day — counted in your stack totals`,
     btnInStack: "✓ in your stack", btnAddStack: "+ add to my stack",
     btnBuyLong: "buy — direct product page ↗", noAffiliation: "no affiliation, kleerer earns nothing",
-    reviewFlag: f => `⚑ unrecognised ingredient: ${f} — help us classify it`,
+    reviewFlag: r => `✓ “${r.string}” — ${T("detail").verdictLabel(r.verdict)}${r.note?` · ${r.note}`:""}${r.reviewed_on?` · reviewed ${r.reviewed_on}`:""}`,
     redCardLong: subs => `🟥 red card — contains a substance banned or restricted by EU / FDA / WHO: ${subs}. Score forced to 0.`,
     footnote: v => `Scored with methodology v${v} from the public label and brand documents — not from independent lab testing. Not medical advice.`
   },
 
   footDisclaimer: `<b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.`,
   footPrices: `Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.`,
-  footMeta: "p1 · compare + p2 · stack (beta) — open method, private data · MIT · v1.5",
+  footRights: `© 2026 kleerer. Code <b>AGPL-3.0</b> · methodology <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. This catalogue is a protected database (Dir. 96/9/EC; CPI art. L.341-1 ff.): individual facts are free to quote, extraction of a <b>substantial part</b> is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3); CPI art. L.122-5-3) — see <a href="/.well-known/tdmrep.json">tdmrep.json</a> and <a href="/terms/">terms</a>.`,
+  footMeta: "p1 · compare + p2 · stack (beta) — open method, private data · AGPL-3.0 · v1.5",
   footVersions: "methodology v1.2 · dosing model v2",
 
   methodology: () => `
@@ -254,7 +259,7 @@ en: {
     <h4>Composition &amp; efficacy — 40 pts</h4>
     <p><b>Form quality (20):</b> chelated magnesium beats oxide; rTG omega-3 beats ethyl esters; Creapure® beats undocumented monohydrate; strain-coded probiotics beat un-coded. <b>Effective dosing (20):</b> daily dose vs published effective ranges and EFSA reference values, with penalties for exceeding EU upper limits.</p>
     <h4>Purity &amp; additives — 30 pts</h4>
-    <p>Start at 30, subtract per additive, <b>proportionate to the health evidence</b>: fully hydrogenated fat −25, undisclosed/proprietary blend −10, BHA/BHT −10, <b>added sugar −8</b>, then sweeteners tiered by evidence (see below), azo colours −3, polyols/carriers/emulsifiers/fillers/coatings −2 each. Natural sweeteners (stevia, monk fruit), carrier oils, capsule shells and natural flavours are neutral. An unrecognised ingredient is never ignored — it's flagged <b>needs review</b> (−2 provisional).</p>
+    <p>Start at 30, subtract per additive, <b>proportionate to the health evidence</b>: fully hydrogenated fat −25, undisclosed/proprietary blend −10, BHA/BHT −10, <b>added sugar −8</b>, then sweeteners tiered by evidence (see below), azo colours −3, polyols/carriers/emulsifiers/fillers/coatings −2 each. Natural sweeteners (stevia, monk fruit), carrier oils, capsule shells and natural flavours are neutral. An unrecognised ingredient is never guessed at: the product is <b>withheld from the site entirely</b> until a human rules on the string. A −2 &ldquo;provisional&rdquo; penalty would be a claim that the worst case is mild, which is exactly what we do not yet know.</p>
     <h4>Our position on sweeteners (evidence-based)</h4>
     <p>Regulators (EFSA, FDA, WHO/JECFA) uphold sweetener safety at their acceptable daily intakes. Large cohorts (NutriNet-Santé, &gt;100 000 adults) and lab studies report <i>signals</i> — not proven causation — for some. We apply mild, proportionate precaution: <b>Tier D</b> sucralose/erythritol/xylitol −6 (mechanistic/CV signal), <b>Tier C</b> aspartame/acesulfame-K −4 (cohort signal), <b>Tier B</b> saccharin/cyclamate −2, <b>Tier A</b> stevia/monk fruit 0. Crucially, <b>added sugar (−8) is penalised more than any sweetener</b>, because the evidence that sugar harms health is stronger. We do not claim "sweeteners cause cancer".</p>
     <h4>Transparency &amp; testing — 30 pts</h4>
@@ -276,7 +281,7 @@ en: {
     <p>Personalised dosing never touches the Health &amp; Compo Score — two people looking at the same product see the same grade. It is guidance for healthy adults and <b>not medical advice</b>.</p>
     <h4>My stack (beta) — combined doses, checked</h4>
     <p>Add any products to a stack and we sum what you would actually swallow per day, nutrient by nutrient — including <b>declared built-in actives</b> (an omega-3 carrying 800 IU of vitamin D counts toward your vitamin-D total). Every total is checked against the EU upper limits — that works <b>without</b> a profile — and against your personal bands with one. Two 300 mg magnesiums quietly total 600 mg against a 250 mg supplemental limit; nothing on the label warns you, the stack does.</p>
-    <p><b>Honest boundary:</b> multivitamin labels aren't per-nutrient coded in our data yet, so a stack containing one shows its totals as <i>lower bounds</i> and says so, rather than guessing. Products whose name declares an extra active we haven't coded are flagged, not silently ignored — the same rule as unrecognised ingredients.</p>
+    <p><b>Honest boundary:</b> multivitamin labels aren't per-nutrient coded in our data yet, so a stack containing one shows its totals as <i>lower bounds</i> and says so, rather than guessing. Products whose name declares an extra active we haven't coded are flagged, not silently ignored — the same instinct as the unrecognised-ingredient rule, which withholds the product outright.</p>
     <h4>Provenance (separate axis, not in the health score)</h4>
     <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
     <h4>Language</h4>
@@ -451,8 +456,8 @@ fr: {
   },
   contribute: {
     line: url => `Vous avez repéré une erreur — un prix, un dosage, un ingrédient ? <a href="${url}" target="_blank" rel="noopener">Proposez une correction</a>. Le jeu de données et le script de notation sont publics ; les corrections arrivent sous forme de modifications auditables, et le correctif s'applique à tous les produits de la même façon.`,
-    btnReview: "Aidez-nous à classer cet ingrédient ↗",
-    titleReview: (b,n) => `[data] classer un ingrédient non reconnu — ${b} ${n}`,
+    btnReview: "Contester cette décision ↗",
+    titleReview: (b,n) => `[data] contester une décision sur un ingrédient — ${b} ${n}`,
     titleFix: (b,n) => `[data] correction — ${b} ${n}`,
     body: (p, flags) => `Produit : ${p.brand} — ${p.name} (${p.variant})\nIdentifiant : ${p.id}\nCatégorie : ${p.category}\n${flags?`Ingrédient(s) non reconnu(s) : ${flags}\n`:""}\n**Qu'est-ce qui est incorrect, et que faudrait-il ?**\n\n\n**Source** (photo d'étiquette, page de la marque, certificat d'analyse) :\n\n`
   },
@@ -461,7 +466,8 @@ fr: {
   priceLevelTitle: tier => `niveau de prix ${tier}/5 (1 = le moins cher par dose, 5 = le plus cher)`,
 
   chipCoa: "analyses publiées", chipThirdParty: "testé par un tiers", chipVegan: "végan",
-  chipReview: "⚑ à vérifier", chipReviewTitle: "ingrédient non reconnu — nécessite une vérification humaine",
+  chipReview: "✓ vérifié manuellement", chipReviewTitle: "un ingrédient illisible pour l'auto-tagger a été tranché par un humain avant la publication de ce produit",
+
   chipFlags: n => `⚠ ${n} alerte${n>1?"s":""}`,
 
   barComposition: "composition", barPurity: "pureté", barTransparency: "transparence",
@@ -503,7 +509,11 @@ fr: {
     scoreLine: (total,conf) => `Health &amp; Compo Score <b>${total}</b> / 100 · fiabilité des données : <b>${conf}</b>`,
     secBreakdown: "détail du score", secPrice: "prix &amp; valeur", secProvenance: "provenance",
     secDosage: "dosage vs vos besoins", secGet: "ce que vous obtenez vraiment",
-    secReview: "vérification humaine requise", secWatchouts: "points de vigilance",
+    secReview: "vérifié manuellement", secWatchouts: "points de vigilance",
+    inStore: pv => `Prix relevé en magasin — ${pv.store}${pv.city?`, ${pv.city}`:""}, le ${pv.observed_on}. Un magasin, un jour : ce n'est pas un prix national, et il n'est pas revérifié quotidiennement comme une annonce en ligne.`,
+    verdictLabel: v => v === "neutral" ? "bénin — aucune pénalité"
+      : v.startsWith("banned:") ? "substance interdite — score ramené à 0"
+      : `compté comme ${v.split(":")[1].replace(/_/g, " ")}`,
     listPrice: "prix public", priceLevelCell: tier => `niveau de prix ${tier}/5 dans la catégorie`,
     provMalus: m => `(−${m} de proximité, affiché séparément — hors score santé)`,
     unknown: "inconnue",
@@ -520,14 +530,15 @@ fr: {
     builtIn: (amt,unit) => `+ intégré : ${amt} ${unit} / jour — comptabilisé dans les totaux de votre routine`,
     btnInStack: "✓ dans votre routine", btnAddStack: "+ ajouter à ma routine",
     btnBuyLong: "acheter — page produit directe ↗", noAffiliation: "aucune affiliation, kleerer ne gagne rien",
-    reviewFlag: f => `⚑ ingrédient non reconnu : ${f} — aidez-nous à le classer`,
+    reviewFlag: r => `✓ « ${r.string} » — ${T("detail").verdictLabel(r.verdict)}${r.note?` · ${r.note}`:""}${r.reviewed_on?` · vérifié le ${r.reviewed_on}`:""}`,
     redCardLong: subs => `🟥 carton rouge — contient une substance interdite ou restreinte par l'UE / la FDA / l'OMS : ${subs}. Score ramené à 0.`,
     footnote: v => `Noté avec la méthodologie v${v} à partir de l'étiquette publique et des documents de la marque — pas d'analyses en laboratoire indépendant. Ne constitue pas un avis médical.`
   },
 
   footDisclaimer: `<b>Ne constitue pas un avis médical.</b> Les scores reflètent uniquement la composition de l'étiquette et la transparence publique — ni l'adéquation d'un complément à votre cas, ni une vérification indépendante du contenu des lots. Les compléments alimentaires ne remplacent pas une alimentation variée. Parlez-en à un professionnel de santé avant toute supplémentation, en particulier en cas de grossesse, de traitement en cours ou de pathologie.`,
   footPrices: `Les prix sont des prix publics UE, relevé de <b>juillet 2026</b> — plusieurs marques (Myprotein, Bulk, Prozis) pratiquent des promotions structurelles, les prix effectifs peuvent donc être inférieurs de 30 à 45 %. La fiabilité des données est signalée produit par produit. Vous avez repéré une erreur ? Le jeu de données et le script de notation sont ouverts — corrigez-nous.`,
-  footMeta: "p1 · comparer + p2 · routine (bêta) — méthode ouverte, données privées · MIT · v1.5",
+  footRights: `© 2026 kleerer. Code <b>AGPL-3.0</b> · méthodologie <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. Ce catalogue est une base de données protégée (dir. 96/9/CE ; CPI art. L.341-1 et s.) : un fait isolé reste librement citable, l'extraction d'une <b>partie substantielle</b> est réservée. Droits de fouille de textes et de données réservés (dir. (UE) 2019/790 art. 4(3) ; CPI art. L.122-5-3) — voir <a href="/.well-known/tdmrep.json">tdmrep.json</a> et les <a href="/terms/">conditions</a>.`,
+  footMeta: "p1 · comparer + p2 · routine (bêta) — méthode ouverte, données privées · AGPL-3.0 · v1.5",
   footVersions: "méthodologie v1.2 · modèle de dosage v2",
 
   methodology: () => `
@@ -538,7 +549,7 @@ fr: {
     <h4>Composition &amp; efficacité — 40 pts</h4>
     <p><b>Qualité de la forme (20) :</b> le magnésium chélaté l'emporte sur l'oxyde ; l'oméga-3 rTG sur les esters éthyliques ; la Creapure® sur un monohydrate non documenté ; les probiotiques à souche identifiée sur les autres. <b>Dosage efficace (20) :</b> dose journalière face aux fourchettes efficaces publiées et aux valeurs de référence EFSA, avec pénalités en cas de dépassement des limites hautes européennes.</p>
     <h4>Pureté &amp; additifs — 30 pts</h4>
-    <p>On part de 30, on retranche par additif, <b>proportionnellement au niveau de preuve sanitaire</b> : graisse entièrement hydrogénée −25, mélange propriétaire non détaillé −10, BHA/BHT −10, <b>sucre ajouté −8</b>, puis les édulcorants par paliers de preuve (voir ci-dessous), colorants azoïques −3, polyols/supports/émulsifiants/charges/enrobages −2 chacun. Les édulcorants naturels (stévia, fruit du moine), huiles support, enveloppes de gélules et arômes naturels sont neutres. Un ingrédient non reconnu n'est jamais ignoré — il est signalé <b>à vérifier</b> (−2 à titre provisoire).</p>
+    <p>On part de 30, on retranche par additif, <b>proportionnellement au niveau de preuve sanitaire</b> : graisse entièrement hydrogénée −25, mélange propriétaire non détaillé −10, BHA/BHT −10, <b>sucre ajouté −8</b>, puis les édulcorants par paliers de preuve (voir ci-dessous), colorants azoïques −3, polyols/supports/émulsifiants/charges/enrobages −2 chacun. Les édulcorants naturels (stévia, fruit du moine), huiles support, enveloppes de gélules et arômes naturels sont neutres. Un ingrédient non reconnu ne fait jamais l'objet d'une supposition : le produit est <b>entièrement retiré du site</b> jusqu'à ce qu'un humain tranche. Une pénalité &laquo;&nbsp;provisoire&nbsp;&raquo; de −2 reviendrait à affirmer que le pire cas est bénin — précisément ce que l'on ignore encore.</p>
     <h4>Notre position sur les édulcorants (fondée sur les preuves)</h4>
     <p>Les autorités (EFSA, FDA, OMS/JECFA) confirment l'innocuité des édulcorants à leurs doses journalières admissibles. De vastes cohortes (NutriNet-Santé, &gt; 100 000 adultes) et des études de laboratoire rapportent des <i>signaux</i> — non une causalité démontrée — pour certains d'entre eux. Nous appliquons une précaution légère et proportionnée : <b>palier D</b> sucralose/érythritol/xylitol −6 (signal mécanistique ou cardiovasculaire), <b>palier C</b> aspartame/acésulfame-K −4 (signal de cohorte), <b>palier B</b> saccharine/cyclamate −2, <b>palier A</b> stévia/fruit du moine 0. Surtout, <b>le sucre ajouté (−8) est plus pénalisé que n'importe quel édulcorant</b>, parce que les preuves de sa nocivité sont plus solides. Nous n'affirmons pas que « les édulcorants donnent le cancer ».</p>
     <h4>Transparence &amp; tests — 30 pts</h4>
@@ -560,7 +571,7 @@ fr: {
     <p>Le dosage personnalisé ne touche jamais au Health &amp; Compo Score — deux personnes regardant le même produit voient la même note. Il s'agit de recommandations pour adultes en bonne santé et <b>non d'un avis médical</b>.</p>
     <h4>Ma routine (bêta) — les doses cumulées, vérifiées</h4>
     <p>Ajoutez des produits à une routine et nous additionnons ce que vous avaleriez réellement chaque jour, nutriment par nutriment — y compris les <b>actifs intégrés déclarés</b> (un oméga-3 apportant 800 UI de vitamine D compte dans votre total de vitamine D). Chaque total est confronté aux limites hautes européennes — cela fonctionne <b>sans</b> profil — et à vos fourchettes personnelles si vous en avez un. Deux magnésiums à 300 mg totalisent discrètement 600 mg face à une limite de 250 mg pour les compléments ; rien sur l'étiquette ne vous prévient, la routine si.</p>
-    <p><b>Limite assumée :</b> les étiquettes de multivitamines ne sont pas encore codées nutriment par nutriment dans nos données ; une routine qui en contient affiche donc ses totaux comme des <i>minorants</i>, et le dit, plutôt que de deviner. Les produits dont le nom déclare un actif supplémentaire non codé sont signalés, pas ignorés silencieusement — la même règle que pour les ingrédients non reconnus.</p>
+    <p><b>Limite assumée :</b> les étiquettes de multivitamines ne sont pas encore codées nutriment par nutriment dans nos données ; une routine qui en contient affiche donc ses totaux comme des <i>minorants</i>, et le dit, plutôt que de deviner. Les produits dont le nom déclare un actif supplémentaire non codé sont signalés, pas ignorés silencieusement — le même réflexe que la règle sur les ingrédients non reconnus, qui retire purement et simplement le produit.</p>
     <h4>Provenance (axe distinct, hors score santé)</h4>
     <p>Nous signalons le pays de fabrication (🇫🇷 France · 🇪🇺 UE · 🌍 hors UE) et un léger malus de proximité (0/1/3) reflétant l'ancrage français de kleerer. Il est affiché <b>séparément</b> : un produit allemand irréprochable n'est pas « moins sain » qu'un produit français.</p>
     <h4>Langue</h4>
