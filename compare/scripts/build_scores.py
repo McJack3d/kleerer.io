@@ -49,6 +49,22 @@ PURITY_PENALTIES = {
     "sweetener_b": 2,           # saccharin, cyclamate — reassuring but not natural
     "polyol": 2, "synthetic_carrier": 2, "artificial_flavour": 2,
     "lecithin": 2, "thickener": 2, "bulking_filler": 2, "anticaking": 2, "coating": 2,
+    "preservative": 2,          # E200-E203 sorbates/benzoates — approved, no harm signal
+    # --- the -1 band (v1.3) -------------------------------------------------
+    # Two things were being forced into -2-or-nothing that deserve neither.
+    #
+    # "undisclosed_minor" is a TRANSPARENCY deduction, not a harm claim: a label
+    # saying "support comprimé standard" or a bare "arômes" has declared that
+    # something is there without saying what. That is materially different from
+    # an undisclosed blend of ACTIVES (proprietary_blend, -10) — you can still
+    # assess the product, you just cannot audit its excipients — and different
+    # again from a named additive with an evidence base behind its penalty.
+    #
+    # "acidity_regulator" covers trace pH and leavening agents. The method
+    # already calls citric acid neutral; -1 says "an added technological
+    # ingredient" without pretending a pH adjuster carries a health signal.
+    "undisclosed_minor": 1,
+    "acidity_regulator": 1,
     "banned": 0,                # red card handled separately in main()
     # There is deliberately NO "unknown" penalty any more. An unreadable
     # ingredient used to cost 2 points and ship; a -2 is a claim that the worst

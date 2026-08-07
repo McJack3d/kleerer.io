@@ -1,0 +1,215 @@
+{
+ "decisions": {
+  "antiagglomerant : oxyde de magnesium": {
+   "note": "magnesium oxide used as an anti-caking agent, not as the active",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "antiagglomérant : oxyde de magnésium",
+   "verdict": "penalty:anticaking"
+  },
+  "antiagglomerant e470b": {
+   "note": "magnesium salts of fatty acids (E470b), anti-caking agent",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "antiagglomérant E470b",
+   "verdict": "penalty:anticaking"
+  },
+  "antioxydant e341": {
+   "note": "calcium phosphates (E341)",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "antioxydant E341",
+   "verdict": "penalty:bulking_filler"
+  },
+  "arome": {
+   "note": "flavouring declared without stating its origin",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arôme",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "arome vanille": {
+   "note": "vanilla flavouring, natural or artificial not stated",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arôme vanille",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "aromes": {
+   "note": "flavouring declared without stating its origin",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arômes",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "aromes (parfums aromatises)": {
+   "note": "flavouring declared without stating its origin",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arômes (parfums aromatisés)",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "aromes naturels": {
+   "note": "natural flavouring, declared as such",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arômes naturels",
+   "verdict": "neutral"
+  },
+  "aromes vanille-anis (contient lait)": {
+   "note": "vanilla-anise flavouring, origin not stated; contains milk",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "arômes vanille-anis (contient lait)",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "bacillus coagulans gbi-30 6086": {
+   "note": "coded probiotic strain — an active ingredient, not an additive",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "Bacillus coagulans GBI-30 6086",
+   "verdict": "neutral"
+  },
+  "colorant : e132 indigotine": {
+   "note": "indigotine (E132), synthetic colour",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "colorant : E132 indigotine",
+   "verdict": "penalty:artificial_colour"
+  },
+  "colorant : e160": {
+   "note": "carotenoid colour (E160), plant-derived",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "colorant : E160",
+   "verdict": "neutral"
+  },
+  "conservateur : sorbate de potassium": {
+   "note": "potassium sorbate (E202), approved preservative",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "conservateur : sorbate de potassium",
+   "verdict": "penalty:preservative"
+  },
+  "correcteur d'acidite : acide malique": {
+   "note": "malic acid (E296), trace acidity regulator",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "correcteur d'acidité : acide malique",
+   "verdict": "penalty:acidity_regulator"
+  },
+  "correcteur d'acidite : hydroxyde de potassium": {
+   "note": "potassium hydroxide (E525), trace acidity regulator",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "correcteur d'acidité : hydroxyde de potassium",
+   "verdict": "penalty:acidity_regulator"
+  },
+  "emulsifiant e471": {
+   "note": "mono- and diglycerides of fatty acids (E471), emulsifier",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "émulsifiant E471",
+   "verdict": "penalty:lecithin"
+  },
+  "emulsifiants : e471, e472a": {
+   "note": "mono/diglycerides and their acetic acid esters (E471, E472a), emulsifiers",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "émulsifiants : E471, E472a",
+   "verdict": "penalty:lecithin"
+  },
+  "excipients comprime bicouche": {
+   "note": "bilayer tablet excipients not itemised on the label",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "excipients comprimé bicouche",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "farine de noix de coco": {
+   "note": "coconut flour, food ingredient",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "farine de noix de coco",
+   "verdict": "neutral"
+  },
+  "fecule de manioc bio": {
+   "note": "organic tapioca starch, bulking agent",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "fécule de manioc bio",
+   "verdict": "penalty:bulking_filler"
+  },
+  "gelifiant e401": {
+   "note": "sodium alginate (E401), gelling agent",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "gélifiant E401",
+   "verdict": "penalty:thickener"
+  },
+  "hypromellose e464": {
+   "note": "hypromellose (E464), standard vegetarian capsule shell",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "hypromellose E464",
+   "verdict": "neutral"
+  },
+  "jus concentre de citron": {
+   "note": "concentrated lemon juice, food ingredient",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "jus concentré de citron",
+   "verdict": "neutral"
+  },
+  "lait ecreme en poudre": {
+   "note": "skimmed milk powder, food ingredient; contains milk",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "lait écrémé en poudre",
+   "verdict": "neutral"
+  },
+  "phosphate de calcium": {
+   "note": "calcium phosphate",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "phosphate de calcium",
+   "verdict": "penalty:bulking_filler"
+  },
+  "poudre a lever : carbonate de soude": {
+   "note": "sodium carbonate (E500), raising agent",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "poudre à lever : carbonate de soude",
+   "verdict": "penalty:acidity_regulator"
+  },
+  "support comprime multicouche": {
+   "note": "multilayer tablet excipients not itemised on the label",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "support comprimé multicouche",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "support comprime pellicule standard": {
+   "note": "film-coating excipients not itemised on the label",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "support comprimé pelliculé standard",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "support comprime standard": {
+   "note": "tablet excipients not itemised on the label",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "support comprimé standard",
+   "verdict": "penalty:undisclosed_minor"
+  },
+  "tapioca dextrin (carrier)": {
+   "note": "tapioca dextrin, carrier",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-08-07",
+   "seen_as": "Tapioca dextrin (carrier)",
+   "verdict": "penalty:bulking_filler"
+  }
+ },
+ "version": 1
+}

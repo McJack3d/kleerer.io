@@ -61,7 +61,9 @@ Start at 30, subtract per additive (floor 0). Every ingredient string is classif
 | Sweetener — Tier C (aspartame, acesulfame-K) | −4 | cohort cancer/CVD signal |
 | Artificial azo colour (E102/E110/E129…) | −3 | EU child-attention warning required |
 | Sweetener — Tier B (saccharin, cyclamate) | −2 | reassuring evidence but not natural |
-| Polyol (maltitol, sorbitol) · PEG carrier · artificial flavour · emulsifier · thickener · filler · anti-caking · coating | −2 each | technological additives, minor concern |
+| Polyol (maltitol, sorbitol) · PEG carrier · artificial flavour · emulsifier · thickener · filler · anti-caking · coating · preservative (sorbates/benzoates) | −2 each | technological additives, minor concern |
+| Undisclosed minor ingredient ("support comprimé standard", bare "arômes") | −1 | transparency deduction, not a harm claim (see §2d) |
+| Acidity regulator / raising agent (potassium hydroxide, malic acid, sodium carbonate) | −1 | trace pH agents; no health signal (see §2d) |
 | Unrecognised ingredient | **product withheld from the site** | not scored at all until a human rules on it (see §2c) |
 
 Neutral (0): water, glycerine, gelatine and capsule shells, carrier oils, natural tocopherol/rosemary antioxidants, natural flavours, plant-based colour concentrates, citric acid, pectin, lactase, prebiotic fibres, and **Tier-A natural sweeteners (stevia, monk fruit)** — no credible harm signal.
@@ -93,6 +95,15 @@ Earlier versions of this method gave an unrecognised ingredient a "conservative"
 Every ruling is recorded in `data/review-ledger.json` against the normalised ingredient string, with the verdict (benign, a named additive penalty, or a red card), the reason, the reviewer and the date. Ruling on a string once releases every product carrying it. Corrections keep the superseded ruling, so what was believed and when stays auditable.
 
 A product that *is* published therefore carries the opposite signal from before: the card's **manually reviewed** section names each once-unreadable ingredient and shows what a human decided about it. That ruling is challengeable in public, same as any other rule here.
+
+### 2d. The −1 band, and why it exists (v1.3)
+Two kinds of ingredient were being forced into a −2-or-nothing choice that fitted neither.
+
+**Undisclosed minor ingredients.** A label reading *"support comprimé standard"* or a bare *"arômes"* has declared that something is present without saying what. Scoring that as zero rewards vagueness; scoring it −2 alongside a named, evidence-assessed additive overstates what is wrong. It is a **transparency** deduction. Note the deliberate distance from *proprietary blend* (−10): an undisclosed blend of **actives** means you cannot assess the product at all, whereas an unspecified tablet excipient means you cannot audit its filler. Those are not the same failure and no longer carry the same weight.
+
+**Acidity regulators and raising agents.** Potassium hydroxide, malic acid and sodium carbonate are trace pH agents with no harm signal. The method already treats citric acid — the same class — as neutral. −1 records that a technological ingredient was added without implying a health concern.
+
+*Known inconsistency, flagged rather than hidden:* citric acid and sodium citrate remain on the neutral list while their functional equivalents now score −1. They should move to this band; until they do, the same chemistry scores differently depending on which acidifier a brand chose.
 
 ## 3. Transparency & Testing (0–30)
 Published COAs (+12) · recognised third-party certification (Informed Sport, Cologne List, IFOS, Sport Protect, AFNOR NF, Friend of the Sea…) (+10) · branded traceable ingredient (Creapure®, EPAX®, Peptan®, Quali-C®…) (+4) · fully quantified label, no proprietary blend (+4).
