@@ -247,6 +247,7 @@ en: {
 
   footDisclaimer: `<b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.`,
   footPrices: `Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.`,
+  footSummary: `<b>Not medical advice.</b> Prices, licence and data rights — open the detail`,
   footRights: `© 2026 kleerer. Code <b>AGPL-3.0</b> · methodology <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. This catalogue is a protected database (Dir. 96/9/EC; CPI art. L.341-1 ff.): individual facts are free to quote, extraction of a <b>substantial part</b> is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3); CPI art. L.122-5-3) — see <a href="/.well-known/tdmrep.json">tdmrep.json</a> and <a href="/terms/">terms</a>.`,
   footMeta: "p1 · compare + p2 · stack (beta) — open method, private data · AGPL-3.0 · v1.5",
   footVersions: "methodology v1.2 · dosing model v2",
@@ -537,6 +538,7 @@ fr: {
 
   footDisclaimer: `<b>Ne constitue pas un avis médical.</b> Les scores reflètent uniquement la composition de l'étiquette et la transparence publique — ni l'adéquation d'un complément à votre cas, ni une vérification indépendante du contenu des lots. Les compléments alimentaires ne remplacent pas une alimentation variée. Parlez-en à un professionnel de santé avant toute supplémentation, en particulier en cas de grossesse, de traitement en cours ou de pathologie.`,
   footPrices: `Les prix sont des prix publics UE, relevé de <b>juillet 2026</b> — plusieurs marques (Myprotein, Bulk, Prozis) pratiquent des promotions structurelles, les prix effectifs peuvent donc être inférieurs de 30 à 45 %. La fiabilité des données est signalée produit par produit. Vous avez repéré une erreur ? Le jeu de données et le script de notation sont ouverts — corrigez-nous.`,
+  footSummary: `<b>Ne constitue pas un avis médical.</b> Prix, licence et droits sur les données — ouvrir le détail`,
   footRights: `© 2026 kleerer. Code <b>AGPL-3.0</b> · méthodologie <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. Ce catalogue est une base de données protégée (dir. 96/9/CE ; CPI art. L.341-1 et s.) : un fait isolé reste librement citable, l'extraction d'une <b>partie substantielle</b> est réservée. Droits de fouille de textes et de données réservés (dir. (UE) 2019/790 art. 4(3) ; CPI art. L.122-5-3) — voir <a href="/.well-known/tdmrep.json">tdmrep.json</a> et les <a href="/terms/">conditions</a>.`,
   footMeta: "p1 · comparer + p2 · routine (bêta) — méthode ouverte, données privées · AGPL-3.0 · v1.5",
   footVersions: "méthodologie v1.2 · modèle de dosage v2",

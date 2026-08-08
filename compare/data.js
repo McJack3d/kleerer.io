@@ -18,7 +18,7 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-08-07",
+  "generated": "2026-08-08",
   "n_products": 163,
   "n_categories": 11,
   "n_red_cards": 1,
@@ -1179,7 +1179,7 @@ const KLEERER_DATA = {
     "price_tier": 2
    },
    "label_hash": "673d42cdfab6",
-   "rank_in_category": 13
+   "rank_in_category": 12
   },
   {
    "id": "nutrico-magnesium",
@@ -2631,7 +2631,8 @@ const KLEERER_DATA = {
    "dose_tier": 20,
    "dose_note": "5.5 g peptides/day — in the studied range.",
    "purity_tags": [
-    "bulking_filler"
+    "bulking_filler",
+    "acidity_regulator"
    ],
    "additives_detail": [
     "gomme d'acacia (agent de charge)",
@@ -2655,9 +2656,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 20,
     "dose": 20,
-    "purity": 28,
+    "purity": 27,
     "transparency": 8,
-    "total": 76,
+    "total": 75,
     "grade": "B",
     "red_card": false,
     "banned_substances": []
@@ -3628,6 +3629,8 @@ const KLEERER_DATA = {
    "form_note": "Documented D3 source (lichen or lanolin).",
    "purity_tags": [
     "polyol",
+    "acidity_regulator",
+    "acidity_regulator",
     "coating"
    ],
    "additives_detail": [
@@ -3657,9 +3660,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 20,
     "dose": 20,
-    "purity": 26,
+    "purity": 24,
     "transparency": 4,
-    "total": 70,
+    "total": 68,
     "grade": "B",
     "red_card": false,
     "banned_substances": []
@@ -3672,7 +3675,7 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "a2088a8d8ca5",
-   "rank_in_category": 12
+   "rank_in_category": 13
   },
   {
    "category": "vitamin_d3",
@@ -7777,8 +7780,8 @@ const KLEERER_DATA = {
    "dose_tier": 20,
    "dose_note": "5 mg elemental zinc/day — effective, within EFSA UL.",
    "purity_tags": [
-    "preservative",
-    "acidity_regulator"
+    "acidity_regulator",
+    "preservative"
    ],
    "additives_detail": [
     "conservateur : sorbate de potassium",
@@ -7798,12 +7801,6 @@ const KLEERER_DATA = {
      "string": "conservateur : sorbate de potassium",
      "verdict": "penalty:preservative",
      "note": "potassium sorbate (E202), approved preservative",
-     "reviewed_on": "2026-08-07"
-    },
-    {
-     "string": "correcteur d'acidité : hydroxyde de potassium",
-     "verdict": "penalty:acidity_regulator",
-     "note": "potassium hydroxide (E525), trace acidity regulator",
      "reviewed_on": "2026-08-07"
     }
    ],
@@ -9262,6 +9259,7 @@ const KLEERER_DATA = {
    "purity_tags": [
     "added_sugar",
     "added_sugar",
+    "acidity_regulator",
     "coating"
    ],
    "additives_detail": [
@@ -9291,9 +9289,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 16,
     "dose": 20,
-    "purity": 12,
+    "purity": 11,
     "transparency": 4,
-    "total": 52,
+    "total": 51,
     "grade": "C",
     "red_card": false,
     "banned_substances": []
@@ -9357,6 +9355,8 @@ const KLEERER_DATA = {
    "dose_note": "1.9 mg/day — EFSA sleep-onset dose, within the French ceiling.",
    "purity_tags": [
     "added_sugar",
+    "acidity_regulator",
+    "acidity_regulator",
     "coating",
     "undisclosed_minor"
    ],
@@ -9393,9 +9393,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 16,
     "dose": 20,
-    "purity": 19,
+    "purity": 17,
     "transparency": 4,
-    "total": 59,
+    "total": 57,
     "grade": "C",
     "red_card": false,
     "banned_substances": []
@@ -10520,10 +10520,11 @@ const KLEERER_DATA = {
    "dose_tier": 20,
    "dose_note": "5 g peptides/day — in the studied range.",
    "purity_tags": [
+    "acidity_regulator",
+    "acidity_regulator",
     "bulking_filler",
     "sweetener_d",
     "sweetener_b",
-    "acidity_regulator",
     "undisclosed_minor"
    ],
    "additives_detail": [
@@ -10545,12 +10546,6 @@ const KLEERER_DATA = {
    "review_pending": [],
    "reviewed": [
     {
-     "string": "correcteur d'acidité : acide malique",
-     "verdict": "penalty:acidity_regulator",
-     "note": "malic acid (E296), trace acidity regulator",
-     "reviewed_on": "2026-08-07"
-    },
-    {
      "string": "arômes",
      "verdict": "penalty:undisclosed_minor",
      "note": "flavouring declared without stating its origin",
@@ -10565,9 +10560,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 16,
     "dose": 20,
-    "purity": 18,
+    "purity": 17,
     "transparency": 8,
-    "total": 62,
+    "total": 61,
     "grade": "C",
     "red_card": false,
     "banned_substances": []
@@ -10629,6 +10624,7 @@ const KLEERER_DATA = {
    "dose_tier": 20,
    "dose_note": "13 g peptides/day — in the studied range.",
    "purity_tags": [
+    "acidity_regulator",
     "banned",
     "added_sugar",
     "added_sugar",
@@ -11198,6 +11194,7 @@ const KLEERER_DATA = {
     "lecithin",
     "thickener",
     "thickener",
+    "acidity_regulator",
     "sweetener_d",
     "undisclosed_minor"
    ],
@@ -11235,9 +11232,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 18,
     "dose": 20,
-    "purity": 17,
+    "purity": 16,
     "transparency": 20,
-    "total": 75,
+    "total": 74,
     "grade": "B",
     "red_card": false,
     "banned_substances": []
@@ -12551,11 +12548,12 @@ const KLEERER_DATA = {
    "dose_tier": 20,
    "dose_note": "1000 mg/day — saturating dose.",
    "purity_tags": [
+    "acidity_regulator",
+    "acidity_regulator",
     "polyol",
     "synthetic_carrier",
     "sweetener_b",
-    "artificial_colour",
-    "acidity_regulator"
+    "artificial_colour"
    ],
    "additives_detail": [
     "acidifiant : acide citrique",
@@ -12577,12 +12575,6 @@ const KLEERER_DATA = {
    "review_pending": [],
    "reviewed": [
     {
-     "string": "poudre à lever : carbonate de soude",
-     "verdict": "penalty:acidity_regulator",
-     "note": "sodium carbonate (E500), raising agent",
-     "reviewed_on": "2026-08-07"
-    },
-    {
      "string": "colorant : E160",
      "verdict": "neutral",
      "note": "carotenoid colour (E160), plant-derived",
@@ -12597,9 +12589,9 @@ const KLEERER_DATA = {
    "scores": {
     "form": 16,
     "dose": 20,
-    "purity": 20,
+    "purity": 19,
     "transparency": 4,
-    "total": 60,
+    "total": 59,
     "grade": "C",
     "red_card": false,
     "banned_substances": []

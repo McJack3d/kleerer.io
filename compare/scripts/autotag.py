@@ -93,6 +93,25 @@ RULES = [
     ("coating",          ["enrobage", "coating", "cire de carnauba", "carnauba",
                           "shellac", "e903", "e904", "carbonate de calcium",
                           "hydroxypropylcellulose", "hydroxypropylmethylcellulose"]),
+    # Acidity regulators and raising agents — the -1 band (METHODOLOGY §2d).
+    #
+    # MUST STAY LAST in RULES. Mineral citrates and carbonates are ACTIVES or
+    # already-classified excipients: "citrate de calcium" is a bulking filler,
+    # "carbonate de magnesium" is anti-caking, "carbonate de calcium" is a
+    # coating, and magnesium/zinc/potassium citrate are the product itself.
+    # Every one of those is matched by an earlier rule, and first match wins, so
+    # ordering is what keeps this rule from taxing a chelated mineral for the
+    # crime of being a citrate. Keywords below are either an explicit label ROLE
+    # ("correcteur d'acidité :") or an acidulant that is never an active.
+    ("acidity_regulator", ["correcteur d'acidite", "acidity regulator",
+                           "poudre a lever", "raising agent",
+                           "acide citrique", "citric acid",
+                           "citrate de sodium", "sodium citrate",
+                           "acide malique", "malic acid",
+                           "acide tartrique", "tartaric acid",
+                           "hydroxyde de potassium", "potassium hydroxide",
+                           "carbonate de soude", "carbonate de sodium",
+                           "sodium carbonate"]),
 ]
 
 # Explicitly recognised as NON-penalised (incl. Tier-A natural sweeteners and the
@@ -102,7 +121,10 @@ NEUTRAL_KEYWORDS = [
     "huile de colza", "huile d'olive", "huile de coco", "huile mct", "mct",
     "huile de tournesol", "huile vegetale", "triglycerides a chaine moyenne",
     "tocopherol", "tocopherols", "vitamine e", "romarin", "rosemary",
-    "acide citrique", "citric acid", "citrate de sodium", "arome naturel",
+    # citric acid / sodium citrate moved to the acidity_regulator rule (-1),
+    # so the same chemistry no longer scores differently depending on which
+    # acidifier a brand happened to choose (METHODOLOGY §2d).
+    "arome naturel",
     "natural flavour", "natural flavor", "lactase", "tolerase", "sel", "salt",
     "betterave", "spiruline", "carthame", "carotte", "sureau", "curcuma",
     "concentres de", "jus de", "bioflavonoide", "flavonoide", "microbiomex",

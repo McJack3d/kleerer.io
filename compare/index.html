@@ -221,9 +221,21 @@
   .prose th{background:var(--soft); font-weight:400}
 
   footer{border-top:1px solid var(--line)}
-  .fwrap{max-width:1180px; margin:0 auto; padding:32px var(--pad); font-size:.75rem; color:var(--muted); line-height:1.7}
+  .fwrap{max-width:1180px; margin:0 auto; padding:18px var(--pad) 20px; font-size:.75rem; color:var(--muted); line-height:1.7}
   .fwrap .disclaimer{max-width:72ch}
-  .fwrap .row{display:flex; gap:20px; margin-top:20px; flex-wrap:wrap; align-items:baseline}
+  /* Folded by default: the legal text is long, load-bearing, and read once.
+     The safety line stays on the summary so it is never behind a click. */
+  .fdet summary{list-style:none; cursor:pointer; display:flex; gap:8px; align-items:baseline;
+    padding:2px 0; color:var(--muted); max-width:72ch}
+  .fdet summary::-webkit-details-marker{display:none}
+  .fdet summary::before{content:"+"; font-family:ui-monospace,monospace; opacity:.55; flex:none}
+  .fdet[open] summary::before{content:"–"}
+  .fdet summary:hover, .fdet summary:focus-visible{color:var(--ink)}
+  .fdet summary:hover::before, .fdet[open] summary::before{opacity:1}
+  .fdet .fbody{margin-top:12px; animation:rise .25s ease both}
+  .fdet .fbody p+p{margin-top:10px}
+  @media (prefers-reduced-motion: reduce){ .fdet .fbody{animation:none} }
+  .fwrap .row{display:flex; gap:20px; margin-top:16px; flex-wrap:wrap; align-items:baseline}
   .fwrap .flogo{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif; font-weight:bold; font-size:1rem; letter-spacing:-.04em; text-decoration:none}
   .fwrap a{color:var(--muted)}
   .fwrap a:hover{color:var(--ink)}
@@ -307,9 +319,14 @@
 
 <footer>
   <div class="fwrap">
+    <details class="fdet">
+    <summary><span data-i18n-html="footSummary"><b>Not medical advice.</b> Prices, licence and data rights — open the detail</span></summary>
+    <div class="fbody">
     <p class="disclaimer" data-i18n-html="footDisclaimer"><b>Not medical advice.</b> Scores reflect label composition and public transparency only — not whether a supplement is right for you, and not independent lab verification of batch content. Dietary supplements are not a substitute for a varied diet. Talk to a healthcare professional before supplementing, especially if you are pregnant, on medication, or have a medical condition.</p>
     <p style="margin-top:10px" data-i18n-html="footPrices">Prices are EU list prices, snapshot <b>July 2026</b> — several brands (Myprotein, Bulk, Prozis) run structural promotions, so effective prices can be 30–45% lower. Data confidence is flagged per product. Found an error? The dataset and scoring script are open — please fix us.</p>
     <p style="margin-top:10px" data-i18n-html="footRights">© 2026 kleerer. Code <b>AGPL-3.0</b> · methodology <b>CC BY-NC-ND 4.0</b> · catalogue <b>CC BY-NC-SA 4.0</b>. This catalogue is a protected database (Dir. 96/9/EC; CPI art. L.341-1 ff.): individual facts are free to quote, extraction of a <b>substantial part</b> is reserved. Text-and-data-mining rights reserved (Dir. (EU) 2019/790 art. 4(3); CPI art. L.122-5-3) — see <a href="/.well-known/tdmrep.json">tdmrep.json</a> and <a href="/terms/">terms</a>.</p>
+    </div>
+    </details>
     <div class="row">
       <a class="flogo" href="../">kleerer<span class="logo-dot">.</span></a>
       <span data-i18n="footMeta">p1 · compare + p2 · stack (beta) — open method, private data · AGPL-3.0 · v1.5</span>
