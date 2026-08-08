@@ -13,6 +13,7 @@ kleerer. makes supplement science available to people looking for advice or reco
 - **`NOTICE.md`** — which licence applies to which layer, and exactly what the database right does and does not claim. Read this before reusing anything.
 - **`robots.txt` / `.well-known/tdmrep.json`** — the TDM reservation in human- and machine-readable form.
 - **`analytics.js`** — cookieless audience measurement: no cookies, no identifiers, no personal data, DNT/GPC honoured, so no consent banner and no self-selected baseline. Inert until a provider is configured.
+- **`manifest.webmanifest` / `sw.js` / `pwa.js` / `icons/`** — the installable app. `compare/` is a PWA: add it to a home screen and **the whole catalogue works offline**, which is the point — the moment you most want a score is standing at the shelf, which is exactly where the signal dies. The ~390 KB catalogue is precached, so it runs with the radio off. The service worker touches our own origin only, stores nothing about the visitor, and sends nothing anywhere.
 - **`CNAME`** — GitHub Pages custom-domain config, points the repo at `kleerer.com`.
 
 ## What it's used for
