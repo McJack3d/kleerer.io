@@ -21,6 +21,13 @@
    "seen_as": "agent de charge : farine de coco",
    "verdict": "neutral"
   },
+  "agent de charge : phosphates de calcium": {
+   "note": "Calcium phosphates (E341) used as a bulking agent — same ruling as « agent de charge (phosphates de calcium) ».",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "agent de charge : phosphates de calcium",
+   "verdict": "penalty:bulking_filler"
+  },
   "antiagglomerant : oxyde de magnesium": {
    "note": "magnesium oxide used as an anti-caking agent, not as the active",
    "reviewed_by": "Alexandre Bredillot",
@@ -126,6 +133,13 @@
    "seen_as": "colorant : E160",
    "verdict": "neutral"
   },
+  "colorant : oxydes et hydroxydes de fer": {
+   "note": "Iron oxides (E172), mineral pigment in the capsule shell — not an azo dye; same ruling as the three earlier spellings.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "colorant : oxydes et hydroxydes de fer",
+   "verdict": "neutral"
+  },
   "colorants (oxydes de fer et hydroxydes de fer)": {
    "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye, no child-attention warning",
    "reviewed_by": "Alexandre Bredillot",
@@ -160,6 +174,13 @@
    "reviewed_on": "2026-08-07",
    "seen_as": "correcteur d'acidité : hydroxyde de potassium",
    "verdict": "penalty:acidity_regulator"
+  },
+  "d-ribose (69 mg)": {
+   "note": "D-ribose at 69 mg is a declared co-ingredient of the liposomal preparation, not an added sugar for taste; below any dietary relevance.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "D-ribose (69 mg)",
+   "verdict": "neutral"
   },
   "emulsifiant (e 433)": {
    "note": "polysorbate 80 (E433), the emulsifier that makes micellar curcumin water-soluble",
@@ -203,6 +224,13 @@
    "seen_as": "extrait d'écorce de quillaja bio",
    "verdict": "penalty:lecithin"
   },
+  "farine de coco": {
+   "note": "Coconut flour used as a bulking agent — a food ingredient, not an additive.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "farine de coco",
+   "verdict": "neutral"
+  },
   "farine de coco bio": {
    "note": "coconut flour, food ingredient",
    "reviewed_by": "Alexandre Bredillot",
@@ -229,6 +257,13 @@
    "reviewed_by": "Alexandre Bredillot",
    "reviewed_on": "2026-09-06",
    "seen_as": "fibre de pois",
+   "verdict": "neutral"
+  },
+  "fibres d'avoine (avena sativa)": {
+   "note": "Oat fibre used as a bulking agent — a food fibre, same class as acacia fibre, which §2 treats as neutral.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "fibres d'avoine (Avena sativa)",
    "verdict": "neutral"
   },
   "fibres de coco bio": {
@@ -266,12 +301,33 @@
    "seen_as": "lait écrémé en poudre",
    "verdict": "neutral"
   },
+  "lithothamne": {
+   "note": "Lithothamnium is a calcified red alga — natural calcium carbonate used as a filler; §2b treats calcium carbonate as neutral.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "lithothamne",
+   "verdict": "neutral"
+  },
+  "lubrifiants : fruit de coco et racine de manioc": {
+   "note": "Coconut fruit and cassava root used as a flow agent in place of magnesium stearate — whole-food ingredients with no additive number; nothing to penalise.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "lubrifiants : fruit de coco et racine de manioc",
+   "verdict": "neutral"
+  },
   "phosphate de calcium": {
    "note": "calcium phosphate",
    "reviewed_by": "Alexandre Bredillot",
    "reviewed_on": "2026-08-07",
    "seen_as": "phosphate de calcium",
    "verdict": "penalty:bulking_filler"
+  },
+  "phosphatidylcholine": {
+   "note": "Phosphatidylcholine is the phospholipid that lecithin consists of — here it forms the liposome wall. Same class, same tag as « émulsifiant : lécithines » for consistency.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "phosphatidylcholine",
+   "verdict": "penalty:lecithin"
   },
   "phospholipides de tournesol": {
    "note": "sunflower phospholipids — the lecithin carrier of the phytosome, an emulsifier",
@@ -287,11 +343,25 @@
    "seen_as": "poudre à lever : carbonate de soude",
    "verdict": "penalty:acidity_regulator"
   },
+  "poudre de fleurs d'hibiscus": {
+   "note": "Hibiscus flower powder used as the capsule filler — a food botanical, not an additive.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "poudre de fleurs d'hibiscus",
+   "verdict": "neutral"
+  },
   "regulateur d'acidite (hydroxyde d'ammonium)": {
    "note": "ammonium hydroxide (E527), trace acidity regulator in the capsule shell",
    "reviewed_by": "Alexandre Bredillot",
    "reviewed_on": "2026-09-06",
    "seen_as": "régulateur d'acidité (hydroxyde d'ammonium)",
+   "verdict": "penalty:acidity_regulator"
+  },
+  "regulateur d'acidite : hydroxyde d'ammonium": {
+   "note": "E527 ammonium hydroxide in the capsule-shell coating/print — an acidity regulator; the −1 band applies to acidity regulators as a class.",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "régulateur d'acidité : hydroxyde d'ammonium",
    "verdict": "penalty:acidity_regulator"
   },
   "support comprime multicouche": {

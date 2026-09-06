@@ -1,0 +1,441 @@
+[
+ {
+  "category": "tribulus",
+  "brand": "Dynveo",
+  "name": "Tribulus terrestris BIO VemoHerb®TS",
+  "variant": "gélules · 120",
+  "price_eur": 27.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 2,
+  "active_per_unit": 525,
+  "active_unit": "mg extract",
+  "form": "extrait sec bio 10:1 VemoHerb®TS, standardisé à 90 % min. de saponines (dont 20 % de furostanol)",
+  "vegan": true,
+  "additives": [
+   "tunique d'origine végétale (hypromellose cellulose)"
+  ],
+  "certifications": [
+   "agriculture biologique (FR-BIO-10)",
+   "Clean Label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "VemoHerb®TS",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/tribulus-terrestris-bio",
+  "ean": null,
+  "notes": "Posologie 1 à 3 gélules/j (énergie) ou 2/j (« bien-être hormonal ») — chiffré à 2/j. Existe en 300 gélules (64,90 €)."
+ },
+ {
+  "category": "tribulus",
+  "brand": "Nutrimuscle",
+  "name": "Tribulus Terrestris",
+  "variant": "gélules · 120",
+  "price_eur": 14.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 4,
+  "active_per_unit": 450,
+  "active_unit": "mg extract",
+  "form": "extrait de parties aériennes titré à 40 % de saponines",
+  "vegan": true,
+  "additives": [
+   "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Sport Protect",
+   "certificat WADA",
+   "Halal"
+  ],
+  "coa_published": true,
+  "third_party_cert": true,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Déconseillé aux femmes enceintes ou allaitantes, aux enfants et adolescents, et en cas de traitement antihypertenseur ou antidiabétique (étiquette)."
+  ],
+  "confidence": "high",
+  "url": "https://www.nutrimuscle.com/products/tribulus-terrestris",
+  "ean": null,
+  "notes": "1 800 mg d'extrait/j (720 mg de saponines) en 4 gélules."
+ },
+ {
+  "category": "tribulus",
+  "brand": "Nutri&Co",
+  "name": "Tribulus Terrestris",
+  "variant": "gélules · 120",
+  "price_eur": 19.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 3,
+  "active_per_unit": 350,
+  "active_unit": "mg extract",
+  "form": "extrait 10:1 titré en saponines (90 % : 315 mg par gélule)",
+  "vegan": true,
+  "additives": [
+   "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://nutriandco.com/fr/produits/tribulus-terrestris",
+  "ean": null,
+  "notes": "350 à 1 050 mg/j (1 à 3 gélules) selon la marque — chiffré à 3/j."
+ },
+ {
+  "category": "tribulus",
+  "brand": "Cuure",
+  "name": "Tribulus",
+  "variant": "gélules · 60",
+  "price_eur": 18.9,
+  "price_note": "cuure.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 2,
+  "active_per_unit": 1000,
+  "active_unit": "mg extract",
+  "form": "extrait de fruit standardisé à 40 % de saponines (400 mg de saponines par gélule)",
+  "vegan": true,
+  "additives": [
+   "fibres d'avoine (Avena sativa)",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Vegan",
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Réservé à l'adulte de plus de 21 ans ; déconseillé en cas de grossesse, d'allaitement, d'antidiabétiques ou d'antihypertenseurs (étiquette)."
+  ],
+  "confidence": "medium",
+  "url": "https://cuure.com/produits/tribulus",
+  "ean": null,
+  "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » (extrait de fruit, fibres d'avoine, gélule végétale). 2 gélules/j = 2 000 mg d'extrait, 800 mg de saponines."
+ },
+ {
+  "category": "tribulus",
+  "brand": "Onatera",
+  "name": "Tribulus terrestris titré 650 mg",
+  "variant": "gélules · 120",
+  "price_eur": 16.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 2,
+  "active_per_unit": 325,
+  "active_unit": "mg extract",
+  "form": "extrait sec de fruit titré à 40 % de saponines",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale",
+   "agent de charge : fibre d'acacia"
+  ],
+  "certifications": [
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-tribulus-terrestris-titre-650-mg-120-gelules-orfito",
+  "ean": null,
+  "notes": "650 mg d'extrait/j (260 mg de saponines) en 2 gélules."
+ },
+ {
+  "category": "tribulus",
+  "brand": "Orfito",
+  "name": "Tribulus Bio 300 mg",
+  "variant": "gélules · 90",
+  "price_eur": 9.9,
+  "price_note": "onatera.com live 06/09/2026 (en rupture ce jour)",
+  "units_pack": 90,
+  "unit_name": "gélule",
+  "units_per_day": 3,
+  "active_per_unit": 300,
+  "active_unit": "mg extract",
+  "form": "poudre de fruits bio (Tribulus terrestris), non standardisée",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale",
+   "agent de charge : gomme d'acacia bio"
+  ],
+  "certifications": [
+   "agriculture biologique",
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-tribulus-bio-300-mg-90-gelules-vegetales-orfito",
+  "ean": null,
+  "notes": "900 mg de poudre/j en 3 gélules ; pas de teneur en saponines déclarée."
+ },
+ {
+  "category": "fenugreek",
+  "brand": "BioTechUSA",
+  "name": "Fenugreek",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 2,
+  "active_per_unit": 750,
+  "active_unit": "mg extract",
+  "form": "extrait de graines de fenugrec (74,2 % de la gélule), non standardisé",
+  "vegan": false,
+  "additives": [
+   "enveloppe de la gélule : gélatine",
+   "agent d'enrobage : shellac",
+   "colorant : oxydes et hydroxydes de fer",
+   "régulateur d'acidité : hydroxyde d'ammonium",
+   "régulateur d'acidité : hydroxyde de potassium",
+   "agent de charge : phosphates de calcium",
+   "anti-agglomérant : sels de magnésium d'acides gras",
+   "anti-agglomérant : dioxyde de silicium"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://shop.biotechusa.fr/products/fenugreek-60-gelules-mega",
+  "ean": null,
+  "notes": "1 500 mg d'extrait/j en 2 gélules ; teneur en saponines non déclarée."
+ },
+ {
+  "category": "fenugreek",
+  "brand": "Nat&Form",
+  "name": "Fenugrec Bio en gélules",
+  "variant": "gélules · 200",
+  "price_eur": 12.5,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 200,
+  "unit_name": "gélule",
+  "units_per_day": 4,
+  "active_per_unit": 350,
+  "active_unit": "mg extract",
+  "form": "poudre de graines de fenugrec bio (contient du gluten)",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Contient du gluten (étiquette)."
+  ],
+  "confidence": "high",
+  "url": "https://www.nat-form.com/products/fenugrec-bio",
+  "ean": null,
+  "notes": "1 400 mg de poudre/j en 4 gélules."
+ },
+ {
+  "category": "fenugreek",
+  "brand": "Nutripure",
+  "name": "Fenugrec titré à 50 % de saponines",
+  "variant": "gélules · 120",
+  "price_eur": 24.9,
+  "price_note": "nutripure.fr live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 4,
+  "active_per_unit": 600,
+  "active_unit": "mg extract",
+  "form": "extrait de graines titré à 50 % de saponines stéroïdiennes",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale (agent d'enrobage : pullulan)",
+   "agent de charge : gomme d'acacia",
+   "huile de tournesol (0,1 %)"
+  ],
+  "certifications": [
+   "Fabriqué en France",
+   "norme anti-dopage"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.nutripure.fr/fr/musculation/6-gelules-fenugrec-saponines.html",
+  "ean": null,
+  "notes": "2 400 mg d'extrait/j (1 200 mg de saponines) en 4 gélules — bien au-dessus des 500–600 mg des essais testostérone ; la marque le positionne glycémie/digestion."
+ },
+ {
+  "category": "fenugreek",
+  "brand": "Superdiet",
+  "name": "Fenugrec Bio",
+  "variant": "gélules · 40",
+  "price_eur": 8.3,
+  "price_note": "superdiet.com live 06/09/2026",
+  "units_pack": 40,
+  "unit_name": "gélule",
+  "units_per_day": 4,
+  "active_per_unit": 335,
+  "active_unit": "mg extract",
+  "form": "poudre de semence de fenugrec bio",
+  "vegan": true,
+  "additives": [
+   "gélule d'hydroxypropylméthylcellulose",
+   "agent de charge : gomme d'acacia bio",
+   "antiagglomérant : carbonate de calcium"
+  ],
+  "certifications": [
+   "Agriculture Biologique",
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": true,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Déconseillé aux femmes enceintes ou allaitantes, aux enfants de moins de 12 ans, en cas d'allergie aux Fabacées et de troubles hépatiques (étiquette)."
+  ],
+  "confidence": "high",
+  "url": "https://www.superdiet.com/fr/p13864_fenugrec_bio_40_gelules.php",
+  "ean": null,
+  "notes": "4 gélules/j (1 340 mg) pour l'appétit, jusqu'à 6 pour la digestion — chiffré à 4/j."
+ },
+ {
+  "category": "fenugreek",
+  "brand": "NutriVie",
+  "name": "Fenugrec Bio",
+  "variant": "gélules · 60",
+  "price_eur": 10.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 3,
+  "active_per_unit": 335,
+  "active_unit": "mg extract",
+  "form": "poudre de graines de fenugrec bio",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-fenugrec-bio-60-gelules-nutrivie",
+  "ean": null,
+  "notes": "3 à 6 gélules/j — chiffré à 3/j (1 005 mg)."
+ },
+ {
+  "category": "zma",
+  "brand": "Olimp Sport Nutrition",
+  "name": "ZMA",
+  "variant": "capsules · 120",
+  "price_eur": 31.0,
+  "price_note": "olimpstore.fr live 06/09/2026 (prix régulier 37,99 €)",
+  "units_pack": 120,
+  "unit_name": "capsule",
+  "units_per_day": 1,
+  "active_per_unit": 10,
+  "active_unit": "mg elemental Zn",
+  "form": "zinc monométhionine L-OptiZinc® + aspartate de zinc ; magnésium citrate + oxyde ; vitamine B6 (3,5 mg)",
+  "vegan": false,
+  "additives": [
+   "antiagglomérant : sels de magnésium d'acides gras",
+   "gélule : gélatine"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "L-OptiZinc®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://olimpstore.fr/olimp-zma-120-gelules-545",
+  "ean": null,
+  "notes": "1 gélule/j selon l'étiquette : 10 mg de zinc + 150 mg de magnésium + 3,5 mg de B6 — un tiers de la dose de l'essai ZMA (30 mg / 450 mg / 10,5 mg).",
+  "secondary_actives": [
+   {
+    "category": "magnesium",
+    "per_day": 150
+   }
+  ]
+ },
+ {
+  "category": "zma",
+  "brand": "Eiyolab",
+  "name": "ZMA HT",
+  "variant": "comprimés · 90",
+  "price_eur": 24.9,
+  "price_note": "eiyolab.com live 06/09/2026",
+  "units_pack": 90,
+  "unit_name": "comprimé",
+  "units_per_day": 3,
+  "active_per_unit": 5,
+  "active_unit": "mg elemental Zn",
+  "form": "zinc bisglycinate (15 mg/3 cp) ; magnésium oxyde + MagShape® microencapsulé (300 mg) ; vitamine B6 (2 mg) ; mélatonine (1,8 mg)",
+  "vegan": true,
+  "additives": [
+   "amidon de maïs",
+   "lécithine de tournesol",
+   "gélule végétale",
+   "lubrifiants : fruit de coco et racine de manioc"
+  ],
+  "certifications": [
+   "HACCP"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "MagShape®",
+  "full_label": true,
+  "flags": [
+   "Contient 1,8 mg de mélatonine par dose : déconseillé en cas de maladie inflammatoire ou auto-immune, de grossesse, d'allaitement, aux enfants et adolescents, et avant toute activité exigeant de la vigilance (étiquette)."
+  ],
+  "confidence": "high",
+  "url": "https://www.eiyolab.com/zma-ht",
+  "ean": null,
+  "notes": "3 comprimés au coucher = 15 mg de zinc, 300 mg de magnésium, 2 mg de B6 et 1,8 mg de mélatonine.",
+  "secondary_actives": [
+   {
+    "category": "magnesium",
+    "per_day": 300
+   },
+   {
+    "category": "melatonin",
+    "per_day": 1.8
+   }
+  ]
+ }
+]

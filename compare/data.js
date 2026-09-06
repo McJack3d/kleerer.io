@@ -19,8 +19,8 @@ const KLEERER_DATA = {
   "region": "EU/FR",
   "currency": "EUR",
   "generated": "2026-09-06",
-  "n_products": 193,
-  "n_categories": 15,
+  "n_products": 239,
+  "n_categories": 23,
   "n_red_cards": 1,
   "n_withheld_for_review": 0,
   "botanical_categories": [
@@ -28,6 +28,11 @@ const KLEERER_DATA = {
    "maca",
    "rhodiola",
    "curcumin"
+  ],
+  "booster_categories": [
+   "tribulus",
+   "fenugreek",
+   "zma"
   ],
   "methodology_version": "1.2"
  },
@@ -2531,6 +2536,1063 @@ const KLEERER_DATA = {
    },
    "label_hash": "b433002c50ed",
    "rank_in_category": 4
+  },
+  {
+   "category": "tribulus",
+   "brand": "Dynveo",
+   "name": "Tribulus terrestris BIO VemoHerb®TS",
+   "variant": "gélules · 120",
+   "price_eur": 27.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 2,
+   "active_per_unit": 525,
+   "active_unit": "mg extract",
+   "form": "extrait sec bio 10:1 VemoHerb®TS, standardisé à 90 % min. de saponines (dont 20 % de furostanol)",
+   "vegan": true,
+   "additives": [
+    "tunique d'origine végétale (hypromellose cellulose)"
+   ],
+   "certifications": [
+    "agriculture biologique (FR-BIO-10)",
+    "Clean Label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "VemoHerb®TS",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/tribulus-terrestris-bio",
+   "ean": null,
+   "notes": "Posologie 1 à 3 gélules/j (énergie) ou 2/j (« bien-être hormonal ») — chiffré à 2/j. Existe en 300 gélules (64,90 €).",
+   "id": "dynveo-tribulus-terrestris-bio-vemoherb-ts-gelules-120",
+   "form_tier": 14,
+   "form_note": "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men.",
+   "dose_tier": 8,
+   "dose_note": "1050 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [],
+   "additives_detail": [
+    "tunique d'origine végétale (hypromellose cellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "VemoHerb®TS",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 8,
+    "purity": 30,
+    "transparency": 20,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.465,
+    "std": 0.465,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "6036394f1943",
+   "rank_in_category": 2
+  },
+  {
+   "category": "tribulus",
+   "brand": "Nutrimuscle",
+   "name": "Tribulus Terrestris",
+   "variant": "gélules · 120",
+   "price_eur": 14.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 4,
+   "active_per_unit": 450,
+   "active_unit": "mg extract",
+   "form": "extrait de parties aériennes titré à 40 % de saponines",
+   "vegan": true,
+   "additives": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Sport Protect",
+    "certificat WADA",
+    "Halal"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Déconseillé aux femmes enceintes ou allaitantes, aux enfants et adolescents, et en cas de traitement antihypertenseur ou antidiabétique (étiquette)."
+   ],
+   "confidence": "high",
+   "url": "https://www.nutrimuscle.com/products/tribulus-terrestris",
+   "ean": null,
+   "notes": "1 800 mg d'extrait/j (720 mg de saponines) en 4 gélules.",
+   "id": "nutrimuscle-tribulus-terrestris-gelules-120",
+   "form_tier": 14,
+   "form_note": "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men.",
+   "dose_tier": 8,
+   "dose_note": "1800 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 14,
+    "dose": 8,
+    "purity": 30,
+    "transparency": 26,
+    "total": 78,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.498,
+    "std": 0.498,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 4
+   },
+   "label_hash": "2804fc6df982",
+   "rank_in_category": 1
+  },
+  {
+   "category": "tribulus",
+   "brand": "Nutri&Co",
+   "name": "Tribulus Terrestris",
+   "variant": "gélules · 120",
+   "price_eur": 19.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 3,
+   "active_per_unit": 350,
+   "active_unit": "mg extract",
+   "form": "extrait 10:1 titré en saponines (90 % : 315 mg par gélule)",
+   "vegan": true,
+   "additives": [
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://nutriandco.com/fr/produits/tribulus-terrestris",
+   "ean": null,
+   "notes": "350 à 1 050 mg/j (1 à 3 gélules) selon la marque — chiffré à 3/j.",
+   "id": "nutri-co-tribulus-terrestris-gelules-120",
+   "form_tier": 14,
+   "form_note": "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men.",
+   "dose_tier": 8,
+   "dose_note": "1050 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 8,
+    "purity": 30,
+    "transparency": 16,
+    "total": 68,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.497,
+    "std": 0.497,
+    "std_label": "€ / day",
+    "days_per_pack": 40,
+    "price_tier": 4
+   },
+   "label_hash": "8c461f78f646",
+   "rank_in_category": 3
+  },
+  {
+   "category": "tribulus",
+   "brand": "Cuure",
+   "name": "Tribulus",
+   "variant": "gélules · 60",
+   "price_eur": 18.9,
+   "price_note": "cuure.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 2,
+   "active_per_unit": 1000,
+   "active_unit": "mg extract",
+   "form": "extrait de fruit standardisé à 40 % de saponines (400 mg de saponines par gélule)",
+   "vegan": true,
+   "additives": [
+    "fibres d'avoine (Avena sativa)",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Vegan",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Réservé à l'adulte de plus de 21 ans ; déconseillé en cas de grossesse, d'allaitement, d'antidiabétiques ou d'antihypertenseurs (étiquette)."
+   ],
+   "confidence": "medium",
+   "url": "https://cuure.com/produits/tribulus",
+   "ean": null,
+   "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » (extrait de fruit, fibres d'avoine, gélule végétale). 2 gélules/j = 2 000 mg d'extrait, 800 mg de saponines.",
+   "id": "cuure-tribulus-gelules-60",
+   "form_tier": 14,
+   "form_note": "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men.",
+   "dose_tier": 8,
+   "dose_note": "2000 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [],
+   "additives_detail": [
+    "fibres d'avoine (Avena sativa)",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "fibres d'avoine (Avena sativa)",
+     "verdict": "neutral",
+     "note": "Oat fibre used as a bulking agent — a food fibre, same class as acacia fibre, which §2 treats as neutral.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 8,
+    "purity": 30,
+    "transparency": 4,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.63,
+    "std": 0.63,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "cd80b24ef9ec",
+   "rank_in_category": 4
+  },
+  {
+   "category": "tribulus",
+   "brand": "Onatera",
+   "name": "Tribulus terrestris titré 650 mg",
+   "variant": "gélules · 120",
+   "price_eur": 16.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 2,
+   "active_per_unit": 325,
+   "active_unit": "mg extract",
+   "form": "extrait sec de fruit titré à 40 % de saponines",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale",
+    "agent de charge : fibre d'acacia"
+   ],
+   "certifications": [
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-tribulus-terrestris-titre-650-mg-120-gelules-orfito",
+   "ean": null,
+   "notes": "650 mg d'extrait/j (260 mg de saponines) en 2 gélules.",
+   "id": "onatera-tribulus-terrestris-titre-650-mg-gelules-120",
+   "form_tier": 14,
+   "form_note": "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men.",
+   "dose_tier": 8,
+   "dose_note": "650 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale",
+    "agent de charge : fibre d'acacia"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 8,
+    "purity": 28,
+    "transparency": 4,
+    "total": 54,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.282,
+    "std": 0.282,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "3b0afb1c3457",
+   "rank_in_category": 5
+  },
+  {
+   "category": "tribulus",
+   "brand": "Orfito",
+   "name": "Tribulus Bio 300 mg",
+   "variant": "gélules · 90",
+   "price_eur": 9.9,
+   "price_note": "onatera.com live 06/09/2026 (en rupture ce jour)",
+   "units_pack": 90,
+   "unit_name": "gélule",
+   "units_per_day": 3,
+   "active_per_unit": 300,
+   "active_unit": "mg extract",
+   "form": "poudre de fruits bio (Tribulus terrestris), non standardisée",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale",
+    "agent de charge : gomme d'acacia bio"
+   ],
+   "certifications": [
+    "agriculture biologique",
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-tribulus-bio-300-mg-90-gelules-vegetales-orfito",
+   "ean": null,
+   "notes": "900 mg de poudre/j en 3 gélules ; pas de teneur en saponines déclarée.",
+   "id": "orfito-tribulus-bio-300-mg-gelules-90",
+   "form_tier": 8,
+   "form_note": "Fruit/plant powder, unstandardised.",
+   "dose_tier": 8,
+   "dose_note": "900 mg/day — no tribulus dose has raised testosterone in men; scored as a token.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale",
+    "agent de charge : gomme d'acacia bio"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 8,
+    "dose": 8,
+    "purity": 28,
+    "transparency": 4,
+    "total": 48,
+    "grade": "D",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.33,
+    "std": 0.33,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "9226dbe6f86d",
+   "rank_in_category": 6
+  },
+  {
+   "category": "fenugreek",
+   "brand": "BioTechUSA",
+   "name": "Fenugreek",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 2,
+   "active_per_unit": 750,
+   "active_unit": "mg extract",
+   "form": "extrait de graines de fenugrec (74,2 % de la gélule), non standardisé",
+   "vegan": false,
+   "additives": [
+    "enveloppe de la gélule : gélatine",
+    "agent d'enrobage : shellac",
+    "colorant : oxydes et hydroxydes de fer",
+    "régulateur d'acidité : hydroxyde d'ammonium",
+    "régulateur d'acidité : hydroxyde de potassium",
+    "agent de charge : phosphates de calcium",
+    "anti-agglomérant : sels de magnésium d'acides gras",
+    "anti-agglomérant : dioxyde de silicium"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://shop.biotechusa.fr/products/fenugreek-60-gelules-mega",
+   "ean": null,
+   "notes": "1 500 mg d'extrait/j en 2 gélules ; teneur en saponines non déclarée.",
+   "id": "biotechusa-fenugreek-gelules-60",
+   "form_tier": 12,
+   "form_note": "Extract, standardisation not declared.",
+   "dose_tier": 14,
+   "dose_note": "1500 mg/day — above the studied range.",
+   "purity_tags": [
+    "coating",
+    "acidity_regulator",
+    "anticaking",
+    "anticaking",
+    "acidity_regulator",
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "enveloppe de la gélule : gélatine",
+    "agent d'enrobage : shellac",
+    "colorant : oxydes et hydroxydes de fer",
+    "régulateur d'acidité : hydroxyde d'ammonium",
+    "régulateur d'acidité : hydroxyde de potassium",
+    "agent de charge : phosphates de calcium",
+    "anti-agglomérant : sels de magnésium d'acides gras",
+    "anti-agglomérant : dioxyde de silicium"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "colorant : oxydes et hydroxydes de fer",
+     "verdict": "neutral",
+     "note": "Iron oxides (E172), mineral pigment in the capsule shell — not an azo dye; same ruling as the three earlier spellings.",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "régulateur d'acidité : hydroxyde d'ammonium",
+     "verdict": "penalty:acidity_regulator",
+     "note": "E527 ammonium hydroxide in the capsule-shell coating/print — an acidity regulator; the −1 band applies to acidity regulators as a class.",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "agent de charge : phosphates de calcium",
+     "verdict": "penalty:bulking_filler",
+     "note": "Calcium phosphates (E341) used as a bulking agent — same ruling as « agent de charge (phosphates de calcium) ».",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 12,
+    "dose": 14,
+    "purity": 20,
+    "transparency": 4,
+    "total": 50,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 0.265,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "9a7b3bace425",
+   "rank_in_category": 5
+  },
+  {
+   "category": "fenugreek",
+   "brand": "Nat&Form",
+   "name": "Fenugrec Bio en gélules",
+   "variant": "gélules · 200",
+   "price_eur": 12.5,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 200,
+   "unit_name": "gélule",
+   "units_per_day": 4,
+   "active_per_unit": 350,
+   "active_unit": "mg extract",
+   "form": "poudre de graines de fenugrec bio (contient du gluten)",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Contient du gluten (étiquette)."
+   ],
+   "confidence": "high",
+   "url": "https://www.nat-form.com/products/fenugrec-bio",
+   "ean": null,
+   "notes": "1 400 mg de poudre/j en 4 gélules.",
+   "id": "nat-form-fenugrec-bio-en-gelules-gelules-200",
+   "form_tier": 8,
+   "form_note": "Seed powder — a spice, not the trial material.",
+   "dose_tier": 14,
+   "dose_note": "1400 mg/day — above the studied range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 8,
+    "dose": 14,
+    "purity": 30,
+    "transparency": 4,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.25,
+    "std": 0.107,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 50,
+    "price_tier": 1
+   },
+   "label_hash": "714a80e356d7",
+   "rank_in_category": 4
+  },
+  {
+   "category": "fenugreek",
+   "brand": "Nutripure",
+   "name": "Fenugrec titré à 50 % de saponines",
+   "variant": "gélules · 120",
+   "price_eur": 24.9,
+   "price_note": "nutripure.fr live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 4,
+   "active_per_unit": 600,
+   "active_unit": "mg extract",
+   "form": "extrait de graines titré à 50 % de saponines stéroïdiennes",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "agent de charge : gomme d'acacia",
+    "huile de tournesol (0,1 %)"
+   ],
+   "certifications": [
+    "Fabriqué en France",
+    "norme anti-dopage"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutripure.fr/fr/musculation/6-gelules-fenugrec-saponines.html",
+   "ean": null,
+   "notes": "2 400 mg d'extrait/j (1 200 mg de saponines) en 4 gélules — bien au-dessus des 500–600 mg des essais testostérone ; la marque le positionne glycémie/digestion.",
+   "id": "nutripure-fenugrec-titre-a-50-de-saponines-gelules-120",
+   "form_tier": 16,
+   "form_note": "Standardised seed extract.",
+   "dose_tier": 14,
+   "dose_note": "2400 mg/day — above the studied range.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "agent de charge : gomme d'acacia",
+    "huile de tournesol (0,1 %)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 14,
+    "purity": 28,
+    "transparency": 16,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.83,
+    "std": 0.207,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "0b5cacb6d432",
+   "rank_in_category": 1
+  },
+  {
+   "category": "fenugreek",
+   "brand": "Superdiet",
+   "name": "Fenugrec Bio",
+   "variant": "gélules · 40",
+   "price_eur": 8.3,
+   "price_note": "superdiet.com live 06/09/2026",
+   "units_pack": 40,
+   "unit_name": "gélule",
+   "units_per_day": 4,
+   "active_per_unit": 335,
+   "active_unit": "mg extract",
+   "form": "poudre de semence de fenugrec bio",
+   "vegan": true,
+   "additives": [
+    "gélule d'hydroxypropylméthylcellulose",
+    "agent de charge : gomme d'acacia bio",
+    "antiagglomérant : carbonate de calcium"
+   ],
+   "certifications": [
+    "Agriculture Biologique",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Déconseillé aux femmes enceintes ou allaitantes, aux enfants de moins de 12 ans, en cas d'allergie aux Fabacées et de troubles hépatiques (étiquette)."
+   ],
+   "confidence": "high",
+   "url": "https://www.superdiet.com/fr/p13864_fenugrec_bio_40_gelules.php",
+   "ean": null,
+   "notes": "4 gélules/j (1 340 mg) pour l'appétit, jusqu'à 6 pour la digestion — chiffré à 4/j.",
+   "id": "superdiet-fenugrec-bio-gelules-40",
+   "form_tier": 8,
+   "form_note": "Seed powder — a spice, not the trial material.",
+   "dose_tier": 14,
+   "dose_note": "1340 mg/day — above the studied range.",
+   "purity_tags": [
+    "bulking_filler",
+    "coating"
+   ],
+   "additives_detail": [
+    "gélule d'hydroxypropylméthylcellulose",
+    "agent de charge : gomme d'acacia bio",
+    "antiagglomérant : carbonate de calcium"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 8,
+    "dose": 14,
+    "purity": 26,
+    "transparency": 14,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.83,
+    "std": 0.372,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 10,
+    "price_tier": 5
+   },
+   "label_hash": "bd492c80207b",
+   "rank_in_category": 3
+  },
+  {
+   "category": "fenugreek",
+   "brand": "NutriVie",
+   "name": "Fenugrec Bio",
+   "variant": "gélules · 60",
+   "price_eur": 10.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 3,
+   "active_per_unit": 335,
+   "active_unit": "mg extract",
+   "form": "poudre de graines de fenugrec bio",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-fenugrec-bio-60-gelules-nutrivie",
+   "ean": null,
+   "notes": "3 à 6 gélules/j — chiffré à 3/j (1 005 mg).",
+   "id": "nutrivie-fenugrec-bio-gelules-60",
+   "form_tier": 8,
+   "form_note": "Seed powder — a spice, not the trial material.",
+   "dose_tier": 20,
+   "dose_note": "1005 mg/day — the 500–600 mg the testosterone trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 8,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.545,
+    "std": 0.325,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 20,
+    "price_tier": 4
+   },
+   "label_hash": "d8373179fc7c",
+   "rank_in_category": 2
+  },
+  {
+   "category": "zma",
+   "brand": "Olimp Sport Nutrition",
+   "name": "ZMA",
+   "variant": "capsules · 120",
+   "price_eur": 31.0,
+   "price_note": "olimpstore.fr live 06/09/2026 (prix régulier 37,99 €)",
+   "units_pack": 120,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 10,
+   "active_unit": "mg elemental Zn",
+   "form": "zinc monométhionine L-OptiZinc® + aspartate de zinc ; magnésium citrate + oxyde ; vitamine B6 (3,5 mg)",
+   "vegan": false,
+   "additives": [
+    "antiagglomérant : sels de magnésium d'acides gras",
+    "gélule : gélatine"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "L-OptiZinc®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://olimpstore.fr/olimp-zma-120-gelules-545",
+   "ean": null,
+   "notes": "1 gélule/j selon l'étiquette : 10 mg de zinc + 150 mg de magnésium + 3,5 mg de B6 — un tiers de la dose de l'essai ZMA (30 mg / 450 mg / 10,5 mg).",
+   "secondary_actives": [
+    {
+     "category": "magnesium",
+     "per_day": 150
+    }
+   ],
+   "id": "olimp-sport-nutrition-zma-capsules-120",
+   "form_tier": 16,
+   "form_note": "Chelated zinc (monomethionine / bisglycinate) — the ZMA trial material or an equivalent chelate.",
+   "dose_tier": 20,
+   "dose_note": "10 mg zinc/day — covers the reference intake and stays under the 25 mg limit.",
+   "purity_tags": [
+    "anticaking"
+   ],
+   "additives_detail": [
+    "antiagglomérant : sels de magnésium d'acides gras",
+    "gélule : gélatine"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "L-OptiZinc®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 8,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.258,
+    "std": 0.258,
+    "std_label": "€ / day",
+    "days_per_pack": 120,
+    "price_tier": 1
+   },
+   "label_hash": "d0548cd02533",
+   "rank_in_category": 1
+  },
+  {
+   "category": "zma",
+   "brand": "Eiyolab",
+   "name": "ZMA HT",
+   "variant": "comprimés · 90",
+   "price_eur": 24.9,
+   "price_note": "eiyolab.com live 06/09/2026",
+   "units_pack": 90,
+   "unit_name": "comprimé",
+   "units_per_day": 3,
+   "active_per_unit": 5,
+   "active_unit": "mg elemental Zn",
+   "form": "zinc bisglycinate (15 mg/3 cp) ; magnésium oxyde + MagShape® microencapsulé (300 mg) ; vitamine B6 (2 mg) ; mélatonine (1,8 mg)",
+   "vegan": true,
+   "additives": [
+    "amidon de maïs",
+    "lécithine de tournesol",
+    "gélule végétale",
+    "lubrifiants : fruit de coco et racine de manioc"
+   ],
+   "certifications": [
+    "HACCP"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "MagShape®",
+   "full_label": true,
+   "flags": [
+    "Contient 1,8 mg de mélatonine par dose : déconseillé en cas de maladie inflammatoire ou auto-immune, de grossesse, d'allaitement, aux enfants et adolescents, et avant toute activité exigeant de la vigilance (étiquette)."
+   ],
+   "confidence": "high",
+   "url": "https://www.eiyolab.com/zma-ht",
+   "ean": null,
+   "notes": "3 comprimés au coucher = 15 mg de zinc, 300 mg de magnésium, 2 mg de B6 et 1,8 mg de mélatonine.",
+   "secondary_actives": [
+    {
+     "category": "magnesium",
+     "per_day": 300
+    },
+    {
+     "category": "melatonin",
+     "per_day": 1.8
+    }
+   ],
+   "id": "eiyolab-zma-ht-comprimes-90",
+   "form_tier": 16,
+   "form_note": "Chelated zinc (monomethionine / bisglycinate) — the ZMA trial material or an equivalent chelate.",
+   "dose_tier": 20,
+   "dose_note": "15 mg zinc/day — covers the reference intake and stays under the 25 mg limit.",
+   "purity_tags": [
+    "bulking_filler",
+    "lecithin"
+   ],
+   "additives_detail": [
+    "amidon de maïs",
+    "lécithine de tournesol",
+    "gélule végétale",
+    "lubrifiants : fruit de coco et racine de manioc"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "MagShape®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "lubrifiants : fruit de coco et racine de manioc",
+     "verdict": "neutral",
+     "note": "Coconut fruit and cassava root used as a flow agent in place of magnesium stearate — whole-food ingredients with no additive number; nothing to penalise.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 8,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.83,
+    "std": 0.83,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "07fc67acc4df",
+   "rank_in_category": 2
   },
   {
    "active_unit": "mg",
@@ -13216,6 +14278,2679 @@ const KLEERER_DATA = {
    },
    "label_hash": "4e129cfd645f",
    "rank_in_category": 16
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Novoma",
+   "name": "Vitamine B12",
+   "variant": "gélules · 120",
+   "price_eur": 15.92,
+   "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 19,90 €)",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "capsule végétale K-Caps® (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://novoma.com/products/vitamine-b12",
+   "ean": null,
+   "notes": "1 000 µg/j en 1 gélule (40 000 % des VNR) ; certificat d'analyse téléchargeable.",
+   "id": "novoma-vitamine-b12-gelules-120",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "capsule végétale K-Caps® (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 16,
+    "total": 82,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.133,
+    "std": 0.066,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 120,
+    "price_tier": 1
+   },
+   "label_hash": "8351845bc0a8",
+   "rank_in_category": 2
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Dynveo",
+   "name": "Vitamine B12 active",
+   "variant": "gélules · 60",
+   "price_eur": 8.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 250,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine + hydroxocobalamine + adénosylcobalamine (trio de formes actives)",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Clean Label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/vitamine-b12",
+   "ean": null,
+   "notes": "250 µg par gélule ; la marque conseille 2 gélules/j en cas de carence — chiffré à 1/j.",
+   "id": "dynveo-vitamine-b12-active-gelules-60",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "250 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 16,
+    "total": 82,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.148,
+    "std": 0.297,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 60,
+    "price_tier": 4
+   },
+   "label_hash": "ef47b39203e9",
+   "rank_in_category": 3
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "ARGALYS",
+   "name": "Vitamine B12 Vegan 1000 µg + Iode et Sélénium",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "argalys.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "cyanocobalamine, avec iode (iodure de potassium, 150 µg) et sélénium (sélénite de sodium, 100 µg)",
+   "vegan": true,
+   "additives": [
+    "fibre de riz",
+    "fibre d'acacia",
+    "gélule végétale HPMC"
+   ],
+   "certifications": [
+    "vegan",
+    "déclaré à la DGCCRF"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Apporte 100 µg de sélénium (182 % VNR) et 150 µg d'iode par gélule : à ne pas cumuler avec un multivitamine ou un complément d'iode."
+   ],
+   "confidence": "high",
+   "url": "https://www.argalys.com/products/vitamine-b12-iode-selenium",
+   "ean": null,
+   "notes": "Posologie de la marque : 2 gélules par semaine en entretien (≈ 0,09 €/j selon la marque) ; 1 gélule/j en cure d'attaque — chiffré ici à 1/j, ce qui surestime le coût en entretien.",
+   "id": "argalys-vitamine-b12-vegan-1000-g-iode-et-selenium-gelules-60",
+   "form_tier": 18,
+   "form_note": "Cyanocobalamin — the stable, best-studied form; the one the trials used.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibre de riz",
+    "fibre d'acacia",
+    "gélule végétale HPMC"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.332,
+    "std": 0.166,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "cfba39ce5a3f",
+   "rank_in_category": 8
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Biocyte",
+   "name": "Vitamin B12 Liposomal 500 µg",
+   "variant": "gélules · 30",
+   "price_eur": 17.0,
+   "price_note": "biocyte.com live 06/09/2026",
+   "units_pack": 30,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 500,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine liposomale",
+   "vegan": true,
+   "additives": [
+    "anti-agglomérant : carbonate de magnésium",
+    "inuline",
+    "émulsifiant : lécithines",
+    "correcteur d'acidité : hydroxyde de sodium",
+    "gélule d'origine végétale (dérivé de cellulose)",
+    "agent de charge : cellulose",
+    "fibre de pois",
+    "anti-agglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.biocyte.com/products/vitamin-b12-liposomal-30-gelules",
+   "ean": null,
+   "notes": "500 µg/j ; « liposomal » n'a aucun avantage démontré sur la B12 avalée.",
+   "id": "biocyte-vitamin-b12-liposomal-500-g-gelules-30",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "500 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "anticaking",
+    "lecithin",
+    "acidity_regulator",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "anti-agglomérant : carbonate de magnésium",
+    "inuline",
+    "émulsifiant : lécithines",
+    "correcteur d'acidité : hydroxyde de sodium",
+    "gélule d'origine végétale (dérivé de cellulose)",
+    "agent de charge : cellulose",
+    "fibre de pois",
+    "anti-agglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "fibre de pois",
+     "verdict": "neutral",
+     "note": "pea fibre, a food fibre",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 21,
+    "transparency": 4,
+    "total": 63,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.567,
+    "std": 0.567,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "a3956d936e4f",
+   "rank_in_category": 10
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Nat&Form",
+   "name": "Vitamine B12 en gélules",
+   "variant": "gélules · 30",
+   "price_eur": 11.5,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 30,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nat-form.com/products/vitamine-b12-en-gelules",
+   "ean": null,
+   "notes": "1 000 µg/j (40 000 % des VNR).",
+   "id": "nat-form-vitamine-b12-en-gelules-gelules-30",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.383,
+    "std": 0.192,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "7c4171d76778",
+   "rank_in_category": 9
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Nutri&Co",
+   "name": "Vitamine B12 MecobalActive®",
+   "variant": "gélules · 120",
+   "price_eur": 19.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine brevetée MecobalActive®",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "gélule végétale (hydroxypropylméthylcellulose)",
+    "amidon de riz"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "MecobalActive®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://nutriandco.com/fr/produits/vitamine-b12",
+   "ean": null,
+   "notes": "Nombre de gélules déduit de « dure minimum 4 mois à raison d'une gélule par jour » (120). Entretien conseillé par la marque : 2 gélules/semaine.",
+   "id": "nutri-co-vitamine-b12-mecobalactive-gelules-120",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "gélule végétale (hydroxypropylméthylcellulose)",
+    "amidon de riz"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "MecobalActive®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 20,
+    "total": 84,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.166,
+    "std": 0.083,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 120,
+    "price_tier": 2
+   },
+   "label_hash": "6d819741a056",
+   "rank_in_category": 1
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Cuure",
+   "name": "Vitamine B12 Méthylcobalamine",
+   "variant": "gélules · 120",
+   "price_eur": 27.9,
+   "price_note": "cuure.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine",
+   "vegan": true,
+   "additives": [
+    "poudre de fleurs d'hibiscus",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Vegan",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://cuure.com/produits/vitamine-b12",
+   "ean": null,
+   "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » de la page (méthylcobalamine, poudre de fleurs d'hibiscus, gélule végétale), pas de ligne d'étiquette formelle. 1 mg = 1 000 µg ; flacon « 120 jours ».",
+   "id": "cuure-vitamine-b12-methylcobalamine-gelules-120",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [],
+   "additives_detail": [
+    "poudre de fleurs d'hibiscus",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "poudre de fleurs d'hibiscus",
+     "verdict": "neutral",
+     "note": "Hibiscus flower powder used as the capsule filler — a food botanical, not an additive.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.232,
+    "std": 0.116,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 120,
+    "price_tier": 2
+   },
+   "label_hash": "16d96fb53f6c",
+   "rank_in_category": 5
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Onatera",
+   "name": "Vitamine B12 vegan",
+   "variant": "gélules · 60",
+   "price_eur": 10.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale",
+    "agent de charge : amidon de riz"
+   ],
+   "certifications": [
+    "Vegan Society",
+    "Made in France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b12-vegan-60-gelules-vegetales-orfito",
+   "ean": null,
+   "notes": "1 000 µg/j. Existe en 120 gélules (19,95 €).",
+   "id": "onatera-vitamine-b12-vegan-gelules-60",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale",
+    "agent de charge : amidon de riz"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.182,
+    "std": 0.091,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "e76929316a4f",
+   "rank_in_category": 7
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Onatera",
+   "name": "Vitamine B12 liposomale LipoCellTech™",
+   "variant": "gélules · 60",
+   "price_eur": 15.95,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine liposomale (LipoCellTech™), enrichie en D-ribose",
+   "vegan": true,
+   "additives": [
+    "D-ribose (69 mg)",
+    "phosphatidylcholine",
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Made in France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "LipoCellTech™",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b12-liposomale-60-gelules-vegetales-enefis",
+   "ean": null,
+   "notes": "1 000 µg/j.",
+   "id": "onatera-vitamine-b12-liposomale-lipocelltech-gelules-60",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "1000 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler",
+    "lecithin"
+   ],
+   "additives_detail": [
+    "D-ribose (69 mg)",
+    "phosphatidylcholine",
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "LipoCellTech™",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "D-ribose (69 mg)",
+     "verdict": "neutral",
+     "note": "D-ribose at 69 mg is a declared co-ingredient of the liposomal preparation, not an added sugar for taste; below any dietary relevance.",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "phosphatidylcholine",
+     "verdict": "penalty:lecithin",
+     "note": "Phosphatidylcholine is the phospholipid that lecithin consists of — here it forms the liposome wall. Same class, same tag as « émulsifiant : lécithines » for consistency.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 8,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.266,
+    "std": 0.133,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "5956ae92d431",
+   "rank_in_category": 6
+  },
+  {
+   "category": "vitamin_b12",
+   "brand": "Onatera",
+   "name": "Vitamine B9 & B12 formes actives",
+   "variant": "gélules · 60",
+   "price_eur": 16.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 500,
+   "active_unit": "µg B12",
+   "form": "méthylcobalamine, avec 5-MTHF Quatrefolic® (200 µg)",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b9-b12-formes-actives-60-gelules-orfito",
+   "ean": null,
+   "notes": "500 µg de B12 + 200 µg de folate (5-MTHF) par gélule.",
+   "secondary_actives": [
+    {
+     "category": "folate",
+     "per_day": 200
+    }
+   ],
+   "id": "onatera-vitamine-b9-b12-formes-actives-gelules-60",
+   "form_tier": 18,
+   "form_note": "Active cobalamin form — works; no proven edge over cyanocobalamin.",
+   "dose_tier": 20,
+   "dose_note": "500 µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 8,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.282,
+    "std": 0.282,
+    "std_label": "€ / 500 µg B12",
+    "days_per_pack": 60,
+    "price_tier": 4
+   },
+   "label_hash": "8110a47ead74",
+   "rank_in_category": 4
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Dynveo",
+   "name": "Vitamine D3 K2 MK-7",
+   "variant": "gélules · 60",
+   "price_eur": 28.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 80,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) micro-encapsulée, avec D3 de lichen (2 000 UI)",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia",
+    "tunique d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Clean Label Dynveo",
+    "vegan"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/vitamine-d3-k2-mk7",
+   "ean": null,
+   "notes": "80 µg de K2 + 2 000 UI de D3 par gélule.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 2000
+    }
+   ],
+   "id": "dynveo-vitamine-d3-k2-mk-7-gelules-60",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 16,
+   "dose_note": "80 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia",
+    "tunique d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 16,
+    "total": 78,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.482,
+    "std": 0.602,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 60,
+    "price_tier": 4
+   },
+   "label_hash": "4aed8015f60a",
+   "rank_in_category": 3
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Dynveo",
+   "name": "Vitamine K2 MK7",
+   "variant": "gélules · 60",
+   "price_eur": 14.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 80,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) forme trans, micro-encapsulée",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia",
+    "tunique d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Clean Label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/vitamine-k2-mk7",
+   "ean": null,
+   "notes": "80 µg/j (100 % VNR).",
+   "id": "dynveo-vitamine-k2-mk7-gelules-60",
+   "form_tier": 20,
+   "form_note": "MK-7, all-trans (branded) — the long-half-life form the MK-7 trials used.",
+   "dose_tier": 16,
+   "dose_note": "80 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia",
+    "tunique d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 16,
+    "total": 80,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.248,
+    "std": 0.31,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "531ecff4ef8a",
+   "rank_in_category": 2
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Nutrimuscle",
+   "name": "Vitamines D3 + K2-MK7",
+   "variant": "gélules · 30",
+   "price_eur": 11.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 30,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 127,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) par fermentation, avec D3 Quali®-D (31 µg = 1 240 UI)",
+   "vegan": true,
+   "additives": [
+    "inuline (85 %)",
+    "gélule végétalienne (agent d'enrobage : pullulan)"
+   ],
+   "certifications": [
+    "Sport Protect",
+    "certificat WADA",
+    "Halal"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutrimuscle.com/products/vitamines-d3-k2-mk7",
+   "ean": null,
+   "notes": "127 µg de K2 + 31 µg (1 240 UI) de D3 par gélule. La marque l'étiquette vegan ; Quali®-D est habituellement issue de lanoline.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 1240
+    }
+   ],
+   "id": "nutrimuscle-vitamines-d3-k2-mk7-gelules-30",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 20,
+   "dose_note": "127 µg/day MK-7 — the range the bone-density trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "inuline (85 %)",
+    "gélule végétalienne (agent d'enrobage : pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 26,
+    "total": 94,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.398,
+    "std": 0.314,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "bddab4d7262d",
+   "rank_in_category": 1
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "BioTechUSA",
+   "name": "K2+D3 Drops",
+   "variant": "flacon 30 ml · 87 doses",
+   "price_eur": 29.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 87,
+   "unit_name": "dose de 10 gouttes",
+   "units_per_day": 1,
+   "active_per_unit": 120,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone (K2, préparation huileuse ; MK-7 ou MK-4 non précisé), avec D3 (50 µg = 2 000 UI)",
+   "vegan": false,
+   "additives": [
+    "huile d'olive extra vierge (92 %)",
+    "acides gras à chaîne moyenne",
+    "antioxydant : DL-alpha-tocophérol",
+    "antioxydant : extrait riche en tocophérols"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://shop.biotechusa.fr/products/k2-d3-drops-30-ml",
+   "ean": null,
+   "notes": "10 gouttes = 120 µg de K2 + 2 000 UI de D3 ; 87 doses par flacon selon la marque.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 2000
+    }
+   ],
+   "id": "biotechusa-k2-d3-drops-flacon-30-ml-87-doses",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 20,
+   "dose_note": "120 µg/day MK-7 — the range the bone-density trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "huile d'olive extra vierge (92 %)",
+    "acides gras à chaîne moyenne",
+    "antioxydant : DL-alpha-tocophérol",
+    "antioxydant : extrait riche en tocophérols"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.344,
+    "std": 0.286,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 87,
+    "price_tier": 2
+   },
+   "label_hash": "0139b52224ec",
+   "rank_in_category": 7
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "PURE AM Nutrition",
+   "name": "PURE Vitamines D3 + K2 MK-7",
+   "variant": "gélules · 120",
+   "price_eur": 18.9,
+   "price_note": "amnutrition.fr live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 75,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7), avec D3 (50 µg = 2 000 UI)",
+   "vegan": false,
+   "additives": [
+    "agent de charge : cellulose",
+    "enveloppe de la gélule végétale : pullulan"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.amnutrition.fr/products/pure-vitamines-d3-k2-mk-7",
+   "ean": null,
+   "notes": "75 µg de K2 + 2 000 UI de D3 par gélule ; origine de la D3 non précisée.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 2000
+    }
+   ],
+   "id": "pure-am-nutrition-pure-vitamines-d3-k2-mk-7-gelules-120",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 16,
+   "dose_note": "75 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : cellulose",
+    "enveloppe de la gélule végétale : pullulan"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 4,
+    "total": 66,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.158,
+    "std": 0.21,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 120,
+    "price_tier": 2
+   },
+   "label_hash": "4f5b62c7fc13",
+   "rank_in_category": 9
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Superphysique Nutrition",
+   "name": "Elite Vitamines D3+K2 vitaMK7®",
+   "variant": "spray · 105 pulvérisations",
+   "price_eur": 19.9,
+   "price_note": "superphysique-nutrition.fr live 06/09/2026",
+   "units_pack": 105,
+   "unit_name": "pulvérisation",
+   "units_per_day": 1,
+   "active_per_unit": 75,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 vitaMK7® (> 99 % trans), avec D3 de lichen (25 µg = 1 000 UI)",
+   "vegan": true,
+   "additives": [
+    "huile de colza biologique",
+    "antioxydant : extraits d'origine naturelle riches en tocophérols"
+   ],
+   "certifications": [
+    "Fabriqué en France (Seanova)"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "vitaMK7®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.superphysique-nutrition.fr/680--elite-d3k2-vitamk7.html",
+   "ean": null,
+   "notes": "1 pulvérisation/j = 75 µg de K2 + 1 000 UI de D3.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 1000
+    }
+   ],
+   "id": "superphysique-nutrition-elite-vitamines-d3-k2-vitamk7-spray-105-pulverisations",
+   "form_tier": 20,
+   "form_note": "MK-7, all-trans (branded) — the long-half-life form the MK-7 trials used.",
+   "dose_tier": 16,
+   "dose_note": "75 µg/day — below most trials.",
+   "purity_tags": [],
+   "additives_detail": [
+    "huile de colza biologique",
+    "antioxydant : extraits d'origine naturelle riches en tocophérols"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "vitaMK7®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 30,
+    "transparency": 8,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.19,
+    "std": 0.253,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 105,
+    "price_tier": 2
+   },
+   "label_hash": "847358611425",
+   "rank_in_category": 4
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Olimp Sport Nutrition",
+   "name": "Gold-Vit® D3+K2 2000 IU Sport Edition",
+   "variant": "capsules · 60",
+   "price_eur": 11.0,
+   "price_note": "olimpstore.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 100,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) par fermentation du soja, avec D3 (50 µg = 2 000 UI)",
+   "vegan": false,
+   "additives": [
+    "huile de triglycérides à chaîne moyenne (MCT)",
+    "antioxydant : extrait riche en tocophérols",
+    "capsule (gélatine)"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://olimpstore.fr/olimp-gold-vit-d3-k2-2000-iu-sport-edition-60-gelules-2191",
+   "ean": null,
+   "notes": "100 µg de K2 + 2 000 UI de D3 par capsule.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 2000
+    }
+   ],
+   "id": "olimp-sport-nutrition-gold-vit-d3-k2-2000-iu-sport-edition-capsules-60",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 20,
+   "dose_note": "100 µg/day MK-7 — the range the bone-density trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "huile de triglycérides à chaîne moyenne (MCT)",
+    "antioxydant : extrait riche en tocophérols",
+    "capsule (gélatine)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.183,
+    "std": 0.183,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "c4ea07db1795",
+   "rank_in_category": 6
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Cuure",
+   "name": "Vitamine K2 MenaQ7®",
+   "variant": "gélules · 120",
+   "price_eur": 39.9,
+   "price_note": "cuure.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 75,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 MenaQ7® (fermentation Bacillus subtilis natto)",
+   "vegan": true,
+   "additives": [
+    "lithothamne",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Vegan",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "MenaQ7®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://cuure.com/produits/vitamine-k2",
+   "ean": null,
+   "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » (MenaQ7, lithothamne, gélule végétale). Flacon « 120 jours » à 1 gélule/j.",
+   "id": "cuure-vitamine-k2-menaq7-gelules-120",
+   "form_tier": 20,
+   "form_note": "MK-7, all-trans (branded) — the long-half-life form the MK-7 trials used.",
+   "dose_tier": 16,
+   "dose_note": "75 µg/day — below most trials.",
+   "purity_tags": [],
+   "additives_detail": [
+    "lithothamne",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "MenaQ7®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "lithothamne",
+     "verdict": "neutral",
+     "note": "Lithothamnium is a calcified red alga — natural calcium carbonate used as a filler; §2b treats calcium carbonate as neutral.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 30,
+    "transparency": 8,
+    "total": 74,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.332,
+    "std": 0.443,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 120,
+    "price_tier": 3
+   },
+   "label_hash": "7cb3808fc23f",
+   "rank_in_category": 5
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Onatera",
+   "name": "Vitamines K2 MK7 & D3",
+   "variant": "comprimés · 90",
+   "price_eur": 11.5,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 90,
+   "unit_name": "comprimé",
+   "units_per_day": 1,
+   "active_per_unit": 75,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) microencapsulée, avec D3 de lanoline (25 µg = 1 000 UI)",
+   "vegan": false,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "anti-agglomérant : fibre et amidon de pomme de terre",
+    "cellulose",
+    "gomme gellane"
+   ],
+   "certifications": [
+    "Made in France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamines-k2-mk7-d3-90-comprimes-onatera",
+   "ean": null,
+   "notes": "75 µg de K2 + 1 000 UI de D3 par comprimé.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 1000
+    }
+   ],
+   "id": "onatera-vitamines-k2-mk7-d3-comprimes-90",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 16,
+   "dose_note": "75 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "bulking_filler",
+    "thickener"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "anti-agglomérant : fibre et amidon de pomme de terre",
+    "cellulose",
+    "gomme gellane"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 16,
+    "purity": 22,
+    "transparency": 4,
+    "total": 60,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.128,
+    "std": 0.17,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 90,
+    "price_tier": 2
+   },
+   "label_hash": "55534fe54f74",
+   "rank_in_category": 11
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Onatera",
+   "name": "Vitamines K2 MK7 & D3 Ultra",
+   "variant": "gélules · 90",
+   "price_eur": 19.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 90,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 75,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 K2VITAL® microencapsulée, avec D3 liposomale Liposovit®-D3 de lanoline (75 µg = 3 000 UI)",
+   "vegan": false,
+   "additives": [
+    "gélule d'origine végétale (HPMC)",
+    "agents de charge : fibre d'acacia, amidon de riz"
+   ],
+   "certifications": [
+    "Made in France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "K2VITAL®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamines-k2-mk7-d3-ultra-90-gelules-onatera",
+   "ean": null,
+   "notes": "75 µg de K2 + 3 000 UI de D3 par gélule.",
+   "secondary_actives": [
+    {
+     "category": "vitamin_d3",
+     "per_day": 3000
+    }
+   ],
+   "id": "onatera-vitamines-k2-mk7-d3-ultra-gelules-90",
+   "form_tier": 20,
+   "form_note": "MK-7, all-trans (branded) — the long-half-life form the MK-7 trials used.",
+   "dose_tier": 16,
+   "dose_note": "75 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale (HPMC)",
+    "agents de charge : fibre d'acacia, amidon de riz"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "K2VITAL®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 8,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.221,
+    "std": 0.295,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 90,
+    "price_tier": 2
+   },
+   "label_hash": "c08ec5b33845",
+   "rank_in_category": 8
+  },
+  {
+   "category": "vitamin_k2",
+   "brand": "Solaray",
+   "name": "Vitamine K2 Ménaquinone-7",
+   "variant": "capsules · 30",
+   "price_eur": 19.6,
+   "price_note": "onatera.com live 06/09/2026 (épuisé ce jour)",
+   "units_pack": 30,
+   "unit_name": "capsule",
+   "units_per_day": 1,
+   "active_per_unit": 50,
+   "active_unit": "µg MK-7",
+   "form": "ménaquinone-7 (MK-7) de natto",
+   "vegan": true,
+   "additives": [
+    "enveloppe de capsule : cellulose",
+    "agents de charge : cellulose microcristalline / gel cellulosique",
+    "anti-agglomérant : stéarate de magnésium",
+    "anti-agglomérant : silice"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-k2-menaquinone-7-30-capsules-solaray",
+   "ean": null,
+   "notes": "50 µg/j — sous la fourchette des essais.",
+   "id": "solaray-vitamine-k2-menaquinone-7-capsules-30",
+   "form_tier": 18,
+   "form_note": "MK-7 — long half-life; isomer purity not declared.",
+   "dose_tier": 16,
+   "dose_note": "50 µg/day — below most trials.",
+   "purity_tags": [
+    "bulking_filler",
+    "anticaking",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "enveloppe de capsule : cellulose",
+    "agents de charge : cellulose microcristalline / gel cellulosique",
+    "anti-agglomérant : stéarate de magnésium",
+    "anti-agglomérant : silice"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": null,
+    "zone": "UNKNOWN",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 16,
+    "purity": 24,
+    "transparency": 4,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.653,
+    "std": 1.307,
+    "std_label": "€ / 100 µg MK-7",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "717f82f13bff",
+   "rank_in_category": 10
+  },
+  {
+   "category": "b_complex",
+   "brand": "Dynveo",
+   "name": "Complexe vitamines B",
+   "variant": "gélules · 60",
+   "price_eur": 18.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "form": "8 vitamines B en formes actives (B6 P-5-P, B9 Quatrefolic® 5-MTHF, B12 trio méthyl/adénosyl/hydroxocobalamine) + inositol et PABA",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Clean Label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/complexe-vitamines-b",
+   "ean": null,
+   "notes": "≈ 100 % des VNR par gélule (B6 1,4 mg, B8 50 µg, B9 200 µg, B12 2,5 µg) ; 20 mg d'inositol et 20 mg de PABA.",
+   "form_quality": "bioactive",
+   "dose_style": "physiological",
+   "id": "dynveo-complexe-vitamines-b-gelules-60",
+   "form_tier": 20,
+   "form_note": "Bioactive / chelated forms.",
+   "dose_tier": 20,
+   "dose_note": "Physiological ~100% NRV coverage.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 20,
+    "total": 88,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.315,
+    "std": 0.315,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "551d3263ccd7",
+   "rank_in_category": 1
+  },
+  {
+   "category": "b_complex",
+   "brand": "Nat&Form",
+   "name": "Complexe vitamines B en gélules",
+   "variant": "gélules · 30",
+   "price_eur": 14.9,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 30,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "form": "vitamines B1, B2, B3, B5, B6, B8, B9, B12 (formes non précisées) + choline, inositol et PABA",
+   "vegan": true,
+   "additives": [
+    "gélule d'origine végétale",
+    "arôme vanille"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Vitamine B3 à 80 mg/j sous une forme non précisée : au-dessus de la limite EFSA de l'acide nicotinique (10 mg/j), pas de celle du nicotinamide (900 mg/j)."
+   ],
+   "confidence": "high",
+   "url": "https://www.nat-form.com/products/complexe-vitamines-b-en-gelules",
+   "ean": null,
+   "notes": "B1 6,6 mg (600 % VNR), B2 7,7 mg (550 %), B3 80 mg (500 %), B5 29 mg (483 %), B6 3,2 mg (228 %) ; 80 mg de PABA, 80 mg d'inositol, 33 mg de choline.",
+   "form_quality": "standard",
+   "dose_style": "megadose_b",
+   "id": "nat-form-complexe-vitamines-b-en-gelules-gelules-30",
+   "form_tier": 12,
+   "form_note": "Standard vitamin/mineral forms.",
+   "dose_tier": 12,
+   "dose_note": "B-vitamin megadosing far above NRV.",
+   "purity_tags": [
+    "undisclosed_minor"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale",
+    "arôme vanille"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "arôme vanille",
+     "verdict": "penalty:undisclosed_minor",
+     "note": "vanilla flavouring, natural or artificial not stated",
+     "reviewed_on": "2026-08-07"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 12,
+    "dose": 12,
+    "purity": 29,
+    "transparency": 4,
+    "total": 57,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.497,
+    "std": 0.497,
+    "std_label": "€ / day",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "51ce23e14953",
+   "rank_in_category": 2
+  },
+  {
+   "category": "biotin",
+   "brand": "Biocyte",
+   "name": "Biotine 10 000 µg",
+   "variant": "gélules · 45",
+   "price_eur": 19.9,
+   "price_note": "biocyte.com live 06/09/2026",
+   "units_pack": 45,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 10000,
+   "active_unit": "µg biotin",
+   "form": "D-biotine (vitamine B8), avec L-cystéine, méthionine, extrait de prêle, zinc bisglycinate (2 mg), sélénométhionine et cuivre bisglycinate",
+   "vegan": true,
+   "additives": [
+    "anti-agglomérant : carbonate de calcium",
+    "gélule d'origine végétale (dérivé de cellulose)",
+    "anti-agglomérant : sels de magnésium d'acides gras"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+   ],
+   "confidence": "high",
+   "url": "https://www.biocyte.com/products/biotine-10000-mcg-45-gelules",
+   "ean": null,
+   "notes": "10 000 µg/j — 20 000 % des VNR.",
+   "id": "biocyte-biotine-10-000-g-gelules-45",
+   "form_tier": 18,
+   "form_note": "D-biotin — one form, no meaningful differences between products.",
+   "dose_tier": 8,
+   "dose_note": "10000 µg/day — a hair-product megadose with no trial behind it; falsifies troponin and thyroid tests.",
+   "purity_tags": [
+    "coating",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "anti-agglomérant : carbonate de calcium",
+    "gélule d'origine végétale (dérivé de cellulose)",
+    "anti-agglomérant : sels de magnésium d'acides gras"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 8,
+    "purity": 26,
+    "transparency": 4,
+    "total": 56,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.442,
+    "std": 0.442,
+    "std_label": "€ / day",
+    "days_per_pack": 45,
+    "price_tier": 5
+   },
+   "label_hash": "daf393b8f91d",
+   "rank_in_category": 5
+  },
+  {
+   "category": "biotin",
+   "brand": "Nat&Form",
+   "name": "Biotine en gélules",
+   "variant": "gélules · 60",
+   "price_eur": 11.9,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 10000,
+   "active_unit": "µg biotin",
+   "form": "D-biotine (vitamine B8), avec zinc bisglycinate (10 mg)",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+   ],
+   "confidence": "high",
+   "url": "https://www.nat-form.com/products/biotine-en-gelules",
+   "ean": null,
+   "notes": "10 000 µg/j + 10 mg de zinc (100 % VNR).",
+   "secondary_actives": [
+    {
+     "category": "zinc",
+     "per_day": 10
+    }
+   ],
+   "id": "nat-form-biotine-en-gelules-gelules-60",
+   "form_tier": 18,
+   "form_note": "D-biotin — one form, no meaningful differences between products.",
+   "dose_tier": 8,
+   "dose_note": "10000 µg/day — a hair-product megadose with no trial behind it; falsifies troponin and thyroid tests.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 8,
+    "purity": 28,
+    "transparency": 4,
+    "total": 58,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.198,
+    "std": 0.198,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "84f6ed499bc9",
+   "rank_in_category": 3
+  },
+  {
+   "category": "biotin",
+   "brand": "Cuure",
+   "name": "Biotine",
+   "variant": "gélules · 60",
+   "price_eur": 12.9,
+   "price_note": "cuure.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 450,
+   "active_unit": "µg biotin",
+   "form": "D-biotine (vitamine B8)",
+   "vegan": true,
+   "additives": [
+    "fibre d'acacia",
+    "gélule d'origine végétale (hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Vegan",
+    "Fabriqué en France"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://cuure.com/produits/biotine",
+   "ean": null,
+   "notes": "450 µg/j. Liste d'ingrédients lue sur les fiches « Ingrédients » de la page.",
+   "id": "cuure-biotine-gelules-60",
+   "form_tier": 18,
+   "form_note": "D-biotin — one form, no meaningful differences between products.",
+   "dose_tier": 14,
+   "dose_note": "450 µg/day — above any need; lab interference possible from ~1,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibre d'acacia",
+    "gélule d'origine végétale (hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 14,
+    "purity": 28,
+    "transparency": 4,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.215,
+    "std": 0.215,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "72320eda02a2",
+   "rank_in_category": 2
+  },
+  {
+   "category": "biotin",
+   "brand": "Onatera",
+   "name": "Vitamine B8 (Biotine) 1000 µg",
+   "variant": "gélules · 60",
+   "price_eur": 9.95,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 1000,
+   "active_unit": "µg biotin",
+   "form": "D-biotine (vitamine B8)",
+   "vegan": true,
+   "additives": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "certifications": [
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+   ],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b8-biotine-1000-mg-50-gelules-orfito",
+   "ean": null,
+   "notes": "1 000 µg/j — 25 × l'apport de référence.",
+   "id": "onatera-vitamine-b8-biotine-1000-g-gelules-60",
+   "form_tier": 18,
+   "form_note": "D-biotin — one form, no meaningful differences between products.",
+   "dose_tier": 14,
+   "dose_note": "1000 µg/day — above any need; lab interference possible from ~1,000 µg.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 14,
+    "purity": 28,
+    "transparency": 4,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.166,
+    "std": 0.166,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "693ab1f1d22f",
+   "rank_in_category": 1
+  },
+  {
+   "category": "biotin",
+   "brand": "Onatera",
+   "name": "Vitamine B8 Max 10 000 µg",
+   "variant": "gélules · 60",
+   "price_eur": 16.9,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 10000,
+   "active_unit": "µg biotin",
+   "form": "D-biotine (vitamine B8)",
+   "vegan": true,
+   "additives": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "certifications": [
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+   ],
+   "confidence": "high",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b8-max-60-gelules-onatera",
+   "ean": null,
+   "notes": "10 000 µg/j ; la marque signale elle-même l'interférence avec les analyses sanguines à partir de 5 mg/j.",
+   "id": "onatera-vitamine-b8-max-10-000-g-gelules-60",
+   "form_tier": 18,
+   "form_note": "D-biotin — one form, no meaningful differences between products.",
+   "dose_tier": 8,
+   "dose_note": "10000 µg/day — a hair-product megadose with no trial behind it; falsifies troponin and thyroid tests.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 8,
+    "purity": 28,
+    "transparency": 4,
+    "total": 58,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.282,
+    "std": 0.282,
+    "std_label": "€ / day",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "5341f0bc5e7b",
+   "rank_in_category": 4
+  },
+  {
+   "category": "folate",
+   "brand": "Novoma",
+   "name": "Acide Folique Quatrefolic®",
+   "variant": "gélules · 90",
+   "price_eur": 13.52,
+   "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 16,90 €)",
+   "units_pack": 90,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 400,
+   "active_unit": "µg folate",
+   "form": "5-MTHF ((6S)-5-méthyltétrahydrofolate) Quatrefolic®",
+   "vegan": true,
+   "additives": [
+    "fibre d'acacia (bio)",
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://novoma.com/products/acide-folique",
+   "ean": null,
+   "notes": "400 µg/j (200 % VNR) — la dose périconceptionnelle ; certificat d'analyse téléchargeable.",
+   "id": "novoma-acide-folique-quatrefolic-gelules-90",
+   "form_tier": 18,
+   "form_note": "5-MTHF (methylfolate) — well absorbed; the NTD trials used folic acid.",
+   "dose_tier": 20,
+   "dose_note": "400 µg/day — the periconceptional dose the neural-tube-defect trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibre d'acacia (bio)",
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 20,
+    "total": 86,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.15,
+    "std": 0.15,
+    "std_label": "€ / 400 µg folate",
+    "days_per_pack": 90,
+    "price_tier": 2
+   },
+   "label_hash": "1fa73f68babe",
+   "rank_in_category": 1
+  },
+  {
+   "category": "folate",
+   "brand": "Dynveo",
+   "name": "Vitamine B9 Quatrefolic®",
+   "variant": "gélules · 60",
+   "price_eur": 9.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 200,
+   "active_unit": "µg folate",
+   "form": "5-MTHF Quatrefolic® (sel de glucosamine)",
+   "vegan": true,
+   "additives": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "certifications": [
+    "Clean Label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.dynveo.fr/products/vitamine-b9",
+   "ean": null,
+   "notes": "200 µg par gélule ; 1 gélule/j adulte, 2 en préconception et grossesse selon la marque — chiffré à 1/j.",
+   "id": "dynveo-vitamine-b9-quatrefolic-gelules-60",
+   "form_tier": 18,
+   "form_note": "5-MTHF (methylfolate) — well absorbed; the NTD trials used folic acid.",
+   "dose_tier": 14,
+   "dose_note": "200 µg/day — reference intake, below the pregnancy dose.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia",
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 14,
+    "purity": 28,
+    "transparency": 20,
+    "total": 80,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.165,
+    "std": 0.33,
+    "std_label": "€ / 400 µg folate",
+    "days_per_pack": 60,
+    "price_tier": 5
+   },
+   "label_hash": "b1481afef544",
+   "rank_in_category": 4
+  },
+  {
+   "category": "folate",
+   "brand": "Nutri&Co",
+   "name": "Acide folique Quatrefolic®",
+   "variant": "gélules · 120",
+   "price_eur": 18.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 120,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 400,
+   "active_unit": "µg folate",
+   "form": "5-MTHF Quatrefolic® (sel de glucosamine)",
+   "vegan": true,
+   "additives": [
+    "agent de charge : gomme d'acacia",
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://nutriandco.com/fr/produits/acide-folique",
+   "ean": null,
+   "notes": "Nombre de gélules déduit de « une cure dure 4 mois à raison d'une gélule par jour » (120). 741 µg de Quatrefolic® = 400 µg de folate.",
+   "id": "nutri-co-acide-folique-quatrefolic-gelules-120",
+   "form_tier": 18,
+   "form_note": "5-MTHF (methylfolate) — well absorbed; the NTD trials used folic acid.",
+   "dose_tier": 20,
+   "dose_note": "400 µg/day — the periconceptional dose the neural-tube-defect trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme d'acacia",
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 20,
+    "total": 86,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.158,
+    "std": 0.157,
+    "std_label": "€ / 400 µg folate",
+    "days_per_pack": 120,
+    "price_tier": 3
+   },
+   "label_hash": "38266c8c0aa0",
+   "rank_in_category": 2
+  },
+  {
+   "category": "folate",
+   "brand": "Nutripure",
+   "name": "Vitamine B9 active Quatrefolic®",
+   "variant": "gélules · 90",
+   "price_eur": 15.9,
+   "price_note": "nutripure.fr live 06/09/2026",
+   "units_pack": 90,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 400,
+   "active_unit": "µg folate",
+   "form": "5-MTHF de glucosamine Quatrefolic®",
+   "vegan": true,
+   "additives": [
+    "agents de charge : gomme d'acacia",
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "farine de coco"
+   ],
+   "certifications": [
+    "Fabriqué en France"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "Quatrefolic®",
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "url": "https://www.nutripure.fr/fr/sante/314-vitamine-b9.html",
+   "ean": null,
+   "notes": "400 µg/j ; étiquette et fiche de traçabilité téléchargeables.",
+   "id": "nutripure-vitamine-b9-active-quatrefolic-gelules-90",
+   "form_tier": 18,
+   "form_note": "5-MTHF (methylfolate) — well absorbed; the NTD trials used folic acid.",
+   "dose_tier": 20,
+   "dose_note": "400 µg/day — the periconceptional dose the neural-tube-defect trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agents de charge : gomme d'acacia",
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "farine de coco"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "Quatrefolic®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "farine de coco",
+     "verdict": "neutral",
+     "note": "Coconut flour used as a bulking agent — a food ingredient, not an additive.",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 20,
+    "total": 86,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.177,
+    "std": 0.177,
+    "std_label": "€ / 400 µg folate",
+    "days_per_pack": 90,
+    "price_tier": 3
+   },
+   "label_hash": "635437014673",
+   "rank_in_category": 3
+  },
+  {
+   "category": "folate",
+   "brand": "Onatera",
+   "name": "Vitamine B9 (acide folique)",
+   "variant": "gélules · 90",
+   "price_eur": 7.95,
+   "price_note": "onatera.com live 06/09/2026",
+   "units_pack": 90,
+   "unit_name": "gélule",
+   "units_per_day": 1,
+   "active_per_unit": 400,
+   "active_unit": "µg folate",
+   "form": "acide folique",
+   "vegan": true,
+   "additives": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale",
+    "maltodextrine",
+    "stéarate de magnésium",
+    "talc"
+   ],
+   "certifications": [
+    "Made in France",
+    "Vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "medium",
+   "url": "https://www.onatera.com/FR/fr/produit-vitamine-b9-acide-folique-100-gelules-orfito",
+   "ean": null,
+   "notes": "Titre actuel « 90 gélules » ; la fiche mentionne encore une cure de 100 jours (ancien format 100). Excipients déclarés à part : maltodextrine, stéarate de magnésium, talc.",
+   "id": "onatera-vitamine-b9-acide-folique-gelules-90",
+   "form_tier": 20,
+   "form_note": "Folic acid — the form with the neural-tube-defect evidence.",
+   "dose_tier": 20,
+   "dose_note": "400 µg/day — the periconceptional dose the neural-tube-defect trials used.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "agent de charge : fibre d'acacia",
+    "gélule d'origine végétale",
+    "maltodextrine",
+    "stéarate de magnésium",
+    "talc"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 22,
+    "transparency": 4,
+    "total": 66,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.088,
+    "std": 0.088,
+    "std_label": "€ / 400 µg folate",
+    "days_per_pack": 90,
+    "price_tier": 1
+   },
+   "label_hash": "0d42407dd05b",
+   "rank_in_category": 5
   },
   {
    "category": "whey",

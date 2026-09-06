@@ -21,7 +21,7 @@ Text-and-data-mining rights reserved — Dir. (EU) 2019/790 art. 4(3); CPI art. 
 
 **What the score is not.** It is not medical advice, not a measure of whether *you* need the product, and not a lab test — we score label composition and public transparency, not actual batch content.
 
-**Scope.** 193 products, 15 categories (11 nutrient categories and 4 botanicals — see §5), EU with a French-market focus. Nutrient snapshot July 2026, botanicals September 2026. Scoring methodology v1.4; personalised dosing model v2.
+**Scope.** 239 products across 23 categories (16 nutrient categories, 4 botanicals, 3 testosterone boosters — see §5), EU with a French-market focus. Nutrient snapshot July 2026; botanicals, the vitamin batch and the boosters September 2026. Scoring methodology v1.4; personalised dosing model v2.
 
 ---
 
@@ -245,6 +245,16 @@ actives are only coded where the manufacturer declares the amount; nothing is es
 **Dose tier (0–20) is the range the trials on the evidence page actually used**, not a serving suggestion: ashwagandha 300–600 mg/day (20 at ≥600; penalised above 1,200 because safety scales with dose and benefit does not), maca 1.5–3 g/day powder-equivalent, rhodiola 200–600 mg/day, curcumin 1,000–1,500 mg/day curcuminoids for a plain extract or 250–500 mg for an enhanced-absorption form.
 
 **Safety is handled as a prominent advisory, not a red card.** Denmark banned ashwagandha in 2023 and ANSES advised against it for several groups in 2024, but neither is one of the three bodies in the red-card rule (§2b), so the product is not forced to zero. Instead the advisory is printed on the dosing note and on the evidence page where the dose would otherwise be. Curcumin carries a liver-injury case history with concentrated forms and is annotated the same way. Being scrupulous about the rule matters here: expanding "red card" by analogy would make it mean whatever we felt like that day.
+
+### 5b. Vitamins batch and testosterone boosters (v1.5)
+
+**Five more nutrient categories** — vitamin B12, vitamin K2, B-complex, biotin and folate (B9) — join the nutrient group. Vitamins E and A are covered on the evidence page (SELECT; ATBC/CARET) but not as product categories: nothing is sold standalone on the tracked shops, and the large trials argue against buying them anyway.
+
+For a vitamin, *form* is the chemical species, and the honest ladder is flatter than the marketing: every cobalamin corrects a B12 deficiency and cyanocobalamin is the form the trials used, so "methyl" and "liposomal" earn no premium; the neural-tube-defect evidence is for **folic acid**, so it outranks methylfolate rather than the reverse; MK-7 outranks MK-4 because supplement-sized MK-4 doses are far below the 45 mg the Japanese bone trials used. **Biotin's dose ladder points downward on purpose**: nothing above the 40 µg reference intake has evidence in healthy people, and from ~1 mg the FDA-documented interference with troponin and thyroid assays becomes the dominant fact about the product. A 10,000 µg "hair" capsule scores 8/20 for dose, and the watch-out says why.
+
+**Testosterone boosters get a third colour, teal.** Tribulus and fenugreek are scored on the same method — form is "the extract the trials used", dose is "the range the trials used" — which is exactly why they land low. No tribulus dose has raised testosterone in men in any controlled trial, so its dose tier is a flat 8/20 with a note saying so; fenugreek's 500–600 mg band reflects four small, mostly manufacturer-linked trials that moved a blood value and showed nothing a person feels. The evidence page grades the wider group — D-aspartic acid, turkesterone, ZMA, boron, DHEA — and most of it is D. The colour exists so that a reader sees that verdict before the price. **ZMA** (zinc + magnesium + B6) is the third booster category: its active is the zinc — the only component with a testosterone claim, and only in deficiency — scored on a zinc-salt ladder (monomethionine and bisglycinate chelates above aspartate, above oxide) and on a dose band that stops at the 25 mg EFSA ceiling. The one positive ZMA trial used 30 mg, above that ceiling, and was funded by the patent holder; the independent replication found nothing. Magnesium and melatonin, where a label adds them, are coded as secondary actives so the stack builder counts them.
+
+B-complex products are scored like multivitamins (form quality and dose style per entry), since a per-nutrient ladder for eight vitamins in one capsule would be false precision.
 
 ### 5a. The evidence page — grades are per outcome, not per supplement
 

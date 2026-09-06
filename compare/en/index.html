@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 193 EU/French products across 15 categories — vitamins, minerals, proteins, and botanicals scored apart. No sponsors, no affiliate links.">
+<meta name="description" content="Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 239 EU/French products across 23 categories — vitamins, minerals, proteins, botanicals and testosterone boosters scored apart. No sponsors, no affiliate links.">
 <meta name="robots" content="index,follow">
 <meta name="keywords" content="compléments alimentaires, supplements, health score, whey, créatine, magnésium, oméga-3, comparateur, additifs, édulcorants">
 <link rel="alternate" hreflang="en" href="https://kleerer.com/compare/en/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="kleerer.">
 <meta property="og:title" content="kleerer. — supplements, made clear">
-<meta property="og:description" content="Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 193 EU/French products across 15 categories — vitamins, minerals, proteins, and botanicals scored apart. No sponsors, no affiliate links.">
+<meta property="og:description" content="Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 239 EU/French products across 23 categories — vitamins, minerals, proteins, botanicals and testosterone boosters scored apart. No sponsors, no affiliate links.">
 <meta property="og:url" content="https://kleerer.com/compare/en/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kleerer. — supplements, made clear">
@@ -45,6 +45,8 @@
     --warn-bg:rgba(196,154,0,.10); --warn-line:rgba(196,154,0,.45); --warn-ink:#6f5703;
     /* botanicals: plant extracts, not nutrients — shown apart, in light purple */
     --bot:#6b4fa3; --bot-bg:#efe9f9; --bot-line:#c9b8e8;
+    /* sold to raise testosterone: its own colour, because the honest summary is "mostly no" */
+    --boost:#1f6f78; --boost-bg:#e6f2f3; --boost-line:#b3d6d9;
     --pad:clamp(24px,5vw,56px);
   }
   *{box-sizing:border-box; margin:0; padding:0}
@@ -86,6 +88,12 @@
   .card.bot{border-left:3px solid var(--bot-line)}
   .card.bot .brand{color:var(--bot)}
   .chip.bot{border-color:var(--bot-line); color:var(--bot); background:var(--bot-bg)}
+  .pill.boost{border-color:var(--boost-line); color:var(--boost); background:var(--boost-bg)}
+  .pill.boost:hover{border-color:var(--boost); color:var(--boost)}
+  .pill.boost.on{background:var(--boost); border-color:var(--boost); color:#fff}
+  .card.boost{border-left:3px solid var(--boost-line)}
+  .card.boost .brand{color:var(--boost)}
+  .chip.boost{border-color:var(--boost-line); color:var(--boost); background:var(--boost-bg)}
   .hnav a{background:none; border:none; font-size:.8rem; color:var(--muted); padding:6px 10px; text-decoration:none}
   .hnav a:hover{color:var(--ink); text-decoration:underline}
   .bar2{display:flex; gap:8px; margin-top:10px; padding-bottom:12px; border-bottom:1px solid var(--line); flex-wrap:wrap; align-items:center}
@@ -363,8 +371,11 @@
 const P = KLEERER_DATA.products;
 const META = KLEERER_DATA.meta;
 const BOTANICAL = new Set(META.botanical_categories || []);      // data-driven, see build_scores.BOTANICALS
+const BOOSTER = new Set(META.booster_categories || []);         // data-driven, see build_scores.BOOSTERS
 const CAT_KEYS = ["all","whey","creatine","vitamin_d3","magnesium","omega3","multivitamin",
-  "zinc","vitamin_c","collagen","probiotics","melatonin", ...(META.botanical_categories || [])];
+  "zinc","vitamin_c","collagen","probiotics","melatonin",
+  "vitamin_b12","vitamin_k2","b_complex","biotin","folate",
+  ...(META.botanical_categories || []), ...(META.booster_categories || [])];
 const CATS = CAT_KEYS.map(k => [k, k]);                 // shape kept; labels resolved live
 const catLabel = k => T("cats")[k] || k;
 const GCOLOR = {A:"var(--gA)", B:"var(--gB)", C:"var(--gC)", D:"var(--gD)", E:"var(--gE)"};
@@ -398,10 +409,10 @@ function renderStats(){
 
 /* ---------- pills ---------- */
 function renderPills(){
-  const firstBot = CAT_KEYS.find(k => BOTANICAL.has(k));
+  const firstBot = CAT_KEYS.find(k => BOTANICAL.has(k)), firstBoost = CAT_KEYS.find(k => BOOSTER.has(k));
   document.getElementById("pills").innerHTML = CAT_KEYS.map(k =>
-    (k === firstBot ? `<span class="pillsep" aria-hidden="true"></span>` : "") +
-    `<button class="pill${BOTANICAL.has(k)?" bot":""}${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${catLabel(k)}</button>`).join("");
+    (k === firstBot || k === firstBoost ? `<span class="pillsep" aria-hidden="true"></span>` : "") +
+    `<button class="pill${BOTANICAL.has(k)?" bot":""}${BOOSTER.has(k)?" boost":""}${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${catLabel(k)}</button>`).join("");
 }
 function setCat(k){ cat = k;
   try { history.replaceState(null, "", k === "all" ? location.pathname + location.search : "#cat=" + k); } catch(e){}
@@ -470,7 +481,7 @@ const fmtNum = n => Number.isInteger(n) ? String(n)
 
 /* Regulatory ceilings — profile-independent, so the stack check works for everyone.
    Each carries its consequence: ULs are not all the same kind of thing. */
-const UL = {vitamin_d3:4000, magnesium:250, zinc:25, vitamin_c:1000, melatonin:1.9, omega3:5000};
+const UL = {vitamin_d3:4000, magnesium:250, zinc:25, vitamin_c:1000, melatonin:1.9, omega3:5000, folate:1000};
 const LIMITS = new Proxy({}, {                       // ul is data, why is translated at read time
   get: (_, k) => UL[k] === undefined ? undefined : {ul: UL[k], why: T("ulWhy")[k]},
   has: (_, k) => k in UL
@@ -562,6 +573,19 @@ function targetFor(cat){
     case "maca":        return {lo:1500, hi:3000, ul:null, unit:T("units").maca, note:T("notes").maca, scaled:false};
     case "rhodiola":    return {lo:200, hi:600, ul:null, unit:T("units").rhodiola, note:T("notes").rhodiola, scaled:false};
     case "curcumin":    return {lo:250, hi:1500, ul:null, unit:T("units").curcumin, note:T("notes").curcumin, scaled:false};
+    // Vitamins batch — bands are the studied ranges; folate carries the only EFSA UL.
+    case "vitamin_b12": return {lo:25, hi:1000, ul:null, unit:T("units").vitamin_b12, note:T("notes").vitamin_b12, scaled:false};
+    case "vitamin_k2":  return {lo:90, hi:200, ul:null, unit:T("units").vitamin_k2, note:T("notes").vitamin_k2, scaled:false};
+    case "biotin":      return {lo:40, hi:300, ul:null, unit:T("units").biotin, note:T("notes").biotin, scaled:false};
+    case "folate":      return {lo:200, hi:400, ul:LIMITS.folate.ul, ulWhy:LIMITS.folate.why, unit:T("units").folate, note:T("notes").folate, scaled:false};
+    case "b_complex":   return {kind:"multi"};
+    // Sold to raise testosterone — the band is what the trials used, not what worked.
+    case "zma": {                                                 // scored on its zinc: same band, same ceiling
+      const z = targetFor("zinc");
+      return {...z, unit:T("units").zma, note:T("notes").zma};
+    }
+    case "tribulus":    return {lo:0, hi:0, ul:null, unit:T("units").tribulus, note:T("notes").tribulus, scaled:false};
+    case "fenugreek":   return {lo:500, hi:600, ul:null, unit:T("units").fenugreek, note:T("notes").fenugreek, scaled:false};
     case "multivitamin": return {kind:"multi"};
     default: return null;
   }
@@ -659,7 +683,7 @@ function renderStackBtn(){
 }
 
 // Nutrients that carry a regulatory ceiling — the ones a stack must not silently exceed.
-const UL_NUTRIENTS = ["vitamin_d3","magnesium","zinc","vitamin_c"];
+const UL_NUTRIENTS = ["vitamin_d3","magnesium","zinc","vitamin_c","folate"];
 
 /* category -> [{p, amount, builtIn, fromMulti}]
    Multivitamins contribute every nutrient they have coded (0 = confirmed absent).
@@ -678,7 +702,9 @@ function stackContributions(items){
       continue;
     }
     const d = productDailyDose(p);
-    if (d != null) push(p.category, {p, amount:d});
+    // ZMA's active IS zinc, so it counts toward the zinc total (and the 25 mg
+    // limit) rather than sitting in a row of its own.
+    if (d != null) push(p.category === "zma" ? "zinc" : p.category, {p, amount:d});
     for (const sa of (p.secondary_actives||[]))
       push(sa.category, {p, amount:sa.per_day, builtIn:true});
   }
@@ -694,7 +720,8 @@ function uncodedMentions(p){
   if (p.category === "multivitamin") return [];
   const txt = (p.name + " " + (p.variant||"") + " " + (p.form||"")).toLowerCase();
   const coded = new Set((p.secondary_actives||[]).map(s => s.category));
-  return MENTIONS.filter(([c,re]) => c !== p.category && !coded.has(c) && re.test(txt)).map(([c]) => c);
+  const own = p.category === "zma" ? "zinc" : p.category;
+  return MENTIONS.filter(([c,re]) => c !== own && !coded.has(c) && re.test(txt)).map(([c]) => c);
 }
 
 // one nutrient row of the stack: total, verdict (limit first, then band), contributors
@@ -848,13 +875,14 @@ function chipset(p){
   if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">${esc(T("chipThirdParty"))}</span>`);
   if (p.vegan) chips.push(`<span class="chip">${esc(T("chipVegan"))}</span>`);
   if (BOTANICAL.has(p.category)) chips.push(`<span class="chip bot" title="${esc(T("chipBotanicalTitle"))}">${esc(T("chipBotanical"))}</span>`);
+  if (BOOSTER.has(p.category)) chips.push(`<span class="chip boost" title="${esc(T("chipBoosterTitle"))}">${esc(T("chipBooster"))}</span>`);
   if (p.reviewed && p.reviewed.length) chips.push(`<span class="chip review" title="${esc(T("chipReviewTitle"))}">${esc(T("chipReview"))}</span>`);
   if (p.flags.length) chips.push(`<span class="chip warn">${esc(T("chipFlags")(p.flags.length))}</span>`);
   return chips.join("");
 }
 function card(p){
   const s = p.scores, inCmp = compare.includes(p.id), inStk = STACK.includes(p.id);
-  return `<article class="card${s.red_card?" redcard":""}${BOTANICAL.has(p.category)?" bot":""}">
+  return `<article class="card${s.red_card?" redcard":""}${BOTANICAL.has(p.category)?" bot":""}${BOOSTER.has(p.category)?" boost":""}">
     <span class="conf" title="${esc(T("confTitle")(T("confidence")[p.confidence]))}" style="background:${CONF[p.confidence]}"></span>
     ${s.red_card?`<div class="redcard-banner">${esc(T("redCardBanner")((s.banned_substances||[]).join(", ").replace(/_/g," ")))}</div>`:""}
     <div class="card-top">
@@ -1060,6 +1088,16 @@ function openAbout(){
   showModal(`<button class="close" onclick="closeModal()">✕</button>
   <div class="prose">${T("about")(META)}</div>`);
 }
+// /compare/#methodology and /compare/#about open the modals directly. The
+// evidence page used to link to METHODOLOGY.md itself, which GitHub Pages
+// serves as a raw markdown download — a dead end for a reader. Every other
+// page now sends them here instead.
+function openFromHash(){
+  const h = location.hash.replace("#", "");
+  if (h === "methodology") openMethodology();
+  else if (h === "about") openAbout();
+}
+window.addEventListener("hashchange", openFromHash);
 
 /* ---------- language ------------------------------------------------------
    Applies the current language to static markup (data-i18n*) and re-renders
@@ -1106,6 +1144,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal()
 
 loadProfileUI();
 applyLang();
+openFromHash();
 </script>
 </body>
 </html>

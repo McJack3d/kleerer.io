@@ -144,12 +144,28 @@ STD = {
     "maca":        {"amount": 3000, "label": "€ / 3 g maca"},
     "rhodiola":    {"amount": 400,  "label": "€ / 400 mg extract"},
     "curcumin":    {"amount": 500,  "label": "€ / 500 mg curcuminoids"},
+    # Vitamins batch (v1.5)
+    "vitamin_b12": {"amount": 500,  "label": "€ / 500 µg B12"},
+    "vitamin_k2":  {"amount": 100,  "label": "€ / 100 µg MK-7"},
+    "b_complex":   {"amount": None, "label": "€ / day"},
+    "biotin":      {"amount": None, "label": "€ / day"},
+    "folate":      {"amount": 400,  "label": "€ / 400 µg folate"},
+    # Sold to raise testosterone (v1.5). Shown in their own colour, because the
+    # evidence page's honest summary of the group is "mostly no". Scored on the
+    # same method — which is exactly why they land low: form is "the extract the
+    # trials used", and for tribulus no dose has ever raised testosterone in men.
+    "tribulus":    {"amount": None, "label": "€ / day"},
+    "fenugreek":   {"amount": 600,  "label": "€ / 600 mg extract"},
+    # ZMA is scored on its zinc (the only component with a testosterone claim,
+    # and only in deficiency); magnesium and B6 ride along as secondary actives.
+    "zma":         {"amount": None, "label": "€ / day"},
 }
 
 # Categories shown apart on the site: plant extracts with pharmacological
 # effects, not nutrients. The list lives here so the UI, the value table and the
 # evidence page all agree on what a "botanical" is.
 BOTANICALS = ["ashwagandha", "maca", "rhodiola", "curcumin"]
+BOOSTERS = ["tribulus", "fenugreek", "zma"]
 
 def value_metrics(p):
     c, price = p["category"], p["price_eur"]
@@ -247,7 +263,7 @@ def normalize(entry):
     p = dict(entry)
     p["id"] = slug(entry["brand"], entry["name"], entry.get("variant",""))
     # form tier
-    if c == "multivitamin":
+    if c in ("multivitamin", "b_complex"):
         p["form_tier"], p["form_note"] = MULTI_FORM.get(entry.get("form_quality","standard"))
         p["dose_tier"], p["dose_note"] = MULTI_DOSE.get(entry.get("dose_style","mixed"))
     else:
@@ -260,7 +276,8 @@ def normalize(entry):
             p["collagen_g_day"] = entry.get("active_per_unit",0) * entry.get("units_per_day",1)
     # dose tier for override categories
     if c in ("zinc","vitamin_c","collagen","probiotics","melatonin",
-             "ashwagandha","maca","rhodiola","curcumin"):
+             "ashwagandha","maca","rhodiola","curcumin",
+             "vitamin_b12","vitamin_k2","biotin","folate","tribulus","fenugreek","zma"):
         p["dose_tier"], p["dose_note"] = autotag.infer_dose_tier(c, p)
     # purity (v1.2: also returns red-card substances + unrecognised items to review)
     p["purity_tags"], p["additives_detail"], p["banned"], p["review_flags"] = \
@@ -407,6 +424,7 @@ def main():
                  "n_red_cards":n_red,
                  "n_withheld_for_review":len(withheld),
                  "botanical_categories":BOTANICALS,
+                 "booster_categories":BOOSTERS,
                  "methodology_version":"1.2"},
         "products": products,
     }

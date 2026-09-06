@@ -30,6 +30,7 @@
     --warn-bg:rgba(196,154,0,.10); --warn-line:rgba(196,154,0,.45); --warn-ink:#6f5703;
     --bot:#6b4fa3; --bot-bg:#efe9f9; --bot-line:#c9b8e8;
     --efsa:#1f4e79; --efsa-bg:rgba(31,78,121,.07);
+    --boost:#1f6f78; --boost-bg:#e6f2f3; --boost-line:#b3d6d9;
     --pad:clamp(24px,5vw,56px);
   }
   *{box-sizing:border-box; margin:0; padding:0}
@@ -84,6 +85,10 @@
 
   .entry{border:1px solid var(--line); border-radius:2px; padding:18px; margin-bottom:14px; background:var(--bg); display:grid; grid-template-columns:44px 1fr; gap:16px; animation:rise .5s ease both}
   .entry.bot{border-left:3px solid var(--bot-line)}
+  .entry.boost{border-left:3px solid var(--boost-line)}
+  .entry.boost .ename{color:var(--boost)}
+  .chip.boost{border-color:var(--boost-line); color:var(--boost); background:var(--boost-bg)}
+  .sw.boost{background:var(--boost-bg); border-color:var(--boost-line)}
   .entry .gb{width:44px; height:44px; font-size:20px; flex-direction:column}
   .entry .gb span{font-size:8px; font-weight:400; opacity:.9; margin-top:1px; font-family:ui-monospace,monospace}
   .etop{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin-bottom:8px}
@@ -138,7 +143,7 @@
     <span class="crumb" id="crumb">/ evidence</span>
     <nav class="hnav">
       <a href="/compare/" id="navCompare">compare</a>
-      <a href="/compare/METHODOLOGY.md" id="navMethod">methodology</a>
+      <a href="/compare/#methodology" id="navMethod">methodology</a>
       <span class="langsw" id="langsw">
         <button onclick="setLang('en')" data-lang="en" title="Show in English">EN</button>
         <button onclick="setLang('fr')" data-lang="fr" title="Afficher en français">FR</button>
@@ -185,6 +190,7 @@ const UI = {
     sub: `What supplements <b>actually do</b>, by need — graded on the trials behind each claim, with participants counted. The <b>EFSA authorised claim</b> is shown separately from the evidence, because a regulator approving a sentence about a nutrient's role is not the same thing as a trial showing an outcome improved. <b>Not medical advice.</b>`,
     keyNutrient: "nutrient — has a reference intake and usually an EFSA limit",
     keyBot: "botanical — a plant extract, not a nutrient; no reference intake, no EFSA limit, no authorised claim",
+    keyBoost: "sold to raise testosterone — plant, amino acid or mineral; graded on whether it did",
     keyEfsa: "EFSA authorised claim (Reg. 1924/2006) — regulator-approved wording, not outcome evidence",
     studies: "the studies", participants: "participants", compare: "compare products →",
     dose: "dose in the trials", noStudies: "no controlled trial meets the bar for a citation here — listed for the authorised claim and for what to expect, not for an effect.",
@@ -204,6 +210,7 @@ const UI = {
     sub: `Ce que les compléments <b>font vraiment</b>, par besoin — noté sur les essais derrière chaque promesse, participants comptés. L'<b>allégation EFSA autorisée</b> est affichée à part des preuves, parce qu'un régulateur qui approuve une phrase sur le rôle d'un nutriment n'est pas la même chose qu'un essai montrant qu'un résultat s'améliore. <b>Ne constitue pas un avis médical.</b>`,
     keyNutrient: "nutriment — a un apport de référence et généralement une limite EFSA",
     keyBot: "plante — un extrait végétal, pas un nutriment ; aucun apport de référence, aucune limite EFSA, aucune allégation autorisée",
+    keyBoost: "vendu pour augmenter la testostérone — plante, acide aminé ou minéral ; noté selon qu'il l'a fait",
     keyEfsa: "allégation EFSA autorisée (règl. 1924/2006) — formulation approuvée par le régulateur, pas une preuve de résultat",
     studies: "les études", participants: "participants", compare: "comparer les produits →",
     dose: "dose dans les essais", noStudies: "aucun essai contrôlé n'atteint le seuil pour être cité ici — listé pour l'allégation autorisée et pour savoir à quoi s'attendre, pas pour un effet.",
@@ -235,14 +242,16 @@ function setLang(l){ if (l !== "en" && l !== "fr") return; LANG = l; try{ localS
 function entry(e){
   const sup = EVIDENCE.supplements[e.sup];
   const bot = sup.kind === "botanical";
+  const boost = sup.kind === "booster";
   const U = UI[LANG];
   const safety = e.safety ? EVIDENCE.safety[e.safety] : null;
-  return `<article class="entry${bot?" bot":""}">
+  return `<article class="entry${bot?" bot":""}${boost?" boost":""}">
     <div class="gb" style="background:${GC[e.grade]}"><span style="font-size:20px;font-family:Arial,Helvetica,sans-serif;font-weight:bold">${e.grade}</span><span>${esc(L(EVIDENCE.grades[e.grade].label))}</span></div>
     <div>
       <div class="etop">
         <span class="ename">${esc(L(sup.name))}</span>
         ${bot ? `<span class="chip bot">${LANG==="fr"?"plante":"botanical"}</span>` : ""}
+        ${boost ? `<span class="chip boost">${LANG==="fr"?"« booster »":"\"booster\""}</span>` : ""}
         ${sup.cat ? `<a class="cmp" href="/compare/#cat=${sup.cat}">${esc(U.compare)}</a>` : ""}
       </div>
       ${safety ? `<div class="safety"><b>⚠ ${esc(L(safety.title))}</b>${esc(L(safety.body))}${safety.urls.length ? `<div style="margin-top:6px">${safety.urls.map(u=>`<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.label)} ↗</a>`).join("")}</div>`:""}</div>` : ""}
@@ -271,6 +280,7 @@ function render(){
   document.getElementById("keyrow").innerHTML =
     `<span class="k"><span class="sw"></span>${esc(U.keyNutrient)}</span>` +
     `<span class="k"><span class="sw bot"></span>${esc(U.keyBot)}</span>` +
+    `<span class="k"><span class="sw boost"></span>${esc(U.keyBoost)}</span>` +
     `<span class="k"><span class="sw efsa"></span>${esc(U.keyEfsa)}</span>`;
   document.getElementById("needsbar").innerHTML = EVIDENCE.needs.map(n => `<a href="#${n.id}">${esc(L(n.name))}</a>`).join("");
   document.getElementById("main").innerHTML = EVIDENCE.needs.map(n => `

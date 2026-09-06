@@ -352,6 +352,88 @@ def infer_form_tier(cat, form, entry=None):
             return 12, "Plain 95% curcuminoid extract — poorly absorbed on its own."
         return 10, "Curcumin form not clearly declared."
 
+
+    # ---------------------------------------------------------------------
+    # Vitamins batch (v1.5). For a vitamin, "form" is the chemical species —
+    # and the honest ladder is flatter than the marketing suggests.
+    # ---------------------------------------------------------------------
+    if cat == "vitamin_b12":
+        # Cyano-, methyl-, adenosyl- and hydroxocobalamin all correct deficiency;
+        # the trials behind the B12 evidence used cyanocobalamin. "Liposomal"
+        # and "sublingual" have no demonstrated advantage over swallowing it.
+        if any(k in f for k in ["methylcobalamin", "methylcobalamine", "adenosylcobalamin", "hydroxocobalamin", "hydroxocobalamine"]):
+            return 18, "Active cobalamin form — works; no proven edge over cyanocobalamin."
+        if "cyanocobalamin" in f or "cyanocobalamine" in f:
+            return 18, "Cyanocobalamin — the stable, best-studied form; the one the trials used."
+        if "liposom" in f:
+            return 14, "'Liposomal' B12 — premium form with no demonstrated advantage."
+        if "cobalamin" in f or "b12" in f:
+            return 12, "B12 form not specified."
+        return 10, "Vitamin form not declared."
+
+    if cat == "vitamin_k2":
+        if any(k in f for k in ["mk-7", "mk7", "menaquinone-7", "menaquinone 7"]):
+            if any(k in f for k in ["all-trans", "all trans", "forme trans", "% trans", "k2vital", "menaq7", "vitamk7"]):
+                return 20, "MK-7, all-trans (branded) — the long-half-life form the MK-7 trials used."
+            return 18, "MK-7 — long half-life; isomer purity not declared."
+        if any(k in f for k in ["mk-4", "mk4", "menaquinone-4", "menatetrenone"]):
+            return 14, "MK-4 — short half-life; the bone trials used a 45 mg pharmaceutical dose, not supplement amounts."
+        if any(k in f for k in ["phylloquinone", "phytonadione", "k1"]):
+            return 10, "Vitamin K1 — not a K2, and not what a 'K2' buyer is paying for."
+        return 8, "Menaquinone form not declared."
+
+    if cat == "biotin":
+        return 18, "D-biotin — one form, no meaningful differences between products."
+
+    if cat == "folate":
+        # The neural-tube-defect evidence is for FOLIC ACID. Methylfolate is
+        # well absorbed and reasonable, but it is not the form the trials used,
+        # and the MTHFR argument for it is theoretical.
+        if any(k in f for k in ["acide folique", "folic acid", "pteroylmonoglutam"]):
+            return 20, "Folic acid — the form with the neural-tube-defect evidence."
+        if any(k in f for k in ["methylfolate", "méthylfolate", "5-mthf", "mthf", "quatrefolic", "metafolin", "methyltetrahydrofolate", "l-methylfolate"]):
+            return 18, "5-MTHF (methylfolate) — well absorbed; the NTD trials used folic acid."
+        if any(k in f for k in ["folate", "folinique", "folinic"]):
+            return 14, "Folate, form not specified."
+        return 10, "Vitamin form not declared."
+
+    # ---------------------------------------------------------------------
+    # Sold to raise testosterone (v1.5)
+    # ---------------------------------------------------------------------
+    if cat == "tribulus":
+        # No standardisation buys back the evidence: no tribulus dose has
+        # raised testosterone in men. The ladder only rewards knowing what is
+        # in the capsule.
+        if any(k in f for k in ["saponin", "protodioscin"]) and "%" in f:
+            return 14, "Standardised saponin/protodioscin content declared — no dose has raised testosterone in men."
+        if "extrait" in f or "extract" in f:
+            return 10, "Extract, standardisation not declared."
+        return 8, "Fruit/plant powder, unstandardised."
+
+    if cat == "fenugreek":
+        # "non standardisé" / "non titré" must not read as "standardised".
+        f = re.sub(r"\b(non|sans|pas)\s+(standardis\w*|titr\w*|titrage)", " ", f)
+        if any(k in f for k in ["testofen", "furosap", "fenu-fg", "fenufg"]):
+            return 20, "Branded seed extract — the material the (manufacturer-linked) testosterone trials used."
+        if any(k in f for k in ["furostanol", "saponin", "titr", "standard"]):
+            return 16, "Standardised seed extract."
+        if "extrait" in f or "extract" in f:
+            return 12, "Extract, standardisation not declared."
+        return 8, "Seed powder — a spice, not the trial material."
+
+    if cat == "zma":
+        # The zinc is the only component with a testosterone claim, and only in
+        # deficiency. The ladder ranks the zinc salt: the patented ZMA material
+        # is zinc monomethionine + aspartate; bisglycinate is as well absorbed;
+        # oxide is the cheap, poorly absorbed one.
+        if any(k in f for k in ["optizinc", "monomethionine", "monomethionine", "methionine", "bisglycinate", "picolinate"]):
+            return 16, "Chelated zinc (monomethionine / bisglycinate) — the ZMA trial material or an equivalent chelate."
+        if any(k in f for k in ["aspartate", "citrate", "gluconate"]):
+            return 14, "Organic zinc salt — well absorbed; not the patented ZMA form."
+        if any(k in f for k in ["oxyde", "oxide", "sulfate", "sulphate"]):
+            return 10, "Zinc oxide/sulfate — the cheapest and least absorbed form."
+        return 8, "Zinc form not declared."
+
     return 14, "Form not scored for this category."
 
 
@@ -425,4 +507,51 @@ def infer_dose_tier(cat, entry):
         if mg >= 1000: return 20, f"{mg:g} mg curcuminoids/day — the plain-extract dose the osteoarthritis trials used."
         if mg >= 500: return 16, f"{mg:g} mg/day — lower end for a plain extract."
         return 10, f"{mg:g} mg/day — too little plain curcumin to expect absorption."
+
+    # Vitamins batch (v1.5)
+    if cat == "vitamin_b12":
+        ug = daily()
+        if ug > 2000: return 16, f"{ug:g} µg/day — far above any studied dose; harmless, but pointless."
+        if ug >= 25:  return 20, f"{ug:g} µg/day — covers the 50–100 µg/day a vegan needs, or a weekly 2,000 µg."
+        if ug >= 4:   return 12, f"{ug:g} µg/day — reference intake, but passive absorption at this dose is ~1 %."
+        return 8, f"{ug:g} µg/day — below the reference intake."
+    if cat == "vitamin_k2":
+        ug = daily()
+        if ug >= 200: return 17, f"{ug:g} µg/day MK-7 — the top of the trial range (375 µg for 3 years)."
+        if ug >= 90:  return 20, f"{ug:g} µg/day MK-7 — the range the bone-density trials used."
+        if ug >= 45:  return 16, f"{ug:g} µg/day — below most trials."
+        return 10, f"{ug:g} µg/day — token dose."
+    if cat == "biotin":
+        # More is worse here. Nothing above the reference intake has evidence in
+        # healthy people, and from ~1 mg the FDA-documented lab-test interference
+        # starts to matter. The ladder points DOWN with dose, on purpose.
+        ug = daily()
+        if ug >= 2500: return 8, f"{ug:g} µg/day — a hair-product megadose with no trial behind it; falsifies troponin and thyroid tests."
+        if ug > 300:   return 14, f"{ug:g} µg/day — above any need; lab interference possible from ~1,000 µg."
+        if ug >= 40:   return 20, f"{ug:g} µg/day — covers the 40 µg reference intake."
+        return 12, f"{ug:g} µg/day — below the reference intake."
+    if cat == "folate":
+        ug = daily()
+        if ug > 1000: return 8, f"{ug:g} µg/day — above the EFSA upper limit for folic acid (1,000 µg); can mask a B12 deficiency."
+        if ug >= 400: return 20, f"{ug:g} µg/day — the periconceptional dose the neural-tube-defect trials used."
+        if ug >= 200: return 14, f"{ug:g} µg/day — reference intake, below the pregnancy dose."
+        return 8, f"{ug:g} µg/day — token dose."
+    if cat == "tribulus":
+        mg = daily()
+        return 8, f"{mg:g} mg/day — no tribulus dose has raised testosterone in men; scored as a token."
+    if cat == "fenugreek":
+        mg = daily()
+        if mg > 1200: return 14, f"{mg:g} mg/day — above the studied range."
+        if mg >= 500: return 20, f"{mg:g} mg/day — the 500–600 mg the testosterone trials used."
+        if mg >= 300: return 15, f"{mg:g} mg/day — below the studied range."
+        return 8, f"{mg:g} mg/day — token dose."
+    if cat == "zma":
+        # Zinc per day. The one positive ZMA trial used 30 mg — above the 25 mg
+        # EFSA ceiling — and the independent replication found nothing at the
+        # same dose, so the band stops at the ceiling, not at the trial.
+        mg = daily()
+        if mg > 25:  return 12, f"{mg:g} mg zinc/day — above the EFSA upper limit (25 mg); the ZMA trial dose, but the replication found nothing."
+        if mg >= 10: return 20, f"{mg:g} mg zinc/day — covers the reference intake and stays under the 25 mg limit."
+        if mg >= 5:  return 12, f"{mg:g} mg zinc/day — half the reference intake."
+        return 8, f"{mg:g} mg zinc/day — token dose."
     return None

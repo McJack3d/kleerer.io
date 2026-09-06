@@ -1,0 +1,1117 @@
+[
+ {
+  "category": "vitamin_b12",
+  "brand": "Novoma",
+  "name": "Vitamine B12",
+  "variant": "gélules · 120",
+  "price_eur": 15.92,
+  "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 19,90 €)",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "capsule végétale K-Caps® (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://novoma.com/products/vitamine-b12",
+  "ean": null,
+  "notes": "1 000 µg/j en 1 gélule (40 000 % des VNR) ; certificat d'analyse téléchargeable."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Dynveo",
+  "name": "Vitamine B12 active",
+  "variant": "gélules · 60",
+  "price_eur": 8.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 250,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine + hydroxocobalamine + adénosylcobalamine (trio de formes actives)",
+  "vegan": true,
+  "additives": [
+   "fibres d'acacia",
+   "gélule d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Clean Label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/vitamine-b12",
+  "ean": null,
+  "notes": "250 µg par gélule ; la marque conseille 2 gélules/j en cas de carence — chiffré à 1/j."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "ARGALYS",
+  "name": "Vitamine B12 Vegan 1000 µg + Iode et Sélénium",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "argalys.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "cyanocobalamine, avec iode (iodure de potassium, 150 µg) et sélénium (sélénite de sodium, 100 µg)",
+  "vegan": true,
+  "additives": [
+   "fibre de riz",
+   "fibre d'acacia",
+   "gélule végétale HPMC"
+  ],
+  "certifications": [
+   "vegan",
+   "déclaré à la DGCCRF"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Apporte 100 µg de sélénium (182 % VNR) et 150 µg d'iode par gélule : à ne pas cumuler avec un multivitamine ou un complément d'iode."
+  ],
+  "confidence": "high",
+  "url": "https://www.argalys.com/products/vitamine-b12-iode-selenium",
+  "ean": null,
+  "notes": "Posologie de la marque : 2 gélules par semaine en entretien (≈ 0,09 €/j selon la marque) ; 1 gélule/j en cure d'attaque — chiffré ici à 1/j, ce qui surestime le coût en entretien."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Biocyte",
+  "name": "Vitamin B12 Liposomal 500 µg",
+  "variant": "gélules · 30",
+  "price_eur": 17.0,
+  "price_note": "biocyte.com live 06/09/2026",
+  "units_pack": 30,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 500,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine liposomale",
+  "vegan": true,
+  "additives": [
+   "anti-agglomérant : carbonate de magnésium",
+   "inuline",
+   "émulsifiant : lécithines",
+   "correcteur d'acidité : hydroxyde de sodium",
+   "gélule d'origine végétale (dérivé de cellulose)",
+   "agent de charge : cellulose",
+   "fibre de pois",
+   "anti-agglomérant : sels de magnésium d'acides gras"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.biocyte.com/products/vitamin-b12-liposomal-30-gelules",
+  "ean": null,
+  "notes": "500 µg/j ; « liposomal » n'a aucun avantage démontré sur la B12 avalée."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Nat&Form",
+  "name": "Vitamine B12 en gélules",
+  "variant": "gélules · 30",
+  "price_eur": 11.5,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 30,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.nat-form.com/products/vitamine-b12-en-gelules",
+  "ean": null,
+  "notes": "1 000 µg/j (40 000 % des VNR)."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Nutri&Co",
+  "name": "Vitamine B12 MecobalActive®",
+  "variant": "gélules · 120",
+  "price_eur": 19.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine brevetée MecobalActive®",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "gélule végétale (hydroxypropylméthylcellulose)",
+   "amidon de riz"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "MecobalActive®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://nutriandco.com/fr/produits/vitamine-b12",
+  "ean": null,
+  "notes": "Nombre de gélules déduit de « dure minimum 4 mois à raison d'une gélule par jour » (120). Entretien conseillé par la marque : 2 gélules/semaine."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Cuure",
+  "name": "Vitamine B12 Méthylcobalamine",
+  "variant": "gélules · 120",
+  "price_eur": 27.9,
+  "price_note": "cuure.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine",
+  "vegan": true,
+  "additives": [
+   "poudre de fleurs d'hibiscus",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Vegan",
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://cuure.com/produits/vitamine-b12",
+  "ean": null,
+  "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » de la page (méthylcobalamine, poudre de fleurs d'hibiscus, gélule végétale), pas de ligne d'étiquette formelle. 1 mg = 1 000 µg ; flacon « 120 jours »."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Onatera",
+  "name": "Vitamine B12 vegan",
+  "variant": "gélules · 60",
+  "price_eur": 10.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale",
+   "agent de charge : amidon de riz"
+  ],
+  "certifications": [
+   "Vegan Society",
+   "Made in France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b12-vegan-60-gelules-vegetales-orfito",
+  "ean": null,
+  "notes": "1 000 µg/j. Existe en 120 gélules (19,95 €)."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Onatera",
+  "name": "Vitamine B12 liposomale LipoCellTech™",
+  "variant": "gélules · 60",
+  "price_eur": 15.95,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine liposomale (LipoCellTech™), enrichie en D-ribose",
+  "vegan": true,
+  "additives": [
+   "D-ribose (69 mg)",
+   "phosphatidylcholine",
+   "agent de charge : fibre d'acacia",
+   "gélule d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Made in France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "LipoCellTech™",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b12-liposomale-60-gelules-vegetales-enefis",
+  "ean": null,
+  "notes": "1 000 µg/j."
+ },
+ {
+  "category": "vitamin_b12",
+  "brand": "Onatera",
+  "name": "Vitamine B9 & B12 formes actives",
+  "variant": "gélules · 60",
+  "price_eur": 16.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 500,
+  "active_unit": "µg B12",
+  "form": "méthylcobalamine, avec 5-MTHF Quatrefolic® (200 µg)",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b9-b12-formes-actives-60-gelules-orfito",
+  "ean": null,
+  "notes": "500 µg de B12 + 200 µg de folate (5-MTHF) par gélule.",
+  "secondary_actives": [
+   {
+    "category": "folate",
+    "per_day": 200
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Dynveo",
+  "name": "Vitamine D3 K2 MK-7",
+  "variant": "gélules · 60",
+  "price_eur": 28.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 80,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) micro-encapsulée, avec D3 de lichen (2 000 UI)",
+  "vegan": true,
+  "additives": [
+   "fibres d'acacia",
+   "tunique d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Clean Label Dynveo",
+   "vegan"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/vitamine-d3-k2-mk7",
+  "ean": null,
+  "notes": "80 µg de K2 + 2 000 UI de D3 par gélule.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 2000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Dynveo",
+  "name": "Vitamine K2 MK7",
+  "variant": "gélules · 60",
+  "price_eur": 14.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 80,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) forme trans, micro-encapsulée",
+  "vegan": true,
+  "additives": [
+   "fibres d'acacia",
+   "tunique d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Clean Label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/vitamine-k2-mk7",
+  "ean": null,
+  "notes": "80 µg/j (100 % VNR)."
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Nutrimuscle",
+  "name": "Vitamines D3 + K2-MK7",
+  "variant": "gélules · 30",
+  "price_eur": 11.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 30,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 127,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) par fermentation, avec D3 Quali®-D (31 µg = 1 240 UI)",
+  "vegan": true,
+  "additives": [
+   "inuline (85 %)",
+   "gélule végétalienne (agent d'enrobage : pullulan)"
+  ],
+  "certifications": [
+   "Sport Protect",
+   "certificat WADA",
+   "Halal"
+  ],
+  "coa_published": true,
+  "third_party_cert": true,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.nutrimuscle.com/products/vitamines-d3-k2-mk7",
+  "ean": null,
+  "notes": "127 µg de K2 + 31 µg (1 240 UI) de D3 par gélule. La marque l'étiquette vegan ; Quali®-D est habituellement issue de lanoline.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 1240
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "BioTechUSA",
+  "name": "K2+D3 Drops",
+  "variant": "flacon 30 ml · 87 doses",
+  "price_eur": 29.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 87,
+  "unit_name": "dose de 10 gouttes",
+  "units_per_day": 1,
+  "active_per_unit": 120,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone (K2, préparation huileuse ; MK-7 ou MK-4 non précisé), avec D3 (50 µg = 2 000 UI)",
+  "vegan": false,
+  "additives": [
+   "huile d'olive extra vierge (92 %)",
+   "acides gras à chaîne moyenne",
+   "antioxydant : DL-alpha-tocophérol",
+   "antioxydant : extrait riche en tocophérols"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://shop.biotechusa.fr/products/k2-d3-drops-30-ml",
+  "ean": null,
+  "notes": "10 gouttes = 120 µg de K2 + 2 000 UI de D3 ; 87 doses par flacon selon la marque.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 2000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "PURE AM Nutrition",
+  "name": "PURE Vitamines D3 + K2 MK-7",
+  "variant": "gélules · 120",
+  "price_eur": 18.9,
+  "price_note": "amnutrition.fr live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 75,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7), avec D3 (50 µg = 2 000 UI)",
+  "vegan": false,
+  "additives": [
+   "agent de charge : cellulose",
+   "enveloppe de la gélule végétale : pullulan"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.amnutrition.fr/products/pure-vitamines-d3-k2-mk-7",
+  "ean": null,
+  "notes": "75 µg de K2 + 2 000 UI de D3 par gélule ; origine de la D3 non précisée.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 2000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Superphysique Nutrition",
+  "name": "Elite Vitamines D3+K2 vitaMK7®",
+  "variant": "spray · 105 pulvérisations",
+  "price_eur": 19.9,
+  "price_note": "superphysique-nutrition.fr live 06/09/2026",
+  "units_pack": 105,
+  "unit_name": "pulvérisation",
+  "units_per_day": 1,
+  "active_per_unit": 75,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 vitaMK7® (> 99 % trans), avec D3 de lichen (25 µg = 1 000 UI)",
+  "vegan": true,
+  "additives": [
+   "huile de colza biologique",
+   "antioxydant : extraits d'origine naturelle riches en tocophérols"
+  ],
+  "certifications": [
+   "Fabriqué en France (Seanova)"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "vitaMK7®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.superphysique-nutrition.fr/680--elite-d3k2-vitamk7.html",
+  "ean": null,
+  "notes": "1 pulvérisation/j = 75 µg de K2 + 1 000 UI de D3.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 1000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Olimp Sport Nutrition",
+  "name": "Gold-Vit® D3+K2 2000 IU Sport Edition",
+  "variant": "capsules · 60",
+  "price_eur": 11.0,
+  "price_note": "olimpstore.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "capsule",
+  "units_per_day": 1,
+  "active_per_unit": 100,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) par fermentation du soja, avec D3 (50 µg = 2 000 UI)",
+  "vegan": false,
+  "additives": [
+   "huile de triglycérides à chaîne moyenne (MCT)",
+   "antioxydant : extrait riche en tocophérols",
+   "capsule (gélatine)"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://olimpstore.fr/olimp-gold-vit-d3-k2-2000-iu-sport-edition-60-gelules-2191",
+  "ean": null,
+  "notes": "100 µg de K2 + 2 000 UI de D3 par capsule.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 2000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Cuure",
+  "name": "Vitamine K2 MenaQ7®",
+  "variant": "gélules · 120",
+  "price_eur": 39.9,
+  "price_note": "cuure.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 75,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 MenaQ7® (fermentation Bacillus subtilis natto)",
+  "vegan": true,
+  "additives": [
+   "lithothamne",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Vegan",
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "MenaQ7®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://cuure.com/produits/vitamine-k2",
+  "ean": null,
+  "notes": "Liste d'ingrédients lue sur les fiches « Ingrédients » (MenaQ7, lithothamne, gélule végétale). Flacon « 120 jours » à 1 gélule/j."
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Onatera",
+  "name": "Vitamines K2 MK7 & D3",
+  "variant": "comprimés · 90",
+  "price_eur": 11.5,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 90,
+  "unit_name": "comprimé",
+  "units_per_day": 1,
+  "active_per_unit": 75,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) microencapsulée, avec D3 de lanoline (25 µg = 1 000 UI)",
+  "vegan": false,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "anti-agglomérant : fibre et amidon de pomme de terre",
+   "cellulose",
+   "gomme gellane"
+  ],
+  "certifications": [
+   "Made in France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamines-k2-mk7-d3-90-comprimes-onatera",
+  "ean": null,
+  "notes": "75 µg de K2 + 1 000 UI de D3 par comprimé.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 1000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Onatera",
+  "name": "Vitamines K2 MK7 & D3 Ultra",
+  "variant": "gélules · 90",
+  "price_eur": 19.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 90,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 75,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 K2VITAL® microencapsulée, avec D3 liposomale Liposovit®-D3 de lanoline (75 µg = 3 000 UI)",
+  "vegan": false,
+  "additives": [
+   "gélule d'origine végétale (HPMC)",
+   "agents de charge : fibre d'acacia, amidon de riz"
+  ],
+  "certifications": [
+   "Made in France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "K2VITAL®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamines-k2-mk7-d3-ultra-90-gelules-onatera",
+  "ean": null,
+  "notes": "75 µg de K2 + 3 000 UI de D3 par gélule.",
+  "secondary_actives": [
+   {
+    "category": "vitamin_d3",
+    "per_day": 3000
+   }
+  ]
+ },
+ {
+  "category": "vitamin_k2",
+  "brand": "Solaray",
+  "name": "Vitamine K2 Ménaquinone-7",
+  "variant": "capsules · 30",
+  "price_eur": 19.6,
+  "price_note": "onatera.com live 06/09/2026 (épuisé ce jour)",
+  "units_pack": 30,
+  "unit_name": "capsule",
+  "units_per_day": 1,
+  "active_per_unit": 50,
+  "active_unit": "µg MK-7",
+  "form": "ménaquinone-7 (MK-7) de natto",
+  "vegan": true,
+  "additives": [
+   "enveloppe de capsule : cellulose",
+   "agents de charge : cellulose microcristalline / gel cellulosique",
+   "anti-agglomérant : stéarate de magnésium",
+   "anti-agglomérant : silice"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-k2-menaquinone-7-30-capsules-solaray",
+  "ean": null,
+  "notes": "50 µg/j — sous la fourchette des essais."
+ },
+ {
+  "category": "b_complex",
+  "brand": "Dynveo",
+  "name": "Complexe vitamines B",
+  "variant": "gélules · 60",
+  "price_eur": 18.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "form": "8 vitamines B en formes actives (B6 P-5-P, B9 Quatrefolic® 5-MTHF, B12 trio méthyl/adénosyl/hydroxocobalamine) + inositol et PABA",
+  "vegan": true,
+  "additives": [
+   "fibres d'acacia",
+   "gélule d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Clean Label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/complexe-vitamines-b",
+  "ean": null,
+  "notes": "≈ 100 % des VNR par gélule (B6 1,4 mg, B8 50 µg, B9 200 µg, B12 2,5 µg) ; 20 mg d'inositol et 20 mg de PABA.",
+  "form_quality": "bioactive",
+  "dose_style": "physiological"
+ },
+ {
+  "category": "b_complex",
+  "brand": "Nat&Form",
+  "name": "Complexe vitamines B en gélules",
+  "variant": "gélules · 30",
+  "price_eur": 14.9,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 30,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "form": "vitamines B1, B2, B3, B5, B6, B8, B9, B12 (formes non précisées) + choline, inositol et PABA",
+  "vegan": true,
+  "additives": [
+   "gélule d'origine végétale",
+   "arôme vanille"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Vitamine B3 à 80 mg/j sous une forme non précisée : au-dessus de la limite EFSA de l'acide nicotinique (10 mg/j), pas de celle du nicotinamide (900 mg/j)."
+  ],
+  "confidence": "high",
+  "url": "https://www.nat-form.com/products/complexe-vitamines-b-en-gelules",
+  "ean": null,
+  "notes": "B1 6,6 mg (600 % VNR), B2 7,7 mg (550 %), B3 80 mg (500 %), B5 29 mg (483 %), B6 3,2 mg (228 %) ; 80 mg de PABA, 80 mg d'inositol, 33 mg de choline.",
+  "form_quality": "standard",
+  "dose_style": "megadose_b"
+ },
+ {
+  "category": "biotin",
+  "brand": "Biocyte",
+  "name": "Biotine 10 000 µg",
+  "variant": "gélules · 45",
+  "price_eur": 19.9,
+  "price_note": "biocyte.com live 06/09/2026",
+  "units_pack": 45,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 10000,
+  "active_unit": "µg biotin",
+  "form": "D-biotine (vitamine B8), avec L-cystéine, méthionine, extrait de prêle, zinc bisglycinate (2 mg), sélénométhionine et cuivre bisglycinate",
+  "vegan": true,
+  "additives": [
+   "anti-agglomérant : carbonate de calcium",
+   "gélule d'origine végétale (dérivé de cellulose)",
+   "anti-agglomérant : sels de magnésium d'acides gras"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+  ],
+  "confidence": "high",
+  "url": "https://www.biocyte.com/products/biotine-10000-mcg-45-gelules",
+  "ean": null,
+  "notes": "10 000 µg/j — 20 000 % des VNR."
+ },
+ {
+  "category": "biotin",
+  "brand": "Nat&Form",
+  "name": "Biotine en gélules",
+  "variant": "gélules · 60",
+  "price_eur": 11.9,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 10000,
+  "active_unit": "µg biotin",
+  "form": "D-biotine (vitamine B8), avec zinc bisglycinate (10 mg)",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "gélule d'origine végétale (HPMC)"
+  ],
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+  ],
+  "confidence": "high",
+  "url": "https://www.nat-form.com/products/biotine-en-gelules",
+  "ean": null,
+  "notes": "10 000 µg/j + 10 mg de zinc (100 % VNR).",
+  "secondary_actives": [
+   {
+    "category": "zinc",
+    "per_day": 10
+   }
+  ]
+ },
+ {
+  "category": "biotin",
+  "brand": "Cuure",
+  "name": "Biotine",
+  "variant": "gélules · 60",
+  "price_eur": 12.9,
+  "price_note": "cuure.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 450,
+  "active_unit": "µg biotin",
+  "form": "D-biotine (vitamine B8)",
+  "vegan": true,
+  "additives": [
+   "fibre d'acacia",
+   "gélule d'origine végétale (hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Vegan",
+   "Fabriqué en France"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://cuure.com/produits/biotine",
+  "ean": null,
+  "notes": "450 µg/j. Liste d'ingrédients lue sur les fiches « Ingrédients » de la page."
+ },
+ {
+  "category": "biotin",
+  "brand": "Onatera",
+  "name": "Vitamine B8 (Biotine) 1000 µg",
+  "variant": "gélules · 60",
+  "price_eur": 9.95,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 1000,
+  "active_unit": "µg biotin",
+  "form": "D-biotine (vitamine B8)",
+  "vegan": true,
+  "additives": [
+   "agent de charge : fibre d'acacia",
+   "gélule d'origine végétale"
+  ],
+  "certifications": [
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+  ],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b8-biotine-1000-mg-50-gelules-orfito",
+  "ean": null,
+  "notes": "1 000 µg/j — 25 × l'apport de référence."
+ },
+ {
+  "category": "biotin",
+  "brand": "Onatera",
+  "name": "Vitamine B8 Max 10 000 µg",
+  "variant": "gélules · 60",
+  "price_eur": 16.9,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 10000,
+  "active_unit": "µg biotin",
+  "form": "D-biotine (vitamine B8)",
+  "vegan": true,
+  "additives": [
+   "agent de charge : fibre d'acacia",
+   "gélule d'origine végétale (HPMC)"
+  ],
+  "certifications": [
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "≥ 1 000 µg/j de biotine : fausse les dosages sanguins (troponine, thyroïde) — prévenir le laboratoire avant toute prise de sang (alerte FDA)."
+  ],
+  "confidence": "high",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b8-max-60-gelules-onatera",
+  "ean": null,
+  "notes": "10 000 µg/j ; la marque signale elle-même l'interférence avec les analyses sanguines à partir de 5 mg/j."
+ },
+ {
+  "category": "folate",
+  "brand": "Novoma",
+  "name": "Acide Folique Quatrefolic®",
+  "variant": "gélules · 90",
+  "price_eur": 13.52,
+  "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 16,90 €)",
+  "units_pack": 90,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 400,
+  "active_unit": "µg folate",
+  "form": "5-MTHF ((6S)-5-méthyltétrahydrofolate) Quatrefolic®",
+  "vegan": true,
+  "additives": [
+   "fibre d'acacia (bio)",
+   "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://novoma.com/products/acide-folique",
+  "ean": null,
+  "notes": "400 µg/j (200 % VNR) — la dose périconceptionnelle ; certificat d'analyse téléchargeable."
+ },
+ {
+  "category": "folate",
+  "brand": "Dynveo",
+  "name": "Vitamine B9 Quatrefolic®",
+  "variant": "gélules · 60",
+  "price_eur": 9.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 200,
+  "active_unit": "µg folate",
+  "form": "5-MTHF Quatrefolic® (sel de glucosamine)",
+  "vegan": true,
+  "additives": [
+   "fibres d'acacia",
+   "gélule d'origine végétale (pullulan)"
+  ],
+  "certifications": [
+   "Clean Label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.dynveo.fr/products/vitamine-b9",
+  "ean": null,
+  "notes": "200 µg par gélule ; 1 gélule/j adulte, 2 en préconception et grossesse selon la marque — chiffré à 1/j."
+ },
+ {
+  "category": "folate",
+  "brand": "Nutri&Co",
+  "name": "Acide folique Quatrefolic®",
+  "variant": "gélules · 120",
+  "price_eur": 18.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 120,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 400,
+  "active_unit": "µg folate",
+  "form": "5-MTHF Quatrefolic® (sel de glucosamine)",
+  "vegan": true,
+  "additives": [
+   "agent de charge : gomme d'acacia",
+   "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://nutriandco.com/fr/produits/acide-folique",
+  "ean": null,
+  "notes": "Nombre de gélules déduit de « une cure dure 4 mois à raison d'une gélule par jour » (120). 741 µg de Quatrefolic® = 400 µg de folate."
+ },
+ {
+  "category": "folate",
+  "brand": "Nutripure",
+  "name": "Vitamine B9 active Quatrefolic®",
+  "variant": "gélules · 90",
+  "price_eur": 15.9,
+  "price_note": "nutripure.fr live 06/09/2026",
+  "units_pack": 90,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 400,
+  "active_unit": "µg folate",
+  "form": "5-MTHF de glucosamine Quatrefolic®",
+  "vegan": true,
+  "additives": [
+   "agents de charge : gomme d'acacia",
+   "gélule d'origine végétale (agent d'enrobage : pullulan)",
+   "farine de coco"
+  ],
+  "certifications": [
+   "Fabriqué en France"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "Quatrefolic®",
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "url": "https://www.nutripure.fr/fr/sante/314-vitamine-b9.html",
+  "ean": null,
+  "notes": "400 µg/j ; étiquette et fiche de traçabilité téléchargeables."
+ },
+ {
+  "category": "folate",
+  "brand": "Onatera",
+  "name": "Vitamine B9 (acide folique)",
+  "variant": "gélules · 90",
+  "price_eur": 7.95,
+  "price_note": "onatera.com live 06/09/2026",
+  "units_pack": 90,
+  "unit_name": "gélule",
+  "units_per_day": 1,
+  "active_per_unit": 400,
+  "active_unit": "µg folate",
+  "form": "acide folique",
+  "vegan": true,
+  "additives": [
+   "agent de charge : fibre d'acacia",
+   "gélule d'origine végétale",
+   "maltodextrine",
+   "stéarate de magnésium",
+   "talc"
+  ],
+  "certifications": [
+   "Made in France",
+   "Vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "medium",
+  "url": "https://www.onatera.com/FR/fr/produit-vitamine-b9-acide-folique-100-gelules-orfito",
+  "ean": null,
+  "notes": "Titre actuel « 90 gélules » ; la fiche mentionne encore une cure de 100 jours (ancien format 100). Excipients déclarés à part : maltodextrine, stéarate de magnésium, talc."
+ }
+]
