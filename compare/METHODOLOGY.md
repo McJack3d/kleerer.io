@@ -21,7 +21,7 @@ Text-and-data-mining rights reserved — Dir. (EU) 2019/790 art. 4(3); CPI art. 
 
 **What the score is not.** It is not medical advice, not a measure of whether *you* need the product, and not a lab test — we score label composition and public transparency, not actual batch content.
 
-**Scope.** 163 products, 11 categories, EU with a French-market focus. Snapshot July 2026. Scoring methodology v1.2; personalised dosing model v2.
+**Scope.** 193 products, 15 categories (11 nutrient categories and 4 botanicals — see §5), EU with a French-market focus. Nutrient snapshot July 2026, botanicals September 2026. Scoring methodology v1.4; personalised dosing model v2.
 
 ---
 
@@ -227,3 +227,36 @@ have not coded (e.g. a collagen "+ Vitamine C") is flagged as uncounted rather t
 silently ignored — the same fail-visible rule as unrecognised ingredients. Secondary
 actives are only coded where the manufacturer declares the amount; nothing is estimated.
 
+---
+
+## 5. Botanicals, and the evidence page (v1.4)
+
+**Botanicals are scored on the same method and shown apart.** Ashwagandha, maca, rhodiola and curcumin are plant extracts with pharmacological effects, not nutrients: there is no amount the body needs, no EFSA upper limit, and no authorised health claim for any of them (botanical claims are on hold under Reg. 1924/2006). They appear in light purple on the comparator so nobody mistakes an extract for a vitamin, and they go through exactly the same composition, purity, transparency and review gate as everything else — a plant extract is still a label with a form, a dose and an additives list.
+
+**Form tier (0–20) for a botanical means: is this the material the trials used?** Standardisation is not marketing here; it is the only way a shelf product and a trial share anything beyond a name.
+
+| Category | 20 | lower tiers |
+|---|---|---|
+| Ashwagandha | branded root extract with standardised withanolides (KSM-66, Sensoril) | 17 standardised ≥2.5 % · 14 unstandardised extract · **12 standardised below 2.5 %**, or branded but root-and-leaf (Shoden) · 10 whole root powder · **8 contains leaf, unbranded** — regulators retain the root alone (withaferin A) |
+| Maca | — | 18 gelatinised or concentrated · 16 coloured ecotype · 14 raw powder |
+| Rhodiola | double-standardised, rosavins + salidroside | 16 single marker · 12 unstandardised extract · 8 root powder |
+| Curcumin | enhanced-absorption formulation with its own trials (Meriva, BCM-95, Longvida, Turmipure…) | 16 95% + piperine · 12 plain 95% · 6 turmeric powder |
+
+**Dose tier (0–20) is the range the trials on the evidence page actually used**, not a serving suggestion: ashwagandha 300–600 mg/day (20 at ≥600; penalised above 1,200 because safety scales with dose and benefit does not), maca 1.5–3 g/day powder-equivalent, rhodiola 200–600 mg/day, curcumin 1,000–1,500 mg/day curcuminoids for a plain extract or 250–500 mg for an enhanced-absorption form.
+
+**Safety is handled as a prominent advisory, not a red card.** Denmark banned ashwagandha in 2023 and ANSES advised against it for several groups in 2024, but neither is one of the three bodies in the red-card rule (§2b), so the product is not forced to zero. Instead the advisory is printed on the dosing note and on the evidence page where the dose would otherwise be. Curcumin carries a liver-injury case history with concentrated forms and is annotated the same way. Being scrupulous about the rule matters here: expanding "red card" by analogy would make it mean whatever we felt like that day.
+
+### 5a. The evidence page — grades are per outcome, not per supplement
+
+[`/compare/evidence/`](evidence/) lists what supplements do by **need** — sleep, stress, muscle, bone, heart, immunity, memory, joints, skin, gut, energy, libido. Each row is one supplement for one need, graded on the trials behind that pairing:
+
+| Grade | Meaning |
+|---|---|
+| **A** strong | several large RCTs or meta-analyses totalling >~1,000 participants, consistent direction, effect large enough to notice |
+| **B** moderate | meta-analyses of smaller trials or a few hundred to ~1,000 participants; consistent but modest — or strong only in a defined group (e.g. the deficient) |
+| **C** limited | few or small trials, low-certainty grading, inconsistent, or high risk of bias including manufacturer funding |
+| **D** not supported | null in large trials for that outcome, or only observational/animal data |
+
+A grade is never a verdict on a molecule: creatine is A for muscle and C for memory; the same fish oil is B for triglycerides and C for cardiovascular events. Every figure cites its source with the participant count, and the dataset is one readable file (`evidence/evidence.js`) so any grade can be challenged by pointing at a better study.
+
+**The EFSA line is deliberately separate from the trial evidence.** An EFSA authorised claim is regulator-approved *wording* about a nutrient's physiological role — "magnesium contributes to normal psychological function" — and is not a trial showing an outcome improved. Both are shown, side by side, precisely so that the authorised sentence and the low-certainty sleep trials for the same nutrient cannot be confused for one another.

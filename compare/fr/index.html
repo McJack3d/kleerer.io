@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 163 produits UE/France dans 11 catégories. Sans sponsors, sans liens affiliés.">
+<meta name="description" content="Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 193 produits UE/France dans 15 catégories — vitamines, minéraux, protéines, et plantes notées à part. Sans sponsors, sans liens affiliés.">
 <meta name="robots" content="index,follow">
 <meta name="keywords" content="compléments alimentaires, supplements, health score, whey, créatine, magnésium, oméga-3, comparateur, additifs, édulcorants">
 <link rel="alternate" hreflang="fr" href="https://kleerer.com/compare/fr/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="kleerer.">
 <meta property="og:title" content="kleerer. — les compléments, au clair">
-<meta property="og:description" content="Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 163 produits UE/France dans 11 catégories. Sans sponsors, sans liens affiliés.">
+<meta property="og:description" content="Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 193 produits UE/France dans 15 catégories — vitamines, minéraux, protéines, et plantes notées à part. Sans sponsors, sans liens affiliés.">
 <meta property="og:url" content="https://kleerer.com/compare/fr/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kleerer. — supplements, made clear">
@@ -43,6 +43,8 @@
     --line:rgba(0,0,0,.18); --soft:rgba(0,0,0,.055);
     --gA:#1a7a3e; --gB:#74941f; --gC:#c49a00; --gD:#c26410; --gE:#b93a17;
     --warn-bg:rgba(196,154,0,.10); --warn-line:rgba(196,154,0,.45); --warn-ink:#6f5703;
+    /* botanicals: plant extracts, not nutrients — shown apart, in light purple */
+    --bot:#6b4fa3; --bot-bg:#efe9f9; --bot-line:#c9b8e8;
     --pad:clamp(24px,5vw,56px);
   }
   *{box-sizing:border-box; margin:0; padding:0}
@@ -77,6 +79,15 @@
   .pill{border:1px solid var(--line); background:none; border-radius:2px; padding:6px 13px; font-size:.78rem; color:var(--muted); transition:.15s}
   .pill:hover{border-color:var(--ink); color:var(--ink)}
   .pill.on{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+  .pill.bot{border-color:var(--bot-line); color:var(--bot); background:var(--bot-bg)}
+  .pill.bot:hover{border-color:var(--bot); color:var(--bot)}
+  .pill.bot.on{background:var(--bot); border-color:var(--bot); color:#fff}
+  .pillsep{align-self:center; width:1px; height:18px; background:var(--line); margin:0 4px}
+  .card.bot{border-left:3px solid var(--bot-line)}
+  .card.bot .brand{color:var(--bot)}
+  .chip.bot{border-color:var(--bot-line); color:var(--bot); background:var(--bot-bg)}
+  .hnav a{background:none; border:none; font-size:.8rem; color:var(--muted); padding:6px 10px; text-decoration:none}
+  .hnav a:hover{color:var(--ink); text-decoration:underline}
   .bar2{display:flex; gap:8px; margin-top:10px; padding-bottom:12px; border-bottom:1px solid var(--line); flex-wrap:wrap; align-items:center}
   .search{flex:1; min-width:190px; display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:2px; padding:7px 11px; background:none}
   .search:focus-within{border-color:var(--ink)}
@@ -266,6 +277,7 @@
     <a class="logo-s" href="../../">kleerer<span class="logo-dot">.</span></a>
     <span class="crumb" data-i18n="crumb">/ p1 · compare</span>
     <nav class="hnav">
+      <a href="/compare/evidence/" data-i18n="navEvidence">evidence</a>
       <button onclick="openMethodology()" data-i18n="navMethodology">methodology</button>
       <button onclick="openAbout()" data-i18n="navAbout">about</button>
       <span class="langsw" id="langsw">
@@ -350,13 +362,15 @@
 <script>
 const P = KLEERER_DATA.products;
 const META = KLEERER_DATA.meta;
+const BOTANICAL = new Set(META.botanical_categories || []);      // data-driven, see build_scores.BOTANICALS
 const CAT_KEYS = ["all","whey","creatine","vitamin_d3","magnesium","omega3","multivitamin",
-  "zinc","vitamin_c","collagen","probiotics","melatonin"];
+  "zinc","vitamin_c","collagen","probiotics","melatonin", ...(META.botanical_categories || [])];
 const CATS = CAT_KEYS.map(k => [k, k]);                 // shape kept; labels resolved live
 const catLabel = k => T("cats")[k] || k;
 const GCOLOR = {A:"var(--gA)", B:"var(--gB)", C:"var(--gC)", D:"var(--gD)", E:"var(--gE)"};
 const CONF = {high:"#1a7a3e", medium:"#c49a00", low:"#c26410"};
 let cat = "all";
+{ const m = location.hash.match(/cat=([a-z0-9_]+)/); if (m && CAT_KEYS.includes(m[1])) cat = m[1]; }
 let compare = [];
 
 /* ---------- helpers ---------- */
@@ -384,10 +398,13 @@ function renderStats(){
 
 /* ---------- pills ---------- */
 function renderPills(){
+  const firstBot = CAT_KEYS.find(k => BOTANICAL.has(k));
   document.getElementById("pills").innerHTML = CAT_KEYS.map(k =>
-    `<button class="pill${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${catLabel(k)}</button>`).join("");
+    (k === firstBot ? `<span class="pillsep" aria-hidden="true"></span>` : "") +
+    `<button class="pill${BOTANICAL.has(k)?" bot":""}${k===cat?" on":""}" data-k="${k}" onclick="setCat('${k}')">${catLabel(k)}</button>`).join("");
 }
 function setCat(k){ cat = k;
+  try { history.replaceState(null, "", k === "all" ? location.pathname + location.search : "#cat=" + k); } catch(e){}
   document.querySelectorAll(".pill").forEach(b => b.classList.toggle("on", b.dataset.k===k));
   render();
 }
@@ -539,6 +556,12 @@ function targetFor(cat){
               note:T("notes").melatonin(a>=55),
               scaled:a>=55?T("scaledBy").melatoninAge:false};
     }
+    // Botanicals — bands are the doses the trials on /compare/evidence/ used.
+    // No reference intake exists, so nothing here scales with weight or age.
+    case "ashwagandha": return {lo:300, hi:600, ul:null, unit:T("units").ashwagandha, note:T("notes").ashwagandha, scaled:false};
+    case "maca":        return {lo:1500, hi:3000, ul:null, unit:T("units").maca, note:T("notes").maca, scaled:false};
+    case "rhodiola":    return {lo:200, hi:600, ul:null, unit:T("units").rhodiola, note:T("notes").rhodiola, scaled:false};
+    case "curcumin":    return {lo:250, hi:1500, ul:null, unit:T("units").curcumin, note:T("notes").curcumin, scaled:false};
     case "multivitamin": return {kind:"multi"};
     default: return null;
   }
@@ -824,13 +847,14 @@ function chipset(p){
   if (p.transparency.coa_published) chips.push(`<span class="chip cert">${esc(T("chipCoa"))}</span>`);
   if (p.transparency.third_party_cert) chips.push(`<span class="chip cert">${esc(T("chipThirdParty"))}</span>`);
   if (p.vegan) chips.push(`<span class="chip">${esc(T("chipVegan"))}</span>`);
+  if (BOTANICAL.has(p.category)) chips.push(`<span class="chip bot" title="${esc(T("chipBotanicalTitle"))}">${esc(T("chipBotanical"))}</span>`);
   if (p.reviewed && p.reviewed.length) chips.push(`<span class="chip review" title="${esc(T("chipReviewTitle"))}">${esc(T("chipReview"))}</span>`);
   if (p.flags.length) chips.push(`<span class="chip warn">${esc(T("chipFlags")(p.flags.length))}</span>`);
   return chips.join("");
 }
 function card(p){
   const s = p.scores, inCmp = compare.includes(p.id), inStk = STACK.includes(p.id);
-  return `<article class="card${s.red_card?" redcard":""}">
+  return `<article class="card${s.red_card?" redcard":""}${BOTANICAL.has(p.category)?" bot":""}">
     <span class="conf" title="${esc(T("confTitle")(T("confidence")[p.confidence]))}" style="background:${CONF[p.confidence]}"></span>
     ${s.red_card?`<div class="redcard-banner">${esc(T("redCardBanner")((s.banned_substances||[]).join(", ").replace(/_/g," ")))}</div>`:""}
     <div class="card-top">

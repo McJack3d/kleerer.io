@@ -1,0 +1,1012 @@
+[
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 000 mg/j en 2 gélules, au-dessus des 600 mg des essais ; la marque indique 500 mg (1 gélule) comme dose minimale.",
+  "category": "ashwagandha",
+  "brand": "Novoma",
+  "name": "Ashwagandha Bio KSM-66®",
+  "variant": "gélules · 60",
+  "price_eur": 17.52,
+  "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 21,90 €)",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 500,
+  "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio)",
+  "additives": [
+   "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://novoma.com/products/ashwagandha-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®",
+   "Clean label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 à 2 gélules/j selon la marque ; 1 gélule = 600 mg, la dose des essais.",
+  "category": "ashwagandha",
+  "brand": "Dynveo",
+  "name": "Ashwagandha BIO KSM-66",
+  "variant": "gélules 600 mg · 60",
+  "price_eur": 19.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 600,
+  "form": "extrait sec de racine KSM-66® standardisé à 5 % min. de withanolides (bio), extraction aqueuse, 100 % racine sans feuille",
+  "additives": [
+   "gélule d'origine végétale (hypromellose cellulose)"
+  ],
+  "url": "https://www.dynveo.fr/products/ashwagandha-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®",
+   "vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "medium",
+  "ean": null,
+  "notes": "Formule combinée : magnésium, tryptophane et vitamines B ne sont pas notés ici. Nombre de gélules et prise déduits de « cure de 1 mois » à 0,66 €/j.",
+  "category": "ashwagandha",
+  "brand": "Argalys",
+  "name": "Ashwagandha KSM-66® + Magnésium & Tryptophane",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "argalys.com live 06/09/2026 — « cure de 1 mois, 0,66 €/j »",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 300,
+  "form": "extrait sec de racine KSM-66® titré à 5 % de withanolides (bio), en formule avec magnésium bisglycinate, L-tryptophane, vitamines C, B5 et B6",
+  "additives": [
+   "fibres d'acacia bio",
+   "fibres de coco bio",
+   "gélule végétale HPMC"
+  ],
+  "url": "https://www.argalys.com/products/ashwagandha-bio-magnesium-tryptophane"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "Shoden®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "Shoden®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023.",
+   "Contient de la feuille (withaférine A) : l'ANSES et la pharmacopée retiennent la racine seule."
+  ],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Le tableau nutritionnel indique 215 mg d'ashwagandha et 6 mg de withanolide glycosides par gélule, ce qui ne correspond pas aux 35 % annoncés — incohérence d'étiquette.",
+  "category": "ashwagandha",
+  "brand": "Nutrimuscle",
+  "name": "Ashwagandha Shoden®",
+  "variant": "gélules · 30",
+  "price_eur": 19.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 30,
+  "units_per_day": 1,
+  "active_per_unit": 215,
+  "form": "Shoden® (racine et feuilles) normalisé à 35 % de withanolide glycosides",
+  "additives": [
+   "inuline (48 %)",
+   "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://www.nutrimuscle.com/products/ashwagandha-shoden-r"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": false,
+  "certifications": [
+   "KSM-66®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "250 mg/j : moins de la moitié de la dose des essais (600 mg).",
+  "category": "ashwagandha",
+  "brand": "BioTechUSA",
+  "name": "Ashwagandha KSM-66®",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 250,
+  "form": "extrait de racine KSM-66® (39 % de la gélule), 5 % de withanolides (12,5 mg)",
+  "additives": [
+   "agent de charge (gel de cellulose)",
+   "enveloppe de la capsule (gélatine)",
+   "agents anti-agglomérants (sels de magnésium d'acides gras, dioxyde de silicium)"
+  ],
+  "url": "https://shop.biotechusa.fr/products/ashwagandha-ksm-66%C2%AE-60-gelules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": false,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "3,7 mg de withanolides/j, contre 30 mg pour un KSM-66 à 600 mg.",
+  "category": "ashwagandha",
+  "brand": "BioTechUSA",
+  "name": "Ashwagandha",
+  "variant": "gélules · 60",
+  "price_eur": 13.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 245,
+  "form": "extrait de racine (27,7 % de la gélule, sur maltodextrine), titré à 1,5 % de withanolides",
+  "additives": [
+   "agent de charge (phosphates de calcium)",
+   "maltodextrine",
+   "enveloppe de la gélule (gélatine)",
+   "agent d'enrobage (shellac)",
+   "colorants (oxydes de fer et hydroxydes de fer)",
+   "régulateur d'acidité (hydroxyde d'ammonium)",
+   "régulateur d'acidité (hydroxyde de potassium)",
+   "agents anti-agglomérants (sels de magnésium d'acides gras)"
+  ],
+  "url": "https://shop.biotechusa.fr/products/ashwagandha-60-gelules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®",
+   "vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 500 mg/j (75 mg de withanolides) : au-delà des 600 mg des essais ; 1 gélule suffit pour la dose étudiée.",
+  "category": "ashwagandha",
+  "brand": "AM Nutrition",
+  "name": "PURE Ashwagandha KSM66® bio",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "amnutrition.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 750,
+  "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio)",
+  "additives": [
+   "enveloppe de la gélule végétale : hydroxypropylmethylcellulose",
+   "agent de charge : farine de coco"
+  ],
+  "url": "https://www.amnutrition.fr/products/pure-ashwagandha"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "600 mg/j en 2 gélules : la dose des essais. Existe en 120 et 180 gélules.",
+  "category": "ashwagandha",
+  "brand": "Nat&Form",
+  "name": "Ashwagandha Bio KSM-66®",
+  "variant": "gélules · 60",
+  "price_eur": 14.5,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 300,
+  "form": "extrait aqueux de racines KSM-66® standardisé à 5 % de withanolides (bio)",
+  "additives": [
+   "agent de charge : gomme arabique bio",
+   "gélule d'origine végétale (HPMC)"
+  ],
+  "url": "https://www.nat-form.com/products/ashwagandha-bio-ksm-66%C2%AE-en-gelules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Nombre de gélules non lu sur la page (60 supposé, cure d'un mois) — à vérifier. 600 mg/j en 2 gélules, la dose des essais.",
+  "category": "ashwagandha",
+  "brand": "Nutri&Co",
+  "name": "Ashwagandha Bio KSM-66®",
+  "variant": "gélules · 60",
+  "price_eur": 20.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 300,
+  "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio), 100 % racine",
+  "additives": [
+   "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://nutriandco.com/fr/produits/ashwagandha-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "KSM-66®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "KSM-66®",
+  "full_label": true,
+  "flags": [
+   "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "La marque indique 1 à 2 gélules/j : à 1 gélule (600 mg) on est à la dose des essais, à 2 (1 200 mg) au-dessus. Existe en 180.",
+  "category": "ashwagandha",
+  "brand": "Nutripure",
+  "name": "Ashwagandha KSM66 Bio",
+  "variant": "gélules 600 mg · 60",
+  "price_eur": 24.9,
+  "price_note": "nutripure.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 600,
+  "form": "extrait de racines KSM-66® titré à 5 % de withanolides (bio, origine Inde)",
+  "additives": [
+   "gélule végétale (agent d'enrobage : hydroxypropylmethylcellulose)",
+   "farine de coco bio"
+  ],
+  "url": "https://www.nutripure.fr/fr/sante/5-ashwagandha.html"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "commerce équitable",
+   "Clean label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 gélule = 5,5 g de poudre équivalente ; 2 gélules = 11 g, bien au-delà des 1,5–3 g des essais.",
+  "category": "maca",
+  "brand": "Dynveo",
+  "name": "Maca BIO",
+  "variant": "gélules 500 mg · 60",
+  "price_eur": 19.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 500,
+  "extract_ratio": 11,
+  "form": "extrait concentré 11:1 de tubercule de maca jaune (totum, extraction aqueuse, bio)",
+  "additives": [
+   "gélule d'origine végétale (hypromellose cellulose)"
+  ],
+  "url": "https://www.dynveo.fr/products/maca-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1,2 g de poudre/j : sous les 1,5 g du bas de la plage des essais.",
+  "category": "maca",
+  "brand": "Nutrimuscle",
+  "name": "Maca bio",
+  "variant": "gélules · 60",
+  "price_eur": 9.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 600,
+  "extract_ratio": 1,
+  "form": "poudre de maca biologique (Lepidium meyenii), fournisseur Guayapi",
+  "additives": [
+   "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://www.nutrimuscle.com/products/maca-bio-en-gelules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": false,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "ean": null,
+  "notes": "Extrait sans ratio déclaré : 1,5 g/j compté comme de la poudre, l'hypothèse la plus prudente.",
+  "category": "maca",
+  "brand": "BioTechUSA",
+  "name": "Maca",
+  "variant": "méga gélules · 60",
+  "price_eur": 20.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 750,
+  "extract_ratio": 1,
+  "form": "extrait de racine de maca (62,8 % de la gélule, sur maltodextrine), ratio d'extraction non déclaré",
+  "additives": [
+   "maltodextrine",
+   "agent de charge (phosphates de calcium)",
+   "enveloppe de la gélule (gélatine)",
+   "agent d'enrobage (shellac)",
+   "colorant (oxydes de fer et hydroxydes de fer)",
+   "régulateur d'acidité (hydroxyde d'ammonium)",
+   "régulateur d'acidité (hydroxyde de potassium)",
+   "agents anti-agglomérants (sels de magnésium d'acides gras)"
+  ],
+  "url": "https://shop.biotechusa.fr/products/maca-60-gelules-mega"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1,4 g de poudre/j en 4 gélules.",
+  "category": "maca",
+  "brand": "Nat&Form",
+  "name": "Maca Bio du Pérou",
+  "variant": "gélules · 200",
+  "price_eur": 15.9,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 200,
+  "units_per_day": 4,
+  "active_per_unit": 350,
+  "extract_ratio": 1,
+  "form": "poudre de racines de maca du Pérou biologique",
+  "additives": [
+   "gélule d'origine végétale"
+  ],
+  "url": "https://www.nat-form.com/products/maca-bio-du-perou"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "Botani+"
+  ],
+  "coa_published": true,
+  "third_party_cert": true,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Nombre de gélules non lu sur la page (60 supposé) — à vérifier. 1 à 4 gélules/j ; à 2, 1,2 g d'équivalent plante sèche.",
+  "category": "maca",
+  "brand": "Nutri&Co",
+  "name": "Maca Noire Bio",
+  "variant": "gélules · 60",
+  "price_eur": 22.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 300,
+  "extract_ratio": 2,
+  "form": "extrait de tubercule de maca noire (bio), 10:1 en équivalent plante fraîche soit 2:1 en plante sèche, label Botani+",
+  "additives": [
+   "agent d'enrobage : hydroxypropylméthylcellulose"
+  ],
+  "url": "https://nutriandco.com/fr/produits/maca-noire-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "Clean label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 à 2 gélules/j (350–700 mg) selon la marque.",
+  "category": "rhodiola",
+  "brand": "Dynveo",
+  "name": "Rhodiola rosea",
+  "variant": "gélules 350 mg · 60",
+  "price_eur": 24.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 350,
+  "form": "extrait 10:1 de racine (totum), titré à 5 % de rosavines et 2 % de salidroside, Altaï",
+  "additives": [
+   "gélule d'origine végétale (pullulan)"
+  ],
+  "url": "https://www.dynveo.fr/products/rhodiola-rosea"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "Rhodiolife®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "Rhodiolife®",
+  "full_label": true,
+  "flags": [
+   "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 060 mg/j : au-dessus des 200–600 mg des essais ; salidroside non déclaré.",
+  "category": "rhodiola",
+  "brand": "Nutrimuscle",
+  "name": "Rhodiola Rhodiolife®",
+  "variant": "gélules · 30",
+  "price_eur": 19.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 30,
+  "units_per_day": 2,
+  "active_per_unit": 530,
+  "form": "extrait de racine Rhodiolife® titré à 3 % de rosavines (Nektium)",
+  "additives": [
+   "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://www.nutrimuscle.com/products/rhodiola-rhodiolife-r"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": false,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement.",
+   "Déconseillé aux moins de 18 ans (mention fabricant)."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "1 000 mg/j : au-dessus de la plage des essais.",
+  "category": "rhodiola",
+  "brand": "BioTechUSA",
+  "name": "Rhodiola",
+  "variant": "gélules · 60",
+  "price_eur": 29.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 500,
+  "form": "extrait de racine (51 % de la gélule), rosavines 3 % (15 mg par gélule)",
+  "additives": [
+   "agent de charge (gel de cellulose)",
+   "enveloppe de la capsule (gélatine)",
+   "agent d'enrobage (gomme laque)",
+   "colorants (oxydes et hydroxydes de fer)",
+   "correcteurs d'acidité (hydroxyde d'ammonium, hydroxyde de potassium)",
+   "antiagglomérants (sels de magnésium d'acides gras)"
+  ],
+  "url": "https://shop.biotechusa.fr/products/rhodiola-60-gelules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "600 mg/j, 6 mg de salidrosides ; rosavines non déclarées. Existe en 120 et 180.",
+  "category": "rhodiola",
+  "brand": "Nat&Form",
+  "name": "Rhodiola",
+  "variant": "gélules · 60",
+  "price_eur": 9.2,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 300,
+  "form": "extrait de racines 2:1 (1 200 mg d'équivalent plante sèche pour 2 gélules) standardisé en salidrosides (1 %), origine non UE",
+  "additives": [
+   "gélule d'origine végétale (HPMC)"
+  ],
+  "url": "https://www.nat-form.com/products/rhodiola-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "Botani+"
+  ],
+  "coa_published": true,
+  "third_party_cert": true,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+  ],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Nombre de gélules non lu (60 supposé) — à vérifier. 400 mg/j en 2 gélules : la dose des essais (extrait WS 1375). Vitamines B non notées ici.",
+  "category": "rhodiola",
+  "brand": "Nutri&Co",
+  "name": "Rhodiola Bio",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 200,
+  "form": "extrait de racine de rhodiole bio standardisé à 3 % de rosavines et 1 % de salidrosides (HPLC), label Botani+, avec un complexe de vitamines B d'origine végétale",
+  "additives": [
+   "agent d'enrobage : hydroxypropylméthylcellulose",
+   "agent de charge : gomme d'acacia bio"
+  ],
+  "url": "https://nutriandco.com/fr/produits/rhodiola-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "Meriva®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "Meriva®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "300 mg de Meriva/j (99 mg de curcuminoïdes) ; les essais arthrose avec Meriva utilisent 1 000 mg/j. Gingembre 150 mg non noté.",
+  "category": "curcumin",
+  "brand": "Novoma",
+  "name": "Curcuma",
+  "variant": "gélules · 60",
+  "price_eur": 20.72,
+  "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 25,90 €)",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 99,
+  "form": "Meriva® (phytosome curcumine–phospholipides de tournesol), 33 % de curcuminoïdes, avec extrait de gingembre",
+  "additives": [
+   "phospholipides de tournesol",
+   "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+  ],
+  "url": "https://novoma.com/products/curcuma-gelule"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "TurmiPure Gold®",
+   "Clean label Dynveo"
+  ],
+  "coa_published": true,
+  "third_party_cert": false,
+  "branded_ingredient": "TurmiPure Gold®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "medium",
+  "ean": null,
+  "notes": "Teneur en curcuminoïdes non affichée : 90 mg estimés d'après la teneur standard de TurmiPure Gold (30 %), la même que Nutri&Co déclare pour 300 mg du même ingrédient.",
+  "category": "curcumin",
+  "brand": "Dynveo",
+  "name": "Curcumine BIO Optimisée",
+  "variant": "gélules 300 mg · 30",
+  "price_eur": 19.9,
+  "price_note": "dynveo.fr live 06/09/2026",
+  "units_pack": 30,
+  "units_per_day": 1,
+  "active_per_unit": 90,
+  "form": "TurmiPure Gold® : extrait de curcuma bio à 95 % micro-encapsulé dans une matrice acacia / tournesol / quillaja",
+  "additives": [
+   "fibres d'acacia bio",
+   "huile de tournesol bio",
+   "extrait d'écorce de quillaja bio"
+  ],
+  "url": "https://www.dynveo.fr/products/curcumine-optimisee"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "BCM-95®",
+   "vegan"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "BCM-95®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "150 mg de curcuminoïdes/j, plafond que la marque retient d'après EFSA/ANSES.",
+  "category": "curcumin",
+  "brand": "Argalys",
+  "name": "Curcuma BCM95® + Manganèse et Vitamine C",
+  "variant": "gélules · 60",
+  "price_eur": 25.9,
+  "price_note": "argalys.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 1,
+  "active_per_unit": 150,
+  "form": "BCM-95® (curcuminoïdes + huiles essentielles de curcuma), avec vitamine C et manganèse",
+  "additives": [
+   "fibre d'acacia bio",
+   "cellulose",
+   "silice colloïdale",
+   "gélule végétale HPMC"
+  ],
+  "url": "https://www.argalys.com/products/curcuma-manganese-vitamine-c"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "capsule",
+  "vegan": true,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "100 mg de curcumine/j. L-ornithine et Andrographis non notés.",
+  "category": "curcumin",
+  "brand": "Nutrimuscle",
+  "name": "Curcumine",
+  "variant": "capsules molles · 60",
+  "price_eur": 24.95,
+  "price_note": "nutrimuscle.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 50,
+  "form": "extrait de curcuma (curcumine) et poudres de curcuma d'Okinawa en capsule molle huileuse, avec L-ornithine et Andrographis",
+  "additives": [
+   "huile de carthame",
+   "cire d'abeille",
+   "inuline",
+   "vitamine E (d-α-tocophérol)"
+  ],
+  "url": "https://www.nutrimuscle.com/products/curcumine"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "capsule",
+  "vegan": false,
+  "certifications": [
+   "NovaSOL®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "NovaSOL®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "48 mg de curcuminoïdes/j ; la biodisponibilité annoncée (×185) ne remplace pas la dose.",
+  "category": "curcumin",
+  "brand": "BioTechUSA",
+  "name": "Liquid Curcuma",
+  "variant": "capsules · 30",
+  "price_eur": 22.9,
+  "price_note": "shop.biotechusa.fr live 06/09/2026",
+  "units_pack": 30,
+  "units_per_day": 1,
+  "active_per_unit": 48,
+  "form": "NovaSOL® (micelles de curcumine, polysorbate 80), avec vitamine D3",
+  "additives": [
+   "émulsifiant (E 433)",
+   "agent de capsule : stabilisant (hydroxypropylméthylcellulose)",
+   "antioxydant (acide ascorbique)"
+  ],
+  "url": "https://shop.biotechusa.fr/products/liquid-curcruma-30-capsules"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "Existe en 90 gélules (63,00 €).",
+  "category": "curcumin",
+  "brand": "Biocyte",
+  "name": "Curcumin Forte Liposomal",
+  "variant": "gélules · 30",
+  "price_eur": 27.9,
+  "price_note": "biocyte.com live 06/09/2026",
+  "units_pack": 30,
+  "units_per_day": 1,
+  "active_per_unit": 123,
+  "form": "complexe de curcuma microencapsulé « liposomal » (gomme arabique, lécithines), 300 mg d'extrait, avec vitamines C et E",
+  "additives": [
+   "agent de charge : gomme arabique",
+   "émulsifiant : lécithines",
+   "enveloppe de la gélule d'origine végétale (hydroxypropylméthylcellulose)",
+   "fibre de pois",
+   "acétate de DL-alpha-tocophéryle",
+   "agent de charge : cellulose microcristalline"
+  ],
+  "url": "https://www.biocyte.com/products/curcumin-forte-liposomal"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Poudre, pas extrait : teneur en curcuminoïdes non déclarée, estimée à ~3 % (≈ 9 mg par gélule de 300 mg, ≈ 36 mg/j). Existe en 120.",
+  "category": "curcumin",
+  "brand": "Nat&Form",
+  "name": "Curcuma pipérine Bio",
+  "variant": "gélules · 200",
+  "price_eur": 12.5,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 200,
+  "units_per_day": 4,
+  "active_per_unit": 9,
+  "form": "poudre de rhizomes de curcuma bio + poudre de poivre bio (pipérine)",
+  "additives": [
+   "gélule d'origine végétale"
+  ],
+  "url": "https://www.nat-form.com/products/curcuma-piperine-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": null,
+  "full_label": true,
+  "flags": [],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Poudre, pas extrait : teneur en curcuminoïdes non déclarée, estimée à ~3 % (≈ 9 mg par gélule, ≈ 36 mg/j).",
+  "category": "curcumin",
+  "brand": "Nat&Form",
+  "name": "Curcuma Bio",
+  "variant": "gélules · 200",
+  "price_eur": 12.5,
+  "price_note": "nat-form.com live 06/09/2026",
+  "units_pack": 200,
+  "units_per_day": 4,
+  "active_per_unit": 9,
+  "form": "poudre de racines de curcuma biologique",
+  "additives": [
+   "gélule d'origine végétale"
+  ],
+  "url": "https://www.nat-form.com/products/curcuma-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "agriculture biologique",
+   "TurmiPure Gold®",
+   "Botani+"
+  ],
+  "coa_published": true,
+  "third_party_cert": true,
+  "branded_ingredient": "TurmiPure Gold®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "low",
+  "ean": null,
+  "notes": "Nombre de gélules non lu (60 supposé) — à vérifier. 90 mg de curcuminoïdes/j en 2 gélules, la dose de l'essai que cite la marque.",
+  "category": "curcumin",
+  "brand": "Nutri&Co",
+  "name": "Curcuma Bio",
+  "variant": "gélules · 60",
+  "price_eur": 19.9,
+  "price_note": "nutriandco.com live 06/09/2026",
+  "units_pack": 60,
+  "units_per_day": 2,
+  "active_per_unit": 45,
+  "form": "TurmiPure Gold® bio titré à 30 % min. de curcuminoïdes (extrait 100 % curcuma, label Botani+)",
+  "additives": [
+   "agent de charge : fibre d'acacia",
+   "émulsifiant : gomme d'acacia",
+   "huile de tournesol",
+   "extrait d'écorce de quillaja"
+  ],
+  "url": "https://nutriandco.com/fr/produits/curcuma-bio"
+ },
+ {
+  "active_unit": "mg",
+  "unit_name": "gélule",
+  "vegan": true,
+  "certifications": [
+   "Cavacurmin®"
+  ],
+  "coa_published": false,
+  "third_party_cert": false,
+  "branded_ingredient": "Cavacurmin®",
+  "full_label": true,
+  "flags": [
+   "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+  ],
+  "confidence": "high",
+  "ean": null,
+  "notes": "150 mg de curcumine/j en 3 gélules. Existe en 270.",
+  "category": "curcumin",
+  "brand": "Nutripure",
+  "name": "Curcumine Active Cavacurmin®",
+  "variant": "gélules · 90",
+  "price_eur": 29.9,
+  "price_note": "nutripure.fr live 06/09/2026",
+  "units_pack": 90,
+  "units_per_day": 3,
+  "active_per_unit": 50,
+  "form": "Cavacurmin® (complexe curcumine–gamma-cyclodextrine), avec vitamine C",
+  "additives": [
+   "gélule d'origine végétale (agent d'enrobage : pullulan)",
+   "maltodextrine",
+   "acide ascorbique (vitamine C)",
+   "huile de tournesol (0,8 %)"
+  ],
+  "url": "https://www.nutripure.fr/fr/complement-alimentaire-mobilite-articulation/39-active-curcumine.html"
+ }
+]

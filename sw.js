@@ -24,7 +24,7 @@
  *   assets       stale-while-revalidate. Instant paint from cache, refreshed in
  *                the background, so data.js is never more than one visit stale.
  */
-const VERSION = "v1.5.4";
+const VERSION = "v1.6.1";
 
 // Assets are requested with a cache-busting query -- `i18n.js?v=1.5`,
 // `data.js?v=1.5` -- while the precache stores them under their bare path. A
@@ -34,6 +34,17 @@ const VERSION = "v1.5.4";
 // the fix, and it is safe here because nothing on this site varies by query
 // string; the `?v=` exists only to bust the HTTP cache on deploy.
 const MATCH = { ignoreSearch: true };
+
+// ONE cache entry per path. Revalidation used to c.put() the fresh response
+// under the request URL *with* its query (`data.js?v=1.5`) while the precache
+// held the bare path; caches.match(…, ignoreSearch) then kept returning the
+// older bare entry, so a fresh data.js was fetched on every visit and never
+// served. Keying every put and match on the bare path means the revalidated
+// copy replaces the stale one instead of sitting next to it.
+const keyFor = (req) => {
+  const u = new URL(req.url);
+  return new Request(u.origin + u.pathname);
+};
 const CACHE = `kleerer-${VERSION}`;
 
 // The app shell. Everything needed to open /compare/ and score a product with
@@ -55,6 +66,8 @@ const PRECACHE = [
   // French and finding /compare/fr/ dead in a shop would defeat the point.
   "/compare/fr/",
   "/compare/en/",
+  "/compare/evidence/",
+  "/compare/evidence/evidence.js",
   "/terms/",
   "/bot/",
   "/manifest.webmanifest",
@@ -103,10 +116,10 @@ self.addEventListener("fetch", (e) => {
       try {
         const fresh = await fetch(req);
         const c = await caches.open(CACHE);
-        c.put(req, fresh.clone());
+        c.put(keyFor(req), fresh.clone());
         return fresh;
       } catch (_) {
-        return (await caches.match(req, MATCH))
+        return (await caches.match(keyFor(req), MATCH))
             || (await caches.match("/compare/", MATCH))
             || (await caches.match("/", MATCH))
             || Response.error();
@@ -116,9 +129,9 @@ self.addEventListener("fetch", (e) => {
   }
 
   e.respondWith((async () => {
-    const cached = await caches.match(req, MATCH);
+    const cached = await caches.match(keyFor(req), MATCH);
     const network = fetch(req).then((res) => {
-      if (res && res.ok) caches.open(CACHE).then((c) => c.put(req, res.clone()));
+      if (res && res.ok) caches.open(CACHE).then((c) => c.put(keyFor(req), res.clone()));
       return res;
     }).catch(() => null);
     return cached || (await network) || Response.error();

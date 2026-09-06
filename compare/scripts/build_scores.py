@@ -136,7 +136,20 @@ STD = {
     "collagen":    {"amount": 10,   "label": "€ / 10 g collagen"},
     "probiotics":  {"amount": None, "label": "€ / day"},
     "melatonin":   {"amount": None, "label": "€ / day"},
+    # Botanicals (v1.4). Not nutrients: no reference intake, no EFSA limit, and
+    # no authorised health claim. They are scored on the SAME code path because a
+    # plant extract is still a label with a form, a dose and an additives list —
+    # the evidence behind each is on /compare/evidence/, graded separately.
+    "ashwagandha": {"amount": 600,  "label": "€ / 600 mg extract"},
+    "maca":        {"amount": 3000, "label": "€ / 3 g maca"},
+    "rhodiola":    {"amount": 400,  "label": "€ / 400 mg extract"},
+    "curcumin":    {"amount": 500,  "label": "€ / 500 mg curcuminoids"},
 }
+
+# Categories shown apart on the site: plant extracts with pharmacological
+# effects, not nutrients. The list lives here so the UI, the value table and the
+# evidence page all agree on what a "botanical" is.
+BOTANICALS = ["ashwagandha", "maca", "rhodiola", "curcumin"]
 
 def value_metrics(p):
     c, price = p["category"], p["price_eur"]
@@ -188,6 +201,10 @@ PROVENANCE = {  # accent-free lowercase brand key -> (country, zone)
     "epycure": ("France", "FR"), "cuure": ("France", "FR"), "pileje": ("France", "FR"),
     "dijo": ("France", "FR"), "apyforme": ("France", "FR"), "sanofi": ("France", "FR"),
     "zzzquil": ("EU", "EU"),
+    # botanicals batch (v1.4)
+    "nat&form": ("France", "FR"), "nat form": ("France", "FR"), "biotechusa": ("Hungary", "EU"),
+    "inshape": ("France", "FR"), "tibo inshape": ("France", "FR"), "nutriandco": ("France", "FR"),
+    "pure am nutrition": ("France", "FR"),
 }
 
 def provenance_for(brand):
@@ -242,7 +259,8 @@ def normalize(entry):
         else:
             p["collagen_g_day"] = entry.get("active_per_unit",0) * entry.get("units_per_day",1)
     # dose tier for override categories
-    if c in ("zinc","vitamin_c","collagen","probiotics","melatonin"):
+    if c in ("zinc","vitamin_c","collagen","probiotics","melatonin",
+             "ashwagandha","maca","rhodiola","curcumin"):
         p["dose_tier"], p["dose_note"] = autotag.infer_dose_tier(c, p)
     # purity (v1.2: also returns red-card substances + unrecognised items to review)
     p["purity_tags"], p["additives_detail"], p["banned"], p["review_flags"] = \
@@ -388,6 +406,7 @@ def main():
                  "n_products":len(products),"n_categories":len(cats),
                  "n_red_cards":n_red,
                  "n_withheld_for_review":len(withheld),
+                 "botanical_categories":BOTANICALS,
                  "methodology_version":"1.2"},
         "products": products,
     }

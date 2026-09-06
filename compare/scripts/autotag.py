@@ -281,6 +281,77 @@ def infer_form_tier(cat, form, entry=None):
             if entry.get("release") == "prolonged" \
             else (16, "Immediate release — supports sleep onset.")
 
+
+    # ---------------------------------------------------------------------
+    # Botanicals (v1.4). "Form" for a plant extract means: is it the material
+    # the trials actually used? Standardisation and branded extracts are not
+    # marketing here — they are the only way a shelf product and a trial share
+    # anything beyond a name.
+    # ---------------------------------------------------------------------
+    if cat == "ashwagandha":
+        branded = any(k in f for k in ["ksm-66", "ksm66", "sensoril", "shoden"])
+        # "100 % racine sans feuille" / "leaf-free" is a claim of the OPPOSITE;
+        # strip negated mentions before looking for leaf.
+        f_leaf = re.sub(r"(sans|no|without|zero|0 ?%)\s+(de\s+)?(feuilles?|leaf|leaves)|(feuilles?|leaf)[- ]free", " ", f)
+        if any(k in f_leaf for k in ["feuille", "leaf", "leaves"]):
+            # Leaf is checked BEFORE the branded list. Shoden is branded and has
+            # its own trials, and it is a root-AND-leaf extract; ANSES and the
+            # pharmacopoeia retain the root alone (withaferin A). Both facts are
+            # true, so the tier sits between "studied" and "not the material".
+            if branded:
+                return 12, "Branded and studied, but a root-and-leaf extract — regulators retain the root alone (withaferin A)."
+            return 8, "Contains leaf — higher withaferin A; not the material the trials used."
+        if branded:
+            return 20, "Clinically studied branded root extract with standardised withanolides."
+        if "withanolide" in f and any(k in f for k in ["%", "titr", "standard"]):
+            # A declared titre is only worth the tier if it is a real one. KSM-66
+            # and its peers sit at 5%; a mass-market extract on maltodextrin can
+            # declare 1.5% and read, to a shopper, as "standardised" too.
+            # Only the percentage attached to "withanolide" counts: "27,7 % de la
+            # gélule, titré à 1,5 % de withanolides" must read as 1.5, not 27.7.
+            pcts = [float(x.replace(",", ".")) for x in
+                    re.findall(r"(\d+(?:[.,]\d+)?)\s*%\s*(?:min\.?\s*)?(?:de\s+|en\s+)?withanolide", f)
+                    + re.findall(r"withanolides?(?:\s+glycosides)?\s*[:(]?\s*(\d+(?:[.,]\d+)?)\s*%", f)]
+            if pcts and max(pcts) < 2.5:
+                return 12, f"Standardised, but only to {max(pcts):g}% withanolides — well below the 5% the trials used."
+            return 17, "Standardised extract with declared withanolide content."
+        if "extrait" in f or "extract" in f:
+            return 14, "Root extract, standardisation not declared."
+        return 10, "Whole root powder — not what the trials used."
+
+    if cat == "maca":
+        if any(k in f for k in ["gelatin", "gelatinis", "extrait", "extract", "concentr"]) or re.search(r"\d+\s*:\s*1", f):
+            return 18, "Gelatinised or concentrated — the digestible form the trials used."
+        if any(k in f for k in ["noire", "black", "rouge", "red"]):
+            return 16, "Coloured ecotype; trial evidence is for standard yellow/mixed maca."
+        return 14, "Raw maca powder."
+
+    if cat == "rhodiola":
+        if "rosavin" in f and "salidroside" in f:
+            return 20, "Double-standardised (rosavins + salidroside) — the profile the trials used."
+        if "rosavin" in f or "salidroside" in f:
+            return 16, "Single-marker standardisation."
+        if "extrait" in f or "extract" in f:
+            return 12, "Extract, standardisation not declared."
+        return 8, "Unstandardised root powder."
+
+    if cat == "curcumin":
+        if any(k in f for k in ["meriva", "bcm-95", "bcm95", "longvida", "novasol", "turmipure",
+                                "theracurmin", "curcuwin", "cavacurmin", "curcugreen"]):
+            return 20, "Enhanced-absorption formulation with its own clinical trials."
+        # Powder is checked BEFORE piperine: "poudre de curcuma + poivre" is a
+        # spice mix, not a 95% extract with an absorption enhancer, and the
+        # pepper does not turn 3% curcuminoids into 95%.
+        if any(k in f for k in ["poudre", "powder", "rhizome en poudre"]):
+            return 6, "Turmeric powder (~3% curcumin) — not the material the trials used."
+        if any(k in f for k in ["liposom", "microencapsul", "micro-encapsul", "micellaire", "micelle"]):
+            return 14, "Absorption-enhanced by encapsulation, but not a clinically named formulation."
+        if any(k in f for k in ["piperine", "piperin", "poivre", "bioperine"]):
+            return 16, "95% extract with piperine — absorbed better, but piperine interacts with drug metabolism."
+        if "95" in f and "curcumino" in f:
+            return 12, "Plain 95% curcuminoid extract — poorly absorbed on its own."
+        return 10, "Curcumin form not clearly declared."
+
     return 14, "Form not scored for this category."
 
 
@@ -321,4 +392,37 @@ def infer_dose_tier(cat, entry):
         if mg > 1.9: return 14, f"{mg:g} mg/day — above the French supplement ceiling (1.9 mg)."
         if mg >= 1: return 20, f"{mg:g} mg/day — EFSA sleep-onset dose, within the French ceiling."
         return 12, f"{mg:g} mg/day — below the 1 mg EFSA claim."
+
+    # Botanicals (v1.4). Dose bands are the ranges the trials on /compare/evidence/
+    # actually used — not a manufacturer's serving suggestion.
+    if cat == "ashwagandha":
+        mg = daily()
+        if mg > 1200: return 12, f"{mg:g} mg/day — above the studied range; safety scales with dose, benefit does not."
+        if mg >= 600: return 20, f"{mg:g} mg/day — the dose the stress and sleep trials used."
+        if mg >= 300: return 16, f"{mg:g} mg/day — lower end of the studied range."
+        return 10, f"{mg:g} mg/day — below the studied range."
+    if cat == "maca":
+        mg = daily() * (entry.get("extract_ratio") or 1)
+        if mg >= 1500: return 20, f"{mg:g} mg powder-equivalent/day — in the studied 1.5–3 g range."
+        if mg >= 750: return 15, f"{mg:g} mg/day — half the studied dose."
+        return 10, f"{mg:g} mg/day — token dose."
+    if cat == "rhodiola":
+        mg = daily()
+        if mg > 700: return 16, f"{mg:g} mg/day — above the studied range."
+        if mg >= 200: return 20, f"{mg:g} mg/day — in the studied 200–600 mg range."
+        if mg >= 100: return 14, f"{mg:g} mg/day — below most trials."
+        return 10, f"{mg:g} mg/day — token dose."
+    if cat == "curcumin":
+        mg = daily()
+        enhanced = (entry.get("form_tier") or 0) >= 20
+        if enhanced:
+            # Studied doses differ by formulation: Meriva ~200 mg curcuminoids/day
+            # (1 g Meriva), TurmiPure Gold 90 mg (300 mg extract), BCM-95 150 mg.
+            if mg >= 180: return 20, f"{mg:g} mg curcuminoids/day in an enhanced-absorption form — at or above the studied doses."
+            if mg >= 90:  return 16, f"{mg:g} mg/day — within the range the formulation trials used."
+            if mg >= 40:  return 12, f"{mg:g} mg/day — below the formulation's studied dose."
+            return 8, f"{mg:g} mg/day — token dose."
+        if mg >= 1000: return 20, f"{mg:g} mg curcuminoids/day — the plain-extract dose the osteoarthritis trials used."
+        if mg >= 500: return 16, f"{mg:g} mg/day — lower end for a plain extract."
+        return 10, f"{mg:g} mg/day — too little plain curcumin to expect absorption."
     return None

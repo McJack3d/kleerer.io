@@ -18,11 +18,17 @@ const KLEERER_DATA = {
   "snapshot": "2026-07",
   "region": "EU/FR",
   "currency": "EUR",
-  "generated": "2026-08-08",
-  "n_products": 163,
-  "n_categories": 11,
+  "generated": "2026-09-06",
+  "n_products": 193,
+  "n_categories": 15,
   "n_red_cards": 1,
   "n_withheld_for_review": 0,
+  "botanical_categories": [
+   "ashwagandha",
+   "maca",
+   "rhodiola",
+   "curcumin"
+  ],
   "methodology_version": "1.2"
  },
  "products": [
@@ -2524,6 +2530,2500 @@ const KLEERER_DATA = {
     "price_tier": 5
    },
    "label_hash": "b433002c50ed",
+   "rank_in_category": 4
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 000 mg/j en 2 gélules, au-dessus des 600 mg des essais ; la marque indique 500 mg (1 gélule) comme dose minimale.",
+   "category": "ashwagandha",
+   "brand": "Novoma",
+   "name": "Ashwagandha Bio KSM-66®",
+   "variant": "gélules · 60",
+   "price_eur": 17.52,
+   "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 21,90 €)",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 500,
+   "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio)",
+   "additives": [
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://novoma.com/products/ashwagandha-bio",
+   "id": "novoma-ashwagandha-bio-ksm-66-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "1000 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 8,
+    "total": 78,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.584,
+    "std": 0.35,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "184ec6cc112d",
+   "rank_in_category": 3
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®",
+    "Clean label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 à 2 gélules/j selon la marque ; 1 gélule = 600 mg, la dose des essais.",
+   "category": "ashwagandha",
+   "brand": "Dynveo",
+   "name": "Ashwagandha BIO KSM-66",
+   "variant": "gélules 600 mg · 60",
+   "price_eur": 19.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 600,
+   "form": "extrait sec de racine KSM-66® standardisé à 5 % min. de withanolides (bio), extraction aqueuse, 100 % racine sans feuille",
+   "additives": [
+    "gélule d'origine végétale (hypromellose cellulose)"
+   ],
+   "url": "https://www.dynveo.fr/products/ashwagandha-bio",
+   "id": "dynveo-ashwagandha-bio-ksm-66-gelules-600-mg-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "600 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale (hypromellose cellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 20,
+    "total": 90,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.332,
+    "std": 0.332,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 60,
+    "price_tier": 2
+   },
+   "label_hash": "77b8c909bda9",
+   "rank_in_category": 1
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®",
+    "vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "medium",
+   "ean": null,
+   "notes": "Formule combinée : magnésium, tryptophane et vitamines B ne sont pas notés ici. Nombre de gélules et prise déduits de « cure de 1 mois » à 0,66 €/j.",
+   "category": "ashwagandha",
+   "brand": "Argalys",
+   "name": "Ashwagandha KSM-66® + Magnésium & Tryptophane",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "argalys.com live 06/09/2026 — « cure de 1 mois, 0,66 €/j »",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 300,
+   "form": "extrait sec de racine KSM-66® titré à 5 % de withanolides (bio), en formule avec magnésium bisglycinate, L-tryptophane, vitamines C, B5 et B6",
+   "additives": [
+    "fibres d'acacia bio",
+    "fibres de coco bio",
+    "gélule végétale HPMC"
+   ],
+   "url": "https://www.argalys.com/products/ashwagandha-bio-magnesium-tryptophane",
+   "id": "argalys-ashwagandha-ksm-66-magnesium-tryptophane-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "600 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "fibres d'acacia bio",
+    "fibres de coco bio",
+    "gélule végétale HPMC"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "fibres de coco bio",
+     "verdict": "neutral",
+     "note": "coconut fibre, food ingredient used as a filler",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 8,
+    "total": 76,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 0.663,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "0d0f9b60a8c3",
+   "rank_in_category": 6
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "Shoden®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Shoden®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023.",
+    "Contient de la feuille (withaférine A) : l'ANSES et la pharmacopée retiennent la racine seule."
+   ],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Le tableau nutritionnel indique 215 mg d'ashwagandha et 6 mg de withanolide glycosides par gélule, ce qui ne correspond pas aux 35 % annoncés — incohérence d'étiquette.",
+   "category": "ashwagandha",
+   "brand": "Nutrimuscle",
+   "name": "Ashwagandha Shoden®",
+   "variant": "gélules · 30",
+   "price_eur": 19.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 30,
+   "units_per_day": 1,
+   "active_per_unit": 215,
+   "form": "Shoden® (racine et feuilles) normalisé à 35 % de withanolide glycosides",
+   "additives": [
+    "inuline (48 %)",
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://www.nutrimuscle.com/products/ashwagandha-shoden-r",
+   "id": "nutrimuscle-ashwagandha-shoden-gelules-30",
+   "form_tier": 12,
+   "form_note": "Branded and studied, but a root-and-leaf extract — regulators retain the root alone (withaferin A).",
+   "dose_tier": 10,
+   "dose_note": "215 mg/day — below the studied range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "inuline (48 %)",
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Shoden®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 12,
+    "dose": 10,
+    "purity": 30,
+    "transparency": 8,
+    "total": 60,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.665,
+    "std": 1.856,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "57cd8b75b774",
+   "rank_in_category": 9
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": false,
+   "certifications": [
+    "KSM-66®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "250 mg/j : moins de la moitié de la dose des essais (600 mg).",
+   "category": "ashwagandha",
+   "brand": "BioTechUSA",
+   "name": "Ashwagandha KSM-66®",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 250,
+   "form": "extrait de racine KSM-66® (39 % de la gélule), 5 % de withanolides (12,5 mg)",
+   "additives": [
+    "agent de charge (gel de cellulose)",
+    "enveloppe de la capsule (gélatine)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras, dioxyde de silicium)"
+   ],
+   "url": "https://shop.biotechusa.fr/products/ashwagandha-ksm-66%C2%AE-60-gelules",
+   "id": "biotechusa-ashwagandha-ksm-66-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 10,
+   "dose_note": "250 mg/day — below the studied range.",
+   "purity_tags": [
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "agent de charge (gel de cellulose)",
+    "enveloppe de la capsule (gélatine)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras, dioxyde de silicium)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 20,
+    "dose": 10,
+    "purity": 26,
+    "transparency": 8,
+    "total": 64,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.332,
+    "std": 0.796,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 60,
+    "price_tier": 4
+   },
+   "label_hash": "27628b39ab8f",
+   "rank_in_category": 8
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": false,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "3,7 mg de withanolides/j, contre 30 mg pour un KSM-66 à 600 mg.",
+   "category": "ashwagandha",
+   "brand": "BioTechUSA",
+   "name": "Ashwagandha",
+   "variant": "gélules · 60",
+   "price_eur": 13.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 245,
+   "form": "extrait de racine (27,7 % de la gélule, sur maltodextrine), titré à 1,5 % de withanolides",
+   "additives": [
+    "agent de charge (phosphates de calcium)",
+    "maltodextrine",
+    "enveloppe de la gélule (gélatine)",
+    "agent d'enrobage (shellac)",
+    "colorants (oxydes de fer et hydroxydes de fer)",
+    "régulateur d'acidité (hydroxyde d'ammonium)",
+    "régulateur d'acidité (hydroxyde de potassium)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras)"
+   ],
+   "url": "https://shop.biotechusa.fr/products/ashwagandha-60-gelules",
+   "id": "biotechusa-ashwagandha-gelules-60",
+   "form_tier": 12,
+   "form_note": "Standardised, but only to 1.5% withanolides — well below the 5% the trials used.",
+   "dose_tier": 10,
+   "dose_note": "245 mg/day — below the studied range.",
+   "purity_tags": [
+    "bulking_filler",
+    "coating",
+    "acidity_regulator",
+    "anticaking",
+    "bulking_filler",
+    "acidity_regulator"
+   ],
+   "additives_detail": [
+    "agent de charge (phosphates de calcium)",
+    "maltodextrine",
+    "enveloppe de la gélule (gélatine)",
+    "agent d'enrobage (shellac)",
+    "colorants (oxydes de fer et hydroxydes de fer)",
+    "régulateur d'acidité (hydroxyde d'ammonium)",
+    "régulateur d'acidité (hydroxyde de potassium)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "agent de charge (phosphates de calcium)",
+     "verdict": "penalty:bulking_filler",
+     "note": "calcium phosphates (E341), bulking agent",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "colorants (oxydes de fer et hydroxydes de fer)",
+     "verdict": "neutral",
+     "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye, no child-attention warning",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "régulateur d'acidité (hydroxyde d'ammonium)",
+     "verdict": "penalty:acidity_regulator",
+     "note": "ammonium hydroxide (E527), trace acidity regulator in the capsule shell",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 12,
+    "dose": 10,
+    "purity": 20,
+    "transparency": 4,
+    "total": 46,
+    "grade": "D",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.232,
+    "std": 0.567,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "6efe8ad239db",
+   "rank_in_category": 10
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®",
+    "vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 500 mg/j (75 mg de withanolides) : au-delà des 600 mg des essais ; 1 gélule suffit pour la dose étudiée.",
+   "category": "ashwagandha",
+   "brand": "AM Nutrition",
+   "name": "PURE Ashwagandha KSM66® bio",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "amnutrition.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 750,
+   "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio)",
+   "additives": [
+    "enveloppe de la gélule végétale : hydroxypropylmethylcellulose",
+    "agent de charge : farine de coco"
+   ],
+   "url": "https://www.amnutrition.fr/products/pure-ashwagandha",
+   "id": "am-nutrition-pure-ashwagandha-ksm66-bio-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 12,
+   "dose_note": "1500 mg/day — above the studied range; safety scales with dose, benefit does not.",
+   "purity_tags": [],
+   "additives_detail": [
+    "enveloppe de la gélule végétale : hydroxypropylmethylcellulose",
+    "agent de charge : farine de coco"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "agent de charge : farine de coco",
+     "verdict": "neutral",
+     "note": "coconut flour, food ingredient used as a filler",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 12,
+    "purity": 30,
+    "transparency": 8,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 0.265,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "9880d42ea960",
+   "rank_in_category": 7
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "600 mg/j en 2 gélules : la dose des essais. Existe en 120 et 180 gélules.",
+   "category": "ashwagandha",
+   "brand": "Nat&Form",
+   "name": "Ashwagandha Bio KSM-66®",
+   "variant": "gélules · 60",
+   "price_eur": 14.5,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 300,
+   "form": "extrait aqueux de racines KSM-66® standardisé à 5 % de withanolides (bio)",
+   "additives": [
+    "agent de charge : gomme arabique bio",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "url": "https://www.nat-form.com/products/ashwagandha-bio-ksm-66%C2%AE-en-gelules",
+   "id": "nat-form-ashwagandha-bio-ksm-66-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "600 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme arabique bio",
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 28,
+    "transparency": 8,
+    "total": 76,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.483,
+    "std": 0.483,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "c3fefd2d0a5c",
+   "rank_in_category": 5
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Nombre de gélules non lu sur la page (60 supposé, cure d'un mois) — à vérifier. 600 mg/j en 2 gélules, la dose des essais.",
+   "category": "ashwagandha",
+   "brand": "Nutri&Co",
+   "name": "Ashwagandha Bio KSM-66®",
+   "variant": "gélules · 60",
+   "price_eur": 20.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 300,
+   "form": "extrait de racine KSM-66® titré à 5 % de withanolides (bio), 100 % racine",
+   "additives": [
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://nutriandco.com/fr/produits/ashwagandha-bio",
+   "id": "nutri-co-ashwagandha-bio-ksm-66-gelules-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "600 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 20,
+    "total": 90,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.697,
+    "std": 0.697,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "8c8c65d107fb",
+   "rank_in_category": 2
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "KSM-66®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "KSM-66®",
+   "full_label": true,
+   "flags": [
+    "ANSES (avis du 19/04/2024) : déconseillé en cas de pathologie thyroïdienne, hépatique ou cardiaque, d'hyperandrogénie, de grossesse ou d'allaitement, de traitement sédatif, et avant 18 ans. Interdit au Danemark depuis 2023."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "La marque indique 1 à 2 gélules/j : à 1 gélule (600 mg) on est à la dose des essais, à 2 (1 200 mg) au-dessus. Existe en 180.",
+   "category": "ashwagandha",
+   "brand": "Nutripure",
+   "name": "Ashwagandha KSM66 Bio",
+   "variant": "gélules 600 mg · 60",
+   "price_eur": 24.9,
+   "price_note": "nutripure.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 600,
+   "form": "extrait de racines KSM-66® titré à 5 % de withanolides (bio, origine Inde)",
+   "additives": [
+    "gélule végétale (agent d'enrobage : hydroxypropylmethylcellulose)",
+    "farine de coco bio"
+   ],
+   "url": "https://www.nutripure.fr/fr/sante/5-ashwagandha.html",
+   "id": "nutripure-ashwagandha-ksm66-bio-gelules-600-mg-60",
+   "form_tier": 20,
+   "form_note": "Clinically studied branded root extract with standardised withanolides.",
+   "dose_tier": 20,
+   "dose_note": "1200 mg/day — the dose the stress and sleep trials used.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétale (agent d'enrobage : hydroxypropylmethylcellulose)",
+    "farine de coco bio"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "KSM-66®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "farine de coco bio",
+     "verdict": "neutral",
+     "note": "coconut flour, food ingredient",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 8,
+    "total": 78,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.83,
+    "std": 0.415,
+    "std_label": "€ / 600 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "c7562d3c865d",
+   "rank_in_category": 4
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "commerce équitable",
+    "Clean label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 gélule = 5,5 g de poudre équivalente ; 2 gélules = 11 g, bien au-delà des 1,5–3 g des essais.",
+   "category": "maca",
+   "brand": "Dynveo",
+   "name": "Maca BIO",
+   "variant": "gélules 500 mg · 60",
+   "price_eur": 19.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 500,
+   "extract_ratio": 11,
+   "form": "extrait concentré 11:1 de tubercule de maca jaune (totum, extraction aqueuse, bio)",
+   "additives": [
+    "gélule d'origine végétale (hypromellose cellulose)"
+   ],
+   "url": "https://www.dynveo.fr/products/maca-bio",
+   "id": "dynveo-maca-bio-gelules-500-mg-60",
+   "form_tier": 18,
+   "form_note": "Gelatinised or concentrated — the digestible form the trials used.",
+   "dose_tier": 20,
+   "dose_note": "11000 mg powder-equivalent/day — in the studied 1.5–3 g range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale (hypromellose cellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 16,
+    "total": 84,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 1.99,
+    "std_label": "€ / 3 g maca",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "87c461eb36e4",
+   "rank_in_category": 2
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1,2 g de poudre/j : sous les 1,5 g du bas de la plage des essais.",
+   "category": "maca",
+   "brand": "Nutrimuscle",
+   "name": "Maca bio",
+   "variant": "gélules · 60",
+   "price_eur": 9.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 600,
+   "extract_ratio": 1,
+   "form": "poudre de maca biologique (Lepidium meyenii), fournisseur Guayapi",
+   "additives": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://www.nutrimuscle.com/products/maca-bio-en-gelules",
+   "id": "nutrimuscle-maca-bio-gelules-60",
+   "form_tier": 14,
+   "form_note": "Raw maca powder.",
+   "dose_tier": 15,
+   "dose_note": "1200 mg/day — half the studied dose.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 14,
+    "dose": 15,
+    "purity": 30,
+    "transparency": 4,
+    "total": 63,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.332,
+    "std": 0.829,
+    "std_label": "€ / 3 g maca",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "f7b1da8b8b8c",
+   "rank_in_category": 4
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": false,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "ean": null,
+   "notes": "Extrait sans ratio déclaré : 1,5 g/j compté comme de la poudre, l'hypothèse la plus prudente.",
+   "category": "maca",
+   "brand": "BioTechUSA",
+   "name": "Maca",
+   "variant": "méga gélules · 60",
+   "price_eur": 20.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 750,
+   "extract_ratio": 1,
+   "form": "extrait de racine de maca (62,8 % de la gélule, sur maltodextrine), ratio d'extraction non déclaré",
+   "additives": [
+    "maltodextrine",
+    "agent de charge (phosphates de calcium)",
+    "enveloppe de la gélule (gélatine)",
+    "agent d'enrobage (shellac)",
+    "colorant (oxydes de fer et hydroxydes de fer)",
+    "régulateur d'acidité (hydroxyde d'ammonium)",
+    "régulateur d'acidité (hydroxyde de potassium)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras)"
+   ],
+   "url": "https://shop.biotechusa.fr/products/maca-60-gelules-mega",
+   "id": "biotechusa-maca-mega-gelules-60",
+   "form_tier": 18,
+   "form_note": "Gelatinised or concentrated — the digestible form the trials used.",
+   "dose_tier": 20,
+   "dose_note": "1500 mg powder-equivalent/day — in the studied 1.5–3 g range.",
+   "purity_tags": [
+    "bulking_filler",
+    "coating",
+    "acidity_regulator",
+    "anticaking",
+    "bulking_filler",
+    "acidity_regulator"
+   ],
+   "additives_detail": [
+    "maltodextrine",
+    "agent de charge (phosphates de calcium)",
+    "enveloppe de la gélule (gélatine)",
+    "agent d'enrobage (shellac)",
+    "colorant (oxydes de fer et hydroxydes de fer)",
+    "régulateur d'acidité (hydroxyde d'ammonium)",
+    "régulateur d'acidité (hydroxyde de potassium)",
+    "agents anti-agglomérants (sels de magnésium d'acides gras)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "agent de charge (phosphates de calcium)",
+     "verdict": "penalty:bulking_filler",
+     "note": "calcium phosphates (E341), bulking agent",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "colorant (oxydes de fer et hydroxydes de fer)",
+     "verdict": "neutral",
+     "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "régulateur d'acidité (hydroxyde d'ammonium)",
+     "verdict": "penalty:acidity_regulator",
+     "note": "ammonium hydroxide (E527), trace acidity regulator in the capsule shell",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 18,
+    "dose": 20,
+    "purity": 20,
+    "transparency": 4,
+    "total": 62,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.697,
+    "std": 1.393,
+    "std_label": "€ / 3 g maca",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "1d3dd302fb44",
+   "rank_in_category": 5
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1,4 g de poudre/j en 4 gélules.",
+   "category": "maca",
+   "brand": "Nat&Form",
+   "name": "Maca Bio du Pérou",
+   "variant": "gélules · 200",
+   "price_eur": 15.9,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 200,
+   "units_per_day": 4,
+   "active_per_unit": 350,
+   "extract_ratio": 1,
+   "form": "poudre de racines de maca du Pérou biologique",
+   "additives": [
+    "gélule d'origine végétale"
+   ],
+   "url": "https://www.nat-form.com/products/maca-bio-du-perou",
+   "id": "nat-form-maca-bio-du-perou-gelules-200",
+   "form_tier": 14,
+   "form_note": "Raw maca powder.",
+   "dose_tier": 15,
+   "dose_note": "1400 mg/day — half the studied dose.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 15,
+    "purity": 30,
+    "transparency": 4,
+    "total": 63,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.318,
+    "std": 0.681,
+    "std_label": "€ / 3 g maca",
+    "days_per_pack": 50,
+    "price_tier": 1
+   },
+   "label_hash": "42ea3b0f86ad",
+   "rank_in_category": 3
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "Botani+"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Nombre de gélules non lu sur la page (60 supposé) — à vérifier. 1 à 4 gélules/j ; à 2, 1,2 g d'équivalent plante sèche.",
+   "category": "maca",
+   "brand": "Nutri&Co",
+   "name": "Maca Noire Bio",
+   "variant": "gélules · 60",
+   "price_eur": 22.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 300,
+   "extract_ratio": 2,
+   "form": "extrait de tubercule de maca noire (bio), 10:1 en équivalent plante fraîche soit 2:1 en plante sèche, label Botani+",
+   "additives": [
+    "agent d'enrobage : hydroxypropylméthylcellulose"
+   ],
+   "url": "https://nutriandco.com/fr/produits/maca-noire-bio",
+   "id": "nutri-co-maca-noire-bio-gelules-60",
+   "form_tier": 18,
+   "form_note": "Gelatinised or concentrated — the digestible form the trials used.",
+   "dose_tier": 15,
+   "dose_note": "1200 mg/day — half the studied dose.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent d'enrobage : hydroxypropylméthylcellulose"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 18,
+    "dose": 15,
+    "purity": 28,
+    "transparency": 26,
+    "total": 87,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.763,
+    "std": 3.817,
+    "std_label": "€ / 3 g maca",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "7a47ba65145b",
+   "rank_in_category": 1
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "Clean label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 à 2 gélules/j (350–700 mg) selon la marque.",
+   "category": "rhodiola",
+   "brand": "Dynveo",
+   "name": "Rhodiola rosea",
+   "variant": "gélules 350 mg · 60",
+   "price_eur": 24.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 350,
+   "form": "extrait 10:1 de racine (totum), titré à 5 % de rosavines et 2 % de salidroside, Altaï",
+   "additives": [
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "url": "https://www.dynveo.fr/products/rhodiola-rosea",
+   "id": "dynveo-rhodiola-rosea-gelules-350-mg-60",
+   "form_tier": 20,
+   "form_note": "Double-standardised (rosavins + salidroside) — the profile the trials used.",
+   "dose_tier": 20,
+   "dose_note": "350 mg/day — in the studied 200–600 mg range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale (pullulan)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 16,
+    "total": 86,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.415,
+    "std": 0.474,
+    "std_label": "€ / 400 mg extract",
+    "days_per_pack": 60,
+    "price_tier": 3
+   },
+   "label_hash": "d29da078236e",
+   "rank_in_category": 2
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "Rhodiolife®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Rhodiolife®",
+   "full_label": true,
+   "flags": [
+    "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 060 mg/j : au-dessus des 200–600 mg des essais ; salidroside non déclaré.",
+   "category": "rhodiola",
+   "brand": "Nutrimuscle",
+   "name": "Rhodiola Rhodiolife®",
+   "variant": "gélules · 30",
+   "price_eur": 19.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 30,
+   "units_per_day": 2,
+   "active_per_unit": 530,
+   "form": "extrait de racine Rhodiolife® titré à 3 % de rosavines (Nektium)",
+   "additives": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://www.nutrimuscle.com/products/rhodiola-rhodiolife-r",
+   "id": "nutrimuscle-rhodiola-rhodiolife-gelules-30",
+   "form_tier": 16,
+   "form_note": "Single-marker standardisation.",
+   "dose_tier": 16,
+   "dose_note": "1060 mg/day — above the studied range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule végétalienne (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Rhodiolife®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 16,
+    "dose": 16,
+    "purity": 30,
+    "transparency": 8,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 1.33,
+    "std": 0.502,
+    "std_label": "€ / 400 mg extract",
+    "days_per_pack": 15,
+    "price_tier": 4
+   },
+   "label_hash": "6ffdf781c7fa",
+   "rank_in_category": 4
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": false,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement.",
+    "Déconseillé aux moins de 18 ans (mention fabricant)."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "1 000 mg/j : au-dessus de la plage des essais.",
+   "category": "rhodiola",
+   "brand": "BioTechUSA",
+   "name": "Rhodiola",
+   "variant": "gélules · 60",
+   "price_eur": 29.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 500,
+   "form": "extrait de racine (51 % de la gélule), rosavines 3 % (15 mg par gélule)",
+   "additives": [
+    "agent de charge (gel de cellulose)",
+    "enveloppe de la capsule (gélatine)",
+    "agent d'enrobage (gomme laque)",
+    "colorants (oxydes et hydroxydes de fer)",
+    "correcteurs d'acidité (hydroxyde d'ammonium, hydroxyde de potassium)",
+    "antiagglomérants (sels de magnésium d'acides gras)"
+   ],
+   "url": "https://shop.biotechusa.fr/products/rhodiola-60-gelules",
+   "id": "biotechusa-rhodiola-gelules-60",
+   "form_tier": 16,
+   "form_note": "Single-marker standardisation.",
+   "dose_tier": 16,
+   "dose_note": "1000 mg/day — above the studied range.",
+   "purity_tags": [
+    "bulking_filler",
+    "coating",
+    "acidity_regulator",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "agent de charge (gel de cellulose)",
+    "enveloppe de la capsule (gélatine)",
+    "agent d'enrobage (gomme laque)",
+    "colorants (oxydes et hydroxydes de fer)",
+    "correcteurs d'acidité (hydroxyde d'ammonium, hydroxyde de potassium)",
+    "antiagglomérants (sels de magnésium d'acides gras)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "colorants (oxydes et hydroxydes de fer)",
+     "verdict": "neutral",
+     "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 16,
+    "dose": 16,
+    "purity": 23,
+    "transparency": 4,
+    "total": 59,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.997,
+    "std": 0.399,
+    "std_label": "€ / 400 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 2
+   },
+   "label_hash": "c0826b66c0ae",
+   "rank_in_category": 5
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "600 mg/j, 6 mg de salidrosides ; rosavines non déclarées. Existe en 120 et 180.",
+   "category": "rhodiola",
+   "brand": "Nat&Form",
+   "name": "Rhodiola",
+   "variant": "gélules · 60",
+   "price_eur": 9.2,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 300,
+   "form": "extrait de racines 2:1 (1 200 mg d'équivalent plante sèche pour 2 gélules) standardisé en salidrosides (1 %), origine non UE",
+   "additives": [
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "url": "https://www.nat-form.com/products/rhodiola-bio",
+   "id": "nat-form-rhodiola-gelules-60",
+   "form_tier": 16,
+   "form_note": "Single-marker standardisation.",
+   "dose_tier": 20,
+   "dose_note": "600 mg/day — in the studied 200–600 mg range.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale (HPMC)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 16,
+    "dose": 20,
+    "purity": 30,
+    "transparency": 4,
+    "total": 70,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.307,
+    "std": 0.204,
+    "std_label": "€ / 400 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 1
+   },
+   "label_hash": "948046fc60ae",
+   "rank_in_category": 3
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "Botani+"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Effet stimulant : à prendre le matin, pas le soir. Déconseillé pendant la grossesse et l'allaitement."
+   ],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Nombre de gélules non lu (60 supposé) — à vérifier. 400 mg/j en 2 gélules : la dose des essais (extrait WS 1375). Vitamines B non notées ici.",
+   "category": "rhodiola",
+   "brand": "Nutri&Co",
+   "name": "Rhodiola Bio",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 200,
+   "form": "extrait de racine de rhodiole bio standardisé à 3 % de rosavines et 1 % de salidrosides (HPLC), label Botani+, avec un complexe de vitamines B d'origine végétale",
+   "additives": [
+    "agent d'enrobage : hydroxypropylméthylcellulose",
+    "agent de charge : gomme d'acacia bio"
+   ],
+   "url": "https://nutriandco.com/fr/produits/rhodiola-bio",
+   "id": "nutri-co-rhodiola-bio-gelules-60",
+   "form_tier": 20,
+   "form_note": "Double-standardised (rosavins + salidroside) — the profile the trials used.",
+   "dose_tier": 20,
+   "dose_note": "400 mg/day — in the studied 200–600 mg range.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent d'enrobage : hydroxypropylméthylcellulose",
+    "agent de charge : gomme d'acacia bio"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 20,
+    "purity": 26,
+    "transparency": 26,
+    "total": 92,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 0.663,
+    "std_label": "€ / 400 mg extract",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "b5211010d254",
+   "rank_in_category": 1
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "Meriva®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Meriva®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "300 mg de Meriva/j (99 mg de curcuminoïdes) ; les essais arthrose avec Meriva utilisent 1 000 mg/j. Gingembre 150 mg non noté.",
+   "category": "curcumin",
+   "brand": "Novoma",
+   "name": "Curcuma",
+   "variant": "gélules · 60",
+   "price_eur": 20.72,
+   "price_note": "novoma.com live 06/09/2026 — promo −20 % sur tout le site ce jour (prix habituel ≈ 25,90 €)",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 99,
+   "form": "Meriva® (phytosome curcumine–phospholipides de tournesol), 33 % de curcuminoïdes, avec extrait de gingembre",
+   "additives": [
+    "phospholipides de tournesol",
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "url": "https://novoma.com/products/curcuma-gelule",
+   "id": "novoma-curcuma-gelules-60",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 16,
+   "dose_note": "99 mg/day — within the range the formulation trials used.",
+   "purity_tags": [
+    "lecithin"
+   ],
+   "additives_detail": [
+    "phospholipides de tournesol",
+    "capsule végétale (agent d'enrobage : hydroxypropylméthylcellulose)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Meriva®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "phospholipides de tournesol",
+     "verdict": "penalty:lecithin",
+     "note": "sunflower phospholipids — the lecithin carrier of the phytosome, an emulsifier",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 8,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.345,
+    "std": 1.744,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "5098e67d1a13",
+   "rank_in_category": 3
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "TurmiPure Gold®",
+    "Clean label Dynveo"
+   ],
+   "coa_published": true,
+   "third_party_cert": false,
+   "branded_ingredient": "TurmiPure Gold®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "medium",
+   "ean": null,
+   "notes": "Teneur en curcuminoïdes non affichée : 90 mg estimés d'après la teneur standard de TurmiPure Gold (30 %), la même que Nutri&Co déclare pour 300 mg du même ingrédient.",
+   "category": "curcumin",
+   "brand": "Dynveo",
+   "name": "Curcumine BIO Optimisée",
+   "variant": "gélules 300 mg · 30",
+   "price_eur": 19.9,
+   "price_note": "dynveo.fr live 06/09/2026",
+   "units_pack": 30,
+   "units_per_day": 1,
+   "active_per_unit": 90,
+   "form": "TurmiPure Gold® : extrait de curcuma bio à 95 % micro-encapsulé dans une matrice acacia / tournesol / quillaja",
+   "additives": [
+    "fibres d'acacia bio",
+    "huile de tournesol bio",
+    "extrait d'écorce de quillaja bio"
+   ],
+   "url": "https://www.dynveo.fr/products/curcumine-optimisee",
+   "id": "dynveo-curcumine-bio-optimisee-gelules-300-mg-30",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 16,
+   "dose_note": "90 mg/day — within the range the formulation trials used.",
+   "purity_tags": [
+    "bulking_filler",
+    "lecithin"
+   ],
+   "additives_detail": [
+    "fibres d'acacia bio",
+    "huile de tournesol bio",
+    "extrait d'écorce de quillaja bio"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": false,
+    "branded_ingredient": "TurmiPure Gold®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "extrait d'écorce de quillaja bio",
+     "verdict": "penalty:lecithin",
+     "note": "quillaja extract (E999), a natural emulsifier in the delivery matrix",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 26,
+    "transparency": 20,
+    "total": 82,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 3.685,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "06c54a2948e1",
+   "rank_in_category": 2
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "BCM-95®",
+    "vegan"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "BCM-95®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "150 mg de curcuminoïdes/j, plafond que la marque retient d'après EFSA/ANSES.",
+   "category": "curcumin",
+   "brand": "Argalys",
+   "name": "Curcuma BCM95® + Manganèse et Vitamine C",
+   "variant": "gélules · 60",
+   "price_eur": 25.9,
+   "price_note": "argalys.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 1,
+   "active_per_unit": 150,
+   "form": "BCM-95® (curcuminoïdes + huiles essentielles de curcuma), avec vitamine C et manganèse",
+   "additives": [
+    "fibre d'acacia bio",
+    "cellulose",
+    "silice colloïdale",
+    "gélule végétale HPMC"
+   ],
+   "url": "https://www.argalys.com/products/curcuma-manganese-vitamine-c",
+   "id": "argalys-curcuma-bcm95-manganese-et-vitamine-c-gelules-60",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 16,
+   "dose_note": "150 mg/day — within the range the formulation trials used.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "anticaking"
+   ],
+   "additives_detail": [
+    "fibre d'acacia bio",
+    "cellulose",
+    "silice colloïdale",
+    "gélule végétale HPMC"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "BCM-95®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 24,
+    "transparency": 8,
+    "total": 68,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.432,
+    "std": 1.439,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 60,
+    "price_tier": 1
+   },
+   "label_hash": "602310c3319a",
+   "rank_in_category": 5
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "capsule",
+   "vegan": true,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "100 mg de curcumine/j. L-ornithine et Andrographis non notés.",
+   "category": "curcumin",
+   "brand": "Nutrimuscle",
+   "name": "Curcumine",
+   "variant": "capsules molles · 60",
+   "price_eur": 24.95,
+   "price_note": "nutrimuscle.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 50,
+   "form": "extrait de curcuma (curcumine) et poudres de curcuma d'Okinawa en capsule molle huileuse, avec L-ornithine et Andrographis",
+   "additives": [
+    "huile de carthame",
+    "cire d'abeille",
+    "inuline",
+    "vitamine E (d-α-tocophérol)"
+   ],
+   "url": "https://www.nutrimuscle.com/products/curcumine",
+   "id": "nutrimuscle-curcumine-capsules-molles-60",
+   "form_tier": 6,
+   "form_note": "Turmeric powder (~3% curcumin) — not the material the trials used.",
+   "dose_tier": 10,
+   "dose_note": "100 mg/day — too little plain curcumin to expect absorption.",
+   "purity_tags": [
+    "coating"
+   ],
+   "additives_detail": [
+    "huile de carthame",
+    "cire d'abeille",
+    "inuline",
+    "vitamine E (d-α-tocophérol)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "cire d'abeille",
+     "verdict": "penalty:coating",
+     "note": "beeswax (E901), glazing agent in a softgel",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Belgium",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 6,
+    "dose": 10,
+    "purity": 28,
+    "transparency": 4,
+    "total": 48,
+    "grade": "D",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.832,
+    "std": 4.158,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "6d3fd65f5e79",
+   "rank_in_category": 10
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "capsule",
+   "vegan": false,
+   "certifications": [
+    "NovaSOL®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "NovaSOL®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "48 mg de curcuminoïdes/j ; la biodisponibilité annoncée (×185) ne remplace pas la dose.",
+   "category": "curcumin",
+   "brand": "BioTechUSA",
+   "name": "Liquid Curcuma",
+   "variant": "capsules · 30",
+   "price_eur": 22.9,
+   "price_note": "shop.biotechusa.fr live 06/09/2026",
+   "units_pack": 30,
+   "units_per_day": 1,
+   "active_per_unit": 48,
+   "form": "NovaSOL® (micelles de curcumine, polysorbate 80), avec vitamine D3",
+   "additives": [
+    "émulsifiant (E 433)",
+    "agent de capsule : stabilisant (hydroxypropylméthylcellulose)",
+    "antioxydant (acide ascorbique)"
+   ],
+   "url": "https://shop.biotechusa.fr/products/liquid-curcruma-30-capsules",
+   "id": "biotechusa-liquid-curcuma-capsules-30",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 12,
+   "dose_note": "48 mg/day — below the formulation's studied dose.",
+   "purity_tags": [
+    "lecithin"
+   ],
+   "additives_detail": [
+    "émulsifiant (E 433)",
+    "agent de capsule : stabilisant (hydroxypropylméthylcellulose)",
+    "antioxydant (acide ascorbique)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "NovaSOL®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "émulsifiant (E 433)",
+     "verdict": "penalty:lecithin",
+     "note": "polysorbate 80 (E433), the emulsifier that makes micellar curcumin water-soluble",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "antioxydant (acide ascorbique)",
+     "verdict": "neutral",
+     "note": "vitamin C used as an antioxidant",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
+   },
+   "scores": {
+    "form": 20,
+    "dose": 12,
+    "purity": 28,
+    "transparency": 8,
+    "total": 68,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.763,
+    "std": 7.951,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 5
+   },
+   "label_hash": "1e34d6eb68db",
+   "rank_in_category": 6
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "Existe en 90 gélules (63,00 €).",
+   "category": "curcumin",
+   "brand": "Biocyte",
+   "name": "Curcumin Forte Liposomal",
+   "variant": "gélules · 30",
+   "price_eur": 27.9,
+   "price_note": "biocyte.com live 06/09/2026",
+   "units_pack": 30,
+   "units_per_day": 1,
+   "active_per_unit": 123,
+   "form": "complexe de curcuma microencapsulé « liposomal » (gomme arabique, lécithines), 300 mg d'extrait, avec vitamines C et E",
+   "additives": [
+    "agent de charge : gomme arabique",
+    "émulsifiant : lécithines",
+    "enveloppe de la gélule d'origine végétale (hydroxypropylméthylcellulose)",
+    "fibre de pois",
+    "acétate de DL-alpha-tocophéryle",
+    "agent de charge : cellulose microcristalline"
+   ],
+   "url": "https://www.biocyte.com/products/curcumin-forte-liposomal",
+   "id": "biocyte-curcumin-forte-liposomal-gelules-30",
+   "form_tier": 14,
+   "form_note": "Absorption-enhanced by encapsulation, but not a clinically named formulation.",
+   "dose_tier": 10,
+   "dose_note": "123 mg/day — too little plain curcumin to expect absorption.",
+   "purity_tags": [
+    "bulking_filler",
+    "lecithin",
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "agent de charge : gomme arabique",
+    "émulsifiant : lécithines",
+    "enveloppe de la gélule d'origine végétale (hydroxypropylméthylcellulose)",
+    "fibre de pois",
+    "acétate de DL-alpha-tocophéryle",
+    "agent de charge : cellulose microcristalline"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "fibre de pois",
+     "verdict": "neutral",
+     "note": "pea fibre, a food fibre",
+     "reviewed_on": "2026-09-06"
+    },
+    {
+     "string": "acétate de DL-alpha-tocophéryle",
+     "verdict": "neutral",
+     "note": "vitamin E acetate",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 14,
+    "dose": 10,
+    "purity": 24,
+    "transparency": 4,
+    "total": 52,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.93,
+    "std": 3.78,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "b0a70a14975a",
+   "rank_in_category": 7
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Poudre, pas extrait : teneur en curcuminoïdes non déclarée, estimée à ~3 % (≈ 9 mg par gélule de 300 mg, ≈ 36 mg/j). Existe en 120.",
+   "category": "curcumin",
+   "brand": "Nat&Form",
+   "name": "Curcuma pipérine Bio",
+   "variant": "gélules · 200",
+   "price_eur": 12.5,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 200,
+   "units_per_day": 4,
+   "active_per_unit": 9,
+   "form": "poudre de rhizomes de curcuma bio + poudre de poivre bio (pipérine)",
+   "additives": [
+    "gélule d'origine végétale"
+   ],
+   "url": "https://www.nat-form.com/products/curcuma-piperine-bio",
+   "id": "nat-form-curcuma-piperine-bio-gelules-200",
+   "form_tier": 6,
+   "form_note": "Turmeric powder (~3% curcumin) — not the material the trials used.",
+   "dose_tier": 10,
+   "dose_note": "36 mg/day — too little plain curcumin to expect absorption.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 6,
+    "dose": 10,
+    "purity": 30,
+    "transparency": 4,
+    "total": 50,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.25,
+    "std": 3.472,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 50,
+    "price_tier": 3
+   },
+   "label_hash": "049d9ca23f1c",
+   "rank_in_category": 8
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": null,
+   "full_label": true,
+   "flags": [],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Poudre, pas extrait : teneur en curcuminoïdes non déclarée, estimée à ~3 % (≈ 9 mg par gélule, ≈ 36 mg/j).",
+   "category": "curcumin",
+   "brand": "Nat&Form",
+   "name": "Curcuma Bio",
+   "variant": "gélules · 200",
+   "price_eur": 12.5,
+   "price_note": "nat-form.com live 06/09/2026",
+   "units_pack": 200,
+   "units_per_day": 4,
+   "active_per_unit": 9,
+   "form": "poudre de racines de curcuma biologique",
+   "additives": [
+    "gélule d'origine végétale"
+   ],
+   "url": "https://www.nat-form.com/products/curcuma-bio",
+   "id": "nat-form-curcuma-bio-gelules-200",
+   "form_tier": 6,
+   "form_note": "Turmeric powder (~3% curcumin) — not the material the trials used.",
+   "dose_tier": 10,
+   "dose_note": "36 mg/day — too little plain curcumin to expect absorption.",
+   "purity_tags": [],
+   "additives_detail": [
+    "gélule d'origine végétale"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": null,
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 6,
+    "dose": 10,
+    "purity": 30,
+    "transparency": 4,
+    "total": 50,
+    "grade": "C",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.25,
+    "std": 3.472,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 50,
+    "price_tier": 3
+   },
+   "label_hash": "7df9464b1bbc",
+   "rank_in_category": 9
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "agriculture biologique",
+    "TurmiPure Gold®",
+    "Botani+"
+   ],
+   "coa_published": true,
+   "third_party_cert": true,
+   "branded_ingredient": "TurmiPure Gold®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "low",
+   "ean": null,
+   "notes": "Nombre de gélules non lu (60 supposé) — à vérifier. 90 mg de curcuminoïdes/j en 2 gélules, la dose de l'essai que cite la marque.",
+   "category": "curcumin",
+   "brand": "Nutri&Co",
+   "name": "Curcuma Bio",
+   "variant": "gélules · 60",
+   "price_eur": 19.9,
+   "price_note": "nutriandco.com live 06/09/2026",
+   "units_pack": 60,
+   "units_per_day": 2,
+   "active_per_unit": 45,
+   "form": "TurmiPure Gold® bio titré à 30 % min. de curcuminoïdes (extrait 100 % curcuma, label Botani+)",
+   "additives": [
+    "agent de charge : fibre d'acacia",
+    "émulsifiant : gomme d'acacia",
+    "huile de tournesol",
+    "extrait d'écorce de quillaja"
+   ],
+   "url": "https://nutriandco.com/fr/produits/curcuma-bio",
+   "id": "nutri-co-curcuma-bio-gelules-60",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 16,
+   "dose_note": "90 mg/day — within the range the formulation trials used.",
+   "purity_tags": [
+    "bulking_filler",
+    "bulking_filler",
+    "lecithin"
+   ],
+   "additives_detail": [
+    "agent de charge : fibre d'acacia",
+    "émulsifiant : gomme d'acacia",
+    "huile de tournesol",
+    "extrait d'écorce de quillaja"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": true,
+    "third_party_cert": true,
+    "branded_ingredient": "TurmiPure Gold®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [
+    {
+     "string": "extrait d'écorce de quillaja",
+     "verdict": "penalty:lecithin",
+     "note": "quillaja extract (E999), a natural emulsifier in the delivery matrix",
+     "reviewed_on": "2026-09-06"
+    }
+   ],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 24,
+    "transparency": 30,
+    "total": 90,
+    "grade": "A",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.663,
+    "std": 3.685,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "f1495cdd4d02",
+   "rank_in_category": 1
+  },
+  {
+   "active_unit": "mg",
+   "unit_name": "gélule",
+   "vegan": true,
+   "certifications": [
+    "Cavacurmin®"
+   ],
+   "coa_published": false,
+   "third_party_cert": false,
+   "branded_ingredient": "Cavacurmin®",
+   "full_label": true,
+   "flags": [
+    "Curcumine concentrée : cas d'atteintes hépatiques rapportés (alerte du ministère italien de la Santé, 2019). À éviter en cas de maladie du foie, de calculs biliaires ou de traitement anticoagulant."
+   ],
+   "confidence": "high",
+   "ean": null,
+   "notes": "150 mg de curcumine/j en 3 gélules. Existe en 270.",
+   "category": "curcumin",
+   "brand": "Nutripure",
+   "name": "Curcumine Active Cavacurmin®",
+   "variant": "gélules · 90",
+   "price_eur": 29.9,
+   "price_note": "nutripure.fr live 06/09/2026",
+   "units_pack": 90,
+   "units_per_day": 3,
+   "active_per_unit": 50,
+   "form": "Cavacurmin® (complexe curcumine–gamma-cyclodextrine), avec vitamine C",
+   "additives": [
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "maltodextrine",
+    "acide ascorbique (vitamine C)",
+    "huile de tournesol (0,8 %)"
+   ],
+   "url": "https://www.nutripure.fr/fr/complement-alimentaire-mobilite-articulation/39-active-curcumine.html",
+   "id": "nutripure-curcumine-active-cavacurmin-gelules-90",
+   "form_tier": 20,
+   "form_note": "Enhanced-absorption formulation with its own clinical trials.",
+   "dose_tier": 16,
+   "dose_note": "150 mg/day — within the range the formulation trials used.",
+   "purity_tags": [
+    "bulking_filler"
+   ],
+   "additives_detail": [
+    "gélule d'origine végétale (agent d'enrobage : pullulan)",
+    "maltodextrine",
+    "acide ascorbique (vitamine C)",
+    "huile de tournesol (0,8 %)"
+   ],
+   "banned": [],
+   "transparency": {
+    "coa_published": false,
+    "third_party_cert": false,
+    "branded_ingredient": "Cavacurmin®",
+    "full_label": true
+   },
+   "review_pending": [],
+   "reviewed": [],
+   "provenance": {
+    "country": "France",
+    "zone": "FR",
+    "malus": 0
+   },
+   "scores": {
+    "form": 20,
+    "dose": 16,
+    "purity": 28,
+    "transparency": 8,
+    "total": 72,
+    "grade": "B",
+    "red_card": false,
+    "banned_substances": []
+   },
+   "value": {
+    "cost_per_day": 0.997,
+    "std": 3.322,
+    "std_label": "€ / 500 mg curcuminoids",
+    "days_per_pack": 30,
+    "price_tier": 3
+   },
+   "label_hash": "ab67b695b556",
    "rank_in_category": 4
   },
   {
@@ -9640,8 +12140,8 @@ const KLEERER_DATA = {
     }
    ],
    "provenance": {
-    "country": null,
-    "zone": "UNKNOWN",
+    "country": "France",
+    "zone": "FR",
     "malus": 0
    },
    "scores": {
@@ -9975,8 +12475,8 @@ const KLEERER_DATA = {
    "review_pending": [],
    "reviewed": [],
    "provenance": {
-    "country": null,
-    "zone": "UNKNOWN",
+    "country": "France",
+    "zone": "FR",
     "malus": 0
    },
    "scores": {
@@ -10175,9 +12675,9 @@ const KLEERER_DATA = {
    "review_pending": [],
    "reviewed": [],
    "provenance": {
-    "country": null,
-    "zone": "UNKNOWN",
-    "malus": 0
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
    },
    "scores": {
     "form": 20,
@@ -10691,9 +13191,9 @@ const KLEERER_DATA = {
     }
    ],
    "provenance": {
-    "country": null,
-    "zone": "UNKNOWN",
-    "malus": 0
+    "country": "Hungary",
+    "zone": "EU",
+    "malus": 1
    },
    "scores": {
     "form": 16,

@@ -17,10 +17,10 @@ en: {
   htmlLang: "en",
   langName: "EN",
   langSwitchTitle: "Afficher en français",
-  metaDesc: "Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 163 EU/French products across 11 categories. No sponsors, no affiliate links.",
+  metaDesc: "Independent supplement comparator: an evidence-based Health & Compo Score (A–E), price per gram of actual active, and a personalised dosage check for 193 EU/French products across 15 categories — vitamins, minerals, proteins, and botanicals scored apart. No sponsors, no affiliate links.",
 
   crumb: "/ p1 · compare",
-  navMethodology: "methodology",
+  navEvidence: "evidence", navMethodology: "methodology",
   navAbout: "about",
 
   heroSub: `The independent supplement comparator — <b>score the label, price the active</b>. Every product gets an evidence-based Health &amp; Compo Score, a price per gram of <i>actual</i> active, and a dosage check against <i>your</i> needs — and <b>my stack</b> sums whatever you combine, catching doses that quietly cross an EU limit. Behind it: a proprietary price-and-label archive, <b>recorded daily and growing</b> — history no one can recreate after the fact. No sponsors, no affiliate links.`,
@@ -52,14 +52,17 @@ en: {
 
   cats: {all:"all", whey:"whey", creatine:"creatine", vitamin_d3:"vitamin d3", magnesium:"magnesium",
     omega3:"omega-3", multivitamin:"multivitamin", zinc:"zinc", vitamin_c:"vitamin c",
-    collagen:"collagen", probiotics:"probiotics", melatonin:"melatonin"},
+    collagen:"collagen", probiotics:"probiotics", melatonin:"melatonin",
+    ashwagandha:"ashwagandha", maca:"maca", rhodiola:"rhodiola", curcumin:"curcumin"},
 
   units: {whey:"g protein", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
     magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
-    collagen:"g peptides", probiotics:"billion CFU", melatonin:"mg melatonin"},
+    collagen:"g peptides", probiotics:"billion CFU", melatonin:"mg melatonin",
+    ashwagandha:"mg root extract", maca:"mg maca", rhodiola:"mg extract", curcumin:"mg curcuminoids"},
   stackUnits: {whey:"g protein (per serving)", creatine:"g creatine", vitamin_d3:"IU vitamin D3",
     magnesium:"mg elemental Mg", omega3:"mg EPA+DHA", zinc:"mg zinc", vitamin_c:"mg vitamin C",
-    collagen:"g collagen peptides", probiotics:"billion CFU", melatonin:"mg melatonin"},
+    collagen:"g collagen peptides", probiotics:"billion CFU", melatonin:"mg melatonin",
+    ashwagandha:"mg ashwagandha extract", maca:"mg maca", rhodiola:"mg rhodiola extract", curcumin:"mg curcuminoids"},
 
   actives: {
     whey: p => `${p.active_per_100g} g protein / 100 g · ${p.active_per_serving_g} g per ${p.serving_g} g serving`,
@@ -73,6 +76,10 @@ en: {
     collagenCaps: p => `${(p.active_per_unit*p.units_per_day).toFixed(2)} g collagen / day (${p.units_per_day} × ${p.unit_name})`,
     probiotics: p => `${p.active_per_unit*p.units_per_day} billion CFU / day (${p.units_per_day} × ${p.unit_name})`,
     melatonin: p => `${p.active_per_unit*p.units_per_day} mg melatonin / day (${p.units_per_day} × ${p.unit_name})`,
+    ashwagandha: p => `${p.active_per_unit*p.units_per_day} mg root extract / day (${p.units_per_day} × ${p.unit_name})`,
+    maca: p => `${(p.active_per_unit*p.units_per_day*(p.extract_ratio||1)).toLocaleString("en")} mg maca (powder-equivalent) / day (${p.units_per_day} × ${p.unit_name})`,
+    rhodiola: p => `${p.active_per_unit*p.units_per_day} mg extract / day (${p.units_per_day} × ${p.unit_name})`,
+    curcumin: p => `${p.active_per_unit*p.units_per_day} mg curcuminoids / day (${p.units_per_day} × ${p.unit_name})`,
     fallback: p => `${p.units_per_day} ${p.unit_name}s / day`
   },
 
@@ -106,6 +113,10 @@ en: {
     zincMen: "men", zincWomen: "women",
     vitaminC: (lo,athlete) => `ANSES PRI is ${lo} mg/day${athlete?"; heavy training raises turnover to ~200 mg":""}. Above that there is no established added benefit, but no harm either — ANSES advises staying at or below 1000 mg/day from supplements`,
     collagen: "clinical trials use 5 g (skin) to 15 g (joints, tendon loading) as absolute doses — collagen peptide research does not scale by body weight, so this band moves with your activity only",
+    ashwagandha: "300–600 mg/day of standardised root extract is what the stress and sleep trials used. Not a nutrient: no reference intake, no EFSA limit — and two European agencies advise against it for thyroid, liver or heart conditions, pregnancy, sedative use and under-18s. Read the evidence page before the dose",
+    maca: "trials used 1.5–3 g/day of powder (or its extract equivalent) for 6–12 weeks. Evidence is limited; the band is the studied range, not a proven effective dose",
+    rhodiola: "200–600 mg/day of extract standardised to rosavins and salidroside — anything unstandardised shares only a name with the trials",
+    curcumin: "plain 95% extract needs ~1,000–1,500 mg/day of curcuminoids to reach the osteoarthritis-trial doses; enhanced-absorption forms use 250–500 mg. Concentrated curcumin has a liver-injury case history — treat it as a drug, not a spice",
     probiotics: "studied doses span roughly 1–50 billion CFU and the effect is strain-specific, not dose-linear — more CFU is not inherently better. No body-weight, sex or age scaling is established, so this band is the same for everyone",
     melatonin: old => "EFSA allows the sleep-onset claim from 1 mg (0.5 mg for jet lag); 1.9 mg is the French regulatory ceiling for a food supplement"
       + (old ? ". Endogenous melatonin declines past 55, where supplementation tends to help most" : ". No body-weight scaling is established")
@@ -177,6 +188,7 @@ en: {
   priceLevelTitle: tier => `price level ${tier}/5 (1=cheapest per dose, 5=priciest)`,
 
   chipCoa: "COA published", chipThirdParty: "3rd-party tested", chipVegan: "vegan",
+  chipBotanical: "botanical", chipBotanicalTitle: "a plant extract, not a nutrient — no reference intake, no EFSA limit, no authorised health claim. Scored on the same method; its evidence is graded separately on the evidence page",
   chipReview: "✓ manually reviewed", chipReviewTitle: "an ingredient here was unreadable by the auto-tagger and was ruled on by a human before this product was published",
   chipFlags: n => `⚠ ${n} flag${n>1?"s":""}`,
 
@@ -287,6 +299,9 @@ en: {
     <p>We flag country of manufacture (🇫🇷 France · 🇪🇺 EU · 🌍 outside EU) and a small proximity malus (0/1/3) reflecting kleerer's French focus. It is shown <b>separately</b>: a clean German product is not "less healthy" than a French one.</p>
     <h4>Language</h4>
     <p>The interface follows your browser's language preference (French or English) and you can switch it any time with the toggle in the header — your choice is remembered. We never look up your IP to guess: that would mean sending your address to a third party, and it would answer the wrong question anyway. Note that product-level editorial notes come from the label in the language they were published in.</p>
+    <h3>Botanicals, in purple</h3>
+    <p>Ashwagandha, maca, rhodiola and curcumin are plant extracts, not nutrients: no reference intake, no EFSA upper limit, and no authorised health claim for any of them. They are shown apart so an extract is never mistaken for a vitamin, and scored on exactly the same method — form tier means <i>is this the material the trials used</i> (standardised, branded extracts vs raw powder), dose tier is the range those trials actually used. Where a European agency has advised against one, the advisory is printed where the dose would otherwise be: ashwagandha carries a 2023 Danish ban and a 2024 ANSES opinion, and is not red-carded only because neither body is in the red-card rule.</p>
+    <p>What each supplement is actually good for — by need, graded on the trials, with the EFSA claim shown separately — is on the <a href="/compare/evidence/">evidence page</a>.</p>
     <p>Full details, penalty tables, sources and limitations: <b>METHODOLOGY.md</b> in the repository.</p>`,
 
   about: META => `
@@ -307,10 +322,10 @@ fr: {
   htmlLang: "fr",
   langName: "FR",
   langSwitchTitle: "Switch to English",
-  metaDesc: "Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 163 produits UE/France dans 11 catégories. Sans sponsors, sans liens affiliés.",
+  metaDesc: "Comparateur indépendant de compléments alimentaires : un Health & Compo Score fondé sur les preuves (A–E), le prix au gramme d'actif réel et un contrôle de dosage personnalisé pour 193 produits UE/France dans 15 catégories — vitamines, minéraux, protéines, et plantes notées à part. Sans sponsors, sans liens affiliés.",
 
   crumb: "/ p1 · comparer",
-  navMethodology: "méthodologie",
+  navEvidence: "preuves", navMethodology: "méthodologie",
   navAbout: "à propos",
 
   heroSub: `Le comparateur indépendant de compléments alimentaires — <b>on note l'étiquette, on chiffre l'actif</b>. Chaque produit reçoit un Health &amp; Compo Score fondé sur les preuves, un prix par gramme d'actif <i>réel</i>, et un contrôle du dosage face à <i>vos</i> besoins — et <b>ma routine</b> additionne tout ce que vous combinez, en repérant les doses qui franchissent discrètement une limite européenne. Derrière : une archive propriétaire des prix et des étiquettes, <b>enregistrée chaque jour et qui s'étoffe</b> — un historique que personne ne peut recréer après coup. Sans sponsors, sans liens affiliés.`,
@@ -342,14 +357,17 @@ fr: {
 
   cats: {all:"tout", whey:"whey", creatine:"créatine", vitamin_d3:"vitamine d3", magnesium:"magnésium",
     omega3:"oméga-3", multivitamin:"multivitamines", zinc:"zinc", vitamin_c:"vitamine c",
-    collagen:"collagène", probiotics:"probiotiques", melatonin:"mélatonine"},
+    collagen:"collagène", probiotics:"probiotiques", melatonin:"mélatonine",
+    ashwagandha:"ashwagandha", maca:"maca", rhodiola:"rhodiola", curcumin:"curcumine"},
 
   units: {whey:"g de protéines", creatine:"g de créatine", vitamin_d3:"UI de vitamine D3",
     magnesium:"mg de Mg élémentaire", omega3:"mg d'EPA+DHA", zinc:"mg de zinc", vitamin_c:"mg de vitamine C",
-    collagen:"g de peptides", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine"},
+    collagen:"g de peptides", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine",
+    ashwagandha:"mg d'extrait de racine", maca:"mg de maca", rhodiola:"mg d'extrait", curcumin:"mg de curcuminoïdes"},
   stackUnits: {whey:"g de protéines (par portion)", creatine:"g de créatine", vitamin_d3:"UI de vitamine D3",
     magnesium:"mg de Mg élémentaire", omega3:"mg d'EPA+DHA", zinc:"mg de zinc", vitamin_c:"mg de vitamine C",
-    collagen:"g de peptides de collagène", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine"},
+    collagen:"g de peptides de collagène", probiotics:"milliards d'UFC", melatonin:"mg de mélatonine",
+    ashwagandha:"mg d'extrait d'ashwagandha", maca:"mg de maca", rhodiola:"mg d'extrait de rhodiola", curcumin:"mg de curcuminoïdes"},
 
   actives: {
     whey: p => `${p.active_per_100g} g de protéines / 100 g · ${p.active_per_serving_g} g par portion de ${p.serving_g} g`,
@@ -363,6 +381,10 @@ fr: {
     collagenCaps: p => `${(p.active_per_unit*p.units_per_day).toFixed(2)} g de collagène / jour (${p.units_per_day} × ${p.unit_name})`,
     probiotics: p => `${p.active_per_unit*p.units_per_day} milliards d'UFC / jour (${p.units_per_day} × ${p.unit_name})`,
     melatonin: p => `${p.active_per_unit*p.units_per_day} mg de mélatonine / jour (${p.units_per_day} × ${p.unit_name})`,
+    ashwagandha: p => `${p.active_per_unit*p.units_per_day} mg d'extrait de racine / jour (${p.units_per_day} × ${p.unit_name})`,
+    maca: p => `${(p.active_per_unit*p.units_per_day*(p.extract_ratio||1)).toLocaleString("fr")} mg de maca (équivalent poudre) / jour (${p.units_per_day} × ${p.unit_name})`,
+    rhodiola: p => `${p.active_per_unit*p.units_per_day} mg d'extrait / jour (${p.units_per_day} × ${p.unit_name})`,
+    curcumin: p => `${p.active_per_unit*p.units_per_day} mg de curcuminoïdes / jour (${p.units_per_day} × ${p.unit_name})`,
     fallback: p => `${p.units_per_day} ${p.unit_name}s / jour`
   },
 
@@ -396,6 +418,10 @@ fr: {
     zincMen: "hommes", zincWomen: "femmes",
     vitaminC: (lo,athlete) => `la RNP ANSES est de ${lo} mg/jour${athlete?" ; un entraînement intensif porte le renouvellement à ~200 mg":""}. Au-delà, aucun bénéfice supplémentaire n'est établi, mais aucun risque non plus — l'ANSES conseille de rester à 1000 mg/jour au maximum via les compléments`,
     collagen: "les essais cliniques utilisent 5 g (peau) à 15 g (articulations, sollicitation tendineuse) en doses absolues — la recherche sur les peptides de collagène n'ajuste pas au poids corporel, cette fourchette ne bouge donc qu'avec votre activité",
+    ashwagandha: "300–600 mg/j d'extrait de racine standardisé : la dose des essais sur le stress et le sommeil. Pas un nutriment : aucun apport de référence, aucune limite EFSA — et deux agences européennes le déconseillent en cas de pathologie thyroïdienne, hépatique ou cardiaque, de grossesse, de prise de sédatifs et avant 18 ans. Lisez la page preuves avant la dose",
+    maca: "les essais ont utilisé 1,5–3 g/j de poudre (ou son équivalent en extrait) pendant 6–12 semaines. Preuves limitées : la fourchette est la plage étudiée, pas une dose efficace démontrée",
+    rhodiola: "200–600 mg/j d'extrait standardisé en rosavines et salidroside — un extrait non standardisé ne partage qu'un nom avec les essais",
+    curcumin: "un extrait simple à 95 % nécessite ~1 000–1 500 mg/j de curcuminoïdes pour atteindre les doses des essais sur l'arthrose ; les formes à absorption améliorée utilisent 250–500 mg. La curcumine concentrée a un historique d'atteintes hépatiques — à traiter comme un médicament, pas une épice",
     probiotics: "les doses étudiées s'étendent grosso modo de 1 à 50 milliards d'UFC et l'effet dépend de la souche, pas linéairement de la dose — davantage d'UFC n'est pas intrinsèquement mieux. Aucun ajustement au poids, au sexe ou à l'âge n'est établi : cette fourchette est donc la même pour tout le monde",
     melatonin: old => "l'EFSA autorise l'allégation sur l'endormissement à partir de 1 mg (0,5 mg pour le décalage horaire) ; 1,9 mg est le plafond réglementaire français pour un complément alimentaire"
       + (old ? ". La mélatonine endogène décline après 55 ans, âge où la supplémentation aide le plus souvent" : ". Aucun ajustement au poids corporel n'est établi")
@@ -467,6 +493,7 @@ fr: {
   priceLevelTitle: tier => `niveau de prix ${tier}/5 (1 = le moins cher par dose, 5 = le plus cher)`,
 
   chipCoa: "analyses publiées", chipThirdParty: "testé par un tiers", chipVegan: "végan",
+  chipBotanical: "plante", chipBotanicalTitle: "un extrait végétal, pas un nutriment — aucun apport de référence, aucune limite EFSA, aucune allégation santé autorisée. Noté selon la même méthode ; ses preuves sont évaluées à part sur la page preuves",
   chipReview: "✓ vérifié manuellement", chipReviewTitle: "un ingrédient illisible pour l'auto-tagger a été tranché par un humain avant la publication de ce produit",
 
   chipFlags: n => `⚠ ${n} alerte${n>1?"s":""}`,
@@ -578,6 +605,9 @@ fr: {
     <p>Nous signalons le pays de fabrication (🇫🇷 France · 🇪🇺 UE · 🌍 hors UE) et un léger malus de proximité (0/1/3) reflétant l'ancrage français de kleerer. Il est affiché <b>séparément</b> : un produit allemand irréprochable n'est pas « moins sain » qu'un produit français.</p>
     <h4>Langue</h4>
     <p>L'interface suit la préférence linguistique de votre navigateur (français ou anglais) et vous pouvez en changer à tout moment avec le sélecteur dans l'en-tête — votre choix est mémorisé. Nous ne consultons jamais votre adresse IP pour deviner : cela reviendrait à transmettre votre adresse à un tiers, et répondrait de toute façon à la mauvaise question. À noter : les remarques éditoriales propres à chaque produit reprennent l'étiquette dans la langue où elle a été publiée.</p>
+    <h3>Les plantes, en violet</h3>
+    <p>Ashwagandha, maca, rhodiola et curcumine sont des extraits végétaux, pas des nutriments : aucun apport de référence, aucune limite supérieure EFSA, aucune allégation santé autorisée pour aucune d'elles. Elles sont affichées à part pour qu'un extrait ne soit jamais pris pour une vitamine, et notées selon exactement la même méthode — le palier de forme signifie <i>est-ce le matériau utilisé dans les essais</i> (extraits standardisés et brevetés vs poudre brute), le palier de dose est la plage réellement utilisée par ces essais. Quand une agence européenne en déconseille une, l'avertissement est imprimé là où la dose serait autrement : l'ashwagandha porte une interdiction danoise de 2023 et un avis de l'ANSES de 2024, et n'a pas de carton rouge uniquement parce qu'aucune de ces deux instances ne fait partie de la règle.</p>
+    <p>Ce à quoi chaque complément sert vraiment — par besoin, noté sur les essais, avec l'allégation EFSA affichée à part — est sur la <a href="/compare/evidence/">page preuves</a>.</p>
     <p>Détails complets, tables de pénalités, sources et limites : <b>METHODOLOGY.md</b> dans le dépôt.</p>`,
 
   about: META => `

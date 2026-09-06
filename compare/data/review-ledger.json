@@ -1,5 +1,26 @@
 {
  "decisions": {
+  "acetate de dl-alpha-tocopheryle": {
+   "note": "vitamin E acetate",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "acétate de DL-alpha-tocophéryle",
+   "verdict": "neutral"
+  },
+  "agent de charge (phosphates de calcium)": {
+   "note": "calcium phosphates (E341), bulking agent",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "agent de charge (phosphates de calcium)",
+   "verdict": "penalty:bulking_filler"
+  },
+  "agent de charge : farine de coco": {
+   "note": "coconut flour, food ingredient used as a filler",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "agent de charge : farine de coco",
+   "verdict": "neutral"
+  },
   "antiagglomerant : oxyde de magnesium": {
    "note": "magnesium oxide used as an anti-caking agent, not as the active",
    "reviewed_by": "Alexandre Bredillot",
@@ -13,6 +34,13 @@
    "reviewed_on": "2026-08-07",
    "seen_as": "antiagglomérant E470b",
    "verdict": "penalty:anticaking"
+  },
+  "antioxydant (acide ascorbique)": {
+   "note": "vitamin C used as an antioxidant",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "antioxydant (acide ascorbique)",
+   "verdict": "neutral"
   },
   "antioxydant e341": {
    "note": "calcium phosphates (E341)",
@@ -70,6 +98,20 @@
    "seen_as": "Bacillus coagulans GBI-30 6086",
    "verdict": "neutral"
   },
+  "cire d'abeille": {
+   "note": "beeswax (E901), glazing agent in a softgel",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "cire d'abeille",
+   "verdict": "penalty:coating"
+  },
+  "colorant (oxydes de fer et hydroxydes de fer)": {
+   "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "colorant (oxydes de fer et hydroxydes de fer)",
+   "verdict": "neutral"
+  },
   "colorant : e132 indigotine": {
    "note": "indigotine (E132), synthetic colour",
    "reviewed_by": "Alexandre Bredillot",
@@ -82,6 +124,20 @@
    "reviewed_by": "Alexandre Bredillot",
    "reviewed_on": "2026-08-07",
    "seen_as": "colorant : E160",
+   "verdict": "neutral"
+  },
+  "colorants (oxydes de fer et hydroxydes de fer)": {
+   "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye, no child-attention warning",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "colorants (oxydes de fer et hydroxydes de fer)",
+   "verdict": "neutral"
+  },
+  "colorants (oxydes et hydroxydes de fer)": {
+   "note": "iron oxides (E172), mineral pigment in the capsule shell — not an azo dye",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "colorants (oxydes et hydroxydes de fer)",
    "verdict": "neutral"
   },
   "conservateur : sorbate de potassium": {
@@ -105,6 +161,13 @@
    "seen_as": "correcteur d'acidité : hydroxyde de potassium",
    "verdict": "penalty:acidity_regulator"
   },
+  "emulsifiant (e 433)": {
+   "note": "polysorbate 80 (E433), the emulsifier that makes micellar curcumin water-soluble",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "émulsifiant (E 433)",
+   "verdict": "penalty:lecithin"
+  },
   "emulsifiant e471": {
    "note": "mono- and diglycerides of fatty acids (E471), emulsifier",
    "reviewed_by": "Alexandre Bredillot",
@@ -126,6 +189,27 @@
    "seen_as": "excipients comprimé bicouche",
    "verdict": "penalty:undisclosed_minor"
   },
+  "extrait d'ecorce de quillaja": {
+   "note": "quillaja extract (E999), a natural emulsifier in the delivery matrix",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "extrait d'écorce de quillaja",
+   "verdict": "penalty:lecithin"
+  },
+  "extrait d'ecorce de quillaja bio": {
+   "note": "quillaja extract (E999), a natural emulsifier in the delivery matrix",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "extrait d'écorce de quillaja bio",
+   "verdict": "penalty:lecithin"
+  },
+  "farine de coco bio": {
+   "note": "coconut flour, food ingredient",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "farine de coco bio",
+   "verdict": "neutral"
+  },
   "farine de noix de coco": {
    "note": "coconut flour, food ingredient",
    "reviewed_by": "Alexandre Bredillot",
@@ -139,6 +223,20 @@
    "reviewed_on": "2026-08-07",
    "seen_as": "fécule de manioc bio",
    "verdict": "penalty:bulking_filler"
+  },
+  "fibre de pois": {
+   "note": "pea fibre, a food fibre",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "fibre de pois",
+   "verdict": "neutral"
+  },
+  "fibres de coco bio": {
+   "note": "coconut fibre, food ingredient used as a filler",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "fibres de coco bio",
+   "verdict": "neutral"
   },
   "gelifiant e401": {
    "note": "sodium alginate (E401), gelling agent",
@@ -175,11 +273,25 @@
    "seen_as": "phosphate de calcium",
    "verdict": "penalty:bulking_filler"
   },
+  "phospholipides de tournesol": {
+   "note": "sunflower phospholipids — the lecithin carrier of the phytosome, an emulsifier",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "phospholipides de tournesol",
+   "verdict": "penalty:lecithin"
+  },
   "poudre a lever : carbonate de soude": {
    "note": "sodium carbonate (E500), raising agent",
    "reviewed_by": "Alexandre Bredillot",
    "reviewed_on": "2026-08-07",
    "seen_as": "poudre à lever : carbonate de soude",
+   "verdict": "penalty:acidity_regulator"
+  },
+  "regulateur d'acidite (hydroxyde d'ammonium)": {
+   "note": "ammonium hydroxide (E527), trace acidity regulator in the capsule shell",
+   "reviewed_by": "Alexandre Bredillot",
+   "reviewed_on": "2026-09-06",
+   "seen_as": "régulateur d'acidité (hydroxyde d'ammonium)",
    "verdict": "penalty:acidity_regulator"
   },
   "support comprime multicouche": {
